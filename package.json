@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "test": "turbo run test --parallel",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
@@ -28,6 +29,11 @@
       },
       "dev": {
         "cache": false
+      },
+      "test": {
+        "dependsOn": [
+          "build"
+        ]
       }
     }
   },
