@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Main Debug",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+          "run",
+          "debug"
+      ],
+      "console": "internalConsole",
+      "outputCapture": "std",
+      "env": {
+          "ENV": "development",
+          "NODE_ENV": "development",
+      },
+      "preLaunchTask": "npm: build",
+      "sourceMaps": true,
+      "port": 9229,
+      "outFiles": ["${workspaceFolder}/dist/**/*"]
+  },
+  ]
+}
