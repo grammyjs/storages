@@ -1,14 +1,14 @@
-name: Release TypeOrm
+name: Release PSQL Storage
  
 on:
   push:
     tags:
-      - "typeorm*"
+      - "psql*"
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: packages/typeorm
+    working-directory: packages/psql
 
 jobs:
   publish-npm:

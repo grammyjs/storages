@@ -1,14 +1,14 @@
-name: Release PSQL storage
+name: Release MongoDB Storage
  
 on:
   push:
     tags:
-      - "psql*"
+      - "mongodb*"
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: packages/psql
+    working-directory: packages/mongodb
 
 jobs:
   publish-npm:
