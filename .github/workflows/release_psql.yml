@@ -1,4 +1,4 @@
-name: Release TypeOrm Storage
+name: Release TypeOrm
  
 on:
   push:

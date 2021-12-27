@@ -1,14 +1,14 @@
-name: Release TypeOrm Storage
+name: Release Redis Storage
  
 on:
   push:
     tags:
-      - "typeorm*"
+      - "redis*"
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: packages/typeorm
+    working-directory: packages/redis
 
 jobs:
   publish-npm:

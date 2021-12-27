@@ -1,14 +1,14 @@
-name: Release TypeOrm Storage
+name: Release File Storage
  
 on:
   push:
     tags:
-      - "typeorm*"
+      - "file*"
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: packages/typeorm
+    working-directory: packages/file
 
 jobs:
   publish-npm:

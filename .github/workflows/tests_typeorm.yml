@@ -1,0 +1,32 @@
+name: Tests TypeORM Storage
+
+on:
+  push:
+    paths:
+      - packages/typeorm/**
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: packages/typeorm
+
+jobs:
+  build:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i -g pnpm
+      - name: install dependencies
+        run: pnpm install
+      - name: build
+        run: pnpm run build
+      - name: tests
+        run: pnpm test
