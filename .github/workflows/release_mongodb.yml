@@ -41,8 +41,8 @@ jobs:
       - run: deno -V
       - name: Run tests
         run: deno test packages/mongodb/__tests__/deno.ts --unstable --no-check --allow-net
-     - name: Publish
+      - name: Publish
         run: |
-          deno install -Af --unstable https://x.nest.land/eggs@0.3.10/eggs.ts
-          eggs link ${{ secrets.NESTAPIKEY }}
-          deno run --allow-read --allow-net --allow-env --unstable eggs.ts mongodb
+            deno install -Af --unstable https://x.nest.land/eggs@0.3.10/eggs.ts
+            eggs link ${{ secrets.NESTAPIKEY }}
+            deno run --allow-read --allow-net --allow-env --unstable eggs.ts mongodb
