@@ -35,4 +35,4 @@ jobs:
         uses: maximousblk/setup-deno@v1
       - run: deno -V
       - name: Run tests
-        run: deno test __tests__/deno.ts --allow-write --no-check --allow-read --unstable
+        run: deno test packages/file/__tests__/deno.ts --allow-write --no-check --allow-read --unstable

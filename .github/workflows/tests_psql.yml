@@ -50,4 +50,4 @@ jobs:
         uses: maximousblk/setup-deno@v1
       - run: deno -V
       - name: Run tests
-        run: deno test __tests__/deno.ts --unstable --no-check --allow-net
+        run: deno test packages/psql/__tests__/deno.ts --unstable --no-check --allow-net
