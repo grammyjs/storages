@@ -26,3 +26,24 @@ jobs:
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  publish-nest:
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+          image: mongo
+          options: >-
+            --health-cmd mongo
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
+          ports:
+            - 27017:27017
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Deno
+        uses: maximousblk/setup-deno@v1
+      - run: deno -V
+      - name: Run tests
+        run: deno test packages/mongodb/__tests__/deno.ts --unstable --no-check --allow-net
+      - name: Publish
+        run: deno run --allow-read --allow-env --unstable eggs.ts mongodb

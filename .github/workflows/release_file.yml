@@ -26,3 +26,14 @@ jobs:
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  publish-nest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Deno
+        uses: maximousblk/setup-deno@v1
+      - run: deno -V
+      - name: Run tests
+        run: deno test packages/file/__tests__/deno.ts --allow-write --no-check --allow-read --unstable
+      - name: Publish
+        run: deno run --allow-read --allow-env --unstable eggs.ts file

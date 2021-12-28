@@ -5,7 +5,7 @@ Deno.chdir(pkgDir);
 
 const pkg = JSON.parse(Deno.readTextFileSync(`./package.json`));
 
-const config = {
+publish({
   'description': pkg.description,
   'homepage': pkg.homepage,
   'version': pkg.version,
@@ -24,6 +24,5 @@ const config = {
   'ignore': [
     `./src/deps.node.ts`,
   ],
-};
-
-publish(config, pkg.name.replace('@satont/', ''));
+  yes: true,
+}, pkg.name.replace('@satont/', ''));
