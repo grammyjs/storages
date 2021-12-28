@@ -1,9 +1,0 @@
-{
-  "editor.formatOnSave": true,
-  "javascript.preferences.quoteStyle": "single",
-  "typescript.preferences.quoteStyle": "single",
-  "deno.enable": true,
-  "deno.suggest.imports.hosts": {
-    "https://deno.land": false
-  }
-}
