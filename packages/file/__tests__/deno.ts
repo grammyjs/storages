@@ -3,7 +3,7 @@ import { session } from 'https://deno.land/x/grammy@v1.5.4/mod.ts';
 import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts'
 import { FileAdapter } from '../src/mod.ts';
 import { fs, path } from '../src/deps.deno.ts'
-import { createMessage, createBot } from "https://deno.land/x/grammy_storage_utils@1.0.3/mod.ts"
+import { createMessage, createBot } from "../../../libs/utils/src/mod.ts"
 
 const dirPath = path.resolve(Deno.cwd(), 'sessions')
 const cleanDir = () => Deno.remove(dirPath, { recursive: true })
