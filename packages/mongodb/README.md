@@ -20,13 +20,13 @@ Deno
 import {
   ISession,
   MongoDBAdapter,
-} from "https://deno.land/x/grammy_mongodb_storage/mod.ts";
+} from "https://x.nest.land/grammy-mongodb-storage@1.0.1/src/mod.ts";
 ```
 
 ## Usage
 
 You can check
-[examples](https://github.com/Satont/grammy-mongodb-storage/tree/main/examples)
+[examples](https://github.com/Satont/grammy-storages/tree/main/packages/mongodb/examples)
 folder, which contains deno and node examples.:
 
 ### Mongoose

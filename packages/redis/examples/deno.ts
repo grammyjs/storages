@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from 'https://deno.land/x/grammy@v1.5.4/mod.ts';
-import { RedisAdapter } from 'https://deno.land/x/grammy_redis_storage/mod.ts';
+import { RedisAdapter } from 'https://x.nest.land/grammy-psql-storage@1.1.0/src/mod.ts';
 import { connect } from 'https://deno.land/x/redis@v0.25.0/mod.ts';
 
 interface SessionData {

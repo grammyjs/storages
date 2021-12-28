@@ -15,11 +15,11 @@ npm install @satont/grammy-file-storage --save
 Deno
 
 ```ts
-import { FileAdapter } from "https://deno.land/x/grammy_file_storage/mod.ts";
+import { FileAdapter } from "https://x.nest.land/grammy-file-storage@1.1.2/src/mod.ts";
 ```
 
 ## Usage
 
 You can check
-[examples](https://github.com/Satont/grammy-file-storage/tree/main/examples)
+[examples](https://github.com/Satont/grammy-storages/tree/main/packages/file/examples)
 folder

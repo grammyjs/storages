@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Satont/grammy-redis-storage.git"
+    "url": "git+https://github.com/Satont/grammy-storages.git"
   },
   "author": "Satont <satontworldwide@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Satont/grammy-redis-storage/issues"
+    "url": "https://github.com/Satont/grammy-storages/issues"
   },
-  "homepage": "https://github.com/Satont/grammy-redis-storage#readme",
+  "homepage": "https://github.com/Satont/grammy-storages/tree/main/packages/redis#readme",
   "devDependencies": {
     "@satont/grammy-storage-utils": "workspace:*",
     "@types/ioredis": "^4.28.5",
