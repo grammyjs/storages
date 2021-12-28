@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/Satont/grammy-typeorm-storage#readme",
   "devDependencies": {
-    "@satont/grammy-storage-utils": "^1.0.3",
+    "@satont/grammy-storage-utils": "workspace:*",
     "@types/node": "^17.0.4",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
