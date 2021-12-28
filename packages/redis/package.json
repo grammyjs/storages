@@ -1,6 +1,6 @@
 {
   "name": "@satont/grammy-redis-storage",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Redis storage for grammy library.",
   "main": "dist/mod.js",
   "types": "dist/mod.d.ts",

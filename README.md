@@ -28,7 +28,7 @@ Bug reports and pull requests are welcome.
   │                          
   │                          
   │
-  └─⫸ Commit Type: docs|feat|fix|perf|refactor|test|chore
+  └─⫸ Commit Type: docs|feat|fix|perf|refactor|test|chore|release
 ```
 
 This is inspired by https://www.conventionalcommits.org
