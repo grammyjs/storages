@@ -16,9 +16,7 @@
     "dev": "nodemon",
     "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.build.json",
-    "eslint": "npx eslint --ext .ts src",
-    "eslint:fix": "npx eslint --ext .ts --fix src"
+    "build": "tsc -p tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -33,10 +31,7 @@
   "devDependencies": {
     "@satont/grammy-storage-utils": "workspace:*",
     "@types/node": "^17.0.4",
-    "@typescript-eslint/eslint-plugin": "^5.8.0",
-    "@typescript-eslint/parser": "^5.8.0",
     "better-sqlite3": "^7.4.5",
-    "eslint": "^8.5.0",
     "grammy": "^1.5.4",
     "mongodb": "^3.6.4",
     "mongodb-memory-server": "^8.1.0",

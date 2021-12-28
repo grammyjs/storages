@@ -1,4 +1,4 @@
-import * as Deps from './deps.deno.ts'
+import * as Deps from './deps.deno.ts';
 
 interface JsonSessionData {
   pizzaCount: number;
@@ -18,17 +18,17 @@ export function createBot(json = true) {
   const botInfo = {
     id: 42,
     first_name: 'Test Bot',
-    is_bot: true as true,
+    is_bot: true as const,
     username: 'bot',
     can_join_groups: true,
     can_read_all_group_messages: true,
     supports_inline_queries: false,
-  }
+  };
 
   if (json) {
-    return new Deps.Bot<JsonBot>('fake-token', { botInfo })
+    return new Deps.Bot<JsonBot>('fake-token', { botInfo });
   } else {
-    return new Deps.Bot<StringBot>('fake-token', { botInfo })
+    return new Deps.Bot<StringBot>('fake-token', { botInfo });
   }
 }
 

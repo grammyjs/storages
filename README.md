@@ -42,3 +42,10 @@ pnpm run build
 ```
 pnpm test
 ```
+
+
+## Linting
+
+```
+pnpm lint
+```
