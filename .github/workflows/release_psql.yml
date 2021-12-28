@@ -47,4 +47,7 @@ jobs:
       - name: Run tests
         run: deno test packages/psql/__tests__/deno.ts --unstable --no-check --allow-net
       - name: Publish
-        run: deno run --allow-read --allow-env --unstable eggs.ts psql
+        run: |
+          deno install -Af --unstable https://x.nest.land/eggs@0.3.10/eggs.ts
+          eggs link ${{ secrets.NESTAPIKEY }}
+          deno run --allow-read --allow-env --unstable eggs.ts psql
