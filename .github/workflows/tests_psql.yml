@@ -11,7 +11,7 @@ defaults:
     working-directory: packages/psql
 
 jobs:
-  build:
+  node-tests:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
     strategy:
@@ -30,3 +30,28 @@ jobs:
         run: pnpm run build
       - name: tests
         run: pnpm test
+  deno-tests:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Deno
+        uses: maximousblk/setup-deno@v1
+      - run: deno -V
+      - name: Run tests
+        run: deno test __tests__/deno.ts --unstable --no-check --allow-net

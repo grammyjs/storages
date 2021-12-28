@@ -11,7 +11,7 @@ defaults:
     working-directory: packages/redis
 
 jobs:
-  build:
+  node-tests:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
     strategy:
@@ -30,3 +30,13 @@ jobs:
         run: pnpm run build
       - name: tests
         run: pnpm test
+  deno-tests:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Deno
+        uses: maximousblk/setup-deno@v1
+      - run: deno -V
+      - name: Run tests
+        run: deno test __tests__/deno.ts --allow-write --no-check --allow-read --unstable
