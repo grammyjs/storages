@@ -6,9 +6,6 @@ on:
       - "redis*"
   workflow_dispatch:
 
-defaults:
-  run:
-    working-directory: packages/redis
 
 jobs:
   publish-npm:
@@ -20,10 +17,10 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm i -g pnpm
-      - run: pnpm install
-      - run: pnpm run build
-      - run: pnpm run test
-      - run: npm publish --access public
+      - run: pnpm install 
+      - run: pnpm run build -- --scope=@satont/grammy-redis-storage
+      - run: pnpm run test -- --scope=@satont/grammy-redis-storage
+      - run: pnpm publish --filter=@satont/grammy-redis-storage --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-nest:

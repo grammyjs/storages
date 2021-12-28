@@ -6,10 +6,6 @@ on:
       - "psql*"
   workflow_dispatch:
 
-defaults:
-  run:
-    working-directory: packages/psql
-
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
@@ -20,10 +16,10 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm i -g pnpm
-      - run: pnpm install
-      - run: pnpm run build
-      - run: pnpm run test
-      - run: npm publish --access public
+      - run: pnpm install 
+      - run: pnpm run build -- --scope=@satont/grammy-psql-storage
+      - run: pnpm run test -- --scope=@satont/grammy-psql-storage
+      - run: pnpm publish --filter=@satont/grammy-psql-storage --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-nest:
