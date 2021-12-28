@@ -36,4 +36,4 @@ jobs:
         run: |
           deno install -Af --unstable https://x.nest.land/eggs@0.3.10/eggs.ts
           eggs link ${{ secrets.NESTAPIKEY }}
-          deno run --allow-read --allow-env --unstable eggs.ts redis
+          deno run --allow-read --allow-net --allow-env --unstable eggs.ts redis
