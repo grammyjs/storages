@@ -22,7 +22,7 @@ async function bootstrap() {
   bot.use(
     session({
       initial: () => ({ counter: 0 }),
-      storage: new PsqlAdapter({ tableName: 'sessions', client }),
+      storage: await PsqlAdapter.create({ tableName: 'sessions', client }),
     })
   );
   
