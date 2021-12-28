@@ -1,5 +1,6 @@
 {
   "name": "@satont/grammy-storage-utils",
+  "private": true,
   "main": "dist/mod.js",
   "types": "dist/mod.d.ts",
   "version": "1.0.3",
@@ -8,8 +9,6 @@
     "build": "deno2node tsconfig.json"
   },
   "keywords": [],
-  "author": "Satont <satontworldwide@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "grammy": "^1.5.4"
   },
