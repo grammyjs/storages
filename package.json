@@ -1,6 +1,5 @@
 {
-  "name": "turborepo-basic-shared",
-  "version": "0.0.0",
+  "name": "@satont/grammy-storages",
   "private": true,
   "scripts": {
     "build": "turbo run build",
