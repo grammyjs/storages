@@ -17,7 +17,7 @@ export class FileAdapter<T> implements StorageAdapter<T> {
   /**
    * @constructor
    * @param {opts} options options
-   * @param {opts.dirname} options.ttl - name of directory where files should be stored.
+   * @param {opts.dirName} options.dirName - name of directory where files should be stored. Defaults to `sessions`.
    * @param {opts.serializer} options.serializer
    * serializer of file. Default `JSON.stringify(input, null, '\t')`.
    *
