@@ -29,7 +29,6 @@
     "@satont/grammy-storage-utils": "workspace:*",
     "@types/node": "^16.11.13",
     "@types/pg": "^8.6.3",
-    "deno2node": "^1.1.0",
     "grammy": "^1.5.4",
     "pg": "^8.7.1",
     "pg-mem": "^2.1.9",

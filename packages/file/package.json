@@ -28,7 +28,6 @@
   "devDependencies": {
     "@satont/grammy-storage-utils": "workspace:*",
     "@types/node": "^17.0.5",
-    "deno2node": "^1.1.0",
     "grammy": "^1.5.4",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4",

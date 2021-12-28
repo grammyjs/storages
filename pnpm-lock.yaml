@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@typescript-eslint/eslint-plugin': ^5.8.0
       '@typescript-eslint/parser': ^5.8.0
+      deno2node: ^1.1.0
       eslint: ^8.5.0
       husky: ^7.0.4
       lint-staged: ^12.1.4
@@ -15,6 +16,7 @@ importers:
     devDependencies:
       '@typescript-eslint/eslint-plugin': 5.8.1_3a47348159e115370aa4cba56aba33b6
       '@typescript-eslint/parser': 5.8.1_eslint@8.5.0+typescript@4.5.4
+      deno2node: 1.1.0
       eslint: 8.5.0
       husky: 7.0.4
       lint-staged: 12.1.4
@@ -26,7 +28,6 @@ importers:
     specifiers:
       '@types/node': ^17.0.5
       ava: ^3.15.0
-      deno2node: ^1.1.0
       grammy: ^1.5.4
       ts-node: ^10.4.0
       typescript: ^4.5.4
@@ -35,7 +36,6 @@ importers:
     devDependencies:
       '@types/node': 17.0.5
       ava: 3.15.0
-      deno2node: 1.1.0
       ts-node: 10.4.0_bad060d5f9aca5284661d88d739ba15b
       typescript: 4.5.4
 
@@ -43,7 +43,6 @@ importers:
     specifiers:
       '@satont/grammy-storage-utils': workspace:*
       '@types/node': ^17.0.5
-      deno2node: ^1.1.0
       grammy: ^1.5.4
       rimraf: ^3.0.2
       typescript: ^4.5.4
@@ -52,7 +51,6 @@ importers:
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.5
-      deno2node: 1.1.0
       grammy: 1.5.4
       rimraf: 3.0.2
       typescript: 4.5.4
@@ -63,7 +61,6 @@ importers:
     specifiers:
       '@satont/grammy-storage-utils': workspace:*
       '@types/node': ^16.11.13
-      deno2node: ^1.1.0
       grammy: ^1.5.4
       mongodb: ^4.2.2
       mongodb-memory-server: ^7.6.3
@@ -74,7 +71,6 @@ importers:
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 16.11.17
-      deno2node: 1.1.0
       grammy: 1.5.4
       mongodb: 4.2.2
       mongodb-memory-server: 7.6.3
@@ -88,7 +84,6 @@ importers:
       '@satont/grammy-storage-utils': workspace:*
       '@types/node': ^16.11.13
       '@types/pg': ^8.6.3
-      deno2node: ^1.1.0
       grammy: ^1.5.4
       pg: ^8.7.1
       pg-mem: ^2.1.9
@@ -100,7 +95,6 @@ importers:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 16.11.17
       '@types/pg': 8.6.3
-      deno2node: 1.1.0
       grammy: 1.5.4
       pg: 8.7.1
       pg-mem: 2.1.9
@@ -114,7 +108,6 @@ importers:
       '@satont/grammy-storage-utils': workspace:*
       '@types/ioredis': ^4.28.5
       '@types/node': ^17.0.5
-      deno2node: ^1.1.0
       grammy: ^1.5.4
       ioredis: ^4.28.2
       rimraf: ^3.0.2
@@ -125,7 +118,6 @@ importers:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/ioredis': 4.28.5
       '@types/node': 17.0.5
-      deno2node: 1.1.0
       grammy: 1.5.4
       ioredis: 4.28.2
       rimraf: 3.0.2

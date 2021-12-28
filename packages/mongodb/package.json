@@ -28,7 +28,6 @@
   "devDependencies": {
     "@satont/grammy-storage-utils": "workspace:*",
     "@types/node": "^16.11.13",
-    "deno2node": "^1.1.0",
     "grammy": "^1.5.4",
     "mongodb": "^4.2.2",
     "mongodb-memory-server": "^7.6.3",
