@@ -33,7 +33,7 @@
     "@types/node": "^17.0.4",
     "better-sqlite3": "^7.4.5",
     "grammy": "^1.5.4",
-    "mongodb": "^3.6.4",
+    "mongodb": "^4.2.2",
     "mongodb-memory-server": "^8.1.0",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
