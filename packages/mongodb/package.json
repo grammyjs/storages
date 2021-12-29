@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/Satont/grammy-storages/tree/main/packages/mongodb#readme",
   "devDependencies": {
-    "@satont/grammy-storage-utils": "workspace:*",
+    "@satont/grammy-storage-utils": "^1.0.3",
     "@types/node": "^16.11.13",
     "grammy": "^1.5.4",
     "mongodb": "^4.2.2",
