@@ -1,4 +1,4 @@
-import { session } from 'https://deno.land/x/grammy@v1.5.4/mod.ts';
+import { session } from 'https://deno.land/x/grammy@v1.5.5/mod.ts';
 import { expect } from 'https://deno.land/x/expect/mod.ts';
 import { PsqlAdapter } from '../src/mod.ts';
 import { Client } from 'https://deno.land/x/postgres@v0.14.2/mod.ts';

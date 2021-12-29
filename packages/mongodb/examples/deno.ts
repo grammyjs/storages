@@ -1,4 +1,4 @@
-import { Bot, Context, session, SessionFlavor } from "https://deno.land/x/grammy@v1.5.4/mod.ts";
+import { Bot, Context, session, SessionFlavor } from "https://deno.land/x/grammy@v1.5.5/mod.ts";
 import { MongoDBAdapter, ISession } from "https://x.nest.land/grammy-mongodb-storage@1.0.1/src/mod.ts";
 import { MongoClient } from "https://deno.land/x/mongo@v0.29.0/mod.ts";
 
