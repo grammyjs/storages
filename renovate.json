@@ -1,5 +1,20 @@
 {
-  "extends": [
-    "config:base"
+  "pinVersions": false,
+  "semanticCommits": true,
+  "semanticPrefix": "chore(dependency)",
+  "separateMajorMinor": false,
+  "prHourlyLimit": 100,
+  "labels": ["dependencies"],
+  "timezone": "Europe/Moscow",
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "schedule": ["every 30m"],
+  "baseBranches": ["main"],
+  "packageFiles": [
+    "package.json",
+    "packages/**/package.json",
+    "utils/**/package.json",
+    ".github/workflows/**/*.yml"
   ]
 }
