@@ -30,7 +30,7 @@
     "@types/node": "^16.11.13",
     "grammy": "^1.5.4",
     "mongodb": "^4.2.2",
-    "mongodb-memory-server": "^7.6.3",
+    "mongodb-memory-server": "^8.1.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4",
     "vite": "^2.7.7",
