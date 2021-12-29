@@ -60,7 +60,7 @@ importers:
   packages/mongodb:
     specifiers:
       '@satont/grammy-storage-utils': workspace:*
-      '@types/node': ^16.11.13
+      '@types/node': ^17.0.0
       grammy: ^1.5.4
       mongodb: ^4.2.2
       mongodb-memory-server: ^7.6.3
@@ -70,7 +70,7 @@ importers:
       vitest: ^0.0.120
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
-      '@types/node': 16.11.17
+      '@types/node': 17.0.5
       grammy: 1.5.4
       mongodb: 4.2.2
       mongodb-memory-server: 7.6.3
@@ -82,7 +82,7 @@ importers:
   packages/psql:
     specifiers:
       '@satont/grammy-storage-utils': workspace:*
-      '@types/node': ^16.11.13
+      '@types/node': ^17.0.0
       '@types/pg': ^8.6.3
       grammy: ^1.5.4
       pg: ^8.7.1
@@ -93,7 +93,7 @@ importers:
       vitest: ^0.0.120
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
-      '@types/node': 16.11.17
+      '@types/node': 17.0.5
       '@types/pg': 8.6.3
       grammy: 1.5.4
       pg: 8.7.1
@@ -427,10 +427,6 @@ packages:
     dependencies:
       '@types/bson': 4.2.0
       '@types/node': 17.0.5
-    dev: true
-
-  /@types/node/16.11.17:
-    resolution: {integrity: sha512-C1vTZME8cFo8uxY2ui41xcynEotVkczIVI5AjLmy5pkpBv/FtG+jhtOlfcPysI8VRVwoOMv6NJm44LGnoMSWkw==}
     dev: true
 
   /@types/node/17.0.5:
