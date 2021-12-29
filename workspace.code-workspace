@@ -1,0 +1,17 @@
+{
+  "folders": [
+      {
+          "path": "./packages/typeorm"
+      },
+      {
+          "name": "root",
+          "path": "."
+      }
+  ],
+  "settings": {
+    "deno.enable": true,
+    "deno.suggest.imports.hosts": {
+      "https://x.nest.land": true
+    }
+  }
+}
