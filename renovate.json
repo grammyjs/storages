@@ -9,7 +9,6 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  /* "schedule": ["every day"], */
   "baseBranches": ["main"],
   "packageFiles": [
     "package.json",
