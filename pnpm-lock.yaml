@@ -131,7 +131,7 @@ importers:
       '@types/node': ^17.0.4
       better-sqlite3: ^7.4.5
       grammy: ^1.5.4
-      mongodb: ^3.6.4
+      mongodb: ^4.0.0
       mongodb-memory-server: ^8.1.0
       rimraf: ^3.0.2
       ts-node: ^10.4.0
@@ -144,11 +144,11 @@ importers:
       '@types/node': 17.0.5
       better-sqlite3: 7.4.5
       grammy: 1.5.4
-      mongodb: 3.7.3
+      mongodb: 4.2.2
       mongodb-memory-server: 8.1.0
       rimraf: 3.0.2
       ts-node: 10.4.0_bad060d5f9aca5284661d88d739ba15b
-      typeorm: 0.2.41_2c9c02149a77649f54e12108b15b308a
+      typeorm: 0.2.41_47e68a61aaaede33e2aa88a017fe70b2
       typescript: 4.5.4
       vite: 2.7.7
       vitest: 0.0.107_vite@2.7.7
@@ -5150,7 +5150,7 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
-  /typeorm/0.2.41_2c9c02149a77649f54e12108b15b308a:
+  /typeorm/0.2.41_47e68a61aaaede33e2aa88a017fe70b2:
     resolution: {integrity: sha512-/d8CLJJxKPgsnrZWiMyPI0rz2MFZnBQrnQ5XP3Vu3mswv2WPexb58QM6BEtmRmlTMYN5KFWUz8SKluze+wS9xw==}
     hasBin: true
     peerDependencies:
@@ -5212,7 +5212,7 @@ packages:
       glob: 7.2.0
       js-yaml: 4.1.0
       mkdirp: 1.0.4
-      mongodb: 3.7.3
+      mongodb: 4.2.2
       reflect-metadata: 0.1.13
       sha.js: 2.4.11
       tslib: 2.3.1
