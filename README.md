@@ -2,15 +2,15 @@
 
 This is monorepo for Satont's adapters for [grammY](https://grammy.dev)
 
-## Packages
+## Storages
 
-- `file`: a file storage
-- `mongodb`: a mongodb storage
-- `psql`: a postgresql storage
-- `redis`: a redis storage
-- `typeorm`: a typeorm storage
+- [file](https://github.com/Satont/grammy-storages/tree/main/packages/file)
+- [mongodb](https://github.com/Satont/grammy-storages/tree/main/packages/mongodb)
+- [psql](https://github.com/Satont/grammy-storages/tree/main/packages/psql)
+- [redis](https://github.com/Satont/grammy-storages/tree/main/packages/redis)
+- [typeorm](https://github.com/Satont/grammy-storages/tree/main/packages/typeorm)
 
-Each package is 100% [TypeScript](https://www.typescriptlang.org/), well tested and focused on support [Deno](https://deno.land) and [Node.js](https://nodejs.org/en/)
+Each package is 100% [TypeScript](https://www.typescriptlang.org/), well tested and focused on support [Deno](https://deno.land) and [Node.js](https://nodejs.org)
 
 
 ## Contributing
