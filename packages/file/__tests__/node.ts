@@ -1,21 +1,21 @@
 
 import { session } from 'grammy';
-import { FileAdapter } from '../dist/mod';
-import { fs, path, cwd } from '../dist/deps.node'
-import { createBot, createMessage} from '@satont/grammy-storage-utils'
-import { test, beforeEach, expect } from 'vitest'
+import { FileAdapter } from '../dist/cjs/mod';
+import { fs, path, cwd } from '../src/deps.node';
+import { createBot, createMessage } from '@satont/grammy-storage-utils';
+import { test, beforeEach, expect } from 'vitest';
 
-const dirPath = path.resolve(cwd(), 'sessions')
+const dirPath = path.resolve(cwd(), 'sessions');
 const cleanDir = async () => {
-  await fs.remove(dirPath).catch(() => null)
-}
+  await fs.remove(dirPath).catch(() => null);
+};
 
-beforeEach(async () => await cleanDir())
+beforeEach(async () => await cleanDir());
 
 test('Should create sessions dir', async () => {
-  new FileAdapter({ dirName: 'sessions' })
-  expect(fs.existsSync(dirPath)).toBe(true)
-})
+  new FileAdapter({ dirName: 'sessions' });
+  expect(fs.existsSync(dirPath)).toBe(true);
+});
 
 test('Pizza counter tests', async () => {
   const bot = createBot();
@@ -26,7 +26,7 @@ test('Pizza counter tests', async () => {
   }));
 
   bot.hears('first', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(0)
+    expect(ctx.session.pizzaCount).toEqual(0);
     ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
   });
   
@@ -36,11 +36,11 @@ test('Pizza counter tests', async () => {
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
-})
+});
  
 
 test('Simple string tests', async () => {
-  const bot = createBot(false)
+  const bot = createBot(false);
 
   bot.use(session({
     initial: () => 'test',
@@ -57,4 +57,4 @@ test('Simple string tests', async () => {
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
-})
+});

@@ -2,8 +2,14 @@
   "name": "@satont/grammy-psql-storage",
   "version": "0.0.5",
   "description": "PSQL storage for grammY library.",
-  "main": "dist/mod.js",
-  "types": "dist/mod.d.ts",
+  "main": "./dist/cjs/mod.js",
+  "module": "./dist/esm/mod.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/mod.js",
+      "require": "./dist/cjs/mod.js"
+    }
+  },
   "files": [
     "README.md",
     "dist",
@@ -13,7 +19,8 @@
   "scripts": {
     "test": "vitest",
     "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.build.json"
+    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist"
   },
   "repository": {
     "type": "git",

@@ -1,27 +1,27 @@
 import { session } from 'grammy';
 import { MongoClient, Collection } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { createBot, createMessage } from '@satont/grammy-storage-utils'
+import { createBot, createMessage } from '@satont/grammy-storage-utils';
 
-import { beforeEach, afterEach, describe, test, expect } from 'vitest'
+import { beforeEach, afterEach, describe, test, expect } from 'vitest';
 
-import { ISession, MongoDBAdapter } from '../dist/mod';
+import { ISession, MongoDBAdapter } from '../dist/cjs/mod';
 
 let mongod: MongoMemoryServer;
-let client: MongoClient
-let collection: Collection<ISession>
+let client: MongoClient;
+let collection: Collection<ISession>;
 
 beforeEach(async () => {
   mongod = await MongoMemoryServer.create();
-  client = new MongoClient(`${mongod.getUri()}/testdb`)
-  await client.connect()
-  collection = client.db('testdb').collection('sessions')
+  client = new MongoClient(`${mongod.getUri()}/testdb`);
+  await client.connect();
+  collection = client.db('testdb').collection('sessions');
 });
 
 afterEach(async () => {
-  await client.close()
-  await mongod.stop()
-})
+  await client.close();
+  await mongod.stop();
+});
 
 describe('Pizza counter test', () => {
   test('Pizza counter should be equals 0 on initial', async () => {
@@ -105,4 +105,4 @@ describe('Test storing of simple string', () => {
     await bot.handleUpdate(createMessage(bot, 'first').update);
     await bot.handleUpdate(createMessage(bot, 'second').update);
   });
-})
+});

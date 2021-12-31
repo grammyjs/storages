@@ -1,6 +1,6 @@
 import ava from 'ava';
 import { Bot, session } from 'grammy';
-import { createBot, createMessage } from '../dist/mod';
+import { createBot, createMessage } from '../dist/cjs/mod';
 
 ava('Should create json session bot', async (t) => {
   const bot = createBot();

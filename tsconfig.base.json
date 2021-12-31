@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "ES2019",
+    "lib": [
+      "ES2019"
+    ],
+    "declaration": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "inlineSourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

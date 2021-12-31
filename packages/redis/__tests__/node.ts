@@ -1,7 +1,7 @@
 import { test, expect } from 'vitest';
 
 import { Bot, Context, session } from 'grammy';
-import { RedisAdapter } from '../dist/mod';
+import { RedisAdapter } from '../dist/cjs/mod';
 import { RedisMock } from './redisMock';
 import { createBot, createMessage } from '@satont/grammy-storage-utils';
 
@@ -14,7 +14,7 @@ test('Pizza counter tests', async () => {
   }));
 
   bot.hears('first', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(0)
+    expect(ctx.session.pizzaCount).toEqual(0);
     ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
   });
   
@@ -24,14 +24,14 @@ test('Pizza counter tests', async () => {
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
-})
+});
  
 
 test('Simple string tests', async () => {
   interface StringSessionFlavor {
     get session(): string;
     set session(session: string | null | undefined);
-}
+  }
 
   const bot = new Bot<Context & StringSessionFlavor>('fake-token', { 
     botInfo: {
@@ -43,7 +43,7 @@ test('Simple string tests', async () => {
       can_read_all_group_messages: true,
       supports_inline_queries: false,
     },
-  });;
+  });
 
   bot.use(session({
     initial: () => 'test',
@@ -60,4 +60,4 @@ test('Simple string tests', async () => {
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
-})
+});
