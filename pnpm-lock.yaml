@@ -49,7 +49,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.124
+      vitest: ^0.0.125
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.5
@@ -57,7 +57,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.7
-      vitest: 0.0.124
+      vitest: 0.0.125
 
   packages/mongodb:
     specifiers:
@@ -69,7 +69,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.124
+      vitest: ^0.0.125
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.5
@@ -79,7 +79,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.7
-      vitest: 0.0.124
+      vitest: 0.0.125
 
   packages/psql:
     specifiers:
@@ -92,7 +92,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.124
+      vitest: ^0.0.125
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.5
@@ -103,7 +103,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.7
-      vitest: 0.0.124
+      vitest: 0.0.125
 
   packages/redis:
     specifiers:
@@ -115,7 +115,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.124
+      vitest: ^0.0.125
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/ioredis': 4.28.5
@@ -125,7 +125,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.7
-      vitest: 0.0.124
+      vitest: 0.0.125
 
   packages/typeorm:
     specifiers:
@@ -140,7 +140,7 @@ importers:
       typeorm: ^0.2.41
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.124
+      vitest: ^0.0.125
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.5
@@ -153,7 +153,7 @@ importers:
       typeorm: 0.2.41_2c9c02149a77649f54e12108b15b308a
       typescript: 4.5.4
       vite: 2.7.7
-      vitest: 0.0.124
+      vitest: 0.0.125
 
 packages:
 
@@ -5873,8 +5873,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.0.124:
-    resolution: {integrity: sha512-azhSsniZCRkInFD/VXONs90WrgNDZLq1hemNVBfX+xE44Ock06R+zFSpk2Jz/LYfZhXXFi/Xr32RCjgquKsklw==}
+  /vitest/0.0.125:
+    resolution: {integrity: sha512-gJc2avxoSiA83OtMFcXUymi4BoCFPw8/+/3FCT1IjBQvUHRfUDrf2tYTGcbkeoqIz39f6b0rkZ27eNocVkQifg==}
     engines: {node: '>=14.14.0'}
     hasBin: true
     peerDependencies:
