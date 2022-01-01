@@ -21,7 +21,7 @@ import IORedis from "ioredis";
 Deno
 
 ```ts
-import { RedisAdapter } from "https://x.nest.land/grammy-redis-storage@1.1.1/src/mod.ts";
+import { RedisAdapter } from "https://x.nest.land/grammy-redis-storage@1.2.0/src/mod.ts";
 import { connect } from "https://deno.land/x/redis@v0.25.0/mod.ts";
 ```
 

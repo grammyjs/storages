@@ -15,7 +15,7 @@ npm install @satont/grammy-file-storage --save
 Deno
 
 ```ts
-import { FileAdapter } from "https://x.nest.land/grammy-file-storage@1.1.2/src/mod.ts";
+import { FileAdapter } from "https://x.nest.land/grammy-file-storage@1.2.0/src/mod.ts";
 ```
 
 ## Usage
