@@ -32,5 +32,6 @@
     },
     "useJSXTextNode": true,
     "tsconfigRootDir": "./"
-  }
+  },
+  "ignorePatterns": ["dist"]
 }

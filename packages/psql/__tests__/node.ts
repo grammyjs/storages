@@ -1,14 +1,14 @@
-import { describe, test, expect } from 'vitest'
+import { describe, test, expect } from 'vitest';
 import { newDb } from 'pg-mem';
-import { PsqlAdapter } from '../dist/mod'
-import { session } from 'grammy'
-import * as utils from '@satont/grammy-storage-utils'
+import { PsqlAdapter } from '../dist/cjs/mod';
+import { session } from 'grammy';
+import * as utils from '@satont/grammy-storage-utils';
 
 describe('Pizza counter test', () => {
   test('Pizza counter should be equals 0 on initial', async () => {
-    const bot = utils.createBot()
+    const bot = utils.createBot();
     const ctx = utils.createMessage(bot);
-    const client = new (newDb().adapters.createPg().Client)
+    const client = new (newDb().adapters.createPg().Client);
 
     bot.use(session({
       initial:() => ({ pizzaCount: 0 }),
@@ -24,7 +24,7 @@ describe('Pizza counter test', () => {
 
   test('Pizza counter should be equals 1 after first message', async () => {
     const bot = utils.createBot();
-    const client = new (newDb().adapters.createPg().Client)
+    const client = new (newDb().adapters.createPg().Client);
 
     bot.use(session({
       initial: () => ({ pizzaCount: 0 }),
@@ -46,8 +46,8 @@ describe('Pizza counter test', () => {
 
 describe('Simple string test', () => {
   test('Should be changed', async () => {
-    const client = new (newDb().adapters.createPg().Client)
-    const bot = utils.createBot(false)
+    const client = new (newDb().adapters.createPg().Client);
+    const bot = utils.createBot(false);
 
     bot.use(session({
       initial: () => 'test',
@@ -64,5 +64,5 @@ describe('Simple string test', () => {
     
     await bot.handleUpdate(utils.createMessage(bot, 'first').update);
     await bot.handleUpdate(utils.createMessage(bot, 'second').update);
-  })
-})
+  });
+});

@@ -1,24 +1,6 @@
 {
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "ES2019",
-    "lib": [
-      "ES2019"
-    ],
-    "module": "CommonJS",
-    "declaration": true,
-    "outDir": "./dist",
-    "strict": false,
-    "esModuleInterop": true,
-    "inlineSourceMap": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-  },
+  "extends": "../../tsconfig.base.json",
   "include": [
     "src"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }
