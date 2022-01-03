@@ -120,7 +120,7 @@ importers:
       vitest: ^0.0.127
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
-      '@types/ioredis': 4.28.5
+      '@types/ioredis': 4.28.6
       '@types/node': 17.0.6
       grammy: 1.6.1
       ioredis: 4.28.2
@@ -414,8 +414,8 @@ packages:
     resolution: {integrity: sha512-/ceqdqeRraGolFTcfoXNiqjyQhZzbINDngeoAq9GoHa8PPK1yNzTaxWjA6BFWp5Ua9JpXEMSS4s5i9tS0hOJtw==}
     dev: true
 
-  /@types/ioredis/4.28.5:
-    resolution: {integrity: sha512-bp5mdpzscWZMEE/jLvvzze5TZFYGhynB1am69l/a0XPqZRXWpbswY6lb5buEht57jOnw5pPG5zL9pFUWw1nggw==}
+  /@types/ioredis/4.28.6:
+    resolution: {integrity: sha512-oD2Dr1lyXgqWC0bQooZlqPGq5lgl/47uSa3YADTLbtnT+RU82nn/9qhejCbuoSmTcqE23vmsdihg2tcA8Vw1Dw==}
     dependencies:
       '@types/node': 17.0.6
     dev: true
