@@ -51,7 +51,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.136
+      vitest: ^0.0.139
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.6
@@ -59,7 +59,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.139
 
   packages/mongodb:
     specifiers:
@@ -71,7 +71,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.136
+      vitest: ^0.0.139
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.6
@@ -81,7 +81,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.139
 
   packages/psql:
     specifiers:
@@ -94,7 +94,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.136
+      vitest: ^0.0.139
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.6
@@ -105,7 +105,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.139
 
   packages/redis:
     specifiers:
@@ -117,7 +117,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.136
+      vitest: ^0.0.139
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/ioredis': 4.28.6
@@ -127,7 +127,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.5.4
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.139
 
   packages/typeorm:
     specifiers:
@@ -142,7 +142,7 @@ importers:
       typeorm: ^0.2.41
       typescript: ^4.5.4
       vite: ^2.7.7
-      vitest: ^0.0.136
+      vitest: ^0.0.139
     devDependencies:
       '@satont/grammy-storage-utils': link:../../libs/utils
       '@types/node': 17.0.6
@@ -155,7 +155,7 @@ importers:
       typeorm: 0.2.41_f8bce294d3489696fc03c16d6b65b8b2
       typescript: 4.5.4
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.139
 
 packages:
 
@@ -5316,8 +5316,8 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: true
 
-  /tinyspy/0.2.7:
-    resolution: {integrity: sha512-AaNITSED8/2j2/nSgPeQZW2nNhdTxNJ7XwcdBezI7MtPS2C+pJ1HjcHc/qfDhohUhQvODITdxzWH9u+Qs+7yFQ==}
+  /tinyspy/0.2.8:
+    resolution: {integrity: sha512-4VXqQzzh9gC5uOLk77cLr9R3wqJq07xJlgM9IUdCNJCet139r+046ETKbU1x7mGs7B0k7eopyH5U6yflbBXNyA==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -5865,8 +5865,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.0.136:
-    resolution: {integrity: sha512-l/FByRw+GNIckkAKMUib8HF5K+U3vmlrBOIl2ugt2FtMPvxSCKmRrbZWPmo3bbMzK1dekqSLILFp0v8WjNS5Lg==}
+  /vitest/0.0.139:
+    resolution: {integrity: sha512-5AXMaEOJXgQpobgXkzBPGP8o4NpAhT2yczeRD1V94U0VWGxRObI1zjqtxBPEtgda8Q4rQKw0SVlHCR0P76h9QA==}
     engines: {node: '>=14.14.0'}
     hasBin: true
     peerDependencies:
@@ -5889,7 +5889,7 @@ packages:
       chai: 4.3.4
       local-pkg: 0.4.1
       tinypool: 0.1.1
-      tinyspy: 0.2.7
+      tinyspy: 0.2.8
       vite: 2.7.10
     transitivePeerDependencies:
       - less
