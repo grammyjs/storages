@@ -16,7 +16,8 @@
     "dev": "nodemon",
     "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
   },
   "repository": {
     "type": "git",
