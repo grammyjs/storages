@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from "grammy";
-import { PsqlAdapter } from '@grammyjs/grammy-psql-storage';
+import { PsqlAdapter } from '@grammyjs/storage-psql';
 import { Client } from "pg";
 
 interface SessionData {

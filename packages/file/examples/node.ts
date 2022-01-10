@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from "grammy";
-import { FileAdapter } from '@grammyjs/grammy-file-storage';
+import { FileAdapter } from '@grammyjs/storage-file';
 
 interface SessionData {
   counter: number;

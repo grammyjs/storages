@@ -9,12 +9,12 @@ Storage adapter that can be used to
 Node
 
 ```bash
-npm install @grammyjs/grammy-redis-storage ioredis --save
+npm install @grammyjs/storage-redis ioredis --save
 npm install @types/ioredis -D
 ```
 
 ```ts
-import { RedisAdapter } from "@grammyjs/grammy-redis-storage";
+import { RedisAdapter } from "@grammyjs/storage-redis";
 import IORedis from "ioredis";
 ```
 

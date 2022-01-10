@@ -9,7 +9,7 @@ using sessions.
 Node
 
 ```bash
-npm install @grammyjs/grammy-file-storage --save
+npm install @grammyjs/storage-file --save
 ```
 
 Deno

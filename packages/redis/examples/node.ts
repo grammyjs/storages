@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from 'grammy';
-import { RedisAdapter } from '@grammyjs/grammy-redis-storage';
+import { RedisAdapter } from '@grammyjs/storage-redis';
 import IORedis from 'ioredis';
 
 interface SessionData {

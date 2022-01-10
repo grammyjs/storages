@@ -9,7 +9,7 @@ Storage adapter that can be used to
 Node
 
 ```bash
-npm install @grammyjs/grammy-psql-storage pg --save
+npm install @grammyjs/storage-psql pg --save
 ```
 
 Deno

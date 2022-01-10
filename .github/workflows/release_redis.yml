@@ -18,9 +18,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm i -g pnpm
       - run: pnpm install 
-      - run: pnpm run build -- --scope=@grammyjs/grammy-redis-storage
-      - run: pnpm run test -- --scope=@grammyjs/grammy-redis-storage
-      - run: pnpm publish --filter=@grammyjs/grammy-redis-storage --access public --no-git-checks
+      - run: pnpm run build -- --scope=@grammyjs/storage-redis
+      - run: pnpm run test -- --scope=@grammyjs/storage-redis
+      - run: pnpm publish --filter=@grammyjs/storage-redis --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-nest:
