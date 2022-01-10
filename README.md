@@ -11,7 +11,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev)
 - [typeorm](https://github.com/grammyjs/storages/tree/main/packages/typeorm)
 - [denodb](https://github.com/grammyjs/storages/tree/main/packages/denodb)
 
-Each package is 100% [TypeScript](https://www.typescriptlang.org/), well tested and focused on support [Deno](https://deno.land) and [Node.js](https://nodejs.org)
+Each package is 100 % [TypeScript](https://www.typescriptlang.org/), well tested, and focused on supporting [Deno](https://deno.land) and [Node.js](https://nodejs.org).
 
 
 ## Contributing
