@@ -1,5 +1,5 @@
 {
-  "name": "@grammyjs/grammy-redis-storage",
+  "name": "@grammyjs/storage-redis",
   "version": "1.2.0",
   "description": "Redis storage for grammy library.",
   "main": "./dist/cjs/mod.js",

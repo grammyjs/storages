@@ -1,5 +1,5 @@
 {
-  "name": "@grammyjs/grammy-typeorm-storage",
+  "name": "@grammyjs/storage-typeorm",
   "version": "1.0.2",
   "description": "TypeORM storage for grammy library.",
   "main": "dist/index.js",
