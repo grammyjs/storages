@@ -24,6 +24,6 @@ jobs:
       - name: install dependencies
         run: pnpm install 
       - name: build
-        run: pnpm run build -- --scope=@grammyjs/grammy-typeorm-storage
+        run: pnpm run build -- --scope=@grammyjs/storage-typeorm
       - name: tests
-        run: pnpm run test -- --scope=@grammyjs/grammy-typeorm-storage
+        run: pnpm run test -- --scope=@grammyjs/storage-typeorm

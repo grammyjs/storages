@@ -11,7 +11,7 @@ Compatible with deno and node!
 Node
 
 ```bash
-npm install @grammyjs/grammy-mongodb-storage --save
+npm install @grammyjs/storage-mongodb --save
 ```
 
 Deno
@@ -36,7 +36,7 @@ You need to get a native connection and use it:
 
 ```ts
 import mongoose from "mongoose";
-import MongoStorage from "@grammyjs/grammy-mongodb-storage";
+import MongoStorage from "@grammyjs/storage-mongodb";
 
 await mongoose.connect("mongodb://localhost:27017/test");
 

@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from "grammy";
-import { TypeormAdapter, ISession } from "@grammyjs/grammy-typeorm-storage";
+import { TypeormAdapter, ISession } from "@grammyjs/storage-typeorm";
 import { Column, createConnection, Entity, getRepository, ObjectID, ObjectIdColumn } from 'typeorm';
 
 interface SessionData {

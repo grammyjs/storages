@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from "grammy";
-import { MongoDBAdapter, ISession } from "@grammyjs/grammy-mongodb-storage";
+import { MongoDBAdapter, ISession } from "@grammyjs/storage-mongodb";
 import { MongoClient } from "mongodb";
 
 interface SessionData {
