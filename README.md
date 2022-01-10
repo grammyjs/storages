@@ -1,14 +1,15 @@
 # Grammy storages
 
-This is monorepo for Satont's adapters for [grammY](https://grammy.dev)
+This is monorepo of session adapters for [grammY](https://grammy.dev)
 
 ## Storages
 
-- [file](https://github.com/Satont/grammy-storages/tree/main/packages/file)
-- [mongodb](https://github.com/Satont/grammy-storages/tree/main/packages/mongodb)
-- [psql](https://github.com/Satont/grammy-storages/tree/main/packages/psql)
-- [redis](https://github.com/Satont/grammy-storages/tree/main/packages/redis)
-- [typeorm](https://github.com/Satont/grammy-storages/tree/main/packages/typeorm)
+- [file](https://github.com/grammyjs/storages/tree/main/packages/file)
+- [mongodb](https://github.com/grammyjs/storages/tree/main/packages/mongodb)
+- [psql](https://github.com/grammyjs/storages/tree/main/packages/psql)
+- [redis](https://github.com/grammyjs/storages/tree/main/packages/redis)
+- [typeorm](https://github.com/grammyjs/storages/tree/main/packages/typeorm)
+- [denodb](https://github.com/grammyjs/storages/tree/main/packages/denodb)
 
 Each package is 100% [TypeScript](https://www.typescriptlang.org/), well tested and focused on support [Deno](https://deno.land) and [Node.js](https://nodejs.org)
 

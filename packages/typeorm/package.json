@@ -1,5 +1,5 @@
 {
-  "name": "@satont/grammy-typeorm-storage",
+  "name": "@grammyjs/grammy-typeorm-storage",
   "version": "1.0.2",
   "description": "TypeORM storage for grammy library.",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/Satont/grammy-typeorm-storage#readme",
   "devDependencies": {
-    "@satont/grammy-storage-utils": "workspace:*",
+    "@grammyjs/grammy-storage-utils": "workspace:*",
     "@types/node": "^17.0.4",
     "better-sqlite3": "^7.4.5",
     "grammy": "^1.5.4",

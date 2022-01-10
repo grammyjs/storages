@@ -1,5 +1,5 @@
 {
-  "name": "@satont/grammy-file-storage",
+  "name": "@grammyjs/grammy-file-storage",
   "version": "1.2.0",
   "description": "File storage for grammY library.",
   "main": "./dist/cjs/mod.js",
@@ -25,16 +25,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Satont/grammy-storages.git"
+    "url": "git+https://github.com/grammyjs/storages.git"
   },
   "author": "Satont <satontworldwide@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Satont/grammy-storages/issues"
+    "url": "https://github.com/grammyjs/storages/issues"
   },
-  "homepage": "https://github.com/Satont/grammy-storages/tree/main/packages/file#readme",
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/file#readme",
   "devDependencies": {
-    "@satont/grammy-storage-utils": "workspace:*",
+    "@grammyjs/grammy-storage-utils": "workspace:*",
     "@types/node": "^17.0.5",
     "grammy": "^1.5.4",
     "rimraf": "^3.0.2",

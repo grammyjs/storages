@@ -1,7 +1,7 @@
 import { session } from 'grammy';
 import { MongoClient, Collection } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { createBot, createMessage } from '@satont/grammy-storage-utils';
+import { createBot, createMessage } from '@grammyjs/grammy-storage-utils';
 
 import { beforeEach, afterEach, describe, test, expect } from 'vitest';
 

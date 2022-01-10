@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from "grammy";
-import { TypeormAdapter } from "@satont/grammy-typeorm-storage";
+import { TypeormAdapter } from "@grammyjs/grammy-typeorm-storage";
 import { createConnection, getRepository } from 'typeorm';
 import { Session } from './SessionEntity';
 

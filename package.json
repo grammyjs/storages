@@ -1,5 +1,5 @@
 {
-  "name": "@satont/grammy-storages",
+  "name": "@grammyjs/grammy-storages",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -41,7 +41,7 @@
       "test": {
         "dependsOn": [
           "build",
-          "@satont/grammy-storage-utils#build"
+          "@grammyjs/grammy-storage-utils#build"
         ]
       }
     }

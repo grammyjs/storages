@@ -4,7 +4,7 @@ import { TypeormAdapter } from '../src';
 import { beforeAll, test, expect, describe } from 'vitest';
 
 import createDbConnection, { Session } from './helpers/createDbConnection';
-import { createBot, createMessage } from '@satont/grammy-storage-utils';
+import { createBot, createMessage } from '@grammyjs/grammy-storage-utils';
 
 
 beforeAll(async () => {

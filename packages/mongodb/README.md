@@ -11,7 +11,7 @@ Compatible with deno and node!
 Node
 
 ```bash
-npm install @satont/grammy-mongodb-storage --save
+npm install @grammyjs/grammy-mongodb-storage --save
 ```
 
 Deno
@@ -26,7 +26,7 @@ import {
 ## Usage
 
 You can check
-[examples](https://github.com/Satont/grammy-storages/tree/main/packages/mongodb/examples)
+[examples](https://github.com/grammyjs/storages/tree/main/packages/mongodb/examples)
 folder, which contains deno and node examples.:
 
 ### Mongoose
@@ -36,7 +36,7 @@ You need to get a native connection and use it:
 
 ```ts
 import mongoose from "mongoose";
-import MongoStorage from "@satont/grammy-mongodb-storage";
+import MongoStorage from "@grammyjs/grammy-mongodb-storage";
 
 await mongoose.connect("mongodb://localhost:27017/test");
 

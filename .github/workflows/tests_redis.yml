@@ -23,9 +23,9 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: build
-        run: pnpm run build -- --scope=@satont/grammy-redis-storage
+        run: pnpm run build -- --scope=@grammyjs/grammy-redis-storage
       - name: tests
-        run: pnpm run test -- --scope=@satont/grammy-redis-storage
+        run: pnpm run test -- --scope=@grammyjs/grammy-redis-storage
   deno-tests:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest

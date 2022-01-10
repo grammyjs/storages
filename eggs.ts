@@ -29,4 +29,4 @@ publish({
     `./src/*.node.ts`,
   ],
   yes: true,
-}, pkg.name.replace('@satont/', ''));
+}, pkg.name.replace('@grammyjs/', ''));

@@ -5,7 +5,7 @@ Storage adapter that can be used to [store your session data](https://grammy.dev
 ## Installation
 
 ```bash
-npm install @satont/grammy-typeorm-storage typeorm --save
+npm install @grammyjs/grammy-typeorm-storage typeorm --save
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ You can check [examples](https://github.com/Satont/grammy-typeorm-storage/tree/m
 Implement the Session entity:
 ```ts
 import { Column, createConnection, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { ISession } from "@satont/grammy-typeorm-storage";
+import { ISession } from "@grammyjs/grammy-typeorm-storage";
 
 @Entity()
 export class Session implements ISession {
@@ -35,7 +35,7 @@ Create bot and pass adapter as storage:
 
 ```ts
 import { Bot, Context, session, SessionFlavor } from "grammy";
-import { TypeormAdapter } from "@satont/grammy-typeorm-storage";
+import { TypeormAdapter } from "@grammyjs/grammy-typeorm-storage";
 import { createConnection } from 'typeorm';
 
 // that import for example class before

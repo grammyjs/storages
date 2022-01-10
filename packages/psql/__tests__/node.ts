@@ -2,7 +2,7 @@ import { describe, test, expect } from 'vitest';
 import { newDb } from 'pg-mem';
 import { PsqlAdapter } from '../dist/cjs/mod';
 import { session } from 'grammy';
-import * as utils from '@satont/grammy-storage-utils';
+import * as utils from '@grammyjs/grammy-storage-utils';
 
 describe('Pizza counter test', () => {
   test('Pizza counter should be equals 0 on initial', async () => {
