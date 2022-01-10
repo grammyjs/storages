@@ -29,4 +29,4 @@ publish({
     `./src/*.node.ts`,
   ],
   yes: true,
-}, pkg.name.replace('@grammyjs/', ''));
+}, `grammy-${pkg.name.replace('@grammyjs/', '').split('-').reverse().join('-')}`);
