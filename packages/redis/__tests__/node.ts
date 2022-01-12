@@ -3,7 +3,7 @@ import { test, expect } from 'vitest';
 import { Bot, Context, session } from 'grammy';
 import { RedisAdapter } from '../dist/cjs/mod';
 import { RedisMock } from './redisMock';
-import { createBot, createMessage } from '@grammyjs/grammy-storage-utils';
+import { createBot, createMessage } from '@grammyjs/storage-utils';
 
 test('Pizza counter tests', async () => {
   const bot = createBot();

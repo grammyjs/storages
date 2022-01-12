@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/mongodb#readme",
   "devDependencies": {
-    "@grammyjs/grammy-storage-utils": "workspace:*",
+    "@grammyjs/storage-utils": "workspace:*",
     "@types/node": "^17.0.0",
     "grammy": "^1.5.4",
     "mongodb": "^4.2.2",

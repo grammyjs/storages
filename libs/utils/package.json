@@ -1,5 +1,5 @@
 {
-  "name": "@grammyjs/grammy-storage-utils",
+  "name": "@grammyjs/storage-utils",
   "private": true,
   "main": "./dist/cjs/mod.js",
   "module": "./dist/esm/mod.js",

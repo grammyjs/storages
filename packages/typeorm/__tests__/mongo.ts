@@ -6,7 +6,7 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 
 import { ISession, TypeormAdapter } from '../src';
 
-import { createBot, createMessage } from '@grammyjs/grammy-storage-utils';
+import { createBot, createMessage } from '@grammyjs/storage-utils';
 
 @Entity()
 export class Session implements ISession {
