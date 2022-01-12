@@ -1,5 +1,5 @@
 {
-  "name": "@grammyjs/grammy-storages",
+  "name": "@grammyjs/storages",
   "private": true,
   "scripts": {
     "build": "turbo run build",
