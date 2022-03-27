@@ -43,5 +43,11 @@ await mongoose.connect("mongodb://localhost:27017/test");
 const collection = mongoose.connection.db.collection<MongoStorage.ISession>(
   "sessions",
 );
-new MongoStorage.MongoDBAdapter({ collection });
+
+bot.use(session({
+    initial: (): SessionData => ({
+        pizzaCount: 0,
+    }),
+    storage: new MongoStorage.MongoDBAdapter({ collection }),
+}))
 ```
