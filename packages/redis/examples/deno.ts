@@ -1,6 +1,6 @@
-import { Bot, Context, session, SessionFlavor } from 'https://deno.land/x/grammy@v1.7.0/mod.ts';
+import { Bot, Context, session, SessionFlavor } from 'https://deno.land/x/grammy@v1.8.0/mod.ts';
 import { RedisAdapter } from 'https://x.nest.land/grammy-redis-storage@1.2.0/src/mod.ts';
-import { connect } from 'https://deno.land/x/redis@v0.25.2/mod.ts';
+import { connect } from 'https://deno.land/x/redis@v0.25.4/mod.ts';
 
 interface SessionData {
   counter: number;
