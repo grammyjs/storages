@@ -12,7 +12,7 @@ export class TypeormAdapter<T> implements StorageAdapter<T> {
   }
 
   async read(key: string) {
-    const session = await this.repository.findOne({ key });
+    const session = await this.repository.findOne({ where: { key } });
 
     if (session === null || session === undefined) {
       return undefined;
@@ -21,7 +21,10 @@ export class TypeormAdapter<T> implements StorageAdapter<T> {
   }
 
   async write(key: string, data: T) {
-    const session = await this.repository.findOne({ key }, { select: ['key'] });
+    const session = await this.repository.findOne({ 
+      where: { key },
+      select: ['key'],
+    });
     const value = JSON.stringify(data);
 
     if (session !== null && session !== undefined) {
