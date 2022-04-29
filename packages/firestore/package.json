@@ -1,0 +1,52 @@
+{
+  "name": "@grammyjs/storage-firestore",
+  "version": "1.0.2",
+  "description": "Google Firestore storage adapter for grammY",
+  "main": "./dist/cjs/mod.js",
+  "module": "./dist/esm/mod.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/mod.js",
+      "require": "./dist/cjs/mod.js"
+    }
+  },
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/grammyjs/storages.git"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "package.json",
+    "LICENSE"
+  ],
+  "author": "KnorpelSenf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grammyjs/storages/issues"
+  },
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/firestore#readme",
+  "devDependencies": {
+    "@google-cloud/firestore": "^4.10.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "keywords": [
+    "grammy",
+    "telegram",
+    "bot",
+    "session",
+    "storage",
+    "adapter",
+    "middleware",
+    "firestore"
+  ]
+}
