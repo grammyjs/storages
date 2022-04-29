@@ -3,7 +3,7 @@ import {
     Context,
     session,
     SessionFlavor,
-} from "https://deno.land/x/grammy@v1.8.0/mod.ts";
+} from "https://deno.land/x/grammy@v1.8.2/mod.ts";
 import {
     Database,
     PostgresConnector,
