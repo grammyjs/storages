@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/Satont/grammy-storages/tree/main/packages/deta#readme",
   "dependencies": {
-    "node-fetch": "^2.6.6"
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.12",
