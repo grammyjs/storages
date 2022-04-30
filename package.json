@@ -8,9 +8,12 @@
     "lint": "npx eslint --ext .ts packages/**/*.ts libs/**/*.ts",
     "lint:fix": "npx eslint --fix --ext .ts packages/**/*.ts libs/**/*.ts",
     "prepare": "husky install",
-    "changelog": "turbo run changelog --parallel"
+    "changelog": "turbo run changelog --parallel",
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.22.0",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "conventional-changelog-cli": "^2.2.2",
