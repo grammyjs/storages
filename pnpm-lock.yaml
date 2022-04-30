@@ -132,13 +132,13 @@ importers:
   packages/supabase:
     specifiers:
       '@supabase/supabase-js': ^1.24.0
-      deno2node: ^0.8.0
+      deno2node: ^1.0.0
       rimraf: ^3.0.2
       ts-node: ^10.4.0
       typescript: ^4.5.4
     devDependencies:
       '@supabase/supabase-js': 1.35.2
-      deno2node: 0.8.0
+      deno2node: 1.1.0
       rimraf: 3.0.2
       ts-node: 10.4.0_typescript@4.5.4
       typescript: 4.5.4
@@ -446,15 +446,6 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       defer-to-connect: 1.1.3
-    dev: true
-
-  /@ts-morph/common/0.10.1:
-    resolution: {integrity: sha512-rKN/VtZUUlW4M+6vjLFSaFc1Z9sK+1hh0832ucPtPkXqOw/mSWE80Lau4z2zTPNTqtxAjfZbvKpQcEwJy0KIEg==}
-    dependencies:
-      fast-glob: 3.2.10
-      minimatch: 3.0.4
-      mkdirp: 1.0.4
-      path-browserify: 1.0.1
     dev: true
 
   /@ts-morph/common/0.12.2:
@@ -1352,10 +1343,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /code-block-writer/10.1.1:
-    resolution: {integrity: sha512-67ueh2IRGst/51p0n6FvPrnRjAGHY5F8xdjkgrYE7DDzpJe6qA07RYQ9VcoUeo5ATOjSOiWpSL3SWBRRbempMw==}
-    dev: true
-
   /code-block-writer/11.0.0:
     resolution: {integrity: sha512-GEqWvEWWsOvER+g9keO4ohFoD3ymwyCnqY3hoTr7GZipYFwEhMHJw+TtV0rfgRhNImM6QWZGO2XYjlJVyYT62w==}
     dependencies:
@@ -1872,16 +1859,6 @@ packages:
 
   /delegates/1.0.0:
     resolution: {integrity: sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=}
-    dev: true
-
-  /deno2node/0.8.0:
-    resolution: {integrity: sha512-gpzIbD54DELPfWfkVI33p10sKykJQPRLbS4NB/P2i3sHKyUUaXt9EF6O2bh+iwU4dcTDO3cc94Zw+hWO3CGVDQ==}
-    engines: {deno: ~1.11, node: ^12.20.0 || >=14.13.1}
-    hasBin: true
-    dependencies:
-      ts-morph: 11.0.3
-      xregexp: 5.1.0
-      zod: 3.11.6
     dev: true
 
   /deno2node/1.1.0:
@@ -5834,13 +5811,6 @@ packages:
   /trim-off-newlines/1.0.3:
     resolution: {integrity: sha512-kh6Tu6GbeSNMGfrrZh6Bb/4ZEHV1QlB4xNDBeog8Y9/QwFlKTRyWvY3Fs9tRDAMZliVUwieMgEdIeL/FtqjkJg==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /ts-morph/11.0.3:
-    resolution: {integrity: sha512-ymuPkndv9rzqTLiHWMkVrFXWcN4nBiBGhRP/kTC9F5amAAl7BNLfyrsTzMD1o9A0zishKoF1KQT/0yyFhJnPgA==}
-    dependencies:
-      '@ts-morph/common': 0.10.1
-      code-block-writer: 10.1.1
     dev: true
 
   /ts-morph/13.0.2:
