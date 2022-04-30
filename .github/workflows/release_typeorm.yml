@@ -1,9 +1,8 @@
-name: Release TypeOrm Storage
+name: Release Storages
  
 on:
-  push:
-    tags:
-      - "typeorm*"
+  release:
+    types: [created]
   workflow_dispatch:
 
 jobs:
@@ -17,8 +16,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm i -g pnpm
       - run: pnpm install 
-      - run: pnpm run build -- --scope=@satont/grammy-typeorm-storage
-      - run: pnpm run test -- --scope=@satont/grammy-typeorm-storage
-      - run: pnpm publish --filter=@satont/grammy-typeorm-storage --access public --no-git-checks
+      - run: pnpm run build
+      - run: pnpm run test
+      - run: bash tools/release.sh
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
