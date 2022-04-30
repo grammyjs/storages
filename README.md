@@ -9,6 +9,7 @@ This is monorepo for Satont's adapters for [grammY](https://grammy.dev)
 - [psql](https://github.com/Satont/grammy-storages/tree/main/packages/psql)
 - [redis](https://github.com/Satont/grammy-storages/tree/main/packages/redis)
 - [typeorm](https://github.com/Satont/grammy-storages/tree/main/packages/typeorm)
+- [supabase](https://github.com/Satont/grammy-storages/tree/main/packages/supabase)
 
 Each package is 100% [TypeScript](https://www.typescriptlang.org/), well tested and focused on support [Deno](https://deno.land) and [Node.js](https://nodejs.org)
 
@@ -23,7 +24,7 @@ Bug reports and pull requests are welcome.
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|redis|typeorm
+  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|redis|typeorm|supabase
   │                          
   │                          
   │                          
