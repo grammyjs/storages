@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Satont/grammy-storages.git"
+    "url": "git+https://github.com/grammyjs/storages.git"
   },
   "author": "waptik <me@waptik.xyz>",
   "license": "MIT",
