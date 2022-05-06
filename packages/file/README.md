@@ -9,7 +9,7 @@ using sessions.
 Node
 
 ```bash
-npm install @satont/grammy-file-storage --save
+npm install @grammyjs/storage-file --save
 ```
 
 Deno
@@ -21,5 +21,5 @@ import { FileAdapter } from "https://x.nest.land/grammy-file-storage@1.2.0/src/m
 ## Usage
 
 You can check
-[examples](https://github.com/Satont/grammy-storages/tree/main/packages/file/examples)
+[examples](https://github.com/grammyjs/storages/tree/main/packages/file/examples)
 folder

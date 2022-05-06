@@ -17,8 +17,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm i -g pnpm
       - run: pnpm install 
-      - run: pnpm run build -- --scope=@satont/grammy-typeorm-storage
-      - run: pnpm run test -- --scope=@satont/grammy-typeorm-storage
-      - run: pnpm publish --filter=@satont/grammy-typeorm-storage --access public --no-git-checks
+      - run: pnpm run build -- --scope=@grammyjs/storage-typeorm
+      - run: pnpm run test -- --scope=@grammyjs/storage-typeorm
+      - run: pnpm publish --filter=@grammyjs/storage-typeorm --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

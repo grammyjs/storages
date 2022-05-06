@@ -29,4 +29,5 @@ publish({
     `./src/*.node.ts`,
   ],
   yes: true,
-}, pkg.name.replace('@satont/', ''));
+  dryRun: Deno.env.get('DRY') === 'true' ? true : false,
+}, `grammy-${pkg.name.replace('@grammyjs/', '').split('-').reverse().join('-')}`);

@@ -9,12 +9,12 @@ Storage adapter that can be used to
 Node
 
 ```bash
-npm install @satont/grammy-redis-storage ioredis --save
+npm install @grammyjs/storage-redis ioredis --save
 npm install @types/ioredis -D
 ```
 
 ```ts
-import { RedisAdapter } from "@satont/grammy-redis-storage";
+import { RedisAdapter } from "@grammyjs/storage-redis";
 import IORedis from "ioredis";
 ```
 
@@ -28,5 +28,5 @@ import { connect } from "https://deno.land/x/redis@v0.25.5/mod.ts";
 ## Usage
 
 You can check
-[examples](https://github.com/Satont/grammy-storages/tree/main/packages/redis/examples)
+[examples](https://github.com/grammyjs/storages/tree/main/packages/redis/examples)
 folder

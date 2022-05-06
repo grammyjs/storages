@@ -6,18 +6,18 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 
 import { ISession, TypeormAdapter } from '../src';
 
-import { createBot, createMessage } from '@satont/grammy-storage-utils';
+import { createBot, createMessage } from '@grammyjs/storage-utils';
 
 @Entity()
 export class Session implements ISession {
   @ObjectIdColumn()
-  id: ObjectID;
+    id: ObjectID;
 
   @Column({ type: 'string' })
-  key: string;
+    key: string;
 
   @Column({ type: 'string' })
-  value: string;
+    value: string;
 }
 
 let mongod: MongoMemoryServer;
