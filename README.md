@@ -13,6 +13,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev)
 - [deta](https://github.com/grammyjs/storages/tree/main/packages/deta)
 - [firestore](https://github.com/grammyjs/storages/tree/main/packages/firestore)
 - [free](https://github.com/grammyjs/storages/tree/main/packages/free)
+- [supabase](https://github.com/grammyjs/storages/tree/main/packages/supabase)
 
 Each package is 100 % [TypeScript](https://www.typescriptlang.org/), well tested, and focused on supporting [Deno](https://deno.land) and [Node.js](https://nodejs.org).
 
@@ -23,11 +24,11 @@ Bug reports and pull requests are welcome.
 
 ### Commit rules
 ```
-<type>(<scope>): <short summary>
+<type>(<scope>?): <short summary>
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|redis|typeorm|supabase
+  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denodb
   │                          
   │                          
   │                          
