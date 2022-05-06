@@ -1,6 +1,0 @@
-{
-  "name": "@grammyjs/storage-denodb",
-  "version": "1.0.0",
-  "description": "File storage for grammY library.",
-  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/denodb#readme"
-}
