@@ -10,6 +10,9 @@ This is monorepo of session adapters for [grammY](https://grammy.dev)
 - [redis](https://github.com/grammyjs/storages/tree/main/packages/redis)
 - [typeorm](https://github.com/grammyjs/storages/tree/main/packages/typeorm)
 - [denodb](https://github.com/grammyjs/storages/tree/main/packages/denodb)
+- [deta](https://github.com/grammyjs/storages/tree/main/packages/deta)
+- [firestore](https://github.com/grammyjs/storages/tree/main/packages/firestore)
+- [free](https://github.com/grammyjs/storages/tree/main/packages/free)
 
 Each package is 100 % [TypeScript](https://www.typescriptlang.org/), well tested, and focused on supporting [Deno](https://deno.land) and [Node.js](https://nodejs.org).
 
