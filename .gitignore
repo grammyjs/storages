@@ -31,3 +31,4 @@ yarn-error.log*
 .pnpm-debug.log
 dist
 eggs-debug.log
+.npmrc
