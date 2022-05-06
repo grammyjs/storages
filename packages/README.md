@@ -1,4 +1,4 @@
-# Grammy storages
+# grammY storages
 
 This is monorepo of session adapters for [grammY](https://grammy.dev)
 
