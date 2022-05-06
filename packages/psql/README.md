@@ -15,7 +15,7 @@ npm install @grammyjs/storage-psql pg --save
 Deno
 
 ```ts
-import { PsqlAdapter } from "https://x.nest.land/grammy-psql-storage@1.0.0/src/mod.ts";
+import { PsqlAdapter } from "https://deno.land/x/grammy_storages/psql/src/mod.ts";
 import { Client } from "https://deno.land/x/postgres@v0.15.0/mod.ts";
 ```
 

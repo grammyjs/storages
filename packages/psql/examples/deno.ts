@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from 'https://deno.land/x/grammy@v1.8.2/mod.ts';
-import { PsqlAdapter } from 'https://x.nest.land/grammy-psql-storage@1.0.0/src/mod.ts';
+import { PsqlAdapter } from 'https://deno.land/x/grammy_storages/psql/src/mod.ts';
 import { Client } from 'https://deno.land/x/postgres@v0.15.0/mod.ts';
 
 interface SessionData {

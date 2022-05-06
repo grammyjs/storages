@@ -79,7 +79,7 @@ import {
   session,
   SessionFlavor,
 } from "https://deno.land/x/grammy/mod.ts";
-import { freeStorage } from "https://deno.land/x/grammy_storage_free/mod.ts";
+import { freeStorage } from "https://deno.land/x/grammy_storages/free/src/mod.ts";
 
 // Define session structure
 interface SessionData {

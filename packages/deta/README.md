@@ -40,7 +40,7 @@ import {
   session,
   SessionFlavor,
 } from "https://deno.land/x/grammy/mod.ts";
-import { DetaAdapter } from "https://deno.land/x/grammy_storage_deta/mod.ts";
+import { DetaAdapter } from "https://deno.land/x/grammy_storages/deta/src/mod.ts";
 
 // Define session structure
 interface SessionData {

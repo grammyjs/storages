@@ -1,5 +1,5 @@
 import { Bot, Context, session, SessionFlavor } from "https://deno.land/x/grammy@v1.8.2/mod.ts";
-import { FileAdapter } from "https://x.nest.land/grammy-file-storage@1.2.0/src/mod.ts"
+import { FileAdapter } from "https://deno.land/x/grammy_storages/file/src/mod.ts"
 
 interface SessionData {
   counter: number;
