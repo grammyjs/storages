@@ -25,29 +25,6 @@
     "turbo": "^1.0.23",
     "typescript": "^4.5.4"
   },
-  "turbo": {
-    "npmClient": "pnpm",
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "lint": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      },
-      "changelog": {},
-      "test": {
-        "dependsOn": [
-          "build",
-          "@grammyjs/storage-utils#build"
-        ]
-      }
-    }
-  },
   "engines": {
     "pnpm": ">=6.24.1",
     "node": ">=12.0.0"

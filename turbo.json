@@ -1,0 +1,23 @@
+{
+  "npmClient": "pnpm",
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "changelog": {},
+    "test": {
+      "dependsOn": [
+        "build",
+        "@grammyjs/storage-utils#build"
+      ]
+    }
+  }
+}
