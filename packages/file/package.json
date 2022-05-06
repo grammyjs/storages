@@ -1,7 +1,7 @@
 {
   "name": "@grammyjs/grammy-file-storage",
   "version": "2.0.0",
-  "private": "false",
+  "private": false,
   "description": "File storage for grammY library.",
   "main": "./dist/cjs/mod.js",
   "module": "./dist/esm/mod.js",
