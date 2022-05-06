@@ -1,6 +1,6 @@
 {
-  "name": "@grammyjs/storage-psql",
-  "version": "1.0.0",
+  "name": "@satont/grammy-psql-storage",
+  "version": "2.0.0",
   "description": "PSQL storage for grammY library.",
   "main": "./dist/cjs/mod.js",
   "module": "./dist/esm/mod.js",
@@ -43,6 +43,6 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4",
     "vite": "^2.7.7",
-    "vitest": "^0.0.139"
+    "vitest": "^0.10.0"
   }
 }

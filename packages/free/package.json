@@ -1,0 +1,56 @@
+{
+  "name": "@grammyjs/storage-free",
+  "version": "2.0.0",
+  "description": "Storage adapter for grammY's free sessions",
+  "main": "./dist/cjs/mod.js",
+  "module": "./dist/esm/mod.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/mod.js",
+      "require": "./dist/cjs/mod.js"
+    }
+  },
+  "types": "./dist/esm/mod.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/grammyjs/storages.git"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "package.json",
+    "LICENSE"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grammyjs/storages/issues"
+  },
+  "homepage": "https://github.com/grammyjs/storages/packages/free#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.12",
+    "deno2node": "^1.0.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "keywords": [
+    "grammy",
+    "telegram",
+    "bot",
+    "session",
+    "storage",
+    "adapter",
+    "middleware",
+    "free"
+  ]
+}

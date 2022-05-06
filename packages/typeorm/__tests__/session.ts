@@ -23,7 +23,7 @@ test('Typeorm connection test', async () => {
   const repository = getRepository(Session);
 
   await repository.save({ key, value });
-  expect((await repository.findOne({ key })).value).toBe(value);
+  expect((await repository.findOne({ where: { key } })).value).toBe(value);
 });
 
 describe('Pizza counter test', () => {

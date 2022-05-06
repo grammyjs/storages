@@ -1,6 +1,6 @@
 {
-  "name": "@grammyjs/storage-typeorm",
-  "version": "1.0.2",
+  "name": "@satont/grammy-typeorm-storage",
+  "version": "2.0.0",
   "description": "TypeORM storage for grammy library.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,9 +38,9 @@
     "mongodb-memory-server": "^8.1.0",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
-    "typeorm": "^0.2.41",
+    "typeorm": "^0.3.0",
     "typescript": "^4.5.4",
     "vite": "^2.7.7",
-    "vitest": "^0.0.139"
+    "vitest": "^0.10.0"
   }
 }

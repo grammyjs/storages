@@ -1,12 +1,12 @@
 {
   "folders": [
-      {
-          "path": "./packages/typeorm"
-      },
-      {
-          "name": "root",
-          "path": "."
-      }
+    {
+        "name": "root",
+        "path": "."
+    },
+    {
+        "path": "./packages/typeorm"
+    },
   ],
   "settings": {
     "deno.enable": true,
