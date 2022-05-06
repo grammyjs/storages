@@ -2,7 +2,7 @@
 import { session } from 'grammy';
 import { FileAdapter } from '../dist/cjs/mod';
 import { fs, path, cwd } from '../dist/cjs/deps.node';
-import { createBot, createMessage } from '@satont/grammy-storage-utils';
+import { createBot, createMessage } from '@grammyjs/storage-utils';
 import { test, beforeEach, expect } from 'vitest';
 
 const dirPath = path.resolve(cwd(), 'sessions');

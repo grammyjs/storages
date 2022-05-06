@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { ISession } from '@satont/grammy-typeorm-storage'
+import { ISession } from '@grammyjs/storage-typeorm'
 
 @Entity()
 export class Session implements ISession {

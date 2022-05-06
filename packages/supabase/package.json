@@ -31,9 +31,9 @@
   "author": "waptik <me@waptik.xyz>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Satont/grammy-storages/issues"
+    "url": "https://github.com/grammyjs/storages/issues"
   },
-  "homepage": "https://github.com/Satont/grammy-storages/tree/main/packages/supabase#readme",
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/supabase#readme",
   "devDependencies": {
     "@supabase/supabase-js": "^1.24.0",
     "deno2node": "^0.8.0",

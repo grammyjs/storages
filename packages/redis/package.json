@@ -1,5 +1,5 @@
 {
-  "name": "@satont/grammy-redis-storage",
+  "name": "@grammyjs/grammy-redis-storage",
   "version": "2.0.0",
   "description": "Redis storage for grammy library.",
   "main": "./dist/cjs/mod.js",
@@ -25,16 +25,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Satont/grammy-storages.git"
+    "url": "git+https://github.com/grammyjs/storages.git"
   },
   "author": "Satont <satontworldwide@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Satont/grammy-storages/issues"
+    "url": "https://github.com/grammyjs/storages/issues"
   },
-  "homepage": "https://github.com/Satont/grammy-storages/tree/main/packages/redis#readme",
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/redis#readme",
   "devDependencies": {
-    "@satont/grammy-storage-utils": "workspace:*",
+    "@grammyjs/storage-utils": "workspace:*",
     "@types/ioredis": "^4.28.5",
     "@types/node": "^17.0.5",
     "grammy": "^1.5.4",

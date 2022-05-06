@@ -9,7 +9,7 @@ Storage adapter that can be used to
 Node
 
 ```bash
-npm install @satont/grammy-psql-storage pg --save
+npm install @grammyjs/storage-psql pg --save
 ```
 
 Deno
@@ -22,5 +22,5 @@ import { Client } from "https://deno.land/x/postgres@v0.15.0/mod.ts";
 ## Usage
 
 You can check
-[examples](https://github.com/Satont/grammy-storages/tree/main/packages/psql/examples)
+[examples](https://github.com/grammyjs/storages/tree/main/packages/psql/examples)
 folder
