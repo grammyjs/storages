@@ -9,7 +9,7 @@ import {
     PostgresConnector,
     SQLite3Connector,
 } from "https://deno.land/x/denodb@v1.0.40/mod.ts";
-import { DenoDBAdapter } from "../src/mod.ts";
+import { DenoDBAdapter } from "https://deno.land/x/grammy_storages/denodb/src/mod.ts";
 
 // Define session structure
 interface SessionData {

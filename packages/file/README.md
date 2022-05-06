@@ -15,7 +15,7 @@ npm install @grammyjs/storage-file --save
 Deno
 
 ```ts
-import { FileAdapter } from "https://x.nest.land/grammy-file-storage@1.2.0/src/mod.ts";
+import { FileAdapter } from "https://deno.land/x/grammy_storages/file/src/mod.ts";
 ```
 
 ## Usage

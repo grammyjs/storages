@@ -20,7 +20,7 @@ Deno
 import {
   ISession,
   MongoDBAdapter,
-} from "https://x.nest.land/grammy-mongodb-storage@1.1.0/src/mod.ts";
+} from "https://deno.land/x/grammy_storages/mongodb/src/mod.ts";
 ```
 
 ## Usage
