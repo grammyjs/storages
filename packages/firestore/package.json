@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Google Firestore storage adapter for grammY",
   "main": "./dist/cjs/mod.js",
+  "private": "false",
   "module": "./dist/esm/mod.js",
   "exports": {
     ".": {
