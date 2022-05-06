@@ -14,8 +14,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist"
   },
   "repository": {
     "type": "git",
