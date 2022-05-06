@@ -1,5 +1,5 @@
 {
-  "name": "@grammyjs/grammy-file-storage",
+  "name": "@grammyjs/storage-file",
   "version": "2.0.0",
   "private": false,
   "description": "File storage for grammY library.",
