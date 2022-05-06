@@ -2,7 +2,7 @@
   "name": "@grammyjs/storages",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --parallel",
     "test": "turbo run test --parallel",
     "dev": "turbo run dev --parallel",
     "lint": "npx eslint --ext .ts packages/**/*.ts libs/**/*.ts",
