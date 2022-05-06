@@ -1,5 +1,5 @@
 {
-  "name": "@satont/grammy-mongodb-storage",
+  "name": "@grammyjs/grammy-mongodb-storage",
   "version": "2.0.0",
   "description": "MongoDB storage for grammy library.",
   "main": "./dist/cjs/mod.js",

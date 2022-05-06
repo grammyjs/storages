@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/grammyjs/storages/issues"
   },
-  "homepage": "https://github.com/Satont/grammy-storages/tree/main/packages/deta#readme",
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/deta#readme",
   "dependencies": {
     "node-fetch": "^2.6.6"
   },

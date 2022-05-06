@@ -1,5 +1,5 @@
 {
-  "name": "@satont/grammy-typeorm-storage",
+  "name": "@grammyjs/grammy-typeorm-storage",
   "version": "2.0.0",
   "description": "TypeORM storage for grammy library.",
   "main": "dist/index.js",

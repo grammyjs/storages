@@ -1,5 +1,5 @@
 {
-  "name": "@satont/grammy-file-storage",
+  "name": "@grammyjs/grammy-file-storage",
   "version": "2.0.0",
   "description": "File storage for grammY library.",
   "main": "./dist/cjs/mod.js",
