@@ -3,7 +3,6 @@
   "semanticCommits": true,
   "semanticPrefix": "chore(dependency)",
   "separateMajorMinor": false,
-  "prHourlyLimit": 100,
   "labels": ["dependencies"],
   "timezone": "Europe/Moscow",
   "lockFileMaintenance": {
