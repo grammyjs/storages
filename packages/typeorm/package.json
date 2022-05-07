@@ -37,7 +37,8 @@
     "grammy": "^1.5.4",
     "mongodb": "^3.6.4",
     "mongodb-memory-server": "^8.1.0",
-    "typeorm": "^0.3.0"
+    "typeorm": "^0.3.0",
+    "vite": "^2.9.8"
   },
   "dependencies": {
     "vitest": "^0.11.0"
