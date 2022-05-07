@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/packages/free#readme",
   "dependencies": {
-    "node-fetch": "^2.6.6"
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.12"
