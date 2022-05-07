@@ -1,0 +1,51 @@
+name: Tests
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  node-tests:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+          image: mongo
+          options: >-
+            --health-cmd mongo
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
+          ports:
+            - 27017:27017
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Deno
+        uses: maximousblk/setup-deno@v1
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - run: npm i -g pnpm
+      - name: install dependencies
+        run: pnpm install 
+      - name: build
+        run: pnpm run build
+      - name: Node tests
+        run: pnpm run test
+      - name: Deno tests
+        run: pnpm run test:deno
