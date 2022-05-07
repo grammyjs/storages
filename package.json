@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build --parallel",
     "test": "turbo run test --parallel",
+    "test:deno": "turbo run test --parallel",
     "dev": "turbo run dev --parallel",
     "lint": "eslint --ext .ts \"packages/\" \"libs/\"",
     "lint:fix": "eslint --fix --ext .ts \"packages/\" \"libs/\"",
