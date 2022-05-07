@@ -1,4 +1,5 @@
 {
+  "extends": ["config:base"],
   "pinVersions": false,
   "semanticCommits": true,
   "semanticPrefix": "chore(dependency)",
@@ -12,6 +13,7 @@
   "packageFiles": [
     "package.json",
     "packages/**/package.json",
+    "!packages/denodb/package.json",
     "utils/**/package.json",
     ".github/workflows/**/*.yml"
   ]
