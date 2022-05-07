@@ -1,4 +1,4 @@
-import { Client } from 'https://deno.land/x/mysql@v2.10.2/mod.ts';
+import { Client, ClientConfig } from 'https://deno.land/x/mysql@v2.10.2/mod.ts';
 
 import {
   Kysely,

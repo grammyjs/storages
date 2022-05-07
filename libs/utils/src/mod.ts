@@ -1,6 +1,6 @@
 import * as Deps from './deps.deno.ts';
 
-interface JsonSessionData {
+export interface JsonSessionData {
   pizzaCount: number;
 }
 

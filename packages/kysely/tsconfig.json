@@ -2,5 +2,10 @@
   "extends": "../../tsconfig.base.json",
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/mysql.ts",
+    "src/postgres.ts",
+    "src/sqlite.ts"
   ]
 }

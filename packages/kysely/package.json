@@ -1,20 +1,25 @@
 {
-  "name": "sql",
+  "name": "@grammtjs/storage-kysely",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "esmo __tests__/node/*.ts",
+    "prebuild": "rimraf dist",
+    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@grammyjs/storage-utils": "workspace:*",
     "@types/pg": "^8.6.3",
     "better-sqlite3": "^7.4.5",
     "grammy": "^1.8.3",
     "mysql2": "^2.3.3",
     "pg": "^8.7.3",
+    "pg-mem": "^2.1.9",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4"
   },

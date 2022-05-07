@@ -7,8 +7,8 @@ import {
   Dialect,
   SqliteDialectConfig,
   StorageAdapter,
-  MySQLClient,
   MysqlDialect,
+  MySQLClient,
 } from './deps.deno.ts';
 
 interface SessionsTable {
@@ -91,16 +91,3 @@ export class SqlAdapter<T> implements StorageAdapter<T> {
     await this.db.deleteFrom('sessions').where('key', '=', key).execute();
   }
 }
-
-const test = await SqlAdapter.create<{ qwe: string}>(
-  'mysql', 
-  await new MySQLClient().connect({
-    hostname: 'localhost',
-    username: 'root',
-    password: 'satont',
-    db: 'grammy',
-  }), 
-  { createTable: true }
-);
-
-test.write('testKey', { qwe: 'hi from test' });

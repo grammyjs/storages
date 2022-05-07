@@ -107,6 +107,31 @@ importers:
       ts-node: 10.7.0_typescript@4.5.4
       typescript: 4.5.4
 
+  packages/kysely:
+    specifiers:
+      '@grammyjs/storage-utils': workspace:*
+      '@types/pg': ^8.6.3
+      better-sqlite3: ^7.4.5
+      grammy: ^1.8.3
+      kysely: ^0.18.1
+      mysql2: ^2.3.3
+      pg: ^8.7.3
+      pg-mem: ^2.1.9
+      rimraf: ^3.0.2
+      typescript: ^4.5.4
+    dependencies:
+      kysely: 0.18.1
+    devDependencies:
+      '@grammyjs/storage-utils': link:../../libs/utils
+      '@types/pg': 8.6.5
+      better-sqlite3: 7.5.1
+      grammy: 1.8.3
+      mysql2: 2.3.3
+      pg: 8.7.3
+      pg-mem: 2.4.1_mysql2@2.3.3
+      rimraf: 3.0.2
+      typescript: 4.5.4
+
   packages/mongodb:
     specifiers:
       '@grammyjs/storage-utils': workspace:*
@@ -160,27 +185,6 @@ importers:
       '@types/node': 17.0.31
       grammy: 1.6.1
       ioredis: 5.0.4
-      rimraf: 3.0.2
-      typescript: 4.5.4
-
-  packages/sql:
-    specifiers:
-      '@types/pg': ^8.6.3
-      better-sqlite3: ^7.4.5
-      grammy: ^1.8.3
-      kysely: ^0.18.1
-      mysql2: ^2.3.3
-      pg: ^8.7.3
-      rimraf: ^3.0.2
-      typescript: ^4.5.4
-    dependencies:
-      kysely: 0.18.1
-    devDependencies:
-      '@types/pg': 8.6.5
-      better-sqlite3: 7.5.1
-      grammy: 1.8.3
-      mysql2: 2.3.3
-      pg: 8.7.3
       rimraf: 3.0.2
       typescript: 4.5.4
 
@@ -591,7 +595,7 @@ packages:
       '@mikro-orm/sqlite':
         optional: true
     dependencies:
-      '@mikro-orm/postgresql': 4.5.10_@mikro-orm+core@4.5.10
+      '@mikro-orm/postgresql': 4.5.10_llvnj6r72h35c4lblpc64vwumu
       ansi-colors: 4.1.1
       clone: 2.1.2
       dotenv: 8.2.0
@@ -639,6 +643,44 @@ packages:
       - supports-color
     dev: true
 
+  /@mikro-orm/knex/4.5.10_ospwxhz2lon5awg54j3droqdxi:
+    resolution: {integrity: sha512-iYSsAlHVNC7m+yz7dDA3JwjBHxyNuGNwQijUpJ6n2Vt55PyorcW4I3wTnHHALUS30Fvjm4TnfZRdio+aQhynsA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@mikro-orm/core': ^4.0.0
+      '@mikro-orm/entity-generator': ^4.0.0
+      '@mikro-orm/migrations': ^4.0.0
+      mssql: ^7.0.0
+      mysql: ^2.18.1
+      mysql2: ^2.1.0
+      pg: ^8.0.3
+      sqlite3: ^5.0.0
+    peerDependenciesMeta:
+      '@mikro-orm/entity-generator':
+        optional: true
+      '@mikro-orm/migrations':
+        optional: true
+      mssql:
+        optional: true
+      mysql:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      sqlite3:
+        optional: true
+    dependencies:
+      '@mikro-orm/core': 4.5.10_toyiocjjdqnqpyg4qfanb5wwcy
+      fs-extra: 9.1.0
+      knex: 0.21.19_mysql2@2.3.3+pg@8.6.0
+      mysql2: 2.3.3
+      pg: 8.6.0
+      sqlstring: 2.3.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@mikro-orm/postgresql/4.5.10_@mikro-orm+core@4.5.10:
     resolution: {integrity: sha512-hVTW5rO43T3k4AN3e1tu2rUZIAN0VuBrizdf+sGYpKZ7xtLAOFXY10TCmLdv/B6euAwrXRSsCraOOT7JnOQyBg==}
     engines: {node: '>= 10.13.0'}
@@ -647,6 +689,26 @@ packages:
     dependencies:
       '@mikro-orm/core': 4.5.10_toyiocjjdqnqpyg4qfanb5wwcy
       '@mikro-orm/knex': 4.5.10_7u6lyeww22rokd3xhrcyqs6fhy
+      pg: 8.6.0
+    transitivePeerDependencies:
+      - '@mikro-orm/entity-generator'
+      - '@mikro-orm/migrations'
+      - mssql
+      - mysql
+      - mysql2
+      - pg-native
+      - sqlite3
+      - supports-color
+    dev: true
+
+  /@mikro-orm/postgresql/4.5.10_llvnj6r72h35c4lblpc64vwumu:
+    resolution: {integrity: sha512-hVTW5rO43T3k4AN3e1tu2rUZIAN0VuBrizdf+sGYpKZ7xtLAOFXY10TCmLdv/B6euAwrXRSsCraOOT7JnOQyBg==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@mikro-orm/core': ^4.0.0
+    dependencies:
+      '@mikro-orm/core': 4.5.10_toyiocjjdqnqpyg4qfanb5wwcy
+      '@mikro-orm/knex': 4.5.10_ospwxhz2lon5awg54j3droqdxi
       pg: 8.6.0
     transitivePeerDependencies:
       - '@mikro-orm/entity-generator'
@@ -3389,6 +3451,46 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /knex/0.21.19_mysql2@2.3.3+pg@8.6.0:
+    resolution: {integrity: sha512-6etvrq9XI1Ck6mEc/XiXFGVpD1Lmj6v9XWojqZgEbOvyMbW7XRvgZ99yIhN/kaBH+43FEy3xv/AcbRaH+1pJtw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    peerDependencies:
+      mssql: ^6.2.1
+      mysql: ^2.18.1
+      mysql2: ^2.1.0
+      pg: ^8.3.0
+      sqlite3: ^5.0.0
+    peerDependenciesMeta:
+      mssql:
+        optional: true
+      mysql:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      sqlite3:
+        optional: true
+    dependencies:
+      colorette: 1.2.1
+      commander: 6.2.1
+      debug: 4.3.1
+      esm: 3.2.25
+      getopts: 2.2.5
+      interpret: 2.2.0
+      liftoff: 3.1.0
+      lodash: 4.17.21
+      mysql2: 2.3.3
+      pg: 8.6.0
+      pg-connection-string: 2.4.0
+      tarn: 3.0.2
+      tildify: 2.0.0
+      v8flags: 3.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /knex/0.21.19_pg@8.6.0:
     resolution: {integrity: sha512-6etvrq9XI1Ck6mEc/XiXFGVpD1Lmj6v9XWojqZgEbOvyMbW7XRvgZ99yIhN/kaBH+43FEy3xv/AcbRaH+1pJtw==}
     engines: {node: '>=10'}
@@ -4320,6 +4422,50 @@ packages:
     dependencies:
       '@mikro-orm/core': 4.5.10_toyiocjjdqnqpyg4qfanb5wwcy
       '@mikro-orm/postgresql': 4.5.10_@mikro-orm+core@4.5.10
+      functional-red-black-tree: 1.0.1
+      immutable: 4.0.0
+      json-stable-stringify: 1.0.1
+      lru-cache: 6.0.0
+      moment: 2.29.3
+      object-hash: 2.2.0
+      pgsql-ast-parser: 10.0.5
+    transitivePeerDependencies:
+      - '@mikro-orm/entity-generator'
+      - '@mikro-orm/mariadb'
+      - '@mikro-orm/migrations'
+      - '@mikro-orm/mongodb'
+      - '@mikro-orm/mysql'
+      - '@mikro-orm/sqlite'
+      - mssql
+      - mysql
+      - mysql2
+      - pg-native
+      - sqlite3
+      - supports-color
+    dev: true
+
+  /pg-mem/2.4.1_mysql2@2.3.3:
+    resolution: {integrity: sha512-4vJiqDe3BLHnefubh1BAJ87yO+xQbYVAn7A499hVsK2gJTL6SXObXeUI1MxS8ChRsmW6G54vUDS2ZeAZvNNuTw==}
+    peerDependencies:
+      knex: '>=0.20'
+      mikro-orm: '*'
+      pg-promise: '>=10.8.7'
+      slonik: '>=23.0.1'
+      typeorm: '>=0.2.29'
+    peerDependenciesMeta:
+      knex:
+        optional: true
+      mikro-orm:
+        optional: true
+      pg-promise:
+        optional: true
+      slonik:
+        optional: true
+      typeorm:
+        optional: true
+    dependencies:
+      '@mikro-orm/core': 4.5.10_toyiocjjdqnqpyg4qfanb5wwcy
+      '@mikro-orm/postgresql': 4.5.10_llvnj6r72h35c4lblpc64vwumu
       functional-red-black-tree: 1.0.1
       immutable: 4.0.0
       json-stable-stringify: 1.0.1
