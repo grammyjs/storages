@@ -1,4 +1,4 @@
-import { cwd, fs, path, StorageAdapter } from "./deps.deno.ts";
+import { cwd, fs, path, StorageAdapter } from './deps.deno.ts';
 
 type Serializer<Session> = (input: Session) => string;
 type Deserializer<Session> = (input: string) => Session;
@@ -25,10 +25,10 @@ export class FileAdapter<T> implements StorageAdapter<T> {
    * deserializer of file. Default `JSON.parse(input)`.
    */
   constructor(opts: ConstructorOptions<T> = {}) {
-    this.folderPath = path.resolve(cwd(), opts?.dirName ?? "sessions");
+    this.folderPath = path.resolve(cwd(), opts?.dirName ?? 'sessions');
 
     this.serializer = opts.serializer ??
-      ((input) => JSON.stringify(input, null, "\t"));
+      ((input) => JSON.stringify(input, null, '\t'));
     this.deserializer = opts.deserializer ??
       ((input) => JSON.parse(input));
 

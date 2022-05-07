@@ -1,7 +1,7 @@
-export type { StorageAdapter } from 'grammy'
-import { readFile, writeFile, rm, stat, mkdir } from 'fs/promises'
-import { existsSync, mkdirSync } from 'fs'
-import { resolve } from 'path'
+export type { StorageAdapter } from 'grammy';
+import { readFile, writeFile, rm, stat, mkdir } from 'fs/promises';
+import { existsSync, mkdirSync } from 'fs';
+import { resolve } from 'path';
 
 interface SystemError {
   code?: string;
@@ -16,19 +16,19 @@ export const fs = {
   existsSync,
   ensureDir: async (path: string) => {
     try {
-      await stat(path)
+      await stat(path);
     } catch (e) {
       if ((e as SystemError).code === 'ENOENT') {
-        await mkdir(path, { recursive: true })
-      } else throw e
+        await mkdir(path, { recursive: true });
+      } else throw e;
     }
   },
   ensureDirSync: (path: string) => mkdirSync(path, { recursive: true }),
-  remove: (path: string) => rm(path, { recursive: true })
-}
+  remove: (path: string) => rm(path, { recursive: true }),
+};
 
 export const path = {
   resolve,
-}
+};
 
-export const cwd = process.cwd
+export const cwd = process.cwd;

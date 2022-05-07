@@ -13,7 +13,8 @@ interface DbOject {
 
 export class PsqlAdapter<T> implements StorageAdapter<T> {
   private tableName: string;
-  private query = (query: string, params?: string[] | undefined): Promise<unknown> | unknown => null;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  private query = (_query: string, _params?: string[] | undefined): Promise<unknown> | unknown => null;
 
   /**
    * @private

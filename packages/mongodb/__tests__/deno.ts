@@ -1,13 +1,13 @@
-import { MongoClient, Collection } from "https://deno.land/x/mongo@v0.29.4/mod.ts";
-import { expect } from 'https://deno.land/x/expect/mod.ts'
-import { session } from "https://deno.land/x/grammy@v1.8.3/mod.ts";
-import { createBot, createMessage } from "../../../libs/utils/src/mod.ts"
-import { MongoDBAdapter } from '../src/mod.ts'
+import { MongoClient, Collection } from 'https://deno.land/x/mongo@v0.29.4/mod.ts';
+import { expect } from 'https://deno.land/x/expect/mod.ts';
+import { session } from 'https://deno.land/x/grammy@v1.8.3/mod.ts';
+import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
+import { MongoDBAdapter } from '../src/mod.ts';
 
 Deno.test('Pizza counter tests', async () => {
-  const client = await createMongoClient()
-  const db = client.database('testdb')
-  const collection = db.collection<any>('sessions')
+  const client = await createMongoClient();
+  const db = client.database('testdb');
+  const collection = db.collection<any>('sessions');
 
   const bot = createBot();
 
@@ -17,7 +17,7 @@ Deno.test('Pizza counter tests', async () => {
   }));
 
   bot.hears('first', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(0)
+    expect(ctx.session.pizzaCount).toEqual(0);
     ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
   });
   
@@ -28,14 +28,14 @@ Deno.test('Pizza counter tests', async () => {
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
 
-  await clearCollection(collection)
-  client.close()
-})
+  await clearCollection(collection);
+  client.close();
+});
 
 Deno.test('Simple string tests', async () => {
-  const client = await createMongoClient()
-  const db = client.database('testdb')
-  const collection = db.collection<any>('sessions')
+  const client = await createMongoClient();
+  const db = client.database('testdb');
+  const collection = db.collection<any>('sessions');
 
   const bot = createBot(false);
 
@@ -57,18 +57,18 @@ Deno.test('Simple string tests', async () => {
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
 
-  await clearCollection(collection)
-  client.close()
-})
+  await clearCollection(collection);
+  client.close();
+});
 
 const createMongoClient = async () => {
-  const client = new MongoClient()
+  const client = new MongoClient();
   await client.connect({
     servers: [{ host: 'localhost', port: 27017 }],
-    db: 'testdb'
-  })
+    db: 'testdb',
+  });
 
-  return client
-}
+  return client;
+};
 
-const clearCollection = (col: Collection<any>) => col.deleteMany({})
+const clearCollection = (col: Collection<any>) => col.deleteMany({});

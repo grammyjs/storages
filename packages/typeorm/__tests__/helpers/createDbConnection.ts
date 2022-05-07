@@ -4,13 +4,13 @@ import { ISession } from '../../src/types/session';
 @Entity()
 export class Session implements ISession {
   @PrimaryGeneratedColumn()
-  id: string;
+    id: string;
 
   @Column('varchar')
-  key: string
+    key: string;
 
   @Column('text')
-  value: string
+    value: string;
 }
 
 export default () => {
