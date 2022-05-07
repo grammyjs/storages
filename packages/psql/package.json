@@ -18,7 +18,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "vitest",
+    "test": "esmo __tests__/node.ts",
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
     "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist",
@@ -42,8 +42,6 @@
     "pg": "^8.7.1",
     "pg-mem": "^2.1.9",
     "rimraf": "^3.0.2",
-    "typescript": "^4.5.4",
-    "vite": "^2.7.7",
-    "vitest": "^0.10.0"
+    "typescript": "^4.5.4"
   }
 }

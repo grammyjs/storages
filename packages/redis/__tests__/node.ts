@@ -1,7 +1,10 @@
-import { test, expect } from 'vitest';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import test from 'node:test';
+import assert from 'node:assert';
 
 import { Bot, Context, session } from 'grammy';
-import { RedisAdapter } from '../dist/cjs/mod';
+import { RedisAdapter } from '../dist/esm/mod';
 import { RedisMock } from './redisMock';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 
@@ -14,12 +17,12 @@ test('Pizza counter tests', async () => {
   }));
 
   bot.hears('first', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(0);
+    assert.equal(ctx.session.pizzaCount, 0);
     ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
   });
   
   bot.hears('second', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(1);
+    assert.equal(ctx.session.pizzaCount, 1);
   });
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
@@ -51,11 +54,12 @@ test('Simple string tests', async () => {
   }));
 
   bot.hears('first', async (ctx) => {
+    assert.equal(ctx.session, 'test');
     ctx.session = `${ctx.session} edited`;
   });
   
   bot.hears('second', async (ctx) => {
-    expect(ctx.session).toEqual('test edited');
+    assert.equal(ctx.session, 'test edited');
   });
   
   await bot.handleUpdate(createMessage(bot, 'first').update);

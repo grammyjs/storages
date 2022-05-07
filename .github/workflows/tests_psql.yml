@@ -2,8 +2,6 @@ name: Tests PSQL Storage
 
 on:
   push:
-    paths:
-      - packages/psql/**
   workflow_dispatch:
 
 jobs:

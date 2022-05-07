@@ -1,41 +1,45 @@
-import { test } from 'vitest';
-import { Bot, session } from 'grammy';
-import { createBot, createMessage } from '../dist/cjs/mod';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import test from 'node:test';
+import assert from 'node:assert';
 
-test('Should create json session bot', async (t) => {
+import { Bot, session } from 'grammy';
+import { createBot, createMessage } from '../dist/esm/mod.js';
+
+test('Should create json session bot', async () => {
   const bot = createBot();
-  t.expect(bot).toBeInstanceOf(Bot);
+  assert.ok(bot instanceof Bot);
 
   bot.use(session({
     initial: () => ({ pizzaCount: 0 }),
   }));
 
   bot.on('message', (ctx) => {
-    t.expect(ctx.session?.pizzaCount).not.toBeTypeOf('undefined');
+    assert.ok(typeof ctx.session?.pizzaCount !== 'undefined');
   });
 
   await bot.handleUpdate(createMessage(bot, 'first').update);
 });
 
-test('Should create string session bot', async (t) => {
+test('Should create string session bot', async () => {
   const bot = createBot(false);
-  t.expect(bot).toBeInstanceOf(Bot);
+  assert.ok(bot instanceof Bot);
 
   bot.use(session({
     initial: () => 'test',
   }));
 
   bot.on('message', (ctx) => {
-    t.expect(ctx.session).toBeTypeOf('string');
+    assert.ok(typeof ctx.session === 'string');
   });
 
   await bot.handleUpdate(createMessage(bot, 'first').update);
 });
 
-test('Should create message', (t) => {
+test('Should create message', () => {
   const bot = createBot();
   const message = createMessage(bot, 'Test');
 
-  t.expect(message.update.update_id).toBeTruthy();
-  t.expect(message.message.text).toBe('Test');
+  assert.ok(Boolean(message.update.update_id));
+  assert.equal(message.message.text, 'Test');
 });

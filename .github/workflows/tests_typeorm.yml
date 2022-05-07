@@ -2,10 +2,7 @@ name: Tests TypeORM Storage
 
 on:
   push:
-    paths:
-      - packages/typeorm/**
   workflow_dispatch:
-
 
 jobs:
   build:

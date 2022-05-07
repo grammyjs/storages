@@ -1,23 +1,28 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import test from 'node:test';
+import assert from 'node:assert';
 
 import { session } from 'grammy';
-import { FileAdapter } from '../dist/cjs/mod';
-import { fs, path, cwd } from '../dist/cjs/deps.node';
+import { FileAdapter } from '../dist/esm/mod';
+import { fs, path, cwd } from '../dist/esm/deps.node';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
-import { test, beforeEach, expect } from 'vitest';
 
 const dirPath = path.resolve(cwd(), 'sessions');
 const cleanDir = async () => {
   await fs.remove(dirPath).catch(() => null);
 };
 
-beforeEach(async () => await cleanDir());
-
 test('Should create sessions dir', async () => {
+  await cleanDir();
+
   new FileAdapter({ dirName: 'sessions' });
-  expect(fs.existsSync(dirPath)).toBe(true);
+  assert.ok(fs.existsSync(dirPath));
 });
 
 test('Pizza counter tests', async () => {
+  await cleanDir();
+
   const bot = createBot();
 
   bot.use(session({
@@ -26,12 +31,12 @@ test('Pizza counter tests', async () => {
   }));
 
   bot.hears('first', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(0);
+    assert.equal(ctx.session.pizzaCount, 0);
     ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
   });
   
   bot.hears('second', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(1);
+    assert.equal(ctx.session.pizzaCount, 1);
   });
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
@@ -40,6 +45,8 @@ test('Pizza counter tests', async () => {
  
 
 test('Simple string tests', async () => {
+  await cleanDir();
+
   const bot = createBot(false);
 
   bot.use(session({
@@ -52,7 +59,7 @@ test('Simple string tests', async () => {
   });
   
   bot.hears('second', async (ctx) => {
-    expect(ctx.session).toEqual('test edited');
+    assert.equal(ctx.session, 'test edited');
   });
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
