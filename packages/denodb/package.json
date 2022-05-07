@@ -1,4 +1,5 @@
 {
+  "name": "denodb",
   "scripts": {
     "test:deno": "deno test --unstable ./test/session.test.ts"
   }
