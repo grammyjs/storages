@@ -13,6 +13,7 @@
   },
   "types": "./dist/esm/mod.d.ts",
   "scripts": {
+    "test:deno": "echo \"Error: no tests found\"",
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
     "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist"
