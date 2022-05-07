@@ -25,6 +25,8 @@ jobs:
       - name: tests
         run: pnpm run test
   deno-tests:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
+    runs-on: ubuntu-latest
     services:
       mongodb:
           image: mongo
