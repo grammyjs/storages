@@ -1,11 +1,11 @@
 import { session } from 'https://deno.land/x/grammy@v1.8.3/mod.ts';
-import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts'
+import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
 import { RedisAdapter } from '../src/mod.ts';
-import { RedisMock } from './redisMock.ts'
-import { createBot, createMessage } from "../../../libs/utils/src/mod.ts"
+import { RedisMock } from './redisMock.ts';
+import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
 
 Deno.test('Pizza counter tests', async () => {
-  const bot = createBot()
+  const bot = createBot();
 
   bot.use(session({
     initial: () => ({ pizzaCount: 0 }),
@@ -13,7 +13,7 @@ Deno.test('Pizza counter tests', async () => {
   }));
 
   bot.hears('first', (ctx) => {
-    expect(ctx.session.pizzaCount).toEqual(0)
+    expect(ctx.session.pizzaCount).toEqual(0);
     ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
   });
   
@@ -23,10 +23,10 @@ Deno.test('Pizza counter tests', async () => {
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
-})
+});
 
 Deno.test('Simple string tests', async () => {
-  const bot = createBot(false)
+  const bot = createBot(false);
 
   bot.use(session({
     initial: () => 'test',
@@ -43,4 +43,4 @@ Deno.test('Simple string tests', async () => {
   
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
-})
+});

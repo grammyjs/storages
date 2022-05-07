@@ -7,14 +7,14 @@ export interface ISession {
 }
 
 export class MongoDBAdapter<T> implements StorageAdapter<T> {
-  private collection: Collection<ISession>
+  private collection: Collection<ISession>;
 
   constructor({ collection }: { collection: Collection<ISession> }) {
-    this.collection = collection
+    this.collection = collection;
   }
  
   async read(key: string) {
-    const session = await this.collection.findOne({ key })
+    const session = await this.collection.findOne({ key });
 
     if (session === null || session === undefined) {
       return undefined;
@@ -25,16 +25,16 @@ export class MongoDBAdapter<T> implements StorageAdapter<T> {
 
   async write(key: string, data: T) {
     await this.collection.updateOne({ 
-      key 
+      key, 
     }, { 
       $set: {
         key, 
-        value: data
-      }  
-    }, { upsert: true })
+        value: data,
+      },  
+    }, { upsert: true });
   }
 
   async delete(key: string) {
-    await this.collection.deleteOne({ key })
+    await this.collection.deleteOne({ key });
   }
 }

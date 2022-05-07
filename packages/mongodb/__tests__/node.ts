@@ -27,7 +27,7 @@ async function stopMongoServer() {
   await mongod.stop();
 }
 
-test('Pizza counter test', async (t) => {
+test('Pizza counter test', async () => {
   await createMongoServer();
 
   const bot = createBot();
@@ -52,7 +52,7 @@ test('Pizza counter test', async (t) => {
   await stopMongoServer();
 });
 
-test('Test storing of simple string', async (t) => {
+test('Test storing of simple string', async () => {
   await createMongoServer();
 
   const bot = createBot(false);
