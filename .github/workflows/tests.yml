@@ -3,7 +3,6 @@ name: Tests
 on:
   push:
   workflow_dispatch:
-  pull_request:
 
 jobs:
   node-tests:
