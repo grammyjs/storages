@@ -1,6 +1,18 @@
 import { DenoDBAdapter } from '../src/adapter.ts';
-import { expect, session } from './test_deps.ts';
-import { createBot, createMessage, sqLiteConnection } from './utils.ts';
+import {
+  session,
+} from 'https://deno.land/x/grammy@v1.8.3/mod.ts';
+import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
+import { Database } from '../src/deps.ts';
+import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
+import { SQLite3Connector } from 'https://deno.land/x/denodb@v1.0.40/mod.ts';
+
+function sqLiteConnection() {
+  const connector = new SQLite3Connector({ filepath: ':memory:' });
+  const db = new Database(connector);
+
+  return db;
+}
 
 Deno.test('Simple string tests', async () => {
   const bot = createBot(false);

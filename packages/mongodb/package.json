@@ -19,6 +19,7 @@
   ],
   "scripts": {
     "test": "esno __tests__/node.ts",
+    "test:deno": "deno test --unstable --no-check --allow-net ./__tests__/deno.ts",
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
     "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist",

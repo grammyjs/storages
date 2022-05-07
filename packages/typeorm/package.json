@@ -12,6 +12,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "test:deno": "echo \"Error: no tests found\"",
     "test": "vitest",
     "start": "node dist/index.js",
     "dev": "nodemon",
