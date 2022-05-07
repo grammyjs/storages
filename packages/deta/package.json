@@ -16,7 +16,7 @@
     "test:deno": "echo \"Error: no tests found\"",
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist"
+    "postbuild": "esno ../../tools/postBuildFixup.ts --path=dist"
   },
   "repository": {
     "type": "git",
@@ -39,11 +39,7 @@
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.12",
-    "deno2node": "^1.0.0",
-    "grammy": "^1.4.3",
-    "rimraf": "^3.0.2",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "grammy": "^1.4.3"
   },
   "keywords": [
     "grammy",
