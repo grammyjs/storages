@@ -22,7 +22,7 @@
     "test:deno": "deno test --allow-write --no-check --allow-read --unstable ./__tests__/deno.ts",
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "ts-node ../../tools/postBuildFixup.ts --path=dist",
+    "postbuild": "esno ../../tools/postBuildFixup.ts --path=dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
   },
   "repository": {
@@ -37,9 +37,6 @@
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/file#readme",
   "devDependencies": {
     "@grammyjs/storage-utils": "workspace:*",
-    "@types/node": "^17.0.5",
-    "grammy": "^1.5.4",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.5.4"
+    "grammy": "^1.5.4"
   }
 }
