@@ -20,7 +20,7 @@
     "@typescript-eslint/parser": "^5.8.0",
     "deno2node": "^1.1.0",
     "eslint": "^8.5.0",
-    "esno": "^0.14.1",
+    "esno": "^0.16.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.4",
     "prettier": "^2.5.1",
