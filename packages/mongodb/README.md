@@ -25,9 +25,7 @@ import {
 
 ## Usage
 
-You can check
-[examples](https://github.com/grammyjs/storages/tree/main/packages/mongodb/examples)
-folder, which contains deno and node examples.:
+You can see [examples/](https://github.com/grammyjs/storages/tree/main/packages/mongodb/examples) which contains both Deno and Node examples.
 
 ### Mongoose
 
