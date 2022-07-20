@@ -7,3 +7,4 @@ test.js
 logs
 .env*
 !.env.example
+prisma/dev.db
