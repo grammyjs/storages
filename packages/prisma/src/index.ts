@@ -1,4 +1,4 @@
-import { StorageAdapter } from 'grammy';
+import { type StorageAdapter } from 'grammy';
 import { SessionDelegate } from './types/SessionDelegate';
 
 export * from './types/SessionDelegate';
