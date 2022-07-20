@@ -13,9 +13,9 @@
   ],
   "scripts": {
     "test:deno": "echo \"Error: no tests found\"",
-    "test": "npx prisma generate & vitest",
+    "test": "npx prisma generate &  & npx prisma db push & vitest",
     "start": "node dist/index.js",
-    "dev": "npx prisma generate & nodemon",
+    "dev": "npx prisma generate & npx prisma db push & nodemon",
     "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
