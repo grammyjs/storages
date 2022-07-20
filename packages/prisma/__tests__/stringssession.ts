@@ -1,10 +1,8 @@
 import { test, expect, describe, beforeEach } from 'vitest';
-import { PrismaClient } from '@prisma/client';
 import { session } from 'grammy';
 import { PrismaAdapter } from '../src';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
-
-const prisma = new PrismaClient();
+import prisma from '../src/prismaClient';
 
 beforeEach(async () => {
   await prisma.session.deleteMany({});
