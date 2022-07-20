@@ -56,8 +56,7 @@ describe('Pizza counter test', () => {
     });
 
     bot.hears('second', (ctx) => {
-      expect(1).toEqual(1);
-      //expect(ctx.session.pizzaCount).toEqual(1);
+      expect(ctx.session.pizzaCount).toEqual(1);
     });
 
     const firstMessage = createMessage(bot, 'first');
