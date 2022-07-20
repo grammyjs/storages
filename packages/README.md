@@ -14,6 +14,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev)
 - [firestore](https://github.com/grammyjs/storages/tree/main/packages/firestore)
 - [free](https://github.com/grammyjs/storages/tree/main/packages/free)
 - [supabase](https://github.com/grammyjs/storages/tree/main/packages/supabase)
+- [prisma](https://github.com/grammyjs/storages/tree/main/packages/prisma)
 
 Each package is 100 % [TypeScript](https://www.typescriptlang.org/), well tested, and focused on supporting [Deno](https://deno.land) and [Node.js](https://nodejs.org).
 
