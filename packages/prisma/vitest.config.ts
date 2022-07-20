@@ -5,5 +5,6 @@ export default defineConfig({
     include: ['__tests__/*.ts'],
     exclude: ['__tests__/helpers'],
     watch: false,
+    threads: false,
   },
 });
