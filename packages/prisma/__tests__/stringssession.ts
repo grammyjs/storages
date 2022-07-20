@@ -1,10 +1,14 @@
-import { test, expect, describe } from 'vitest';
+import { test, expect, describe, beforeEach } from 'vitest';
 import { PrismaClient } from '@prisma/client';
 import { session } from 'grammy';
 import { PrismaAdapter } from '../src';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 
 const prisma = new PrismaClient();
+
+beforeEach(() => {
+  prisma.session.deleteMany();
+});
 
 test('bot should be created', () => {
   expect(createBot()).not.toBeFalsy();
