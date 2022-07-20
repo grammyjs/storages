@@ -6,8 +6,8 @@ import { createBot, createMessage } from '@grammyjs/storage-utils';
 
 const prisma = new PrismaClient();
 
-beforeEach(() => {
-  prisma.session.deleteMany();
+beforeEach(async () => {
+  await prisma.session.deleteMany({});
 });
 
 test('bot should be created', () => {
