@@ -2,7 +2,7 @@ import { session } from 'grammy';
 import { PrismaAdapter } from '../src';
 import { test, expect, describe, beforeEach } from 'vitest';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
-import prisma from '../src/prismaClient';
+import prisma from './helpers/prisma';
 
 beforeEach(async () => {
   await prisma.session.deleteMany({});
