@@ -1,5 +1,4 @@
 export interface Session {
-  id: number;
   key: string;
   value: string;
 }
