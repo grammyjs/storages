@@ -36,9 +36,7 @@
     "@prisma/client": "^4.1.0",
     "grammy": "^1.5.4",
     "prisma": "^4.1.0",
-    "vite": "^2.9.8"
-  },
-  "dependencies": {
+    "vite": "^2.9.8",
     "vitest": "^0.16.0"
   }
 }
