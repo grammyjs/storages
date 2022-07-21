@@ -12,10 +12,10 @@
   "version": "1.0.3",
   "scripts": {
     "test:deno": "echo \"Error: no tests specified\"",
-    "test": "esmo __tests__/index.ts",
+    "test": "tsx __tests__/index.ts",
     "prebuild": "rm -rf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "esno ../../tools/postBuildFixup.ts --path=dist"
+    "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
   },
   "keywords": [],
   "dependencies": {

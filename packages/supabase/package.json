@@ -24,7 +24,7 @@
     "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/mod.js",
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "esno ../../tools/postBuildFixup.ts --path=dist"
+    "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
   },
   "repository": {
     "type": "git",

@@ -18,11 +18,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "esmo __tests__/node.ts",
+    "test": "tsx __tests__/node.ts",
     "test:deno": "deno test --allow-write --no-check --allow-read --unstable ./__tests__/deno.ts",
     "prebuild": "rimraf dist",
     "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "esno ../../tools/postBuildFixup.ts --path=dist",
+    "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
   },
   "repository": {
