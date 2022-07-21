@@ -1,4 +1,4 @@
-import { session } from 'https://deno.land/x/grammy@v1.9.0/mod.ts';
+import { session } from 'https://deno.land/x/grammy@v1.9.2/mod.ts';
 import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
 import { RedisAdapter } from '../src/mod.ts';
 import { RedisMock } from './redisMock.ts';
