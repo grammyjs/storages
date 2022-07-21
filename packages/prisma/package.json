@@ -34,10 +34,7 @@
   "devDependencies": {
     "@grammyjs/storage-utils": "workspace:*",
     "@prisma/client": "^4.1.0",
-    "better-sqlite3": "^7.4.5",
     "grammy": "^1.5.4",
-    "mongodb": "^3.6.4",
-    "mongodb-memory-server": "^8.1.0",
     "prisma": "^4.1.0",
     "vite": "^2.9.8"
   },
