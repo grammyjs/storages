@@ -1,0 +1,44 @@
+{
+  "name": "@grammyjs/storage-prisma",
+  "version": "2.0.0",
+  "private": false,
+  "description": "TypeORM storage for grammy library.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test:deno": "echo \"Error: no tests found\"",
+    "test": "npx prisma generate & npx prisma db push & vitest",
+    "start": "node dist/index.js",
+    "dev": "npx prisma generate & npx prisma db push & nodemon",
+    "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grammyjs/storages.git"
+  },
+  "author": "Dani Haro <daniharopadul@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grammyjs/storages/issues"
+  },
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/typeorm#readme",
+  "devDependencies": {
+    "@grammyjs/storage-utils": "workspace:*",
+    "@prisma/client": "^4.1.0",
+    "grammy": "^1.5.4",
+    "prisma": "^4.1.0",
+    "vite": "^2.9.8"
+  },
+  "dependencies": {
+    "vitest": "^0.16.0"
+  }
+}
