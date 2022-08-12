@@ -1,5 +1,5 @@
-import { session } from 'https://deno.land/x/grammy@v1.9.2/mod.ts';
-import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
+import { session } from 'https://deno.land/x/grammy@v1.10.1/mod.ts';
+import { expect } from 'https://deno.land/x/expect@v0.2.10/mod.ts';
 import { RedisAdapter } from '../src/mod.ts';
 import { RedisMock } from './redisMock.ts';
 import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
