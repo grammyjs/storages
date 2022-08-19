@@ -13,7 +13,7 @@ npm install @grammyjs/storage-deta --save
 Deno
 
 ```ts
-import { DetaAdapter } from "https://deno.land/x/grammy_storage_deta/mod.ts";
+import { DetaAdapter } from "https://deno.land/x/grammy_storages/deta/src/mod.ts";
 ```
 
 ## Introduction

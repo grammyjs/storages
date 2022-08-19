@@ -15,7 +15,7 @@ The rest will work automatically.
 
 ```ts
 // Import this module
-import { freeStorage } from "https://deno.land/x/grammy_storage_free/mod.ts";
+import { freeStorage } from "https://deno.land/x/grammy_storages/free/src/mod.ts";
 
 // Install the session middleware
 bot.use(session({
