@@ -1,6 +1,6 @@
 # grammY storages
 
-This is monorepo of session adapters for [grammY](https://grammy.dev)
+This is monorepo of session adapters for [grammY](https://grammy.dev).
 
 ## Storages
 
