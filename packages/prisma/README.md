@@ -18,6 +18,11 @@ Implement the Session model in your Prisma schema:
 model Session {
   id    Int    @id @default(autoincrement())
   key   String @unique
+  // When using MySQL connector the field "value" should map to @db.Text (or larger if you want)
+  // since the default type mapping, in this case, is VARCHAR(191) which is too short to store
+  // conversation's serialized data.
+  value String @db.Text
+  // When using any other connector
   value String
 }
 ```
