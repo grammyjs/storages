@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   db:
-      image: postgres:14
+      image: postgres:15
       restart: always
       command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all
       environment:
