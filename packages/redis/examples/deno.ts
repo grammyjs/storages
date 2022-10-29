@@ -1,4 +1,4 @@
-import { Bot, Context, session, SessionFlavor } from 'https://deno.land/x/grammy@v1.10.1/mod.ts';
+import { Bot, Context, session, SessionFlavor } from 'https://deno.land/x/grammy/mod.ts';
 import { RedisAdapter } from 'https://deno.land/x/grammy_storages/redis/src/mod.ts';
 import { connect } from 'https://deno.land/x/redis@v0.26.0/mod.ts';
 
