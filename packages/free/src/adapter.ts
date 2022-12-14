@@ -108,7 +108,12 @@ async function retryFetch(
     res = await fetch(...args);
     if (res.status >= 500) {
       console.error(`${res.status} in free session service, retrying!`);
+      await sleep(3000);
     }
   } while (res.status >= 500);
   return res;
+}
+
+async function sleep(ms: number) {
+  await new Promise((r) => setTimeout(r, ms));
 }
