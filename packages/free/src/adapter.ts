@@ -2,7 +2,7 @@ class Storage {
   public jwt: string | undefined;
   constructor(
     private readonly token: string,
-    private readonly rootUrl = 'https://grammy-free-session.deno.dev',
+    private readonly rootUrl = 'https://grammy-free-session.deno.dev/api',
   ) {}
 
   async login() {
