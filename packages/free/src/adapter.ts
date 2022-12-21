@@ -104,11 +104,14 @@ async function retryFetch(
   ...args: Parameters<typeof fetch>
 ): ReturnType<typeof fetch> {
   let res: Awaited<ReturnType<typeof fetch>>;
+  let delay = 10; // ms
   do {
     res = await fetch(...args);
     if (res.status >= 500) {
       console.error(`${res.status} in free session service, retrying!`);
-      await sleep(3000);
+      await sleep(delay);
+      delay += delay; // exponential back-off
+      delay = Math.min(delay, 1000 * 60 * 60); // cap at 1 hour
     }
   } while (res.status >= 500);
   return res;
