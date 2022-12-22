@@ -1,7 +1,7 @@
-import { type StorageAdapter } from 'grammy';
-import { SessionDelegate } from './types/SessionDelegate';
+import { StorageAdapter } from './deps.deno.ts';
+import { SessionDelegate } from './types/SessionDelegate.ts';
 
-export * from './types/SessionDelegate';
+export * from './types/SessionDelegate.ts';
 
 export class PrismaAdapter<T> implements StorageAdapter<T> {
   private sessionDelegate: SessionDelegate;
