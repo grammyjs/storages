@@ -33,3 +33,4 @@ dist
 eggs-debug.log
 .npmrc
 .pnpm-store
+.idea

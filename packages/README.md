@@ -53,10 +53,24 @@ This is inspired by https://www.conventionalcommits.org
     pnpm install
     ```
 
+## Releasing
+
+### Create new version
+
+```bash
+   pnpm version [major|minor|patch]
+```
+
+### Release
+
+```bash
+   pnpm publish
+```
+
 ## Building
 
 ```
-pnpm run build
+pnpm build
 ```
 
 ## Testing
@@ -71,3 +85,4 @@ pnpm test
 ```
 pnpm lint
 ```
+

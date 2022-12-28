@@ -1,10 +1,8 @@
 name: Release Storages
  
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  release:
+    types: [published]
 
 env:
   CI: true
@@ -30,10 +28,8 @@ jobs:
       - run: pnpm run build
       - run: pnpm run test
       - name: create and publish versions
-        uses: changesets/action@master
-        with:
-          publish: pnpm run ci:publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
+        run: |
+          pnpm publish
