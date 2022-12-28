@@ -1,6 +1,6 @@
 import { Bot, Context, session, SessionFlavor } from 'https://deno.land/x/grammy/mod.ts';
 import { PsqlAdapter } from 'https://deno.land/x/grammy_storages/psql/src/mod.ts';
-import { Client } from 'https://deno.land/x/postgres@v0.16.1/mod.ts';
+import { Client } from 'https://deno.land/x/postgres@v0.17.0/mod.ts';
 
 interface SessionData {
   counter: number;
