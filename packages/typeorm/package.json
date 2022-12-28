@@ -33,7 +33,7 @@
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/typeorm#readme",
   "devDependencies": {
     "@grammyjs/storage-utils": "workspace:*",
-    "better-sqlite3": "^7.4.5",
+    "better-sqlite3": "^8.0.0",
     "grammy": "^1.5.4",
     "mongodb": "^3.6.4",
     "mongodb-memory-server": "^8.1.0",
