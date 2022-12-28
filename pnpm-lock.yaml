@@ -136,7 +136,7 @@ importers:
   packages/typeorm:
     specifiers:
       '@grammyjs/storage-utils': workspace:*
-      better-sqlite3: ^7.4.5
+      better-sqlite3: ^8.0.0
       grammy: ^1.5.4
       mongodb: ^3.6.4
       mongodb-memory-server: ^8.1.0
@@ -147,11 +147,11 @@ importers:
       vitest: 0.26.2
     devDependencies:
       '@grammyjs/storage-utils': link:../../libs/utils
-      better-sqlite3: 7.6.2
+      better-sqlite3: 8.0.1
       grammy: 1.9.2
       mongodb: 3.7.3
       mongodb-memory-server: 8.8.0
-      typeorm: 0.3.7_jcogszhfhubvf3xci7ue2vkxqi
+      typeorm: 0.3.7_r4g4762bjo3kyrlmcbhydho2tm
       vite: 4.0.3
 
 packages:
@@ -2326,8 +2326,8 @@ packages:
     resolution: {integrity: sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==}
     dev: true
 
-  /better-sqlite3/7.6.2:
-    resolution: {integrity: sha512-S5zIU1Hink2AH4xPsN0W43T1/AJ5jrPh7Oy07ocuW/AKYYY02GWzz9NH0nbSMn/gw6fDZ5jZ1QsHt1BXAwJ6Lg==}
+  /better-sqlite3/8.0.1:
+    resolution: {integrity: sha512-JhTZjpyapA1icCEjIZB4TSSgkGdFgpWZA2Wszg7Cf4JwJwKQmbvuNnJBeR+EYG/Z29OXvR4G//Rbg31BW/Z7Yg==}
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -8094,7 +8094,7 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: true
 
-  /typeorm/0.3.7_jcogszhfhubvf3xci7ue2vkxqi:
+  /typeorm/0.3.7_r4g4762bjo3kyrlmcbhydho2tm:
     resolution: {integrity: sha512-MsPJeP6Zuwfe64c++l80+VRqpGEGxf0CkztIEnehQ+CMmQPSHjOnFbFxwBuZ2jiLqZTjLk2ZqQdVF0RmvxNF3Q==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
@@ -8154,7 +8154,7 @@ packages:
     dependencies:
       '@sqltools/formatter': 1.2.3
       app-root-path: 3.0.0
-      better-sqlite3: 7.6.2
+      better-sqlite3: 8.0.1
       buffer: 6.0.3
       chalk: 4.1.2
       cli-highlight: 2.1.11
