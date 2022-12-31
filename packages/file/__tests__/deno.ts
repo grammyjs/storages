@@ -1,5 +1,5 @@
 
-import { session } from 'https://deno.land/x/grammy@v1.12.5/mod.ts';
+import { session } from 'https://deno.land/x/grammy@v1.13.0/mod.ts';
 import { expect } from 'https://deno.land/x/expect@v0.2.10/mod.ts';
 import { FileAdapter } from '../src/mod.ts';
 import { fs, path } from '../src/deps.deno.ts';
