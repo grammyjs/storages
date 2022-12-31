@@ -1,5 +1,5 @@
 import type { Client } from 'https://deno.land/x/postgres@v0.17.0/mod.ts';
-export type { StorageAdapter } from 'https://deno.land/x/grammy@v1.12.5/mod.ts';
+export type { StorageAdapter } from 'https://deno.land/x/grammy@v1.13.0/mod.ts';
 export type { Client } from 'https://deno.land/x/postgres@v0.17.0/mod.ts';
 
 export function buildQueryRunner(client: Client) {
