@@ -3,4 +3,4 @@ export {
   Database,
   DataTypes,
   Model,
-} from 'https://deno.land/x/denodb@v1.1.0/mod.ts';
+} from 'https://deno.land/x/denodb@v1.2.0/mod.ts';
