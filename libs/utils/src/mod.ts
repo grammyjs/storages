@@ -46,8 +46,13 @@ export function createMessage(bot: Deps.Bot<any>, text = 'Test Text') {
         first_name: 'Test User',
       },
       date: Date.now(),
+      from: {
+        id: 1,
+        is_bot: false,
+        first_name: 'Test user',
+      },
     },
-  }, 
+  },
   bot.api, 
   bot.botInfo
   );
