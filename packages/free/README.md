@@ -78,7 +78,7 @@ import {
   Context,
   session,
   SessionFlavor,
-} from "https://deno.land/x/grammy/mod.ts";
+} from "https://lib.deno.dev/x/grammy@1.x/mod.ts";
 import { freeStorage } from "https://deno.land/x/grammy_storages/free/src/mod.ts";
 
 // Define session structure
