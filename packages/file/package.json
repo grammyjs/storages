@@ -36,7 +36,8 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/file#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "workspace:*",
+    "@grammyjs/storage-utils": "2.1.0",
     "grammy": "^1.5.4"
-  }
+  },
+  "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
 }
