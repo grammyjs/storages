@@ -53,18 +53,10 @@ This is inspired by https://www.conventionalcommits.org
     pnpm install
     ```
 
-## Releasing
-
-### Create new version
+## Release
 
 ```bash
-   pnpm lerna version [major|minor|patch]
-```
-
-### Release
-
-```bash
-   pnpm publish
+pnpm lerna publish [major|minor|patch]
 ```
 
 ## Building
