@@ -4,18 +4,18 @@ importers:
 
   .:
     specifiers:
-      '@types/node': ^18.0.6
-      '@typescript-eslint/eslint-plugin': ^5.30.7
-      '@typescript-eslint/parser': ^5.30.7
-      deno2node: ^1.1.0
-      eslint: ^8.20.0
-      husky: ^8.0.0
-      lerna: ^6.3.0
-      lint-staged: ^13.0.0
-      prettier: ^2.5.1
-      rimraf: ^4.0.0
-      tsx: ^3.8.0
-      typescript: ^4.5.4
+      '@types/node': ^18.11.18
+      '@typescript-eslint/eslint-plugin': ^5.48.1
+      '@typescript-eslint/parser': ^5.48.1
+      deno2node: ^1.7.1
+      eslint: ^8.32.0
+      husky: ^8.0.3
+      lerna: ^6.4.1
+      lint-staged: ^13.1.0
+      prettier: ^2.8.3
+      rimraf: ^4.0.7
+      tsx: ^3.12.2
+      typescript: ^4.9.4
     devDependencies:
       '@types/node': 18.11.18
       '@typescript-eslint/eslint-plugin': 5.48.1_oomjohfipuyaxs2zyomcx4f5by
@@ -5122,7 +5122,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
