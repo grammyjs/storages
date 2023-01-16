@@ -58,7 +58,7 @@ This is inspired by https://www.conventionalcommits.org
 ### Create new version
 
 ```bash
-   pnpm version [major|minor|patch]
+   pnpm lerna version [major|minor|patch]
 ```
 
 ### Release
