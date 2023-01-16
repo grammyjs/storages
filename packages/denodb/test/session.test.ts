@@ -1,7 +1,7 @@
 import { DenoDBAdapter } from '../src/adapter.ts';
 import {
   session,
-} from 'https://deno.land/x/grammy@v1.8.3/mod.ts';
+} from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
 import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
 import { Database } from '../src/deps.ts';
 import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';

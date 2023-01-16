@@ -1,4 +1,4 @@
-export type { StorageAdapter } from 'https://deno.land/x/grammy@v1.13.0/mod.ts';
+export type { StorageAdapter } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
 import { exists, existsSync } from 'https://deno.land/std@0.172.0/fs/mod.ts';
 import { resolve } from 'https://deno.land/std@0.172.0/path/mod.ts';
 
