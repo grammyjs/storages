@@ -56,5 +56,6 @@ jobs:
           node-version: 18.x
       - run: npm i -g pnpm
       - run: pnpm install
+      - run: pnpm build
       - name: tests
         run: pnpm run test:deno
