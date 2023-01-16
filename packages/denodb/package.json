@@ -3,5 +3,6 @@
   "private": true,
   "scripts": {
     "test:deno": "deno test --unstable ./test/session.test.ts"
-  }
+  },
+  "version": "2.1.0"
 }
