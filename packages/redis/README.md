@@ -22,7 +22,7 @@ Deno
 
 ```ts
 import { RedisAdapter } from "https://deno.land/x/grammy_storages/redis/src/mod.ts";
-import { connect } from "https://deno.land/x/redis@v0.29.0/mod.ts";
+import { connect } from "https://deno.land/x/redis@v0.29.1/mod.ts";
 ```
 
 ## Usage
