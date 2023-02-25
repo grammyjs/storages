@@ -1,8 +1,8 @@
-import { Database, StorageAdapter } from './deps.ts';
+import { DenoDB, StorageAdapter } from './deps.ts';
 import { Session } from './model.ts';
 
 export class DenoDBAdapter<T> implements StorageAdapter<T> {
-  constructor(db: Database) {
+  constructor(db: DenoDB.Database) {
     db.link([Session]);
   }
 

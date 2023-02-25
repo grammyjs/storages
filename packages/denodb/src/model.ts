@@ -1,10 +1,10 @@
-import { DataTypes, Model } from './deps.ts';
+import { DenoDB } from './deps.ts';
 
-export class Session extends Model {
+export class Session extends DenoDB.Model {
   static table = 'sessions';
 
   static fields = {
-    key: { primaryKey: true, type: DataTypes.STRING },
-    value: { type: DataTypes.TEXT, allowNull: false },
+    key: { primaryKey: true, type: DenoDB.DataTypes.STRING },
+    value: { type: DenoDB.DataTypes.TEXT, allowNull: false },
   };
 }
