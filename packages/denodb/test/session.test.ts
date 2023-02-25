@@ -33,6 +33,8 @@ Deno.test('Simple string tests', async () => {
 
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
+
+  await connection.close();
 });
 
 Deno.test('Pizza counter tests', async () => {
@@ -58,4 +60,6 @@ Deno.test('Pizza counter tests', async () => {
 
   await bot.handleUpdate(createMessage(bot, 'first').update);
   await bot.handleUpdate(createMessage(bot, 'second').update);
+
+  await connection.close();
 });
