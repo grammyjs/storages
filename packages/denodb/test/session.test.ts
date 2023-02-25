@@ -3,15 +3,13 @@ import {
   session,
 } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
 import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
-import { Database } from '../src/deps.ts';
+import { DenoDB } from '../src/deps.ts';
 import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
-import { SQLite3Connector } from 'https://deno.land/x/denodb@v1.0.40/mod.ts';
 
 function sqLiteConnection() {
-  const connector = new SQLite3Connector({ filepath: ':memory:' });
-  const db = new Database(connector);
+  const connector = new DenoDB.SQLite3Connector({ filepath: ':memory:' });
 
-  return db;
+  return new DenoDB.Database(connector);
 }
 
 Deno.test('Simple string tests', async () => {
