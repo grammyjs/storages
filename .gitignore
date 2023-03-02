@@ -34,3 +34,4 @@ eggs-debug.log
 .npmrc
 .pnpm-store
 .idea
+lerna-debug.log
