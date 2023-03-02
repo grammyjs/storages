@@ -51,7 +51,7 @@ importers:
 
   packages/file:
     specifiers:
-      "@grammyjs/storage-utils": ^2.1.2
+      "@grammyjs/storage-utils": ^2.1.3
       grammy: ^1.5.4
     devDependencies:
       "@grammyjs/storage-utils": link:../../libs/utils
@@ -74,7 +74,7 @@ importers:
 
   packages/mongodb:
     specifiers:
-      "@grammyjs/storage-utils": ^2.1.2
+      "@grammyjs/storage-utils": ^2.1.3
       grammy: ^1.5.4
       mongodb: ^4.2.2
       mongodb-memory-server: ^8.0.0
@@ -86,7 +86,7 @@ importers:
 
   packages/prisma:
     specifiers:
-      "@grammyjs/storage-utils": ^2.1.2
+      "@grammyjs/storage-utils": ^2.1.3
       "@prisma/client": ^4.1.0
       grammy: ^1.5.4
       prisma: ^4.1.0
@@ -102,7 +102,7 @@ importers:
 
   packages/psql:
     specifiers:
-      "@grammyjs/storage-utils": ^2.1.2
+      "@grammyjs/storage-utils": ^2.1.3
       "@types/pg": ^8.6.3
       grammy: ^1.5.4
       pg: ^8.7.1
@@ -116,7 +116,7 @@ importers:
 
   packages/redis:
     specifiers:
-      "@grammyjs/storage-utils": ^2.1.2
+      "@grammyjs/storage-utils": ^2.1.3
       "@types/ioredis": ^4.28.5
       grammy: ^1.5.4
       ioredis: ^5.0.0
@@ -134,7 +134,7 @@ importers:
 
   packages/typeorm:
     specifiers:
-      "@grammyjs/storage-utils": ^2.1.2
+      "@grammyjs/storage-utils": ^2.1.3
       better-sqlite3: ^8.0.0
       grammy: ^1.5.4
       mongodb: ^3.6.4
