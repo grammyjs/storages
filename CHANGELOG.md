@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/grammyjs/storages/compare/v2.1.1...v2.1.2) (2023-03-02)
+
+### Bug Fixes
+
+- **dependency:** update dependency vitest to ^0.29.0 ([d4a1970](https://github.com/grammyjs/storages/commit/d4a1970f51ab5cc9c25319488eac442c4e0220c9))
+- **firestore:** correct path of exports in `package.json` ([972181a](https://github.com/grammyjs/storages/commit/972181a3ce3c6b484cfe5058f27d76a54304a926))
+
 ## [2.1.1](https://github.com/grammyjs/storages/compare/v2.1.0...v2.1.1) (2023-02-25)
 
 ### Bug Fixes
