@@ -2,6 +2,17 @@
 
 Database storage adapter that can be used to [store your session data](https://grammy.dev/plugins/session.html) via [DenoDB](https://github.com/eveningkid/denodb) when using sessions.
 
+## Attention
+
+Denodb dependency is broken (see https://github.com/eveningkid/denodb/issues/3790). Until it get fixed we pinned it to fork version of it https://raw.githubusercontent.com/jerlam06/denodb/master/mod.ts
+
+You should use import maps or use same import as in example below: 
+
+```ts
+ import * as DenoDB from 'https://raw.githubusercontent.com/jerlam06/denodb/master/mod.ts'
+```
+
+
 ## Instructions
 
 1. Import the adapter
