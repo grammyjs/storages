@@ -9,7 +9,7 @@
       "require": "./dist/cjs/mod.js"
     }
   },
-  "version": "2.1.3",
+  "version": "2.1.4",
   "scripts": {
     "test:deno": "echo \"Error: no tests specified\"",
     "test": "tsx __tests__/index.ts",

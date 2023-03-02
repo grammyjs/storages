@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.4](https://github.com/grammyjs/storages/compare/v2.1.3...v2.1.4) (2023-03-02)
+
+### Bug Fixes
+
+- **denodb:** again change denodb dependency to another url because it's again broken ([14ad651](https://github.com/grammyjs/storages/commit/14ad65134702ac3b4948bbf9321f7f5faf39df93))
+
 ## [2.1.3](https://github.com/grammyjs/storages/compare/v2.1.2...v2.1.3) (2023-03-02)
 
 **Note:** Version bump only for package denodb
