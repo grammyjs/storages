@@ -1,0 +1,32 @@
+{
+  "name": "@grammyjsx",
+  "version": "2.1.5",
+  "private": false,
+  "description": "Cloudflare Workers KV session storage for grammY.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test:deno": "echo \"Error: no tests found\"",
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grammyjs/storages.git"
+  },
+  "author": "grammyjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grammyjs/storages/issues"
+  },
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/workers-kv#readme",
+  "devDependencies": {
+    "grammy": "^1.5.4"
+  }
+}
