@@ -14,7 +14,7 @@ export interface Env {
   KV_NAMESPACE: KVNamespace<string>
 }
 
-class KvAdapter<T> implements StorageAdapter<T> {
+export class KvAdapter<T> implements StorageAdapter<T> {
   private kv_namespace: KVNamespace<string>;
 
   constructor(kv_namespace: KVNamespace<string>) {
