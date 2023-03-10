@@ -13,8 +13,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "Echo \"No tests found\"",
-    "test:deno": "Echo \"No tests found\"",
+    "test": "echo \"No tests found\"",
+    "test:deno": "echo \"No tests found\"",
     "prebuild": "rimraf dist",
     "build": "tsc"
   },
