@@ -35,70 +35,58 @@ export class KvAdapter<T> implements StorageAdapter<T> {
     return false;
   }
 
-  readAllKeys(): AsyncIterable<string> {
+  async *readAllKeys(): AsyncIterable<string> {
     const kv_namespace = this.kv_namespace;
-    return {
-      async *[Symbol.asyncIterator](): AsyncIterator<string, any, undefined> {
-        let keyList: KVNamespaceListResult<any, string>;
-        const listOptions: KVNamespaceListOptions = {};
-        do {
-          keyList = await kv_namespace.list(listOptions);
-          if (!keyList.list_complete) {
-            listOptions.cursor = keyList.cursor;
-          }
-          for (const key of keyList.keys) {
-            yield key.name;
-          }
-        } while (!keyList.list_complete);
-      },
-    };
+    let keyList: KVNamespaceListResult<any, string>;
+    const listOptions: KVNamespaceListOptions = {};
+    do {
+      keyList = await kv_namespace.list(listOptions);
+      if (!keyList.list_complete) {
+        listOptions.cursor = keyList.cursor;
+      }
+      for (const key of keyList.keys) {
+        yield key.name;
+      }
+    } while (!keyList.list_complete);
   }
 
-  readAllValues(): AsyncIterable<T> {
+  async *readAllValues(): AsyncIterable<T> {
     const kv_namespace = this.kv_namespace;
-    return {
-      async *[Symbol.asyncIterator](): AsyncIterator<T, any, undefined> {
-        let keyList: KVNamespaceListResult<any, string>;
-        const listOptions: KVNamespaceListOptions = {};
-        do {
-          keyList = await kv_namespace.list(listOptions);
-          if (!keyList.list_complete) {
-            listOptions.cursor = keyList.cursor;
-          }
-          for (const key of keyList.keys) {
-            const value = await kv_namespace.get<T>(key.name, { type: 'json' });
-            if (value === null) {
-              yield null as T;
-            } else {
-              yield value;
-            }
-          }
-        } while (!keyList.list_complete);
-      },
-    };
+    let keyList: KVNamespaceListResult<any, string>;
+    const listOptions: KVNamespaceListOptions = {};
+    do {
+      keyList = await kv_namespace.list(listOptions);
+      if (!keyList.list_complete) {
+        listOptions.cursor = keyList.cursor;
+      }
+      for (const key of keyList.keys) {
+        const value = await kv_namespace.get<T>(key.name, { type: 'json' });
+        if (value === null) {
+          yield null as T;
+        } else {
+          yield value;
+        }
+      }
+    } while (!keyList.list_complete);
   }
 
-  readAllEntries(): AsyncIterable<[key: string, value: T]> {
+  async *readAllEntries(): AsyncIterable<[key: string, value: T]> {
     const kv_namespace = this.kv_namespace;
-    return {
-      async *[Symbol.asyncIterator](): AsyncIterator<[key: string, value: T], any, undefined> {
-        let keyList: KVNamespaceListResult<any, string>;
-        const listOptions: KVNamespaceListOptions = {};
-        do {
-          keyList = await kv_namespace.list(listOptions);
-          if (!keyList.list_complete) {
-            listOptions.cursor = keyList.cursor;
-          }
-          for (const key of keyList.keys) {
-            const value = await kv_namespace.get<T>(key.name, { type: 'json' });
-            if (value === null) {
-              yield [key.name, null as T];
-            } else {
-              yield [key.name, value];
-            }
-          }
-        } while (!keyList.list_complete);
-      },
-    };
+    let keyList: KVNamespaceListResult<any, string>;
+    const listOptions: KVNamespaceListOptions = {};
+    do {
+      keyList = await kv_namespace.list(listOptions);
+      if (!keyList.list_complete) {
+        listOptions.cursor = keyList.cursor;
+      }
+      for (const key of keyList.keys) {
+        const value = await kv_namespace.get<T>(key.name, { type: 'json' });
+        if (value === null) {
+          yield [key.name, null as T];
+        } else {
+          yield [key.name, value];
+        }
+      }
+    } while (!keyList.list_complete);
   }
 }
