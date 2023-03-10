@@ -2,7 +2,7 @@ import { unstable_dev } from 'wrangler';
 import test from 'node:test';
 import assert from 'node:assert';
 
-const worker = await unstable_dev('../src/index.ts', {
+const worker = await unstable_dev('./__tests__/helpers/bot.ts', {
   experimental: { disableExperimentalWarning: true },
 });
 
