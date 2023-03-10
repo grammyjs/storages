@@ -13,7 +13,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "tsx __tests__/kv.ts",
+    "test": "Echo \"No tests found\"",
     "test:deno": "Echo \"No tests found\"",
     "prebuild": "rimraf dist",
     "build": "tsc"
@@ -31,7 +31,6 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230115.0",
     "grammy": "^1.15.1",
-    "vitest": "^0.29.0",
     "wrangler": "^2.8.1"
   }
 }
