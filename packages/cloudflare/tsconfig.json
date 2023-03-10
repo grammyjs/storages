@@ -3,8 +3,9 @@
   "compilerOptions": {
     "module": "es6",
     "outDir": "./dist",
+    "strict": true
   },
   "include": [
     "src"
-  ]
+  ],
 }

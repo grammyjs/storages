@@ -14,7 +14,7 @@ export interface Env {
   KV_NAMESPACE: KVNamespace<string>
 }
 
-export class KvAdapter<T> implements StorageAdapter<T> {
+class KvAdapter<T> implements StorageAdapter<T> {
   private kv_namespace: KVNamespace<string>;
 
   constructor(kv_namespace: KVNamespace<string>) {
@@ -22,7 +22,7 @@ export class KvAdapter<T> implements StorageAdapter<T> {
   }
 
   async read(key: string): Promise<T | undefined> {
-    return await this.kv_namespace.get(key, { type: 'json' }) ?? undefined;
+    return await this.kv_namespace.get<T>(key, { type: 'json' }) ?? undefined;
   }
 
   async write(key: string, value: T): Promise<void> {
@@ -79,7 +79,12 @@ export class KvAdapter<T> implements StorageAdapter<T> {
             listOptions.cursor = keyList.cursor;
           }
           for (const key of keyList.keys) {
-            yield await kv_namespace.get<T>(key.name, { type: 'json' }) as T;
+            const value = await kv_namespace.get<T>(key.name, { type: 'json' });
+            if (value === null) {
+              yield null as T;
+            } else {
+              yield value;
+            }
           }
         } while (!keyList.list_complete);
       },
@@ -98,8 +103,12 @@ export class KvAdapter<T> implements StorageAdapter<T> {
             listOptions.cursor = keyList.cursor;
           }
           for (const key of keyList.keys) {
-            const value = await kv_namespace.get<T>(key.name, { type: 'json' }) as T;
-            yield [key.name, value];
+            const value = await kv_namespace.get<T>(key.name, { type: 'json' });
+            if (value === null) {
+              yield [key.name, null as T];
+            } else {
+              yield [key.name, value];
+            }
           }
         } while (!keyList.list_complete);
       },
