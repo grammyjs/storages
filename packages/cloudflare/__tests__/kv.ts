@@ -1,25 +1,17 @@
 import { unstable_dev } from 'wrangler';
-import type { UnstableDevWorker } from 'wrangler';
-import { describe, expect, it, beforeAll, afterAll } from 'vitest';
+import test from 'node:test';
+import assert from 'node:assert';
 
-describe('Worker', () => {
-  let worker: UnstableDevWorker;
-
-  beforeAll(async () => {
-    worker = await unstable_dev('../src/index.ts', {
-      experimental: { disableExperimentalWarning: true },
-    });
-  });
-
-  afterAll(async () => {
-    await worker.stop();
-  });
-
-  it('should return Hello World', async () => {
-    const resp = await worker.fetch();
-    if (resp) {
-      const text = await resp.text();
-      expect(text).toMatchInlineSnapshot(`"Hello World!"`);
-    }
-  });
+const worker = await unstable_dev('../src/index.ts', {
+  experimental: { disableExperimentalWarning: true },
 });
+
+test('Should create sessions dir', async () => {
+  const resp = await worker.fetch();
+  if (resp) {
+    const text = await resp.text();
+    assert.equal(text, 'Hello World!');
+  }
+});
+
+await worker.stop();

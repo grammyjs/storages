@@ -5,6 +5,7 @@
   "description": "Cloudflare Workers session storage for grammY.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "files": [
     "README.md",
     "dist",
@@ -12,7 +13,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "tsx __tests__/session.ts",
+    "test": "tsx __tests__/kv.ts",
     "test:deno": "Echo \"No tests found\"",
     "prebuild": "rimraf dist",
     "build": "tsc"
