@@ -1,0 +1,36 @@
+{
+  "name": "@grammyjs/storage-cloudflare",
+  "version": "2.1.4",
+  "private": false,
+  "description": "Cloudflare Workers session storage for grammY.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"No tests found\"",
+    "test:deno": "echo \"No tests found\"",
+    "prebuild": "rimraf dist",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grammyjs/storages.git"
+  },
+  "author": "grammyjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grammyjs/storages/issues"
+  },
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/workers-kv#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230115.0",
+    "grammy": "^1.15.1",
+    "wrangler": "^2.8.1"
+  }
+}
