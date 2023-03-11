@@ -15,6 +15,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev).
 - [free](https://github.com/grammyjs/storages/tree/main/packages/free)
 - [supabase](https://github.com/grammyjs/storages/tree/main/packages/supabase)
 - [prisma](https://github.com/grammyjs/storages/tree/main/packages/prisma)
+- [cloudflare](https://github.com/grammyjs/storages/tree/main/packages/cloudflare)
 
 Each package is 100 % [TypeScript](https://www.typescriptlang.org/), well tested, and focused on supporting [Deno](https://deno.land) and [Node.js](https://nodejs.org).
 
@@ -29,7 +30,7 @@ Bug reports and pull requests are welcome.
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denodb
+  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denodb|cloudflare
   │                          
   │                          
   │                          
