@@ -34,11 +34,11 @@ You need to get a native connection and use it:
 
 ```ts
 import mongoose from "mongoose";
-import MongoStorage from "@grammyjs/storage-mongodb";
+import { MongoDBAdapter, ISession } from "@grammyjs/storage-mongodb";
 
 await mongoose.connect("mongodb://localhost:27017/test");
 
-const collection = mongoose.connection.db.collection<MongoStorage.ISession>(
+const collection = mongoose.connection.db.collection<ISession>(
   "sessions",
 );
 
@@ -46,6 +46,6 @@ bot.use(session({
     initial: (): SessionData => ({
         pizzaCount: 0,
     }),
-    storage: new MongoStorage.MongoDBAdapter({ collection }),
+    storage: new MongoDBAdapter({ collection }),
 }))
 ```
