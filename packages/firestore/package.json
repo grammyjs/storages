@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-firestore",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "Google Firestore storage adapter for grammY",
   "main": "./dist/cjs/index.js",
   "private": false,

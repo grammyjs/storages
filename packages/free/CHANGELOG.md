@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/grammyjs/storages/compare/v2.1.4...v2.2.0) (2023-04-15)
+
+**Note:** Version bump only for package @grammyjs/storage-free
+
 ## [2.1.4](https://github.com/grammyjs/storages/compare/v2.1.3...v2.1.4) (2023-03-02)
 
 **Note:** Version bump only for package @grammyjs/storage-free

@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-prisma",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "private": false,
   "description": "Prisma storage for grammY",
   "main": "dist/index.js",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/typeorm#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.1.4",
+    "@grammyjs/storage-utils": "^2.2.0",
     "@prisma/client": "^4.1.0",
     "grammy": "^1.5.4",
     "prisma": "^4.1.0",

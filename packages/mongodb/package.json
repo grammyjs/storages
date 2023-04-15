@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-mongodb",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "private": false,
   "description": "MongoDB storage for grammy library.",
   "main": "./dist/cjs/mod.js",
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/mongodb#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.1.4",
+    "@grammyjs/storage-utils": "^2.2.0",
     "grammy": "^1.5.4",
     "mongodb": "^4.2.2",
     "mongodb-memory-server": "^8.0.0"

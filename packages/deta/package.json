@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-deta",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "private": false,
   "description": "deta.sh storage adapter for grammY",
   "main": "./dist/cjs/mod.js",

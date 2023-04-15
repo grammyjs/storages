@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-typeorm",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "private": false,
   "description": "TypeORM storage for grammy library.",
   "main": "dist/index.js",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/typeorm#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.1.4",
+    "@grammyjs/storage-utils": "^2.2.0",
     "better-sqlite3": "^8.0.0",
     "grammy": "^1.5.4",
     "mongodb": "^3.6.4",
