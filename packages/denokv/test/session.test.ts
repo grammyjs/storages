@@ -4,8 +4,9 @@ import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
 import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
 
 Deno.test('Simple string tests', async () => {
+  const tempFilePath = await Deno.makeTempFile();
   const bot = createBot(false);
-  const kv = await Deno.openKv('./kv.db');
+  const kv = await Deno.openKv(tempFilePath);
 
   bot.use(session({
     initial: () => 'test',
@@ -24,12 +25,13 @@ Deno.test('Simple string tests', async () => {
   await bot.handleUpdate(createMessage(bot, 'second').update);
 
   await kv.close();
-  Deno.removeSync('./kv.db');
+  Deno.removeSync(tempFilePath);
 });
 
 Deno.test('Pizza counter tests', async () => {
+  const tempFilePath = await Deno.makeTempFile();
   const bot = createBot();
-  const kv = await Deno.openKv('./kv.db');
+  const kv = await Deno.openKv(tempFilePath);
 
   bot.use(session({
     initial: () => ({ pizzaCount: 0 }),
@@ -49,5 +51,5 @@ Deno.test('Pizza counter tests', async () => {
   await bot.handleUpdate(createMessage(bot, 'second').update);
 
   await kv.close();
-  Deno.removeSync('./kv.db');
+  Deno.removeSync(tempFilePath);
 });
