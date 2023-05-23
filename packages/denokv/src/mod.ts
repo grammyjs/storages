@@ -1,1 +1,1 @@
-export { DenoKVAdapter } from "./adapter.ts";
+export { DenoKVAdapter } from './adapter.ts';
