@@ -2,7 +2,7 @@
   "name": "denokv",
   "private": true,
   "scripts": {
-    "test:deno": "deno test --unstable ./test/session.test.ts"
+    "test:deno": "deno test --allow-read --allow-write --unstable ./test/session.test.ts"
   },
   "version": "2.2.0"
 }
