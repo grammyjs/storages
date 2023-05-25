@@ -30,3 +30,18 @@ import { connect } from "https://deno.land/x/redis@v0.29.2/mod.ts";
 You can check
 [examples](https://github.com/grammyjs/storages/tree/main/packages/redis/examples)
 folder
+
+## Vendor examples
+
+### [Vercel KV](https://vercel.com/docs/storage/vercel-kv) ([Upstash](https://upstash.com))
+
+```js
+import { kv as instance } from "@vercel/kv";
+import { RedisAdapter } from "@grammyjs/storage-redis";
+
+instance.opts.automaticDeserialization = false;
+
+const storage = new RedisAdapter({instance});
+
+bot.use(session({storage}));
+```
