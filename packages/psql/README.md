@@ -37,7 +37,9 @@ const client = createClient();
 
 await client.connect();
 
-const storage = await PsqlAdapter.create({tableName: "sessions", client});
-
-bot.use(session({storage}));
+bot.use(
+  session({
+    storage: await PsqlAdapter.create({ tableName: 'sessions', client }),
+  })
+);
 ```
