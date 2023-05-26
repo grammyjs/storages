@@ -31,7 +31,7 @@ You can check
 [examples](https://github.com/grammyjs/storages/tree/main/packages/redis/examples)
 folder
 
-## Vendor examples
+## Vendor Examples
 
 ### [Vercel KV](https://vercel.com/docs/storage/vercel-kv) ([Upstash](https://upstash.com))
 
