@@ -24,3 +24,20 @@ import { Client } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
 You can check
 [examples](https://github.com/grammyjs/storages/tree/main/packages/psql/examples)
 folder
+
+## Vendor examples
+
+### [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres) ([Neon](https://neon.tech))
+
+```js
+import { createClient } from "@vercel/postgres";
+import { PsqlAdapter } from "@grammyjs/storage-psql";
+
+const client = createClient();
+
+await client.connect();
+
+const storage = await PsqlAdapter.create({tableName: "sessions", client});
+
+bot.use(session({storage}));
+```
