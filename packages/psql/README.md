@@ -25,7 +25,7 @@ You can check
 [examples](https://github.com/grammyjs/storages/tree/main/packages/psql/examples)
 folder
 
-## Vendor examples
+## Vendor Examples
 
 ### [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres) ([Neon](https://neon.tech))
 
