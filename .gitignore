@@ -35,4 +35,4 @@ eggs-debug.log
 .pnpm-store
 .idea
 lerna-debug.log
-pnpm-lock.yaml
+# pnpm-lock.yaml
