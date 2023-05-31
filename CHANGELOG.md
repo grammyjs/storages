@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/grammyjs/storages/compare/v2.2.0...v2.3.0) (2023-05-31)
+
+### Bug Fixes
+
+- **denokv:** make tests idempotent ([b9e23b4](https://github.com/grammyjs/storages/commit/b9e23b45aee215e7e46d033d1b43a57720a60b30))
+- **denokv:** script test ([c3e9889](https://github.com/grammyjs/storages/commit/c3e988981c79cd39a2a3416f7accae09823377c7))
+- **dependency:** update dependency vitest to ^0.31.0 ([#173](https://github.com/grammyjs/storages/issues/173)) ([2ad2054](https://github.com/grammyjs/storages/commit/2ad20549052d034481011fdc61f0251eded9e44b))
+- **typeorm:** use correct import of `ObjectId` for mongo ([cefaf34](https://github.com/grammyjs/storages/commit/cefaf3487ddde1213f200293f27fe87c3e80540e))
+
 # [2.2.0](https://github.com/grammyjs/storages/compare/v2.1.4...v2.2.0) (2023-04-15)
 
 ### Features
