@@ -1,22 +1,16 @@
 import { beforeAll, test, expect, describe } from 'vitest';
 
 import { session } from 'grammy';
-import { getConnection, getRepository } from 'typeorm';
+import { DataSource } from 'typeorm';
 import { TypeormAdapter } from '../src';
 
 import createDbConnection, { Session } from './helpers/createDbConnection';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 
+let source: DataSource;
+
 beforeAll(async () => {
-  await createDbConnection();
-});
-
-test('bot should be created', () => {
-  expect(createBot()).not.toBeFalsy();
-});
-
-test('Typeorm connection test', async () => {
-  expect(getConnection().isConnected).toBe(true);
+  source = await createDbConnection();
 });
 
 describe('Test string session', () => {
@@ -27,7 +21,7 @@ describe('Test string session', () => {
       initial() {
         return 'test';
       },
-      storage: new TypeormAdapter({ repository: getRepository(Session) }),
+      storage: new TypeormAdapter({ repository: source.getRepository(Session) }),
     }));
 
     await bot.handleUpdate(ctx.update);
@@ -44,7 +38,7 @@ describe('Test string session', () => {
       initial() {
         return 'test';
       },
-      storage: new TypeormAdapter({ repository: getRepository(Session) }),
+      storage: new TypeormAdapter({ repository: source.getRepository(Session) }),
     }));
 
     

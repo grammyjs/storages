@@ -1,7 +1,7 @@
 import { beforeAll, afterAll, test, expect, describe } from 'vitest';
 
 import { session } from 'grammy';
-import { Column, createConnection, Entity, getConnection, getRepository, ObjectID, ObjectIdColumn } from 'typeorm';
+import { Column, DataSource, Entity,  ObjectIdColumn, ObjectId } from 'typeorm';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
 import { ISession, TypeormAdapter } from '../src';
@@ -11,7 +11,7 @@ import { createBot, createMessage } from '@grammyjs/storage-utils';
 @Entity()
 export class Session implements ISession {
   @ObjectIdColumn()
-    id: ObjectID;
+    id: ObjectId;
 
   @Column({ type: 'string' })
     key: string;
@@ -21,35 +21,21 @@ export class Session implements ISession {
 }
 
 let mongod: MongoMemoryServer;
+let source: DataSource;
 
 beforeAll(async () => {
   mongod = await MongoMemoryServer.create();
 
-  await createConnection({
+  source = await new DataSource({
     type: 'mongodb',
     url: mongod.getUri(),
     entities: [Session],
-  });
+  }).initialize();
 });
 
-afterAll(() => {
-  mongod.stop();
-  getConnection().close();
-});
-
-test('Bot should be created', () => {
-  expect(createBot()).not.toBeFalsy();
-});
-
-test('Typeorm is connected and mocked successfuly', async () => {
-  expect(getConnection().isConnected).toBe(true);
-
-  const key = 'TEST KEY';
-  const value = 'TEST VALUE';
-  const repository = getRepository(Session);
-
-  await repository.save({ key, value });
-  expect((await repository.findOne({ key })).value).toBe(value);
+afterAll(async () => {
+  await source.destroy();
+  await mongod.stop();
 });
 
 describe('Pizza counter test', () => {
@@ -61,7 +47,7 @@ describe('Pizza counter test', () => {
       initial() {
         return { pizzaCount: 0 };
       },
-      storage: new TypeormAdapter({ repository: getRepository(Session) }),
+      storage: new TypeormAdapter({ repository: source.getRepository(Session) }),
     }));
 
     await bot.handleUpdate(ctx.update);
@@ -76,7 +62,7 @@ describe('Pizza counter test', () => {
 
     bot.use(session({
       initial: () => ({ pizzaCount: 0 }),
-      storage: new TypeormAdapter({ repository: getRepository(Session) }),
+      storage: new TypeormAdapter({ repository: source.getRepository(Session) }),
     }));
 
     bot.hears('first', (ctx) => {

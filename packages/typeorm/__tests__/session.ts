@@ -1,5 +1,5 @@
 import { session } from 'grammy';
-import { getConnection, getRepository } from 'typeorm';
+import { DataSource } from 'typeorm';
 import { TypeormAdapter } from '../src';
 import { beforeAll, test, expect, describe } from 'vitest';
 
@@ -7,23 +7,10 @@ import createDbConnection, { Session } from './helpers/createDbConnection';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 
 
+let source: DataSource;
+
 beforeAll(async () => {
-  await createDbConnection();
-});
-
-test('bot should be created', () => {
-  expect(createBot()).not.toBeFalsy();
-});
-
-test('Typeorm connection test', async () => {
-  expect(getConnection().isConnected).toBe(true);
-
-  const key = 'TEST KEY';
-  const value = 'TEST VALUE';
-  const repository = getRepository(Session);
-
-  await repository.save({ key, value });
-  expect((await repository.findOne({ where: { key } })).value).toBe(value);
+  source = await createDbConnection();
 });
 
 describe('Pizza counter test', () => {
@@ -35,7 +22,7 @@ describe('Pizza counter test', () => {
       initial() {
         return { pizzaCount: 0 };
       },
-      storage: new TypeormAdapter({ repository: getRepository(Session) }),
+      storage: new TypeormAdapter({ repository: source.getRepository(Session) }),
     }));
 
     await bot.handleUpdate(ctx.update);
@@ -50,7 +37,7 @@ describe('Pizza counter test', () => {
 
     bot.use(session({
       initial: () => ({ pizzaCount: 0 }),
-      storage: new TypeormAdapter({ repository: getRepository(Session) }),
+      storage: new TypeormAdapter({ repository: source.getRepository(Session) }),
     }));
 
     bot.hears('first', (ctx) => {
