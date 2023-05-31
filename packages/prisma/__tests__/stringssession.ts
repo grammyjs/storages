@@ -8,10 +8,6 @@ beforeEach(async () => {
   await prisma.session.deleteMany({});
 });
 
-test('bot should be created', () => {
-  expect(createBot()).not.toBeFalsy();
-});
-
 describe('Test string session', () => {
   test('Initial session state should equals "test"', async () => {
     const bot = createBot(false);
