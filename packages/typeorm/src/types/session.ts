@@ -1,7 +1,7 @@
-import { ObjectID } from 'typeorm';
+import { ObjectId } from 'typeorm';
 
 export interface ISession {
-  id: string | ObjectID;
+  id: string | ObjectId | number;
   key: string;
   value: string;
 }
