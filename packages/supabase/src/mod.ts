@@ -26,7 +26,7 @@ export function supabaseAdapter<T>({ supabase, table }: Opts) {
         return undefined;
       }
 
-      return JSON.parse(data) as T;
+      return JSON.parse(data.session) as T;
     },
     write: async (id: string, value: T) => {
       const input = { id, session: JSON.stringify(value) };
