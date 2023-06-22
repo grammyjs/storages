@@ -1,4 +1,4 @@
-import { SupabaseClient } from './deps.node.js';
+import { SupabaseClient } from './deps.deno.ts';
 
 type Opts = {
   supabase: SupabaseClient,
