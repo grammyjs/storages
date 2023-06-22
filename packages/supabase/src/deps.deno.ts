@@ -1,1 +1,1 @@
-export { SupabaseClient } from 'https://lib.deno.dev/x/supabase@2.x/mod.ts';
+export { SupabaseClient } from 'https://esm.sh/@supabase/supabase-js@2.x';
