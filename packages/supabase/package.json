@@ -40,7 +40,7 @@
     "@supabase/supabase-js": "^2.26.0"
   },
   "peerDependencies": {
-    "@supabase/supabase-js": "^1.0.0"
+    "@supabase/supabase-js": "^2.26.0"
   },
   "keywords": [
     "grammy",
