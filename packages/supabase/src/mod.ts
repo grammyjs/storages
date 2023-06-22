@@ -1,11 +1,11 @@
-import { SupabaseClient } from './deps.deno.ts';
+import { SupabaseClient } from './deps.node.js';
 
-interface Session {
-  id: string;
-  session: string;
+type Opts = {
+  supabase: SupabaseClient,
+  table: string
 }
 
-export function supabaseAdapter<T>({ supabase, table }: { supabase: SupabaseClient; table: string }) {
+export function supabaseAdapter<T>({ supabase, table }: Opts) {
   if (!supabase) {
     throw new Error('Kindly pass an instance of supabase client to the parameter list.');
   } 
@@ -16,21 +16,25 @@ export function supabaseAdapter<T>({ supabase, table }: { supabase: SupabaseClie
 
   return {
     read: async (id: string) => {
-      const { data, error } = await supabase.from<Session>(table).select('session').eq('id', id).single();
+      const { data, error } = await supabase.from(table).select(table).eq('id', id).limit(1).single();
 
-      if (error || !data) {
+      if (error) {
+        throw error;
+      }
+
+      if (!data) {
         return undefined;
       }
 
-      return JSON.parse(data.session) as T;
+      return JSON.parse(data) as T;
     },
     write: async (id: string, value: T) => {
       const input = { id, session: JSON.stringify(value) };
 
-      await supabase.from<Session>(table).upsert(input, { returning: 'minimal' });
+      await supabase.from(table).upsert(input);
     },
     delete: async (id: string) => {
-      await supabase.from<Session>(table).delete({ returning: 'minimal' }).match({ id });
+      await supabase.from(table).delete().match({ id });
     },
   };
 }
