@@ -16,7 +16,7 @@ export function supabaseAdapter<T>({ supabase, table }: Opts) {
 
   return {
     read: async (id: string) => {
-      const { data, error } = await supabase.from(table).select(table).eq('id', id).limit(1).single();
+      const { data, error } = await supabase.from(table).select('session').eq('id', id).limit(1).throwOnError().single();
 
       if (error) {
         throw error;
