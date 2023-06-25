@@ -25,6 +25,10 @@ export class PrismaAdapter<T> implements StorageAdapter<T> {
   }
 
   async delete(key: string) {
-    await this.sessionDelegate.delete({ where: { key } });
+    await this.sessionDelegate.delete({ where: { key } }).catch((err) => {
+      // Record does not exist in database
+      if (err?.code === 'P2025') return;
+      return Promise.reject(err);
+    });
   }
 }
