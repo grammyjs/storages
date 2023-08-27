@@ -14,7 +14,7 @@ async function bootstrap() {
   bot.use(
     session({
       initial: () => ({ counter: 0 }),
-      storage: new PrismaAdapter(prisma.session),
+      storage: new PrismaAdapter<SessionData>(prisma.session),
     })
   );
 
