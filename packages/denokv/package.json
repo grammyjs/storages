@@ -4,5 +4,5 @@
   "scripts": {
     "test:deno": "deno test --allow-read --allow-write --unstable ./test/session.test.ts"
   },
-  "version": "2.3.0"
+  "version": "2.3.1"
 }

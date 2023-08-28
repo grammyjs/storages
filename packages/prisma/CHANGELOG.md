@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/grammyjs/storages/compare/v2.3.0...v2.3.1) (2023-08-28)
+
+### Bug Fixes
+
+- **prisma:** silence the "Record to delete does not exist" error ([#186](https://github.com/grammyjs/storages/issues/186)) ([7ce1614](https://github.com/grammyjs/storages/commit/7ce16144b8d00ebb6ddfeabec06426d2eddcf3c9))
+
 # [2.3.0](https://github.com/grammyjs/storages/compare/v2.2.0...v2.3.0) (2023-05-31)
 
 ### Bug Fixes

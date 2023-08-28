@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-supabase",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "private": false,
   "description": "Supabase database storage",
   "types": "./dist/esm/mod.d.ts",
