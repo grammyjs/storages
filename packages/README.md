@@ -58,8 +58,10 @@ This is inspired by https://www.conventionalcommits.org
 ## Release
 
 ```bash
-pnpm lerna publish [major|minor|patch]
+pnpm lerna publish --force-publish [major|minor|patch]
 ```
+
+`--force-publish` used for bump all packages version here.
 
 ## Building
 
