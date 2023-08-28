@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@types/node": "^18.15.0",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "deno2node": "^1.7.2",
     "eslint": "^8.35.0",
     "husky": "^8.0.3",
