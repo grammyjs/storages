@@ -1,6 +1,6 @@
 import { DenoKVAdapter } from '../src/adapter.ts';
 import { session } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
-import { expect } from 'https://deno.land/x/expect@v0.2.9/mod.ts';
+import { expect } from 'https://deno.land/x/expect@v0.4.0/mod.ts';
 import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
 
 Deno.test('Simple string tests', async () => {
