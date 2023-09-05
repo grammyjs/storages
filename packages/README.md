@@ -66,7 +66,7 @@ This is inspired by https://www.conventionalcommits.org
 
 2. Release
    ```bash
-   pnpm lerna publish
+   pnpm publish -r
    ```
 
 ## Building
