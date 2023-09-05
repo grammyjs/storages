@@ -57,11 +57,17 @@ This is inspired by https://www.conventionalcommits.org
 
 ## Release
 
-```bash
-pnpm lerna publish --force-publish [major|minor|patch]
-```
+1. Run command to bump version of packages
+   ```bash
+   pnpm lerna version --force-publish [major|minor|patch]
+   ```
+   
+   `--force-publish` used for bump all packages version here.
 
-`--force-publish` used for bump all packages version here.
+2. Release
+   ```bash
+   pnpm lerna publish
+   ```
 
 ## Building
 
