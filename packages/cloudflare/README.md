@@ -1,4 +1,4 @@
-# Cloudflare storages for grammY
+# Cloudflare KV/D1 storages for grammY
 
 Storage adapter that can be used to
 [store your session data](https://grammy.dev/plugins/session.html) in cloudflare when
