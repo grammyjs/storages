@@ -23,7 +23,7 @@ export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		const grammyD1StorageAdapter = await D1Adapter.create<SessionData>(env.DB, 'GrammySessions')
 
-		const bot = new Bot<MyContext>('1065054386:AAFh6G_GtAzIqGgZZUGLtJQoYMpEY_iXQ2k');
+		const bot = new Bot<MyContext>(env.BOT_TOKEN);
 
 		bot.use(session({
 			initial: (): SessionData => {
