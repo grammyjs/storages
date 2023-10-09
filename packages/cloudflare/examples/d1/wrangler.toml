@@ -1,0 +1,8 @@
+name = "d1"
+main = "src/index.ts"
+compatibility_date = "2023-10-02"
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "grammy_d1_storage"
+database_id = "b12b44f6-e8ef-4257-9ecf-fe1ebe264f58"

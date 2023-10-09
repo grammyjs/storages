@@ -36,3 +36,5 @@ eggs-debug.log
 .idea
 lerna-debug.log
 # pnpm-lock.yaml
+.env
+.wrangler
