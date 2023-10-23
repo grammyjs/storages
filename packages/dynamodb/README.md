@@ -1,4 +1,4 @@
-# Prisma storage adapter for grammY
+# DynamoDB storage adapter for grammY
 
 Storage adapter that can be used to [store your session data](https://grammy.dev/plugins/session.html) with [AWS DynamoDB](https://aws.amazon.com/dynamodb/) when using sessions.
 
