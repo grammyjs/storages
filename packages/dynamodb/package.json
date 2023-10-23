@@ -43,11 +43,9 @@
   "devDependencies": {
     "@aws-sdk/client-dynamodb": "^3.433.0",
     "@grammyjs/storage-utils": "^2.4.0",
+    "aws-sdk-client-mock": "^3.0.0",
     "grammy": "^1.19.2",
     "vite": "^4.5.0",
     "vitest": "^0.34.6"
-  },
-  "dependencies": {
-    "pnpm": "^8.9.2"
   }
 }

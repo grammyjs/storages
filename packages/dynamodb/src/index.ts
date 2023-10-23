@@ -1,8 +1,8 @@
 import { StorageAdapter } from 'grammy';
 import { DynamoDBClient, PutItemCommand, GetItemCommand, DeleteItemCommand } from '@aws-sdk/client-dynamodb';
 
-interface DynamoDBAdapterOptions {
-  tableName: string; // Name of the DynamoDB table where you want to store data
+export interface DynamoDBAdapterOptions {
+  tableName: string;
   dynamoDbClient: DynamoDBClient
 }
 

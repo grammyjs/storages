@@ -2,21 +2,16 @@ import { session } from 'grammy';
 import { DynamoDBAdapter } from '../src';
 import { test, expect, describe, beforeEach } from 'vitest';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
-import { DeleteItemCommand } from '@aws-sdk/client-dynamodb';
+import { DynamoDBClient, GetItemCommand } from '@aws-sdk/client-dynamodb';
 import dynamodb from './helpers/dynamodb';
-
-beforeEach(async () => {
-  await dynamodb.send(new DeleteItemCommand({
-    TableName: 'grammy_test_table',
-    Key: {
-      id: {
-        S: '1',
-      },
-    },
-  }));
-});
+import { mockClient } from 'aws-sdk-client-mock';
 
 describe('Pizza counter test', () => {
+  const ddbMock = mockClient(DynamoDBClient);
+
+  beforeEach(() => {
+    ddbMock.reset();
+  });
 
   const adapter = new DynamoDBAdapter({
     tableName: 'grammy_test_table',
@@ -26,6 +21,8 @@ describe('Pizza counter test', () => {
   test('Pizza counter should be equals 0 on initial', async () => {
     const bot = createBot();
     const firstMessage = createMessage(bot);
+
+    ddbMock.resolves({});
 
     bot.use(
       session<any, any>({
@@ -63,6 +60,10 @@ describe('Pizza counter test', () => {
 
     const firstMessage = createMessage(bot, 'first');
     const secondMessage = createMessage(bot, 'second');
+
+    ddbMock.resolves({}).on(GetItemCommand)
+      .resolvesOnce({ Item: { id: { S: '1' }, Value: { S: '{"pizzaCount":0}' } } })
+      .resolvesOnce({ Item: { id: { S: '1' }, Value: { S: '{"pizzaCount":1}' } } });
 
     await bot.handleUpdate(firstMessage.update);
     await bot.handleUpdate(secondMessage.update);
