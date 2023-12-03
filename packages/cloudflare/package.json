@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-cloudflare",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "private": false,
   "description": "Cloudflare Workers session storage for grammY.",
   "main": "dist/index.js",

@@ -82,7 +82,7 @@ importers:
   packages/file:
     devDependencies:
       "@grammyjs/storage-utils":
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../libs/utils
       grammy:
         specifier: ^1.16.1
@@ -107,7 +107,7 @@ importers:
   packages/mongodb:
     devDependencies:
       "@grammyjs/storage-utils":
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../libs/utils
       grammy:
         specifier: ^1.16.1
@@ -122,7 +122,7 @@ importers:
   packages/prisma:
     devDependencies:
       "@grammyjs/storage-utils":
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../libs/utils
       "@prisma/client":
         specifier: ^4.15.0
@@ -143,7 +143,7 @@ importers:
   packages/psql:
     devDependencies:
       "@grammyjs/storage-utils":
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../libs/utils
       "@types/pg":
         specifier: ^8.10.1
@@ -161,7 +161,7 @@ importers:
   packages/redis:
     devDependencies:
       "@grammyjs/storage-utils":
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../libs/utils
       "@types/ioredis":
         specifier: ^5.0.0
@@ -186,7 +186,7 @@ importers:
         version: 0.31.3
     devDependencies:
       "@grammyjs/storage-utils":
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../libs/utils
       better-sqlite3:
         specifier: ^8.4.0
