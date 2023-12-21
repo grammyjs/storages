@@ -1,13 +1,17 @@
 # DenoKV Storage Adapter for grammY
 
-Database storage adapter that can be used to
-[store your session data](https://grammy.dev/plugins/session.html) via
-[Deno KV API](https://deno.land/manual/runtime/kv) when using sessions.
+Database storage adapter that can be used to [store your session data](https://grammy.dev/plugins/session.html) via [Deno KV API](https://deno.land/manual/runtime/kv) when using sessions.
 
 ## Attention
 
-⚠️ At this moment Deno KV is `experimental` API. Use cli flag `--unstable` while
-starting project.
+1. ⚠️ At this moment Deno KV is `experimental` API. Use cli flag `--unstable` while starting project.
+   Check the API at https://deno.land/api?s=Deno.Kv&unstable
+2. Deno KV has **a fixed size limit** and you might run into some issues when you are using [the conversations plugin](https://grammy.dev/plugins/conversations) whilst you're building long forms or pagination system inside a conversation. You can find out more about it in the last paragraph of the [API description](https://deno.land/api?s=Deno.Kv&unstable) but here's the short version:
+   > Keys have a maximum length of 2048 bytes after serialization.
+   > Values have a maximum length of 64 KiB after serialization.
+
+   The size limit error at a glance
+    ![image](https://github.com/grammyjs/storages/assets/1687551/3cfc6bfe-392f-4cea-8bf0-e23ba532089e)
 
 ## Instructions
 
