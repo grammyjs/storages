@@ -1,0 +1,51 @@
+{
+  "name": "@grammyjs/storage-dynamodb",
+  "version": "2.4.0",
+  "description": "AWS DynamoDB storage adapter for grammY",
+  "types": "dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test:deno": "echo \"Error: no tests found\"",
+    "test": "vitest",
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grammyjs/storages.git"
+  },
+  "author": "mt <manue+git@matm.xyz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grammyjs/storages/issues"
+  },
+  "homepage": "https://github.com/grammyjs/storages#readme",
+  "keywords": [
+    "grammy",
+    "telegram",
+    "bot",
+    "session",
+    "storage",
+    "adapter",
+    "middleware",
+    "aws",
+    "dynamodb"
+  ],
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.433.0",
+    "@grammyjs/storage-utils": "^2.4.0",
+    "aws-sdk-client-mock": "^3.0.0",
+    "grammy": "^1.19.2",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
+  }
+}
