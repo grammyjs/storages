@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-redis",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "private": false,
   "description": "Redis storage for grammy library.",
   "main": "./dist/cjs/mod.js",
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/redis#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.4.1",
+    "@grammyjs/storage-utils": "^2.4.2",
     "@types/ioredis": "^5.0.0",
     "grammy": "^1.21.1",
     "ioredis": "^5.3.2"
