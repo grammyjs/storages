@@ -15,7 +15,7 @@ jobs:
         run: |
           deno run -A https://deno.land/x/udd/main.ts packages/**/src/*.ts packages/**/__tests__/*.ts packages/**/examples/*.ts libs/**/src/*.ts packages/**/*.md
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         id: pr
         with:
           commit-message: "chore: update deno dependencies"
