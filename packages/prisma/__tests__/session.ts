@@ -5,7 +5,7 @@ import { createBot, createMessage } from '@grammyjs/storage-utils';
 import prisma from './helpers/prisma';
 
 beforeEach(async () => {
-  await prisma.session.deleteMany({});
+  await prisma.pizzaSession.deleteMany({});
 });
 
 describe('Pizza counter test', () => {
@@ -18,7 +18,7 @@ describe('Pizza counter test', () => {
         initial() {
           return { pizzaCount: 0 };
         },
-        storage: new PrismaAdapter(prisma.session),
+        storage: new PrismaAdapter(prisma.pizzaSession),
       })
     );
 
@@ -35,7 +35,7 @@ describe('Pizza counter test', () => {
     bot.use(
       session({
         initial: () => ({ pizzaCount: 0 }),
-        storage: new PrismaAdapter(prisma.session),
+        storage: new PrismaAdapter(prisma.pizzaSession),
       })
     );
 

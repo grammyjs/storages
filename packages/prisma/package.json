@@ -13,9 +13,11 @@
   ],
   "scripts": {
     "test:deno": "echo \"Error: no tests found\"",
-    "test": "npx prisma generate; npx prisma db push; vitest",
+    "pre:test": "rm ./prisma/dev.db",
+    "test": "generate; prisma db push; vitest",
     "start": "node dist/index.js",
-    "dev": "npx prisma generate & npx prisma db push & nodemon",
+    "generate": "prisma generate",
+    "dev": "generate & prisma db push & nodemon",
     "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
@@ -33,11 +35,11 @@
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/typeorm#readme",
   "devDependencies": {
     "@grammyjs/storage-utils": "^2.4.1",
-    "@prisma/client": "^4.15.0",
-    "grammy": "^1.16.1",
-    "prisma": "^4.15.0",
-    "vite": "^4.3.9",
-    "vitest": "^0.31.3"
+    "@prisma/client": "^5.10.2",
+    "grammy": "^1.21.1",
+    "prisma": "^5.10.2",
+    "vite": "^5.1.4",
+    "vitest": "^1.3.1"
   },
   "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
 }

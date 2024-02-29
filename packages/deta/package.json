@@ -38,8 +38,8 @@
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.5.12",
-    "grammy": "^1.4.3"
+    "@types/node-fetch": "^2.6.11",
+    "grammy": "^1.21.1"
   },
   "keywords": [
     "grammy",

@@ -7,7 +7,13 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-model Session {
+model StringSession {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+}
+
+model PizzaSession {
   id    Int    @id @default(autoincrement())
   key   String @unique
   value String

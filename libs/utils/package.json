@@ -19,6 +19,6 @@
   },
   "keywords": [],
   "dependencies": {
-    "grammy": "^1.16.1"
+    "grammy": "^1.21.1"
   }
 }
