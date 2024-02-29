@@ -38,7 +38,7 @@
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.6.4"
+    "@types/node-fetch": "^2.6.11"
   },
   "keywords": [
     "grammy",

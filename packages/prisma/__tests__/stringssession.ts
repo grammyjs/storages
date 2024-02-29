@@ -5,7 +5,7 @@ import { createBot, createMessage } from '@grammyjs/storage-utils';
 import prisma from './helpers/prisma';
 
 beforeEach(async () => {
-  await prisma.session.deleteMany({});
+  await prisma.stringSession.deleteMany({});
 });
 
 describe('Test string session', () => {
@@ -16,7 +16,7 @@ describe('Test string session', () => {
       initial() {
         return 'test';
       },
-      storage: new PrismaAdapter(prisma.session),
+      storage: new PrismaAdapter(prisma.stringSession),
     }));
 
     await bot.handleUpdate(ctx.update);
@@ -33,7 +33,7 @@ describe('Test string session', () => {
       initial() {
         return 'test';
       },
-      storage: new PrismaAdapter(prisma.session),
+      storage: new PrismaAdapter(prisma.stringSession),
     }));
 
     

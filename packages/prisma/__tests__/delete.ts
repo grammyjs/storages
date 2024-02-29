@@ -5,11 +5,11 @@ import { createBot, createMessage } from '@grammyjs/storage-utils';
 import prisma from './helpers/prisma';
 
 beforeEach(async () => {
-  await prisma.session.deleteMany({});
+  await prisma.pizzaSession.deleteMany({});
 });
 
 describe('Delete test', () => {
-  test('A not yet stored record should be nullable without throwing', async () => {
+  test('An not yet stored record should be nullable without throwing', async () => {
     const bot = createBot();
 
     bot.use(
@@ -17,7 +17,7 @@ describe('Delete test', () => {
         initial() {
           return { pizzaCount: 0 };
         },
-        storage: new PrismaAdapter(prisma.session),
+        storage: new PrismaAdapter(prisma.pizzaSession),
       })
     );
 
