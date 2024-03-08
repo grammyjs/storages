@@ -17,7 +17,7 @@ To get started, you first need to
   - `id` as a primary key of type `varchar`, cannot be null
   - `session` as `text`. Make it nullable.
 
-  You could also add `created_at` and `updated_at` to keep track of changes.
+  You could also add `created_at` and `updated_at` to keep track of changes. ( [See below](#createdat-and-updatedat-guide) )
 
 ## How to use
 
@@ -62,4 +62,35 @@ bot.command('stats', (ctx) => ctx.reply
 bot.on(':photo', (ctx) => ctx.session.counter++);
 
 bot.start();
+```
+
+## createdAt and updatedAt Guide
+
+You can alter table manually or just execute this SQL snippet in SQL editor (don't forget to replace `YOUR_TABLE_NAME` with your table name):
+
+```sql
+-- Add new columns to table named `created_at` and `updated_at`
+ALTER TABLE YOUR_TABLE_NAME
+ADD COLUMN created_at timestamptz default now(),
+ADD COLUMN updated_at timestamptz default now();
+
+-- Enable MODDATETIME extension
+create extension if not exists moddatetime schema extensions;
+
+-- This will set the `updated_at` column on every update
+create trigger handle_updated_at before update on YOUR_TABLE_NAME
+  for each row execute procedure moddatetime (updated_at);
+```
+
+### Manually enable extension
+
+1. Navigate to `Database` -> `Extensions` in your Supabase dashboard
+2. Enable the `MODDATETIME` extension
+3. Add a new column to your table named `created_at`, with type `timestamptz`, and default value `now()`
+4. Add a new column to your table named updated_at, with type `timestamptz`, and default value `now()`
+5. Go to the SQL editor and run the following query (replace `YOUR_TABLE_NAME` with the name of your table):
+
+```sql
+create trigger handle_updated_at before update on YOUR_TABLE_NAME
+  for each row execute procedure moddatetime (updated_at);
 ```
