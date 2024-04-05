@@ -3,7 +3,7 @@ import { ListResult, BaseModel } from 'pocketbase';
 
 type AdapterConstructor = {
   /**
-   * For example: http://127.0.0.1
+   * For example: http://127.0.0.1:8090
    */
   pocketbaseInstanceUrl: string;
   botToken: string;

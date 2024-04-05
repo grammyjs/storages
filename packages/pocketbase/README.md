@@ -21,3 +21,61 @@ After running `./pocketbase serve` in the location in which we extracted the .ex
 ![Pocketbase server routes](./docs/images/pb-url.png)
 
 > Copy the underlined url, this url will be used for the `pocketbaseInstanceUrl` when using this storage adapter
+
+Open the Admin UI page in your browser, if it's the first time that you are instantiating your Pocketbase instance, go ahead and create your root admin user.
+
+Then from the left sidebar, click on the settings icon and then "Import collections", and paste this configuration:
+
+> Make sure to place your Telegram bot token inside the "your telegram bot token" fields
+
+```
+[
+    {
+        "id": "sxeo80n9r1j23md",
+        "name": "sessions",
+        "type": "base",
+        "system": false,
+        "schema": [
+            {
+                "system": false,
+                "id": "rr9dbgn5",
+                "name": "key",
+                "type": "text",
+                "required": false,
+                "presentable": false,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "system": false,
+                "id": "o1epnmt2",
+                "name": "value",
+                "type": "json",
+                "required": false,
+                "presentable": false,
+                "unique": false,
+                "options": {
+                    "maxSize": 2000000
+                }
+            }
+        ],
+        "indexes": [],
+        "listRule": "@request.headers.bot_token = \"your telegram bot token"",
+        "viewRule": "@request.headers.bot_token = \"your telegram bot token"",
+        "createRule": "@request.headers.bot_token = \"your telegram bot token"",
+        "updateRule": "@request.headers.bot_token = \"your telegram bot token"",
+        "deleteRule": "@request.headers.bot_token = \"your telegram bot token"",
+        "options": {}
+    }
+]
+```
+
+After doing this, there's not much to do with the Pocketbase instance anymore; You may configure your fields, indexes etc... if you are aware of the repercussions
+
+### Use the package in your grammY code
+
+Refer to [Node example](./examples/node.ts)
