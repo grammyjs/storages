@@ -1,6 +1,6 @@
 {
 	"name": "@grammyjs/storage-pocketbase",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Pocketbase storage adapter for grammY",
 	"types": "dist/index.d.ts",
 	"main": "dist/index.js",
