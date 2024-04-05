@@ -64,21 +64,22 @@ export class PocketbaseAdapter<T> implements StorageAdapter<T> {
       });
 
       if (!updateFetch.ok) return undefined;
+    } else {
+      const createFetch = await fetch(`${this.pocketbaseInstanceUrl}/api/collections/sessions/records`, {
+        method: 'POST',
+        body: JSON.stringify({
+          key,
+          value,
+        }),
+        headers: new Headers({
+          'bot_token': this.botToken,
+          'Content-Type': 'application/json',
+        }),
+      });
+
+      if (!createFetch.ok) return undefined;
     }
 
-    const createFetch = await fetch(`${this.pocketbaseInstanceUrl}/api/collections/sessions/records`, {
-      method: 'POST',
-      body: JSON.stringify({
-        key,
-        value,
-      }),
-      headers: new Headers({
-        'bot_token': this.botToken,
-        'Content-Type': 'application/json',
-      }),
-    });
-
-    if (!createFetch.ok) return undefined;
   }
 
   async delete(key: string) {
