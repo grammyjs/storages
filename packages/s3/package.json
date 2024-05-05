@@ -1,0 +1,7 @@
+{
+  "name": "s3",
+  "private": true,
+  "scripts": {
+    "test:deno": "deno task test"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "check": "deno check *.ts test/*.ts",
+    "test": "deno test test"
+  },
+  "lock": false,
+  "nodeModulesDir": false
+}

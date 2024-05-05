@@ -10,11 +10,13 @@ interface StringSessionFlavor {
 }
 
 type JsonBot = Deps.Context & Deps.SessionFlavor<JsonSessionData>
+type LazyJsonBot = Deps.Context & Deps.LazySessionFlavor<JsonSessionData>
 type StringBot = Deps.Context & StringSessionFlavor
 
-export function createBot(json?: true): Deps.Bot<JsonBot>
-export function createBot(json?: false): Deps.Bot<StringBot>
-export function createBot(json = true) {
+export function createBot(json: true): Deps.Bot<JsonBot>
+export function createBot(json: true, lazy: true): Deps.Bot<LazyJsonBot>
+export function createBot(json: false): Deps.Bot<StringBot>
+export function createBot(json = true, lazy:boolean = false): Deps.Bot<any> {
   const botInfo = {
     id: 42,
     first_name: 'Test Bot',
@@ -26,7 +28,7 @@ export function createBot(json = true) {
   };
 
   if (json) {
-    return new Deps.Bot<JsonBot>('fake-token', { botInfo });
+    return new Deps.Bot<typeof lazy extends true ? LazyJsonBot : JsonBot>('fake-token', { botInfo });
   } else {
     return new Deps.Bot<StringBot>('fake-token', { botInfo });
   }
@@ -35,12 +37,12 @@ export function createBot(json = true) {
 export function createMessage(bot: Deps.Bot<any>, text = 'Test Text') {
   const createRandomNumber = () => Math.floor(Math.random() * (123456789 - 1) + 1);
 
-  const ctx = new Deps.Context({ 
-    update_id: createRandomNumber(), 
-    message: { 
+  const ctx = new Deps.Context({
+    update_id: createRandomNumber(),
+    message: {
       text,
       message_id: createRandomNumber(),
-      chat: { 
+      chat: {
         id: 1,
         type: 'private',
         first_name: 'Test User',
@@ -53,7 +55,7 @@ export function createMessage(bot: Deps.Bot<any>, text = 'Test Text') {
       },
     },
   },
-  bot.api, 
+  bot.api,
   bot.botInfo
   );
 
