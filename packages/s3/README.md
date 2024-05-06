@@ -87,7 +87,7 @@ need to add related tests
 4. Define method to create session key from context
 
    ```ts
-   const getSessionKey = (ctx: MyContext) {
+   function getSessionKey (ctx: MyContext) {
      // it could be user based
      return `/chat/${ctx.from?.id ?? 0}/session.json`;
      // or if group chats are relevant, it could be chat based
