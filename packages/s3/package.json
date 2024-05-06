@@ -3,5 +3,8 @@
   "private": true,
   "scripts": {
     "test:deno": "deno task test"
+  },
+  "dependencies": {
+    "@bradenmacdonald/s3-lite-client": "@jsr/bradenmacdonald__s3-lite-client@0.7.4"
   }
 }
