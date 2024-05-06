@@ -1,6 +1,5 @@
-import { StorageAdapter } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
-import { S3Client } from 'jsr:@bradenmacdonald/s3-lite-client@0.7.4';
-export { S3Client } from 'jsr:@bradenmacdonald/s3-lite-client@0.7.4';
+import { StorageAdapter, S3Client } from './deps.deno.ts';
+export { S3Client } from './deps.deno.ts';
 /**
  * The type of the constructor argument for S3Client
  */

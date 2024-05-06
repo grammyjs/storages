@@ -4,10 +4,10 @@ import {
   S3Storage,
   S3StorageClient,
 } from '../adapter.ts';
-import { lazySession } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
-import { createBot, createMessage } from '../../../libs/utils/src/mod.ts';
-import { assertSpyCall, spy } from 'jsr:@std/testing/mock';
-import { assert } from 'jsr:@std/assert';
+import { lazySession } from 'grammy';
+import { createBot, createMessage } from '@grammyjs/storage-utils';
+import { assertSpyCall, spy } from '@std/testing/mock';
+import { assert } from '@std/assert';
 
 const createClient = (
   {

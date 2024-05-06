@@ -4,5 +4,12 @@
     "test": "deno test test"
   },
   "lock": false,
-  "nodeModulesDir": false
+  "nodeModulesDir": false,
+  "imports": {
+    "@bradenmacdonald/s3-lite-client": "jsr:@bradenmacdonald/s3-lite-client@0.7.4",
+    "@grammyjs/storage-utils": "../../libs/utils/src/mod.ts",
+    "@std/assert": "jsr:@std/assert",
+    "@std/testing/mock": "jsr:@std/testing/mock",
+    "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts"
+  }
 }
