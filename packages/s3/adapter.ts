@@ -25,23 +25,23 @@ export type S3StorageClient = Pick<
 S3Client,
 'exists' | 'deleteObject' | 'getObject' | 'host' | 'region' | 'putObject'
 >;
-const isS3StorageClient = (
-  maybeClient: S3StorageClient | any,
-): maybeClient is S3StorageClient => {
+function isS3StorageClient(
+  maybeClient: S3StorageClient | S3ClientOptions,
+): maybeClient is S3StorageClient {
   return ['exists', 'deleteObject', 'getObject', 'putObject'].every((
     required,
-  ) => typeof maybeClient[required] === 'function');
-};
+  ) => typeof maybeClient[required as keyof typeof maybeClient] === 'function');
+}
 
-export const isObjectSession = (maybeSession: any): maybeSession is object => {
+export function isObjectSession(maybeSession: unknown): maybeSession is object {
   return !!maybeSession && typeof maybeSession === 'object';
-};
+}
 
 export class S3Storage<T> implements StorageAdapter<T> {
   readonly client: S3StorageClient;
   constructor(
     clientOrOptions: S3StorageClient | S3ClientOptions,
-    readonly validateSession: (data: any) => boolean,
+    readonly validateSession: (data: T | unknown) => boolean,
   ) {
     this.client = isS3StorageClient(clientOrOptions)
       ? clientOrOptions
@@ -55,12 +55,15 @@ export class S3Storage<T> implements StorageAdapter<T> {
     return /^[-0-9a-zA-Z!_.()]+$/.test(key);
   }
 
-  delete(key: string): Promise<void> {
-    return this.client.deleteObject(key);
+  async delete(key: string): Promise<void> {
+    return await this.client.deleteObject(key);
   }
 
-  has = (key: string): Promise<boolean> => this.client.exists(key);
-  read = async (key: string): Promise<T | undefined> => {
+  async has(key: string): Promise<boolean> {
+    return await this.client.exists(key);
+  }
+
+  async read(key: string): Promise<T | undefined> {
     try {
       const res = await this.client.getObject(key);
       const data = await res.json() as T;
@@ -68,7 +71,7 @@ export class S3Storage<T> implements StorageAdapter<T> {
     } catch {
       return undefined;
     }
-  };
+  }
 
   async write(key: string, value: T): Promise<void> {
     // the client has a mismatching return type
