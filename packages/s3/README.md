@@ -100,13 +100,15 @@ need to add related tests
    ```ts
    const bot = new Bot<MyContext>("<Token>");
 
-   bot.use(sequentialize(getSessionKey)).use(lazySession({
-     getSessionKey,
-     initial() {
-       return { count: 0 };
-     },
-     storage: new S3Adapter(clientOptions),
-   }));
+   bot.use(sequentialize(getSessionKey)).use(
+     lazySession({
+       getSessionKey,
+       initial() {
+         return { count: 0 };
+       },
+       storage: new S3Adapter(clientOptions),
+     }),
+   );
    ```
 
 Use `await ctx.session` as explained in

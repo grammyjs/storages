@@ -28,9 +28,10 @@ S3Client,
 function isS3StorageClient(
   maybeClient: S3StorageClient | S3ClientOptions,
 ): maybeClient is S3StorageClient {
-  return ['exists', 'deleteObject', 'getObject', 'putObject'].every((
-    required,
-  ) => typeof maybeClient[required as keyof typeof maybeClient] === 'function');
+  return ['exists', 'deleteObject', 'getObject', 'putObject'].every(
+    (required) =>
+      typeof maybeClient[required as keyof typeof maybeClient] === 'function',
+  );
 }
 
 export function isObjectSession(maybeSession: unknown): maybeSession is object {
@@ -66,7 +67,7 @@ export class S3Storage<T> implements StorageAdapter<T> {
   async read(key: string): Promise<T | undefined> {
     try {
       const res = await this.client.getObject(key);
-      const data = await res.json() as T;
+      const data = (await res.json()) as T;
       return this.validateSession(data) ? data : undefined;
     } catch {
       return undefined;

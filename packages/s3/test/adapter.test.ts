@@ -9,16 +9,14 @@ import { createBot, createMessage } from '@grammyjs/storage-utils';
 import { assertSpyCall, spy } from '@std/testing/mock';
 import { assert } from '@std/assert';
 
-const createClient = (
-  {
-    exists = (key: string) => Promise.resolve(key === SESSION_KEY),
-    deleteObject = () => Promise.resolve(),
-    getObject = () => Promise.reject<Response>(new Error('not implemented')),
-    putObject = () => Promise.resolve({ etag: '', versionId: null }),
-    host = 'localhost',
-    region = 'test-auto',
-  }: Partial<S3StorageClient> = {},
-) => ({
+const createClient = ({
+  exists = (key: string) => Promise.resolve(key === SESSION_KEY),
+  deleteObject = () => Promise.resolve(),
+  getObject = () => Promise.reject<Response>(new Error('not implemented')),
+  putObject = () => Promise.resolve({ etag: '', versionId: null }),
+  host = 'localhost',
+  region = 'test-auto',
+}: Partial<S3StorageClient> = {}) => ({
   exists: spy(exists),
   deleteObject: spy(deleteObject),
   getObject: spy(getObject),
@@ -37,11 +35,13 @@ Deno.test('integration test green path', async () => {
   });
   const validateSession = spy(isObjectSession);
 
-  bot.use(lazySession({
-    getSessionKey,
-    initial: () => ({ pizzaCount: 0 }),
-    storage: new S3Storage(client, validateSession),
-  }));
+  bot.use(
+    lazySession({
+      getSessionKey,
+      initial: () => ({ pizzaCount: 0 }),
+      storage: new S3Storage(client, validateSession),
+    }),
+  );
 
   bot.hears('first', async (ctx) => {
     const session = await ctx.session;
@@ -75,60 +75,74 @@ Deno.test('new S3Storage(client) uses existing instance', () => {
   assert(it.client.host === 'example.com');
   assert(it.client.region === region);
 });
-Deno.test('S3Storage.read returns data when validateSession returns true', async () => {
-  const data = { pizzaCount: 5 };
-  const client = createClient({
-    getObject: () => Promise.resolve(new Response(JSON.stringify(data))),
-  });
+Deno.test(
+  'S3Storage.read returns data when validateSession returns true',
+  async () => {
+    const data = { pizzaCount: 5 };
+    const client = createClient({
+      getObject: () => Promise.resolve(new Response(JSON.stringify(data))),
+    });
 
-  const validateSession = spy((raw: any) => Object.hasOwn(raw, 'pizzaCount'));
-  const it = new S3Storage<typeof data>(client, validateSession);
+    const validateSession = spy((raw: any) => Object.hasOwn(raw, 'pizzaCount'));
+    const it = new S3Storage<typeof data>(client, validateSession);
 
-  const actual = await it.read(SESSION_KEY);
+    const actual = await it.read(SESSION_KEY);
 
-  assertSpyCall(validateSession, 0, { args: [data], returned: true });
-  assert(actual?.pizzaCount === 5);
-});
-Deno.test('S3Storage.read returns undefined when validateSession returns false', async () => {
-  const data = { noPizzaCount: 5 };
-  const client = createClient({
-    getObject: () => Promise.resolve(new Response(JSON.stringify(data))),
-  });
+    assertSpyCall(validateSession, 0, { args: [data], returned: true });
+    assert(actual?.pizzaCount === 5);
+  },
+);
+Deno.test(
+  'S3Storage.read returns undefined when validateSession returns false',
+  async () => {
+    const data = { noPizzaCount: 5 };
+    const client = createClient({
+      getObject: () => Promise.resolve(new Response(JSON.stringify(data))),
+    });
 
-  const it = new S3Storage<typeof data>(
-    client,
-    (raw) => Object.hasOwn(raw, 'pizzaCount'),
-  );
+    const it = new S3Storage<typeof data>(client, (raw) =>
+      Object.hasOwn(raw, 'pizzaCount'),
+    );
 
-  assert(await it.read(SESSION_KEY) === undefined);
-});
-Deno.test('S3Storage.read returns undefined when the object exists but contains no json', async () => {
-  const data = { pizzaCount: 5 };
-  const client = createClient({
-    getObject: () =>
-      Promise.resolve(new Response('<html>some error page or XML</html>')),
-  });
+    assert((await it.read(SESSION_KEY)) === undefined);
+  },
+);
+Deno.test(
+  'S3Storage.read returns undefined when the object exists but contains no json',
+  async () => {
+    const data = { pizzaCount: 5 };
+    const client = createClient({
+      getObject: () =>
+        Promise.resolve(new Response('<html>some error page or XML</html>')),
+    });
 
-  const it = new S3Storage<typeof data>(client, () => true);
+    const it = new S3Storage<typeof data>(client, () => true);
 
-  assert(await it.read(SESSION_KEY) === undefined);
-});
-Deno.test('S3Storage.read returns undefined when the object doesn\'t exist', async () => {
-  const data = { pizzaCount: 5 };
-  const client = createClient({
-    getObject: () =>
-      Promise.reject(new Error('thrown because if http status code > 400')),
-  });
+    assert((await it.read(SESSION_KEY)) === undefined);
+  },
+);
+Deno.test(
+  'S3Storage.read returns undefined when the object doesn\'t exist',
+  async () => {
+    const data = { pizzaCount: 5 };
+    const client = createClient({
+      getObject: () =>
+        Promise.reject(new Error('thrown because if http status code > 400')),
+    });
 
-  const it = new S3Storage<typeof data>(client, () => false);
+    const it = new S3Storage<typeof data>(client, () => false);
 
-  assert(await it.read(SESSION_KEY) === undefined);
-});
-Deno.test('S3Storage.read returns undefined when the key is invalid', async () => {
-  const data = { pizzaCount: 5 };
-  const client = new S3Client({ endPoint, region });
+    assert((await it.read(SESSION_KEY)) === undefined);
+  },
+);
+Deno.test(
+  'S3Storage.read returns undefined when the key is invalid',
+  async () => {
+    const data = { pizzaCount: 5 };
+    const client = new S3Client({ endPoint, region });
 
-  const it = new S3Storage<typeof data>(client, () => false);
+    const it = new S3Storage<typeof data>(client, () => false);
 
-  assert(await it.read('') === undefined);
-});
+    assert((await it.read('')) === undefined);
+  },
+);
