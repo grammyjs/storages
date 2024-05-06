@@ -86,9 +86,9 @@ And we would need to add related tests
    ```ts
    const getSessionKey = (ctx: MyContext) =>
      // it could be user based
-     `/chat/${ctx.from?.id ?? 0}/sesssion.json`;
+     `/chat/${ctx.from?.id ?? 0}/session.json`;
    // or if group chats are relevant, it could be chat based
-   //`/chat/${ctx.chat?.id ?? 0}/sesssion.json`;
+   //`/chat/${ctx.chat?.id ?? 0}/session.json`;
    ```
 
 5. Register adapter's middleware
