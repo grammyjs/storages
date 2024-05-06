@@ -15,8 +15,9 @@ The most prominent options are:
 ## Pros and Cons
 
 The biggest restriction of the current setup is that it only works with deno.
-For it to work with pnpm / node,
-we would need to add the following line to `.npmrc` (which is currently `.gitignore`d)
+For it to work with pnpm / node, we would need to add the following line to
+`.npmrc` (which is currently `.gitignore`d)
+
 ```
 @jsr:registry=https://npm.jsr.io
 # The above doesn't work and prevents us from adding
@@ -27,11 +28,13 @@ we would need to add the following line to `.npmrc` (which is currently `.gitign
 #   This error happened while installing a direct dependency of /run/media/karfau/hdd-data/dev/storages/packages/file
 #   @grammyjs/storage-utils is not in the npm registry, or you have no permission to fetch it.
 ```
-which would allow us to add `packages/s3/package.json` with the following `dependency`:
+
+which would allow us to add `packages/s3/package.json` with the following
+`dependency`:
 `"@bradenmacdonald/s3-lite-client": "npm:@jsr/bradenmacdonald__s3-lite-client@0.7.4"`
-it would also require some changes to the imports, to provide the bare specifiers as listed in `package.json`
-in `deno.json` "imports".
-And we would need to add related tests
+it would also require some changes to the imports, to provide the bare
+specifiers as listed in `package.json` in `deno.json` "imports". And we would
+need to add related tests
 
 1. It is not the fastest way to get your data (benchmarks?), so it currently
    does not implement the methods for loading all sessions. In a webhook

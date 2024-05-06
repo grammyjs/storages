@@ -1,4 +1,4 @@
-import { StorageAdapter, S3Client } from './deps.deno.ts';
+import { S3Client, StorageAdapter } from './deps.deno.ts';
 export { S3Client } from './deps.deno.ts';
 /**
  * The type of the constructor argument for S3Client
@@ -27,13 +27,15 @@ S3Client,
 >;
 const isS3StorageClient = (
   maybeClient: S3StorageClient | any,
-): maybeClient is S3StorageClient =>
-  ['exists', 'deleteObject', 'getObject', 'putObject'].every((required) =>
-    typeof maybeClient[required] === 'function'
-  );
+): maybeClient is S3StorageClient => {
+  return ['exists', 'deleteObject', 'getObject', 'putObject'].every((
+    required,
+  ) => typeof maybeClient[required] === 'function');
+};
 
-export const isObjectSession = (maybeSession: any): maybeSession is object =>
-  !!maybeSession && typeof maybeSession === 'object';
+export const isObjectSession = (maybeSession: any): maybeSession is object => {
+  return !!maybeSession && typeof maybeSession === 'object';
+};
 
 export class S3Storage<T> implements StorageAdapter<T> {
   readonly client: S3StorageClient;
@@ -45,15 +47,20 @@ export class S3Storage<T> implements StorageAdapter<T> {
       ? clientOrOptions
       : new S3Client(clientOrOptions);
   }
+
   /**
    * @see https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html
    */
-  readonly isSafe = (key: string): boolean => /^[-0-9a-zA-Z!_.()]+$/.test(key);
+  isSafe(key: string): boolean {
+    return /^[-0-9a-zA-Z!_.()]+$/.test(key);
+  }
 
-  readonly delete = (key: string): Promise<void> =>
-    this.client.deleteObject(key);
-  readonly has = (key: string): Promise<boolean> => this.client.exists(key);
-  readonly read = async (key: string): Promise<T | undefined> => {
+  delete(key: string): Promise<void> {
+    return this.client.deleteObject(key);
+  }
+
+  has = (key: string): Promise<boolean> => this.client.exists(key);
+  read = async (key: string): Promise<T | undefined> => {
     try {
       const res = await this.client.getObject(key);
       const data = await res.json() as T;
@@ -63,9 +70,9 @@ export class S3Storage<T> implements StorageAdapter<T> {
     }
   };
 
-  readonly write = async (key: string, value: T): Promise<void> => {
+  async write(key: string, value: T): Promise<void> {
     // the client has a mismatching return type
     // to make type checks happy we await it, and intentionally do not return it
     await this.client.putObject(key, JSON.stringify(value));
-  };
+  }
 }

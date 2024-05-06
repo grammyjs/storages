@@ -13,8 +13,7 @@ const createClient = (
   {
     exists = (key: string) => Promise.resolve(key === SESSION_KEY),
     deleteObject = () => Promise.resolve(),
-    getObject = () =>
-      Promise.reject<Response>(new Error('not implemented')),
+    getObject = () => Promise.reject<Response>(new Error('not implemented')),
     putObject = () => Promise.resolve({ etag: '', versionId: null }),
     host = 'localhost',
     region = 'test-auto',
