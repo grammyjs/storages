@@ -101,7 +101,7 @@ Deno.test(
     });
 
     const it = new S3Storage<typeof data>(client, (raw) =>
-      Object.hasOwn(raw, 'pizzaCount'),
+      !!raw && Object.hasOwn(raw, 'pizzaCount'),
     );
 
     assert((await it.read(SESSION_KEY)) === undefined);
