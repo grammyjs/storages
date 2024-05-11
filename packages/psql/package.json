@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/psql#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.4.2",
+    "@grammyjs/storage-utils": "workspace:*",
     "@types/pg": "^8.11.2",
     "grammy": "^1.21.1",
     "pg": "^8.11.3",
