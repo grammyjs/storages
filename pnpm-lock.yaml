@@ -177,8 +177,8 @@ importers:
   packages/s3:
     dependencies:
       '@bradenmacdonald/s3-lite-client':
-        specifier: '@jsr/bradenmacdonald__s3-lite-client@0.7.4'
-        version: link:@jsr/bradenmacdonald__s3-lite-client@0.7.4
+        specifier: '@jsr/bradenmacdonald__s3-lite-client@0.7.5'
+        version: link:@jsr/bradenmacdonald__s3-lite-client@0.7.5
 
   packages/supabase:
     devDependencies:

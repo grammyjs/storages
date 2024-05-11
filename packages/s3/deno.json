@@ -6,7 +6,7 @@
   "lock": false,
   "nodeModulesDir": false,
   "imports": {
-    "@bradenmacdonald/s3-lite-client": "jsr:@bradenmacdonald/s3-lite-client@0.7.4",
+    "@bradenmacdonald/s3-lite-client": "jsr:@bradenmacdonald/s3-lite-client@0.7.5",
     "@grammyjs/storage-utils": "../../libs/utils/src/mod.ts",
     "@std/assert": "jsr:@std/assert",
     "@std/testing/mock": "jsr:@std/testing/mock",

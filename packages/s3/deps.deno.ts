@@ -1,2 +1,5 @@
 export type { StorageAdapter } from 'grammy';
-export { S3Client } from '@bradenmacdonald/s3-lite-client';
+export {
+  S3Client,
+  type S3ClientOptions,
+} from '@bradenmacdonald/s3-lite-client';

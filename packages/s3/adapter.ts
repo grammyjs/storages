@@ -1,25 +1,9 @@
-import { S3Client, StorageAdapter } from './deps.deno.ts';
-export { S3Client } from './deps.deno.ts';
-/**
- * The type of the constructor argument for S3Client
- */
-// vendored from https://github.com/bradenmacdonald/s3-lite-client/blob/b34c604d0e9c3741919c92bc0151ec7d13eae467/client.ts#L15C1-L29C2
-// can be removed when https://github.com/bradenmacdonald/s3-lite-client/pull/38 is merged
-export interface S3ClientOptions {
-  /** Hostname of the endpoint. Not a URL, just the hostname with no protocol or port. */
-  endPoint: string;
-  accessKey?: string;
-  secretKey?: string;
-  sessionToken?: string;
-  useSSL?: boolean | undefined;
-  port?: number | undefined;
-  /** Default bucket name, if not specified on individual requests */
-  bucket?: string;
-  /** Region to use, e.g. "us-east-1" */
-  region: string;
-  /** Use path-style requests, e.g. https://endpoint/bucket/object-key instead of https://bucket/object-key (default: true) */
-  pathStyle?: boolean | undefined;
-}
+import {
+  S3Client,
+  type S3ClientOptions,
+  type StorageAdapter,
+} from './deps.deno.ts';
+export { S3Client, type S3ClientOptions } from './deps.deno.ts';
 
 export type S3StorageClient = Pick<
 S3Client,

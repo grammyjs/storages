@@ -2,7 +2,7 @@ import {
   isObjectSession,
   S3Client,
   S3Storage,
-  S3StorageClient,
+  type S3StorageClient,
 } from '../adapter.ts';
 import { lazySession } from 'grammy';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
@@ -100,8 +100,9 @@ Deno.test(
       getObject: () => Promise.resolve(new Response(JSON.stringify(data))),
     });
 
-    const it = new S3Storage<typeof data>(client, (raw) =>
-      !!raw && Object.hasOwn(raw, 'pizzaCount'),
+    const it = new S3Storage<typeof data>(
+      client,
+      (raw) => !!raw && Object.hasOwn(raw, 'pizzaCount'),
     );
 
     assert((await it.read(SESSION_KEY)) === undefined);
