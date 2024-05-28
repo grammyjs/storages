@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"target": "ES2019",
+		"lib": ["ES2019"],
+		"module": "CommonJS",
+		"declaration": true,
+		"outDir": "./dist",
+		"strict": true,
+		"esModuleInterop": true,
+		"inlineSourceMap": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitAny": true,
+		"useUnknownInCatchVariables": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		"noEmit": true
+	},
+	"include": ["src", "examples"],
+	"exclude": ["node_modules"]
+}

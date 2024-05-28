@@ -1,0 +1,44 @@
+{
+	"name": "@grammyjs/storage-pocketbase",
+	"version": "0.2.0",
+	"description": "Pocketbase storage adapter for grammY",
+	"types": "dist/index.d.ts",
+	"main": "dist/index.js",
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"scripts": {
+		"start": "node dist/index.js",
+		"build": "tsc -p tsconfig.build.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grammyjs/storages.git"
+	},
+	"author": "ma <mobinaskarimail@protonmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"homepage": "https://github.com/grammyjs/storages#readme",
+	"keywords": [
+		"grammy",
+		"telegram",
+		"bot",
+		"session",
+		"storage",
+		"adapter",
+		"middleware",
+		"pocketbase"
+	],
+	"dependencies": {
+		"pocketbase": "^0.21.1"
+	},
+	"devDependencies": {
+		"@grammyjs/storage-utils": "workspace:^2.4.2",
+		"grammy": "^1.21.1"
+	}
+}
