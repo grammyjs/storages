@@ -94,3 +94,9 @@ create trigger handle_updated_at before update on YOUR_TABLE_NAME
 create trigger handle_updated_at before update on YOUR_TABLE_NAME
   for each row execute procedure moddatetime (updated_at);
 ```
+
+ 
+## Notes (WARNING)
+Using the `anon public` key will lead to unexpected behaviour since RLS (Row Level Security) is enabled by default when creating the table, and will lock writing unless explicit permissions.
+
+You can use `service_role` secret, but be aware that this will **bypass** RLS.
