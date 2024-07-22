@@ -97,6 +97,8 @@ create trigger handle_updated_at before update on YOUR_TABLE_NAME
 
  
 ## Notes (WARNING)
-Using the `anon public` key will lead to unexpected behaviour since RLS (Row Level Security) is enabled by default when creating the table, and will lock writing unless explicit permissions.
+
+Using the `anon public` key will lead to unexpected behaviour since RLS (Row Level Security) is enabled by default when creating the table, and will lock writing unless explicit permissions.  
+When RLS is enabled without configuration, a [default-deny policy](https://www.postgresql.org/docs/current/ddl-rowsecurity.html#DDL-ROWSECURITY:~:text=If%20no%20policy%20exists%20for%20the%20table%2C%20a%20default%2Ddeny%20policy%20is%20used%2C%20meaning%20that%20no%20rows%20are%20visible%20or%20can%20be%20modified) is used.
 
 You can use `service_role` secret, but be aware that this will **bypass** RLS.
