@@ -14,7 +14,7 @@ const redisInstance = await connect({
 });
 
 //create storage
-const storage = new RedisAdapter({ instance: redisInstance, ttl: 10 });
+const storage = new RedisAdapter({ instance: redisInstance, ttl: 10, autoParseDates: true });
 
 // Create bot and register session middleware
 const bot = new Bot<MyContext>('');

@@ -3,14 +3,16 @@ import { Client, StorageAdapter } from './deps.deno.ts';
 export class RedisAdapter<T> implements StorageAdapter<T> {
   private redis: Client;
   private readonly ttl?: number;
+  private readonly autoParseDates: boolean
 
   /**
    * @constructor
    * @param {opts} Constructor options
    * @param {opts.ttl} ttl - Session time to life in SECONDS.
    * @param {opts.instance} instance - Instance of redis.
+   * @param {opts.autoParseDates} autoParseDates - set to true to convert string in the json date format to date object
    */
-  constructor({ instance, ttl }: { instance?: Client; ttl?: number }) {
+  constructor({ instance, ttl, autoParseDates }: { instance?: Client; ttl?: number, autoParseDates?: boolean }) {
     if (instance) {
       this.redis = instance;
     } else {
@@ -18,12 +20,16 @@ export class RedisAdapter<T> implements StorageAdapter<T> {
     }
 
     this.ttl = ttl;
+    this.autoParseDates = autoParseDates || false;
   }
 
   async read(key: string) {
     const session = await this.redis.get(key);
     if (session === null || session === undefined) {
       return undefined;
+    }
+    if (this.autoParseDates) {
+      return JSON.parse(session, dateParser) as unknown as T;
     }
     return JSON.parse(session) as unknown as T;
   }
@@ -38,4 +44,18 @@ export class RedisAdapter<T> implements StorageAdapter<T> {
   async delete(key: string) {
     await this.redis.del(key);
   }
+}
+
+const ISO_8601 = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z?$/;
+const dateParser = (key: string, value: any) => {
+
+  if (typeof value === 'string' && ISO_8601.test(value)) {
+    var newValue;
+    if (!value.endsWith("Z")) {
+      newValue = `${value}Z`;
+    }
+    else newValue = value
+    return new Date(newValue);
+  }
+  return value;
 }

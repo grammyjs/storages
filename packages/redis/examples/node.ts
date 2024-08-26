@@ -10,7 +10,7 @@ type MyContext = Context & SessionFlavor<SessionData>;
 const redisInstance = new IORedis('redis://localhost:6379/0');
 
 //create storage
-const storage = new RedisAdapter({ instance: redisInstance, ttl: 10 });
+const storage = new RedisAdapter({ instance: redisInstance, ttl: 10, autoParseDates: true });
 
 // Create bot and register session middleware
 const bot = new Bot<MyContext>('');
