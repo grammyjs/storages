@@ -39,7 +39,7 @@
     "@grammyjs/storage-utils": "^2.4.2",
     "grammy": "^1.21.1",
     "mongodb": "^6.3.0",
-    "mongodb-memory-server": "^9.1.6"
+    "mongodb-memory-server": "^10.0.0"
   },
   "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
 }
