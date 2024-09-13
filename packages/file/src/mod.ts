@@ -68,6 +68,8 @@ export class FileAdapter<T> implements StorageAdapter<T> {
   }
 
   async delete(key: string) {
-    await fs.remove(this.resolveSessionPath(key));
+    try {
+      await fs.remove(this.resolveSessionPath(key));
+    } catch {}
   }
 }
