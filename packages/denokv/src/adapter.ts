@@ -2,7 +2,7 @@ import { StorageAdapter } from './deps.ts';
 
 export class DenoKVAdapter<T> implements StorageAdapter<T> {
   constructor(private kv: Deno.Kv, 
-              private prefix: Deno.KvKeyPart[] = ['sessions']) {}
+    private prefix: Deno.KvKeyPart[] = ['sessions']) {}
 
   async read(key: string): Promise<T | undefined> {
     const result = await this.kv.get([...this.prefix, key]);

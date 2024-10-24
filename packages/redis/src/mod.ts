@@ -3,7 +3,7 @@ import { Client, StorageAdapter } from './deps.deno.ts';
 export class RedisAdapter<T> implements StorageAdapter<T> {
   private redis: Client;
   private readonly ttl?: number;
-  private readonly autoParseDates: boolean
+  private readonly autoParseDates: boolean;
 
   /**
    * @constructor
@@ -50,12 +50,11 @@ const ISO_8601 = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z?$/;
 const dateParser = (key: string, value: any) => {
 
   if (typeof value === 'string' && ISO_8601.test(value)) {
-    var newValue;
-    if (!value.endsWith("Z")) {
+    let newValue;
+    if (!value.endsWith('Z')) {
       newValue = `${value}Z`;
-    }
-    else newValue = value
+    } else newValue = value;
     return new Date(newValue);
   }
   return value;
-}
+};
