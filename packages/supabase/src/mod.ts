@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
 export function supabaseAdapter<T>(
 	{ supabase, table }: { supabase: SupabaseClient; table: string },
@@ -12,7 +12,7 @@ export function supabaseAdapter<T>(
 	}
 
 	return {
-		read: async (id: string) => {
+		read: async (id: string): Promise<T | undefined> => {
 			const { data, error } = await supabase.from(table).select('session').eq(
 				'id',
 				id,
@@ -25,12 +25,12 @@ export function supabaseAdapter<T>(
 
 			return JSON.parse(data.session) as T;
 		},
-		write: async (id: string, value: T) => {
+		write: async (id: string, value: T): Promise<void> => {
 			const input = { id, session: JSON.stringify(value) };
 
 			await supabase.from(table).upsert(input);
 		},
-		delete: async (id: string) => {
+		delete: async (id: string): Promise<void> => {
 			await supabase.from(table).delete().match({ id });
 		},
 	};

@@ -36,7 +36,7 @@ export class RedisAdapter<T> implements StorageAdapter<T> {
 		this.autoParseDates = autoParseDates || false;
 	}
 
-	async read(key: string) {
+	async read(key: string): Promise<T | undefined> {
 		const session = await this.redis.get(key);
 		if (session === null || session === undefined) {
 			return undefined;
@@ -47,14 +47,14 @@ export class RedisAdapter<T> implements StorageAdapter<T> {
 		return JSON.parse(session) as unknown as T;
 	}
 
-	async write(key: string, value: T) {
+	async write(key: string, value: T): Promise<void> {
 		await this.redis.set(key, JSON.stringify(value));
 		if (this.ttl) {
 			this.redis.expire(key, this.ttl);
 		}
 	}
 
-	async delete(key: string) {
+	async delete(key: string): Promise<void> {
 		await this.redis.del(key);
 	}
 }

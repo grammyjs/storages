@@ -1,3 +1,5 @@
+import type { StorageAdapter } from 'grammy';
+
 class Storage {
 	public jwt: string | undefined;
 	constructor(
@@ -78,7 +80,10 @@ interface StorageOptions {
  * @param opts Further configuration options
  * @returns An adapter to grammY's free session storage
  */
-export function freeStorage<T>(token: string, opts?: StorageOptions) {
+export function freeStorage<T>(
+	token: string,
+	opts?: StorageOptions,
+): StorageAdapter<T> & { getToken: () => Promise<string | undefined> } {
 	const storage = new Storage(token, opts?.rootUrl);
 	if (opts?.jwt !== undefined) storage.jwt = opts.jwt;
 	return {
@@ -86,10 +91,10 @@ export function freeStorage<T>(token: string, opts?: StorageOptions) {
 			const session = await storage.call('GET', key);
 			return session === undefined ? undefined : JSON.parse(session);
 		},
-		async write(key: string, data: T) {
+		async write(key: string, data: T): Promise<void> {
 			await storage.call('POST', key, JSON.stringify(data));
 		},
-		async delete(key: string) {
+		async delete(key: string): Promise<void> {
 			await storage.call('DELETE', key);
 		},
 		/**
@@ -99,7 +104,7 @@ export function freeStorage<T>(token: string, opts?: StorageOptions) {
 		 * for the first time. This can improve startup performance and is
 		 * especially useful in serverless environments.
 		 */
-		async getToken() {
+		async getToken(): Promise<string | undefined> {
 			return await storage.login();
 		},
 	};

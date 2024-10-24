@@ -23,7 +23,7 @@ export class MongoDBAdapter<T> implements StorageAdapter<T> {
 		this.collection = collection;
 	}
 
-	async read(key: string) {
+	async read(key: string): Promise<T | undefined> {
 		const session = await this.collection.findOne({ key });
 
 		if (session === null || session === undefined) {
@@ -33,7 +33,7 @@ export class MongoDBAdapter<T> implements StorageAdapter<T> {
 		return session.value as T;
 	}
 
-	async write(key: string, data: T) {
+	async write(key: string, data: T): Promise<void> {
 		await this.collection.updateOne({
 			key,
 		}, {
@@ -44,7 +44,7 @@ export class MongoDBAdapter<T> implements StorageAdapter<T> {
 		}, { upsert: true });
 	}
 
-	async delete(key: string) {
+	async delete(key: string): Promise<void> {
 		await this.collection.deleteOne({ key });
 	}
 }

@@ -45,12 +45,12 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 		this.query = opts.__query;
 	}
 
-	static async create(
+	static async create<T>(
 		opts = { tableName: 'sessions' } as Omit<
 			AdapterConstructor,
 			'__query' | '__internalConstructor'
 		>,
-	) {
+	): Promise<PsqlAdapter<T>> {
 		const queryString = `
       CREATE TABLE IF NOT EXISTS "${opts.tableName}" (
         "key" VARCHAR NOT NULL,
@@ -70,7 +70,7 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 		});
 	}
 
-	private async findSession(key: string) {
+	private async findSession(key: string): Promise<DbOject> {
 		const results =
 			(await this.query(`select * from "${this.tableName}" where key = $1`, [key])) as DbOject[];
 		const session = results[0];
@@ -78,7 +78,7 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 		return session;
 	}
 
-	async read(key: string) {
+	async read(key: string): Promise<T | undefined> {
 		const session = await this.findSession(key);
 
 		if (!session) {
@@ -88,7 +88,7 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 		return JSON.parse(session.value as string) as T;
 	}
 
-	async write(key: string, value: T) {
+	async write(key: string, value: T): Promise<void> {
 		await this.query(
 			`
       INSERT INTO "${this.tableName}" (key, value)
@@ -98,7 +98,7 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 		);
 	}
 
-	async delete(key: string) {
+	async delete(key: string): Promise<void> {
 		await this.query(`delete from ${this.tableName} where key = $1`, [key]);
 	}
 }

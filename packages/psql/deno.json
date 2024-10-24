@@ -8,5 +8,5 @@
   "imports": {
     "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts",
     "postgres": "https://deno.land/x/postgres@v0.19.3/mod.ts"
-  }
+  },
 }

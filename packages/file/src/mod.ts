@@ -52,7 +52,7 @@ export class FileAdapter<T> implements StorageAdapter<T> {
 		}
 	}
 
-	async read(key: string) {
+	async read(key: string): Promise<T | undefined> {
 		const file = await this.findSessionFile(key);
 
 		if (!file) {
@@ -62,7 +62,7 @@ export class FileAdapter<T> implements StorageAdapter<T> {
 		return this.deserializer(file);
 	}
 
-	async write(key: string, value: T) {
+	async write(key: string, value: T): Promise<void> {
 		const fullPath = this.resolveSessionPath(key);
 		const fileName = `${key}.json`;
 		const folderPath = fullPath.substring(0, fullPath.length - fileName.length);
@@ -71,7 +71,7 @@ export class FileAdapter<T> implements StorageAdapter<T> {
 		await writeFile(fullPath, this.serializer(value));
 	}
 
-	async delete(key: string) {
+	async delete(key: string): Promise<void> {
 		try {
 			await unlink(this.resolveSessionPath(key));
 			// deno-lint-ignore no-empty

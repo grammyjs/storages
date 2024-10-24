@@ -43,7 +43,7 @@ export class PocketbaseAdapter<T> implements StorageAdapter<T> {
 		return data.items[0];
 	}
 
-	async read(key: string) {
+	async read(key: string): Promise<T | undefined> {
 		const res = await this.get(key);
 
 		if (!res) return undefined;
@@ -51,7 +51,7 @@ export class PocketbaseAdapter<T> implements StorageAdapter<T> {
 		return res.value as T;
 	}
 
-	async write(key: string, value: T) {
+	async write(key: string, value: T): Promise<void> {
 		const alreadyExists = await this.get(key);
 
 		if (alreadyExists) {
@@ -90,7 +90,7 @@ export class PocketbaseAdapter<T> implements StorageAdapter<T> {
 		}
 	}
 
-	async delete(key: string) {
+	async delete(key: string): Promise<void> {
 		const existingSession = await this.get(key);
 
 		if (!existingSession) return undefined;

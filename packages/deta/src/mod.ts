@@ -21,7 +21,7 @@ export class DetaAdapter<T> implements StorageAdapter<T> {
 		method: Method,
 		key: string,
 		body?: { items: T[] },
-	) {
+	): Promise<Response> {
 		const apiUrl = `${this.rootUrl}${key}`;
 		return await fetch(apiUrl, {
 			method: method,
