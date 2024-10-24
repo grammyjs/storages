@@ -1,16 +1,16 @@
-
-import { session } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
+import { session } from 'grammy';
 import { expect } from 'https://deno.land/x/expect@v0.4.0/mod.ts';
 import { FileAdapter } from '../src/mod.ts';
-import { fs, path } from '../src/deps.deno.ts';
 import { createMessage, createBot } from '../../../libs/utils/src/mod.ts';
+import path from 'node:path';
+import { existsSync } from 'node:fs';
 
 const dirPath = path.resolve(Deno.cwd(), 'sessions');
 const cleanDir = () => Deno.remove(dirPath, { recursive: true });
 
 Deno.test('Should create sessions dir', async () => {
   new FileAdapter({ dirName: 'sessions' });
-  expect(await fs.exists(dirPath)).toBe(true);
+  expect(existsSync(dirPath)).toBe(true);
 
   await cleanDir();
 });
