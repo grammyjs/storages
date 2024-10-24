@@ -15,7 +15,7 @@
   "scripts": {
     "test:deno": "echo \"Error: no tests found\"",
     "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && pnpm postbuild",
     "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
   },
   "repository": {
@@ -35,7 +35,10 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/firestore#readme",
   "devDependencies": {
-    "@google-cloud/firestore": "^6.6.0"
+    "@google-cloud/firestore": "^7.10.0"
+  },
+  "peerDependencies": {
+    "@google-cloud/firestore": "^7.10.0"
   },
   "keywords": [
     "grammy",
