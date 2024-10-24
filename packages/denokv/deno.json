@@ -6,6 +6,6 @@
     "test": "deno test --allow-read --allow-write --allow-import --unstable --unstable-kv ./__tests__/deno/session.test.ts"
   },
   "imports": {
-    "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts"
+    "grammy": "npm:grammy@^1.30.0"
   }
 }

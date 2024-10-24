@@ -6,7 +6,7 @@
     "test": "deno test --unstable --no-check --allow-net --allow-import --allow-env --allow-read --allow-sys --allow-write ./__tests__/deno/deno.ts"
   },
   "imports": {
-    "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts",
+    "grammy": "npm:grammy@^1.30.0",
     "mongodb": "npm:mongodb@6.10.0"
   }
 }

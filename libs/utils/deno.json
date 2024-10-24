@@ -2,6 +2,6 @@
   "name": "@grammyjs/storage-utils",
   "exports": "./src/mod.ts",
   "imports": {
-    "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts"
+    "grammy": "npm:grammy@^1.30.0"
   }
 }
