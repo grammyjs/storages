@@ -88,6 +88,12 @@ pnpm test
 ## Linting
 
 ```
-pnpm lint
+deno lint
+```
+
+## Formatting
+
+```
+deno fmt
 ```
 

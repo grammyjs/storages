@@ -6,10 +6,6 @@
   "scripts": {
     "build": "lerna run build",
     "test": "lerna run test",
-    "test:deno": "lerna run test:deno",
-    "dev": "lerna run dev --parallel",
-    "lint": "eslint --ext .ts \"packages/\" \"libs/\"",
-    "lint:fix": "eslint --fix --ext .ts \"packages/\" \"libs/\"",
     "prepublish": "pnpm build",
     "publish": "lerna publish --no-private"
   },
