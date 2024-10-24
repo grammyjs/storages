@@ -5,5 +5,12 @@
   "imports": {
     "grammy": "npm:grammy@^1.30.0"
   },
-  "license": "./LICENSE"
+  "publish": {
+    "include": [
+      "src",
+      "CHANGELOG.md",
+      "deno.json",
+      "README.md"
+    ]
+  }
 }

@@ -8,5 +8,13 @@
   "imports": {
     "grammy": "npm:grammy@^1.30.0",
     "mongodb": "npm:mongodb@6.10.0"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "CHANGELOG.md",
+      "deno.json",
+      "README.md"
+    ]
   }
 }

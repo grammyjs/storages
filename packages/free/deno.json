@@ -4,5 +4,13 @@
   "version": "2.4.2",
   "imports": {
     "grammy": "npm:grammy@^1.30.0"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "CHANGELOG.md",
+      "deno.json",
+      "README.md"
+    ]
   }
 }

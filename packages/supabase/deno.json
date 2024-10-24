@@ -4,5 +4,13 @@
   "version": "2.4.2",
   "imports": {
     "@supabase/supabase-js": "jsr:@supabase/supabase-js@^2.45.6"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "CHANGELOG.md",
+      "deno.json",
+      "README.md"
+    ]
   }
 }
