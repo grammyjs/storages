@@ -2,6 +2,8 @@
   "name": "@grammyjs/storage-utils",
   "private": true,
   "main": "./src/mod.ts",
+  "exports": "./src/mod.ts",
+  "type": "module",
   "version": "2.4.2",
   "scripts": {
     "test:deno": "echo \"Error: no tests specified\"",

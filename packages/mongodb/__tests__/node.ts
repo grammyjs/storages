@@ -1,78 +1,78 @@
-import test from 'node:test';
+import test, {} from 'node:test';
 import assert from 'node:assert';
 
 import { session } from 'grammy';
-import { MongoClient, Collection } from 'mongodb';
+import { Collection, MongoClient } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 
-
-import { ISession, MongoDBAdapter } from '../dist/cjs/mod';
+import { ISession, MongoDBAdapter } from '../src/mod.ts';
 
 let mongod: MongoMemoryServer;
 let client: MongoClient;
 let collection: Collection<ISession>;
 
-async function createMongoServer() {
-  mongod = await MongoMemoryServer.create();
-  client = new MongoClient(`${mongod.getUri()}/testdb`);
-  await client.connect();
-  collection = client.db('testdb').collection('sessions');
-}
+test.describe('test MongoDBAdapter', () => {
+	test.before(async () => {
+		mongod = await MongoMemoryServer.create();
+		client = new MongoClient(`${mongod.getUri()}/testdb`);
+		collection = client.db('testdb').collection('sessions');
 
-async function stopMongoServer() {
-  await client.close();
-  await mongod.stop();
-}
+		await client.connect();
+	});
 
-test('Pizza counter test', async () => {
-  await createMongoServer();
+	test.after(async () => {
+		await client.close();
+		await mongod.stop();
+	});
 
-  const bot = createBot();
+	test.beforeEach(async () => {
+		if (collection) {
+			await collection.deleteMany({});
+		}
+	});
 
-  bot.use(session({
-    initial: () => ({ pizzaCount: 0 }),
-    storage: new MongoDBAdapter({ collection }),
-  }));
+	test.it('Pizza counter test', async () => {
+		const bot = createBot();
 
-  bot.hears('first', (ctx) => {
-    assert.equal(ctx.session.pizzaCount, 0);
-    ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
-  });
-  
-  bot.hears('second', (ctx) => {
-    assert.equal(ctx.session.pizzaCount, 1);
-  });
-  
-  await bot.handleUpdate(createMessage(bot, 'first').update);
-  await bot.handleUpdate(createMessage(bot, 'second').update);
+		bot.use(session({
+			initial: () => ({ pizzaCount: 0 }),
+			storage: new MongoDBAdapter({ collection }),
+		}));
 
-  await stopMongoServer();
-});
+		bot.hears('first', (ctx) => {
+			assert.equal(ctx.session.pizzaCount, 0);
+			ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
+		});
 
-test('Test storing of simple string', async () => {
-  await createMongoServer();
+		bot.hears('second', (ctx) => {
+			assert.equal(ctx.session.pizzaCount, 1);
+		});
 
-  const bot = createBot(false);
+		await bot.handleUpdate(createMessage(bot, 'first').update);
+		await bot.handleUpdate(createMessage(bot, 'second').update);
+	});
 
-  bot.use(session({
-    initial() {
-      return 'test';
-    },
-    storage: new MongoDBAdapter({ collection }),
-  }));
+	test.it('Test storing of simple string', async () => {
+		const bot = createBot(false);
 
-  bot.hears('first', async (ctx) => {
-    assert.equal(ctx.session, 'test');
-    ctx.session = `${ctx.session} edited`;
-  });
-  
-  bot.hears('second', async (ctx) => {
-    assert.equal(ctx.session, 'test edited');
-  });
-  
-  await bot.handleUpdate(createMessage(bot, 'first').update);
-  await bot.handleUpdate(createMessage(bot, 'second').update);
+		bot.use(session({
+			initial() {
+				return 'test';
+			},
+			storage: new MongoDBAdapter({ collection }),
+		}));
 
-  await stopMongoServer();
+		bot.hears('first', async (ctx) => {
+			assert.equal(ctx.session, 'test');
+			ctx.session = `${ctx.session} edited`;
+		});
+
+		bot.hears('second', async (ctx) => {
+			assert.equal(ctx.session, 'test edited');
+		});
+
+		await bot.handleUpdate(createMessage(bot, 'first').update);
+		await bot.handleUpdate(createMessage(bot, 'second').update);
+	});
 });
