@@ -7,23 +7,32 @@ on:
 
 jobs:
   node-tests:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 18.x
-      - run: npm i -g pnpm
-      - name: install dependencies
-        run: pnpm install 
+          version: 9
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: build
         run: pnpm run build
       - name: tests
         run: pnpm run test
+
+
   deno-tests:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
     services:
       mongodb:
@@ -47,15 +56,11 @@ jobs:
         ports:
           - 5432:5432
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Deno
-        uses: maximousblk/setup-deno@v2
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v2
         with:
-          node-version: 18.x
-      - run: npm i -g pnpm
-      - run: pnpm install
-      - run: pnpm build
+          deno-version: v2.x
+
       - name: tests
-        run: pnpm run test:deno
+        run: deno task test
