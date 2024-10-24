@@ -127,8 +127,8 @@ importers:
         specifier: ^8.11.2
         version: 8.11.2
       grammy:
-        specifier: ^1.21.1
-        version: 1.21.1(encoding@0.1.13)
+        specifier: ^1.30.0
+        version: 1.30.0(encoding@0.1.13)
       pg:
         specifier: ^8.11.3
         version: 8.11.3

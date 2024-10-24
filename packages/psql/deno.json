@@ -1,0 +1,12 @@
+{
+  "name": "@grammyjs/storage-psql",
+  "exports": "./src/mod.ts",
+  "version": "2.4.2",
+  "tasks": {
+    "test": "deno test ./__tests__/deno.ts --unstable --no-check --allow-net --allow-import --allow-env"
+  },
+  "imports": {
+    "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts",
+    "postgres": "https://deno.land/x/postgres@v0.19.3/mod.ts"
+  }
+}
