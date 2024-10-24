@@ -19,7 +19,6 @@
   ],
   "scripts": {
     "test": "tsx __tests__/node.ts",
-    "test:deno": "deno test --allow-import --allow-write --no-check --allow-read --unstable ./__tests__/deno.ts",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && pnpm postbuild",
     "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist",

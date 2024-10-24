@@ -1,6 +1,9 @@
 {
   "name": "@grammyjs/storage-file",
   "exports": "./src/mod.ts",
+  "tasks": {
+    "test": "deno test --allow-import --allow-write --no-check --allow-read --unstable ./__tests__/deno.ts"
+  },
   "imports": {
     "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts"
   }
