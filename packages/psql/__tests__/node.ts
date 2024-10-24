@@ -6,7 +6,7 @@ import pg from 'pg';
 import { session } from 'grammy';
 import * as utils from '@grammyjs/storage-utils';
 
-test.describe('Tests', (it) => {
+test.describe('Tests', () => {
 	const client = new pg.Client({
 		user: 'postgres',
 		password: 'postgres',
