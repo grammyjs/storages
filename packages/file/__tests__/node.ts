@@ -10,20 +10,31 @@ import { rm as remove } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 
 const dirPath = resolve(cwd(), 'sessions');
-const cleanDir = async () => {
-	await remove(dirPath, { recursive: true });
-};
+
+async function cleanDir() {
+	try {
+		await remove(dirPath, { recursive: true });
+	} catch (e: any) {
+		if (e.code !== 'ENOENT') {
+			throw e;
+		}
+	}
+}
+
+test.beforeEach(async () => {
+	await cleanDir();
+});
+
+test.after(async () => {
+	await cleanDir();
+});
 
 test('Should create sessions dir', async () => {
-	await cleanDir();
-
 	new FileAdapter({ dirName: 'sessions' });
 	assert.ok(existsSync(dirPath));
 });
 
 test('Pizza counter tests', async () => {
-	await cleanDir();
-
 	const bot = createBot();
 
 	bot.use(session({
@@ -46,8 +57,6 @@ test('Pizza counter tests', async () => {
 });
 
 test('Simple string tests', async () => {
-	await cleanDir();
-
 	const bot = createBot(false);
 
 	bot.use(session({

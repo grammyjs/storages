@@ -2,8 +2,12 @@
   "version": "4",
   "specifiers": {
     "jsr:@lucsoft/web-bson@~0.3.1": "0.3.1",
+    "jsr:@std/assert@^1.0.6": "1.0.6",
     "jsr:@std/crypto@~0.220.1": "0.220.1",
     "jsr:@std/encoding@~0.220.1": "0.220.1",
+    "jsr:@std/expect@*": "1.0.5",
+    "jsr:@std/internal@^1.0.4": "1.0.4",
+    "jsr:@std/testing@*": "1.0.3",
     "npm:@supabase/supabase-js@^1.24.0": "1.35.7",
     "npm:@types/ioredis@5": "5.0.0",
     "npm:@types/node@^20.11.22": "20.17.0",
@@ -26,11 +30,34 @@
     "@lucsoft/web-bson@0.3.1": {
       "integrity": "dccad36fe5cc68286a4d3fe1993f7e7a81df0970c5946a5894dae9173adafe60"
     },
+    "@std/assert@1.0.6": {
+      "integrity": "1904c05806a25d94fe791d6d883b685c9e2dcd60e4f9fc30f4fc5cf010c72207",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
     "@std/crypto@0.220.1": {
       "integrity": "4cec173974f33398041a3f66cc2f9b2fcc4a5ceaddd0e60840887d3bb7289d23"
     },
     "@std/encoding@0.220.1": {
       "integrity": "8dc38dd72e36cd68857a5837e24eb09a64bb296b96c295239c75eec17d45d23f"
+    },
+    "@std/expect@1.0.5": {
+      "integrity": "8c7ac797e2ffe57becc6399c0f2fd06230cb9ef124d45229c6e592c563824af1",
+      "dependencies": [
+        "jsr:@std/assert",
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.4": {
+      "integrity": "62e8e4911527e5e4f307741a795c0b0a9e6958d0b3790716ae71ce085f755422"
+    },
+    "@std/testing@1.0.3": {
+      "integrity": "f98c2bee53860a5916727d7e7d3abe920dd6f9edace022e2d059f00d05c2cf42",
+      "dependencies": [
+        "jsr:@std/assert",
+        "jsr:@std/internal"
+      ]
     }
   },
   "npm": {
@@ -4007,7 +4034,6 @@
       },
       "packages/mongodb": {
         "dependencies": [
-          "npm:mongodb-memory-server@10.1.2",
           "npm:mongodb@6.10.0"
         ],
         "packageJson": {

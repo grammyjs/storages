@@ -1,5 +1,6 @@
 import { session } from 'grammy';
-import { expect } from 'https://deno.land/x/expect@v0.4.0/mod.ts';
+import { test } from 'jsr:@std/testing/bdd';
+import { expect } from 'jsr:@std/expect';
 import { FileAdapter } from '../src/mod.ts';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 import path from 'node:path';
@@ -9,14 +10,14 @@ import { rm as remove } from 'node:fs/promises';
 const dirPath = path.resolve(Deno.cwd(), 'sessions');
 const cleanDir = () => remove(dirPath, { recursive: true });
 
-Deno.test('Should create sessions dir', async () => {
+test('Should create sessions dir', async () => {
 	new FileAdapter({ dirName: 'sessions' });
 	expect(existsSync(dirPath)).toBe(true);
 
 	await cleanDir();
 });
 
-Deno.test('Pizza counter tests', async () => {
+test('Pizza counter tests', async () => {
 	const bot = createBot();
 
 	bot.use(session({
@@ -39,7 +40,7 @@ Deno.test('Pizza counter tests', async () => {
 	await cleanDir();
 });
 
-Deno.test('Simple string tests', async () => {
+test('Simple string tests', async () => {
 	const bot = createBot(false);
 
 	bot.use(session({
