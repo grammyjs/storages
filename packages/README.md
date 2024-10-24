@@ -80,10 +80,7 @@ pnpm build
 > [!NOTE]
 > All tests for Deno should be placed in `packages/*/__tests__/deno` directory.
 
-```
-pnpm test
-```
-
+All testing processed via github actions, because it depends on `mongodb` and `postgres` services. Maybe layter we'll add docker tests locally.
 
 ## Linting
 
