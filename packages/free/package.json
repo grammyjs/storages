@@ -15,7 +15,7 @@
   "scripts": {
     "test:deno": "echo \"Error: no tests found\"",
     "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "build": "tsc -b tsconfig.cjs.json && tsc -b tsconfig.esm.json && pnpm postbuild",
     "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
   },
   "repository": {
@@ -34,12 +34,6 @@
     "url": "https://github.com/grammyjs/storages/issues"
   },
   "homepage": "https://github.com/grammyjs/storages/packages/free#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.6"
-  },
-  "devDependencies": {
-    "@types/node-fetch": "^2.6.11"
-  },
   "keywords": [
     "grammy",
     "telegram",

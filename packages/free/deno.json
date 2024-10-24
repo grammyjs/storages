@@ -1,0 +1,5 @@
+{
+  "name": "@grammyjs/storage-free",
+  "exports": "./src/mod.ts",
+  "version": "2.4.2"
+}
