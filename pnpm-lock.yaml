@@ -48,8 +48,6 @@ importers:
         specifier: ^3.82.0
         version: 3.82.0(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@6.0.4)
 
-  packages/denodb: {}
-
   packages/deta:
     devDependencies:
       grammy:
@@ -71,7 +69,11 @@ importers:
         specifier: ^7.10.0
         version: 7.10.0(encoding@0.1.13)
 
-  packages/free: {}
+  packages/free:
+    devDependencies:
+      grammy:
+        specifier: ^1.30.0
+        version: 1.30.0(encoding@0.1.13)
 
   packages/mongodb:
     devDependencies:

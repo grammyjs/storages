@@ -44,5 +44,11 @@
     "middleware",
     "free"
   ],
-  "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
+  "gitHead": "a7758c4f957f103a14832088c6858d693c444576",
+  "devDependencies": {
+    "grammy": "^1.30.0"
+  },
+  "peerDependencies": {
+    "grammy": "^1.30.0"
+  }
 }
