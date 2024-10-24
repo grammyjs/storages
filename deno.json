@@ -1,6 +1,8 @@
 {
+  "tasks": {
+    "test": "deno test --allow-all ./packages/*/__tests__/deno/*.ts"
+  },
   "workspace": [
-    "./packages/denodb",
     "./packages/denokv",
     "./packages/deta",
     "./packages/file",

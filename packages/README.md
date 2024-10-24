@@ -77,6 +77,9 @@ pnpm build
 
 ## Testing
 
+> [!NOTE]
+> All tests for Deno should be placed in `packages/*/__tests__/deno` directory.
+
 ```
 pnpm test
 ```

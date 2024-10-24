@@ -1,7 +1,7 @@
 import { session } from 'grammy';
 import { test } from 'jsr:@std/testing/bdd';
 import { expect } from 'jsr:@std/expect';
-import { PsqlAdapter } from '../src/mod.ts';
+import { PsqlAdapter } from '../../src/mod.ts';
 import { Client } from 'postgres';
 import * as utils from '@grammyjs/storage-utils';
 

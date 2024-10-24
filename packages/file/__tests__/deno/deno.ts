@@ -1,29 +1,38 @@
-import { Collection, MongoClient } from 'mongodb';
-import { test } from 'jsr:@std/testing/bdd';
-import { expect } from 'jsr:@std/expect';
 import { session } from 'grammy';
+import { beforeEach, test } from 'jsr:@std/testing/bdd';
+import { expect } from 'jsr:@std/expect';
+import { FileAdapter } from '../../src/mod.ts';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
-import { MongoDBAdapter } from '../src/mod.ts';
+import path from 'node:path';
+import { existsSync } from 'node:fs';
+import { rm as remove } from 'node:fs/promises';
 
-const createMongoClient = async () => {
-	const client = new MongoClient(`mongodb://localhost:27017/testdb `);
-	await client.connect();
+const dirPath = path.resolve(Deno.cwd(), 'sessions');
+async function cleanDir() {
+	try {
+		await remove(dirPath, { recursive: true });
+	} catch (e: any) {
+		if (e.code !== 'ENOENT') {
+			throw e;
+		}
+	}
+}
 
-	return client;
-};
+beforeEach(async () => {
+	await cleanDir();
+});
 
-const clearCollection = (col: Collection<any>) => col.deleteMany({});
+test('Should create sessions dir', async () => {
+	new FileAdapter({ dirName: 'sessions' });
+	expect(existsSync(dirPath)).toBe(true);
+});
 
 test('Pizza counter tests', async () => {
-	const client = await createMongoClient();
-	const db = client.db('testdb');
-	const collection = db.collection<any>('sessions');
-
 	const bot = createBot();
 
 	bot.use(session({
 		initial: () => ({ pizzaCount: 0 }),
-		storage: new MongoDBAdapter({ collection }),
+		storage: new FileAdapter({ dirName: 'sessions' }),
 	}));
 
 	bot.hears('first', (ctx) => {
@@ -37,23 +46,14 @@ test('Pizza counter tests', async () => {
 
 	await bot.handleUpdate(createMessage(bot, 'first').update);
 	await bot.handleUpdate(createMessage(bot, 'second').update);
-
-	await clearCollection(collection);
-	client.close();
 });
 
 test('Simple string tests', async () => {
-	const client = await createMongoClient();
-	const db = client.db('testdb');
-	const collection = db.collection<any>('sessions');
-
 	const bot = createBot(false);
 
 	bot.use(session({
-		initial() {
-			return 'test';
-		},
-		storage: new MongoDBAdapter({ collection }),
+		initial: () => 'test',
+		storage: new FileAdapter({ dirName: 'sessions' }),
 	}));
 
 	bot.hears('first', async (ctx) => {
@@ -66,7 +66,4 @@ test('Simple string tests', async () => {
 
 	await bot.handleUpdate(createMessage(bot, 'first').update);
 	await bot.handleUpdate(createMessage(bot, 'second').update);
-
-	await clearCollection(collection);
-	client.close();
 });

@@ -1,4 +1,4 @@
-import { DenoKVAdapter } from '../src/adapter.ts';
+import { DenoKVAdapter } from '../../src/adapter.ts';
 import { session } from 'grammy';
 import { test } from 'jsr:@std/testing/bdd';
 import { expect } from 'jsr:@std/expect';

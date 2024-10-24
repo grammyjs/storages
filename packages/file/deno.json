@@ -3,7 +3,7 @@
   "exports": "./src/mod.ts",
   "version": "2.4.2",
   "tasks": {
-    "test": "deno test --allow-import --allow-write --no-check --allow-read --unstable ./__tests__/deno.ts"
+    "test": "deno test --allow-import --allow-write --no-check --allow-read --unstable ./__tests__/deno/deno.ts"
   },
   "imports": {
     "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts"
