@@ -120,6 +120,8 @@ function buildQueryRunner(client: Client) {
 			return rows;
 		};
 	} else {
-		throw new Error('Unknown client passed');
+		throw new Error(
+			'Unknown postgres client passed, please refer to docs for check supported clients.',
+		);
 	}
 }
