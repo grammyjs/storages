@@ -1,0 +1,11 @@
+{
+  "name": "@grammyjs/storages-denokv",
+  "version": "2.4.2",
+  "exports": "./src/mod.ts",
+  "tasks": {
+    "test": "deno test --allow-read --allow-write --allow-import --unstable --unstable-kv ./test/session.test.ts"
+  },
+  "imports": {
+    "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts"
+  }
+}

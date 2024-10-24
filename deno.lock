@@ -60,13 +60,8 @@
     "packageJson": {
       "dependencies": [
         "npm:@types/node@^20.11.22",
-        "npm:@typescript-eslint/eslint-plugin@^7.1.0",
-        "npm:@typescript-eslint/parser@^7.1.0",
         "npm:deno2node@^1.11.0",
-        "npm:eslint@^8.57.0",
-        "npm:husky@^9.0.11",
         "npm:lerna@^8.1.2",
-        "npm:lint-staged@^15.2.2",
         "npm:prettier@^3.2.5",
         "npm:rimraf@^5.0.5",
         "npm:tsx@^4.7.1",

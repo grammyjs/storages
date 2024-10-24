@@ -1,6 +1,7 @@
 {
   "workspace": [
     "./packages/denodb",
+    "./packages/denokv",
     "./packages/deta",
     "./packages/file",
     "./packages/free",
