@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "es6",
+    "outDir": "./dist/esm"
+  },
+  "deno2node": {
+    "shim": "./src/shim.node.ts"
+  }
+}

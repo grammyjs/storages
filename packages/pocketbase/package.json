@@ -2,8 +2,15 @@
 	"name": "@grammyjs/storage-pocketbase",
 	"version": "0.2.0",
 	"description": "Pocketbase storage adapter for grammY",
-	"types": "dist/index.d.ts",
-	"main": "dist/index.js",
+	"main": "./dist/cjs/index.js",
+	"module": "./dist/esm/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.js",
+			"require": "./dist/cjs/index.js"
+		}
+	},
+	"types": "./dist/esm/index.d.ts",
 	"files": [
 		"README.md",
 		"dist",
@@ -12,7 +19,8 @@
 	],
 	"scripts": {
 		"start": "node dist/index.js",
-		"build": "tsc -p tsconfig.build.json"
+		"build": "tsc -b tsconfig.cjs.json && tsc -b tsconfig.esm.json && pnpm postbuild",
+		"postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
 	},
 	"repository": {
 		"type": "git",
@@ -34,11 +42,12 @@
 		"middleware",
 		"pocketbase"
 	],
-	"dependencies": {
-		"pocketbase": "^0.21.1"
-	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
-		"grammy": "^1.21.1"
+		"grammy": "^1.30.0",
+		"pocketbase": "^0.21.5"
+	},
+	"peerDependencies": {
+		"pocketbase": "^0.21.5"
 	}
 }
