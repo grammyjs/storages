@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "test": "deno test --allow-all ./packages/*/__tests__/deno/*.ts"
+    "test": "deno test --allow-all --unstable --unstable-kv ./packages/*/__tests__/deno/*.ts"
   },
   "workspace": [
     "./packages/denokv",
