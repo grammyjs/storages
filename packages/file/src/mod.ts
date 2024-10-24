@@ -1,4 +1,8 @@
-import { cwd, fs, path, StorageAdapter } from './deps.deno.ts';
+import { StorageAdapter } from 'grammy';
+import { cwd } from 'node:process';
+import { mkdirSync } from 'node:fs';
+import { mkdir, readFile, unlink, writeFile } from 'node:fs/promises';
+import path from 'node:path';
 
 type Serializer<Session> = (input: Session) => string;
 type Deserializer<Session> = (input: string) => Session;
@@ -32,7 +36,7 @@ export class FileAdapter<T> implements StorageAdapter<T> {
     this.deserializer = opts.deserializer ??
       ((input) => JSON.parse(input));
 
-    fs.ensureDirSync(this.folderPath);
+    mkdirSync(this.folderPath, { recursive: true });
   }
 
   private resolveSessionPath(key: string) {
@@ -42,7 +46,7 @@ export class FileAdapter<T> implements StorageAdapter<T> {
 
   private async findSessionFile(key: string) {
     try {
-      return await fs.readFile(this.resolveSessionPath(key));
+      return await readFile(this.resolveSessionPath(key), { encoding: 'utf8' });
     } catch {
       return null;
     }
@@ -63,13 +67,14 @@ export class FileAdapter<T> implements StorageAdapter<T> {
     const fileName = `${key}.json`;
     const folderPath = fullPath.substring(0, fullPath.length - fileName.length);
 
-    await fs.ensureDir(folderPath);
-    await fs.writeFile(fullPath, this.serializer(value));
+    await mkdir(folderPath, { recursive: true });
+    await writeFile(fullPath, this.serializer(value));
   }
 
   async delete(key: string) {
     try {
-      await fs.remove(this.resolveSessionPath(key));
-    } catch {}
+      await unlink(this.resolveSessionPath(key));
+    // deno-lint-ignore no-empty
+    } catch { /* empty */ }
   }
 }

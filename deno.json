@@ -1,0 +1,12 @@
+{
+  "workspace": [
+    "./packages/denodb",
+    "./packages/deta",
+    "./packages/file",
+    "./packages/free",
+    "./packages/mongodb",
+    "./packages/psql",
+    "./packages/redis",
+    "./packages/supabase"
+  ]
+}
