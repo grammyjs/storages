@@ -1,14 +1,20 @@
 import test from 'node:test';
 import * as assert from 'node:assert';
 
-import { newDb } from 'pg-mem';
 import { PsqlAdapter } from '../src/mod.ts';
+import pg from 'pg';
 import { session } from 'grammy';
 import * as utils from '@grammyjs/storage-utils';
 
 test('Pizza counter test', async () => {
 	const bot = utils.createBot();
-	const client = new (newDb().adapters.createPg().Client)();
+	const client = new pg.Client({
+		user: 'postgres',
+		password: 'postgres',
+		database: 'postgres',
+		host: 'localhost',
+		port: 5432,
+	});
 
 	bot.use(session({
 		initial: () => ({ pizzaCount: 0 }),
