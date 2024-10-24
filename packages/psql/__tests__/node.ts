@@ -6,15 +6,20 @@ import pg from 'pg';
 import { session } from 'grammy';
 import * as utils from '@grammyjs/storage-utils';
 
+const client = new pg.Client({
+	user: 'postgres',
+	password: 'postgres',
+	database: 'postgres',
+	host: 'localhost',
+	port: 5432,
+});
+
+test.after(async () => {
+	await client.end();
+});
+
 test('Pizza counter test', async () => {
 	const bot = utils.createBot();
-	const client = new pg.Client({
-		user: 'postgres',
-		password: 'postgres',
-		database: 'postgres',
-		host: 'localhost',
-		port: 5432,
-	});
 
 	bot.use(session({
 		initial: () => ({ pizzaCount: 0 }),
@@ -35,7 +40,13 @@ test('Pizza counter test', async () => {
 });
 
 test('Should be changed', async () => {
-	const client = new (newDb().adapters.createPg().Client)();
+	const client = new pg.Client({
+		user: 'postgres',
+		password: 'postgres',
+		database: 'postgres',
+		host: 'localhost',
+		port: 5432,
+	});
 	const bot = utils.createBot(false);
 
 	bot.use(session({
