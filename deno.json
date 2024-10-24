@@ -9,6 +9,7 @@
     "./packages/psql",
     "./packages/redis",
     "./packages/supabase",
+    "./packages/pocketbase",
     "./libs/utils"
   ],
   "fmt": {
