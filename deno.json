@@ -12,6 +12,9 @@
     "./packages/pocketbase",
     "./libs/utils"
   ],
+  "exclude": [
+    "./**/examples/*.ts"
+  ],
   "fmt": {
     "useTabs": false,
     "lineWidth": 100,
