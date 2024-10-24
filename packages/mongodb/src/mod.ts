@@ -1,10 +1,19 @@
-import { type Collection } from 'mongodb';
 import { type StorageAdapter } from 'grammy';
 
 export interface ISession {
 	_id: { $oid: string };
 	key: string;
 	value: unknown;
+}
+
+interface Collection<T> {
+	findOne(filter: { key: string }): Promise<T | null>;
+	updateOne(
+		filter: { key: string },
+		update: { $set: { key: string; value: unknown } },
+		opts: { upsert: true },
+	): Promise<any>;
+	deleteOne(filter: { key: string }): Promise<any>;
 }
 
 export class MongoDBAdapter<T> implements StorageAdapter<T> {

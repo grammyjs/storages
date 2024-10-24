@@ -1,10 +1,20 @@
 import { Collection, MongoClient } from 'mongodb';
-import { expect } from 'https://deno.land/x/expect@v0.4.0/mod.ts';
+import { test } from 'jsr:@std/testing/bdd';
+import { expect } from 'jsr:@std/expect';
 import { session } from 'grammy';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 import { MongoDBAdapter } from '../src/mod.ts';
 
-Deno.test('Pizza counter tests', async () => {
+const createMongoClient = async () => {
+	const client = new MongoClient(`mongodb://localhost:27017/testdb `);
+	await client.connect();
+
+	return client;
+};
+
+const clearCollection = (col: Collection<any>) => col.deleteMany({});
+
+test('Pizza counter tests', async () => {
 	const client = await createMongoClient();
 	const db = client.db('testdb');
 	const collection = db.collection<any>('sessions');
@@ -32,7 +42,7 @@ Deno.test('Pizza counter tests', async () => {
 	client.close();
 });
 
-Deno.test('Simple string tests', async () => {
+test('Simple string tests', async () => {
 	const client = await createMongoClient();
 	const db = client.db('testdb');
 	const collection = db.collection<any>('sessions');
@@ -60,15 +70,3 @@ Deno.test('Simple string tests', async () => {
 	await clearCollection(collection);
 	client.close();
 });
-
-const createMongoClient = async () => {
-	const client = new MongoClient();
-	await client.connect({
-		servers: [{ host: 'localhost', port: 27017 }],
-		db: 'testdb',
-	});
-
-	return client;
-};
-
-const clearCollection = (col: Collection<any>) => col.deleteMany({});
