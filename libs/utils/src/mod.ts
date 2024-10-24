@@ -1,4 +1,4 @@
-import * as Deps from './deps.deno.ts';
+import { Context, type SessionFlavor, Bot } from 'grammy';
 
 interface JsonSessionData {
   pizzaCount: number;
@@ -9,11 +9,11 @@ interface StringSessionFlavor {
   set session(session: string | null | undefined);
 }
 
-type JsonBot = Deps.Context & Deps.SessionFlavor<JsonSessionData>
-type StringBot = Deps.Context & StringSessionFlavor
+type JsonBot = Context & SessionFlavor<JsonSessionData>
+type StringBot = Context & StringSessionFlavor
 
-export function createBot(json?: true): Deps.Bot<JsonBot>
-export function createBot(json?: false): Deps.Bot<StringBot>
+export function createBot(json?: true): Bot<JsonBot>
+export function createBot(json?: false): Bot<StringBot>
 export function createBot(json = true) {
   const botInfo = {
     id: 42,
@@ -23,21 +23,23 @@ export function createBot(json = true) {
     can_join_groups: true,
     can_read_all_group_messages: true,
     supports_inline_queries: false,
+    can_connect_to_business: false,
+    has_main_web_app: false,
   };
 
   if (json) {
-    return new Deps.Bot<JsonBot>('fake-token', { botInfo });
+    return new Bot<JsonBot>('fake-token', { botInfo });
   } else {
-    return new Deps.Bot<StringBot>('fake-token', { botInfo });
+    return new Bot<StringBot>('fake-token', { botInfo });
   }
 }
 
-export function createMessage(bot: Deps.Bot<any>, text = 'Test Text') {
+export function createMessage(bot: Bot<any>, text = 'Test Text') {
   const createRandomNumber = () => Math.floor(Math.random() * (123456789 - 1) + 1);
 
-  const ctx = new Deps.Context({ 
-    update_id: createRandomNumber(), 
-    message: { 
+  const ctx = new Context({
+    update_id: createRandomNumber(),
+    message: {
       text,
       message_id: createRandomNumber(),
       chat: { 
