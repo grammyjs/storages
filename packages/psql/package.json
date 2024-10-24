@@ -19,9 +19,8 @@
   ],
   "scripts": {
     "test": "tsx __tests__/node.ts",
-    "test:deno": "deno test ./__tests__/deno.ts --unstable --no-check --allow-net",
     "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "build": "tsc -b tsconfig.cjs.json && tsc -b tsconfig.esm.json && pnpm postbuild",
     "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
   },
@@ -36,11 +35,13 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/psql#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.4.2",
+    "@grammyjs/storage-utils": "workspace:*",
     "@types/pg": "^8.11.2",
-    "grammy": "^1.21.1",
-    "pg": "^8.11.3",
-    "pg-mem": "^2.8.1"
+    "grammy": "^1.30.0",
+    "pg": "^8.11.3"
   },
-  "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
+  "gitHead": "a7758c4f957f103a14832088c6858d693c444576",
+  "peerDependencies": {
+    "grammy": "^1.30.0"
+  }
 }

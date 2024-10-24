@@ -12,11 +12,9 @@
     "LICENSE"
   ],
   "scripts": {
-    "test:deno": "echo \"Error: no tests found\"",
     "test": "vitest",
     "start": "node dist/index.js",
     "dev": "nodemon",
-    "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
@@ -32,14 +30,17 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/typeorm#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.4.2",
-    "better-sqlite3": "^9.4.3",
-    "grammy": "^1.21.1",
-    "mongodb": "^6.3.0",
-    "mongodb-memory-server": "^9.1.6",
+    "@grammyjs/storage-utils": "workspace:*",
+    "better-sqlite3": "^11.5.0",
+    "grammy": "^1.30.0",
+    "mongodb": "^6.10.0",
     "typeorm": "^0.3.20",
-    "vite": "^5.1.4",
-    "vitest": "^1.3.1"
+    "vite": "^5.4.10",
+    "vitest": "^2.1.3"
   },
-  "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
+  "gitHead": "a7758c4f957f103a14832088c6858d693c444576",
+  "peerDependencies": {
+    "grammy": "^1.30.0",
+    "typeorm": "^0.3.20"
+  }
 }

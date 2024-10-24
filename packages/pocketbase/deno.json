@@ -1,0 +1,17 @@
+{
+  "name": "@grammyjs/storage-pocketbase",
+  "exports": "./src/index.ts",
+  "version": "0.2.0",
+  "imports": {
+    "grammy": "npm:grammy@^1.30.0",
+    "pocketbase": "npm:pocketbase@0.21.5"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "CHANGELOG.md",
+      "deno.json",
+      "README.md"
+    ]
+  }
+}

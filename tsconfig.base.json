@@ -6,12 +6,12 @@
       "ES2019"
     ],
     "declaration": true,
-    "strict": false,
+    "strict": true,
     "esModuleInterop": true,
     "inlineSourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules"

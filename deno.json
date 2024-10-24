@@ -1,0 +1,39 @@
+{
+  "tasks": {
+    "test": "deno test --allow-all --unstable --unstable-kv ./packages/*/__tests__/deno/*.ts"
+  },
+  "workspace": [
+    "./packages/denokv",
+    "./packages/deta",
+    "./packages/file",
+    "./packages/free",
+    "./packages/mongodb",
+    "./packages/psql",
+    "./packages/redis",
+    "./packages/supabase",
+    "./packages/pocketbase",
+    "./libs/utils"
+  ],
+  "exclude": [
+    "./**/examples/*.ts"
+  ],
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": true,
+    "proseWrap": "preserve",
+    "include": [
+      "./**/*.ts"
+    ]
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    },
+    "include": [
+      "./**/*.ts"
+    ]
+  }
+}

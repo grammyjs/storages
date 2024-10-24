@@ -1,0 +1,20 @@
+{
+  "name": "@grammyjs/storage-mongodb",
+  "exports": "./src/mod.ts",
+  "version": "2.4.2",
+  "tasks": {
+    "test": "deno test --unstable --no-check --allow-net --allow-import --allow-env --allow-read --allow-sys --allow-write ./__tests__/deno/deno.ts"
+  },
+  "imports": {
+    "grammy": "npm:grammy@^1.30.0",
+    "mongodb": "npm:mongodb@6.10.0"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "CHANGELOG.md",
+      "deno.json",
+      "README.md"
+    ]
+  }
+}

@@ -2,6 +2,7 @@
   "name": "@grammyjs/storage-mongodb",
   "version": "2.4.2",
   "private": false,
+  "type": "module",
   "description": "MongoDB storage for grammy library.",
   "main": "./dist/cjs/mod.js",
   "module": "./dist/esm/mod.js",
@@ -19,9 +20,8 @@
   ],
   "scripts": {
     "test": "tsx __tests__/node.ts",
-    "test:deno": "deno test --unstable --no-check --allow-net ./__tests__/deno.ts",
     "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "build": "tsc -b tsconfig.cjs.json && tsc -b tsconfig.esm.json && pnpm postbuild",
     "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
   },
@@ -36,10 +36,13 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/mongodb#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.4.2",
-    "grammy": "^1.21.1",
-    "mongodb": "^6.3.0",
-    "mongodb-memory-server": "^9.1.6"
+    "@grammyjs/storage-utils": "workspace:*",
+    "grammy": "^1.30.0",
+    "mongodb": "^6.10.0"
+  },
+  "peerDependencies": {
+    "grammy": "^1.30.0",
+    "mongodb": "^6.10.0"
   },
   "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
 }

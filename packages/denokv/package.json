@@ -1,8 +1,0 @@
-{
-  "name": "denokv",
-  "private": true,
-  "scripts": {
-    "test:deno": "deno test --allow-read --allow-write --unstable ./test/session.test.ts"
-  },
-  "version": "2.4.2"
-}

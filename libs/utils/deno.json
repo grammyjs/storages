@@ -1,0 +1,7 @@
+{
+  "name": "@grammyjs/storage-utils",
+  "exports": "./src/mod.ts",
+  "imports": {
+    "grammy": "npm:grammy@^1.30.0"
+  }
+}

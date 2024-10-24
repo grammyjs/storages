@@ -1,0 +1,19 @@
+{
+  "name": "@grammyjs/storage-file",
+  "exports": "./src/mod.ts",
+  "version": "2.4.2",
+  "tasks": {
+    "test": "deno test --allow-import --allow-write --no-check --allow-read --unstable ./__tests__/deno/deno.ts"
+  },
+  "imports": {
+    "grammy": "npm:grammy@^1.30.0"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "CHANGELOG.md",
+      "deno.json",
+      "README.md"
+    ]
+  }
+}

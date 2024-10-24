@@ -3,27 +3,56 @@ name: Tests
 on:
   push:
   workflow_dispatch:
-  pull_request:
 
 jobs:
   node-tests:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo
+        options: >-
+          --health-cmd "echo 'db.runCommand("ping").ok' | mongosh --quiet"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 27017:27017
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 18.x
-      - run: npm i -g pnpm
-      - name: install dependencies
-        run: pnpm install 
+          version: 9
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: build
         run: pnpm run build
       - name: tests
         run: pnpm run test
+
+
   deno-tests:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
     services:
       mongodb:
@@ -47,15 +76,14 @@ jobs:
         ports:
           - 5432:5432
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Deno
-        uses: maximousblk/setup-deno@v2
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v2
         with:
-          node-version: 18.x
-      - run: npm i -g pnpm
-      - run: pnpm install
-      - run: pnpm build
-      - name: tests
-        run: pnpm run test:deno
+          deno-version: v2.x
+
+      - name: Install dependencies
+        run: deno install
+
+      - name: Run tests
+        run: deno task test

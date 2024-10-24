@@ -79,3 +79,4 @@ After doing this, there's not much to do with the Pocketbase instance anymore; Y
 ### Use the package in your grammY code
 
 Refer to [Node example](./examples/node.ts)
+Refer to [Deno example](./examples/deno.ts)
