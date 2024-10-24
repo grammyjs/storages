@@ -53,17 +53,10 @@ importers:
   packages/denokv: {}
 
   packages/deta:
-    dependencies:
-      node-fetch:
-        specifier: ^2.6.6
-        version: 2.6.9(encoding@0.1.13)
     devDependencies:
-      '@types/node-fetch':
-        specifier: ^2.6.11
-        version: 2.6.11
       grammy:
-        specifier: ^1.21.1
-        version: 1.21.1(encoding@0.1.13)
+        specifier: ^1.30.0
+        version: 1.30.0(encoding@0.1.13)
 
   packages/file:
     devDependencies:
@@ -100,7 +93,7 @@ importers:
         version: 1.21.1(encoding@0.1.13)
       mongodb:
         specifier: ^6.3.0
-        version: 6.3.0(gcp-metadata@6.1.0(encoding@0.1.13))(socks@2.8.3)
+        version: 6.3.0(gcp-metadata@5.2.0(encoding@0.1.13))(socks@2.8.3)
       mongodb-memory-server:
         specifier: ^9.1.6
         version: 9.1.6
@@ -191,13 +184,13 @@ importers:
         version: 1.21.1(encoding@0.1.13)
       mongodb:
         specifier: ^6.3.0
-        version: 6.3.0(gcp-metadata@6.1.0(encoding@0.1.13))(socks@2.8.3)
+        version: 6.3.0(gcp-metadata@5.2.0(encoding@0.1.13))(socks@2.8.3)
       mongodb-memory-server:
         specifier: ^9.1.6
         version: 9.1.6
       typeorm:
         specifier: ^0.3.20
-        version: 0.3.20(better-sqlite3@9.4.3)(ioredis@5.4.1)(mongodb@6.3.0(gcp-metadata@6.1.0(encoding@0.1.13))(socks@2.8.3))(pg@8.13.0)
+        version: 0.3.20(better-sqlite3@9.4.3)(ioredis@5.4.1)(mongodb@6.3.0(gcp-metadata@5.2.0(encoding@0.1.13))(socks@2.8.3))(pg@8.13.0)
       vite:
         specifier: ^5.1.4
         version: 5.1.4(@types/node@22.7.9)
@@ -1150,10 +1143,6 @@ packages:
     resolution: {integrity: sha512-o/zjMZRhJxny7OyEF+Op8X+efiELC7k7yOjMzgfzVqOzXqkBkWI79YoTdOtsuWd5BWhAGAuOY/Xa6xpiaWXiNg==}
     engines: {node: '>= 14'}
 
-  agent-base@7.1.1:
-    resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
-    engines: {node: '>= 14'}
-
   agentkeepalive@4.5.0:
     resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
     engines: {node: '>= 8.0.0'}
@@ -1992,17 +1981,9 @@ packages:
     resolution: {integrity: sha512-aezGIjb+/VfsJtIcHGcBSerNEDdfdHeMros+RbYbGpmonKWQCOVOes0LVZhn1lDtIgq55qq0HaxymIoae3Fl/A==}
     engines: {node: '>=12'}
 
-  gaxios@6.7.1:
-    resolution: {integrity: sha512-LDODD4TMYx7XXdpwxAVRAIAuB0bzv0s+ywFonY46k126qzQHT9ygyoa9tncmOiQmmDrik65UYsEkv3lbfqQ3yQ==}
-    engines: {node: '>=14'}
-
   gcp-metadata@5.2.0:
     resolution: {integrity: sha512-aFhhvvNycky2QyhG+dcfEdHBF0FRbYcf39s6WNHUDysKSrbJ5vuFbjydxBcmewtXeV248GP8dWT3ByPNxsyHCw==}
     engines: {node: '>=12'}
-
-  gcp-metadata@6.1.0:
-    resolution: {integrity: sha512-Jh/AIwwgaxan+7ZUUmRLCjtchyDiqh4KjBJ5tW3plBZb5iL/BPcso8A5DlzeD9qlw0duCamnNdpFjxwaT0KyKg==}
-    engines: {node: '>=14'}
 
   get-caller-file@2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
@@ -2201,10 +2182,6 @@ packages:
 
   https-proxy-agent@7.0.4:
     resolution: {integrity: sha512-wlwpilI7YdjSkWaQ/7omYBMTliDcmCN8OLihO6I9B86g06lMyAoqgoDpV0XqoaPOKj+0DIdAvnsWfyAAhmimcg==}
-    engines: {node: '>= 14'}
-
-  https-proxy-agent@7.0.5:
-    resolution: {integrity: sha512-1e4Wqeblerz+tMKPIq2EMGiiWW1dIjZOksyHWSUm1rmuvw/how9hBHZ38lAGj5ID4Ik6EdkOw7NmWPy6LAwalw==}
     engines: {node: '>= 14'}
 
   human-signals@2.1.0:
@@ -5370,13 +5347,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  agent-base@7.1.1:
-    dependencies:
-      debug: 4.3.7
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
   agentkeepalive@4.5.0:
     dependencies:
       humanize-ms: 1.2.1
@@ -6255,18 +6225,6 @@ snapshots:
       - encoding
       - supports-color
 
-  gaxios@6.7.1(encoding@0.1.13):
-    dependencies:
-      extend: 3.0.2
-      https-proxy-agent: 7.0.5
-      is-stream: 2.0.1
-      node-fetch: 2.7.0(encoding@0.1.13)
-      uuid: 9.0.1
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    optional: true
-
   gcp-metadata@5.2.0(encoding@0.1.13):
     dependencies:
       gaxios: 5.1.0(encoding@0.1.13)
@@ -6274,15 +6232,6 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
-
-  gcp-metadata@6.1.0(encoding@0.1.13):
-    dependencies:
-      gaxios: 6.7.1(encoding@0.1.13)
-      json-bigint: 1.0.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    optional: true
 
   get-caller-file@2.0.5: {}
 
@@ -6456,7 +6405,7 @@ snapshots:
     dependencies:
       '@grammyjs/types': 3.14.0
       abort-controller: 3.0.0
-      debug: 4.3.4
+      debug: 4.3.7
       node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
@@ -6554,14 +6503,6 @@ snapshots:
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
-
-  https-proxy-agent@7.0.5:
-    dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.7
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
 
   human-signals@2.1.0: {}
 
@@ -7340,13 +7281,13 @@ snapshots:
     optionalDependencies:
       '@mongodb-js/saslprep': 1.1.4
 
-  mongodb@6.3.0(gcp-metadata@6.1.0(encoding@0.1.13))(socks@2.8.3):
+  mongodb@6.3.0(gcp-metadata@5.2.0(encoding@0.1.13))(socks@2.8.3):
     dependencies:
       '@mongodb-js/saslprep': 1.1.4
       bson: 6.3.0
       mongodb-connection-string-url: 3.0.0
     optionalDependencies:
-      gcp-metadata: 6.1.0(encoding@0.1.13)
+      gcp-metadata: 5.2.0(encoding@0.1.13)
       socks: 2.8.3
 
   moo@0.5.2: {}
@@ -8672,7 +8613,7 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typeorm@0.3.20(better-sqlite3@9.4.3)(ioredis@5.4.1)(mongodb@6.3.0(gcp-metadata@6.1.0(encoding@0.1.13))(socks@2.8.3))(pg@8.13.0):
+  typeorm@0.3.20(better-sqlite3@9.4.3)(ioredis@5.4.1)(mongodb@6.3.0(gcp-metadata@5.2.0(encoding@0.1.13))(socks@2.8.3))(pg@8.13.0):
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
@@ -8692,7 +8633,7 @@ snapshots:
     optionalDependencies:
       better-sqlite3: 9.4.3
       ioredis: 5.4.1
-      mongodb: 6.3.0(gcp-metadata@6.1.0(encoding@0.1.13))(socks@2.8.3)
+      mongodb: 6.3.0(gcp-metadata@5.2.0(encoding@0.1.13))(socks@2.8.3)
       pg: 8.13.0
     transitivePeerDependencies:
       - supports-color

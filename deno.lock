@@ -79,9 +79,7 @@
       "packages/deta": {
         "packageJson": {
           "dependencies": [
-            "npm:@types/node-fetch@^2.6.11",
-            "npm:grammy@^1.21.1",
-            "npm:node-fetch@^2.6.6"
+            "npm:grammy@^1.30.0"
           ]
         }
       },
