@@ -1,5 +1,5 @@
 import { session } from 'grammy';
-import { test } from 'jsr:@std/testing/bdd';
+import { beforeEach, test } from 'jsr:@std/testing/bdd';
 import { expect } from 'jsr:@std/expect';
 import { FileAdapter } from '../src/mod.ts';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
@@ -8,13 +8,23 @@ import { existsSync } from 'node:fs';
 import { rm as remove } from 'node:fs/promises';
 
 const dirPath = path.resolve(Deno.cwd(), 'sessions');
-const cleanDir = () => remove(dirPath, { recursive: true });
+async function cleanDir() {
+	try {
+		await remove(dirPath, { recursive: true });
+	} catch (e: any) {
+		if (e.code !== 'ENOENT') {
+			throw e;
+		}
+	}
+}
+
+beforeEach(async () => {
+	await cleanDir();
+});
 
 test('Should create sessions dir', async () => {
 	new FileAdapter({ dirName: 'sessions' });
 	expect(existsSync(dirPath)).toBe(true);
-
-	await cleanDir();
 });
 
 test('Pizza counter tests', async () => {
@@ -36,8 +46,6 @@ test('Pizza counter tests', async () => {
 
 	await bot.handleUpdate(createMessage(bot, 'first').update);
 	await bot.handleUpdate(createMessage(bot, 'second').update);
-
-	await cleanDir();
 });
 
 test('Simple string tests', async () => {
@@ -58,6 +66,4 @@ test('Simple string tests', async () => {
 
 	await bot.handleUpdate(createMessage(bot, 'first').update);
 	await bot.handleUpdate(createMessage(bot, 'second').update);
-
-	await cleanDir();
 });
