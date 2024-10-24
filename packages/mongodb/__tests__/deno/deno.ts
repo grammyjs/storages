@@ -6,7 +6,7 @@ import { createBot, createMessage } from '@grammyjs/storage-utils';
 import { MongoDBAdapter } from '../../src/mod.ts';
 
 const createMongoClient = async () => {
-	const client = new MongoClient(`mongodb://localhost:27017/testdb `);
+	const client = new MongoClient(`mongodb://localhost:27017/testdb`);
 	await client.connect();
 
 	return client;

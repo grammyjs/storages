@@ -2,28 +2,21 @@ import test, {} from 'node:test';
 import assert from 'node:assert';
 
 import { session } from 'grammy';
-import { Collection, MongoClient } from 'mongodb';
-import { MongoMemoryServer } from 'mongodb-memory-server';
+import { MongoClient } from 'mongodb';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 
 import { ISession, MongoDBAdapter } from '../src/mod.ts';
 
-let mongod: MongoMemoryServer;
-let client: MongoClient;
-let collection: Collection<ISession>;
+const client = new MongoClient(`mongodb://localhost:27017/testdb`);
+let collection = client.db('testdb').collection<ISession>('sessions');
 
 test.describe('test MongoDBAdapter', () => {
 	test.before(async () => {
-		mongod = await MongoMemoryServer.create();
-		client = new MongoClient(`${mongod.getUri()}/testdb`);
-		collection = client.db('testdb').collection('sessions');
-
 		await client.connect();
 	});
 
 	test.after(async () => {
 		await client.close();
-		await mongod.stop();
 	});
 
 	test.beforeEach(async () => {

@@ -34,7 +34,6 @@
     "better-sqlite3": "^11.5.0",
     "grammy": "^1.30.0",
     "mongodb": "^6.10.0",
-    "mongodb-memory-server": "^10.1.2",
     "typeorm": "^0.3.20",
     "vite": "^5.4.10",
     "vitest": "^2.1.3"

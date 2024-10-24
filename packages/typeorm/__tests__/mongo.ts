@@ -2,7 +2,6 @@ import { afterAll, beforeAll, describe, expect, test } from "vitest";
 
 import { session } from "grammy";
 import { Column, DataSource, Entity, ObjectId, ObjectIdColumn } from "typeorm";
-import { MongoMemoryServer } from "mongodb-memory-server";
 
 import { ISession, TypeormAdapter } from "../src";
 
@@ -20,22 +19,18 @@ export class Session implements ISession {
 	value: string;
 }
 
-let mongod: MongoMemoryServer;
 let source: DataSource;
 
 beforeAll(async () => {
-	mongod = await MongoMemoryServer.create();
-
 	source = await new DataSource({
 		type: "mongodb",
-		url: mongod.getUri(),
+		url: "mongodb://localhost:27017/testdb",
 		entities: [Session],
 	}).initialize();
 });
 
 afterAll(async () => {
 	await source?.destroy();
-	await mongod?.stop();
 });
 
 describe("Pizza counter test", () => {
