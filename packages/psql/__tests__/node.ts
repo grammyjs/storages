@@ -15,10 +15,6 @@ test.describe('Tests', () => {
 		port: 5432,
 	});
 
-	test.after(async () => {
-		await client.end();
-	});
-
 	test.it('Pizza counter test', async () => {
 		const bot = utils.createBot();
 
@@ -40,7 +36,7 @@ test.describe('Tests', () => {
 		await bot.handleUpdate(utils.createMessage(bot, 'second').update);
 	});
 
-	test('Should be changed', async () => {
+	test.it('Should be changed', async () => {
 		const client = new pg.Client({
 			user: 'postgres',
 			password: 'postgres',
@@ -65,5 +61,9 @@ test.describe('Tests', () => {
 
 		await bot.handleUpdate(utils.createMessage(bot, 'first').update);
 		await bot.handleUpdate(utils.createMessage(bot, 'second').update);
+	});
+
+	test.after(async () => {
+		await client.end();
 	});
 });
