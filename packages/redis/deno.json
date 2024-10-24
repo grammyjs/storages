@@ -1,0 +1,11 @@
+{
+  "name": "@grammyjs/storage-redis",
+  "exports": "./src/mod.ts",
+  "version": "2.4.2",
+  "tasks": {
+    "test": "deno test --allow-write --no-check --allow-read --unstable --allow-import ./__tests__/deno.ts"
+  },
+  "imports": {
+    "grammy": "https://lib.deno.dev/x/grammy@1.x/mod.ts"
+  }
+}
