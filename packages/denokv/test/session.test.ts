@@ -1,9 +1,10 @@
 import { DenoKVAdapter } from '../src/adapter.ts';
 import { session } from 'grammy';
-import { expect } from 'https://deno.land/x/expect@v0.4.0/mod.ts';
+import { test } from 'jsr:@std/testing/bdd';
+import { expect } from 'jsr:@std/expect';
 import { createBot, createMessage } from '@grammyjs/storage-utils';
 
-Deno.test('Simple string tests', async () => {
+test('Simple string tests', async () => {
 	const tempFilePath = await Deno.makeTempFile();
 	const bot = createBot(false);
 	const kv = await Deno.openKv(tempFilePath);
@@ -28,7 +29,7 @@ Deno.test('Simple string tests', async () => {
 	Deno.removeSync(tempFilePath);
 });
 
-Deno.test('Pizza counter tests', async () => {
+test('Pizza counter tests', async () => {
 	const tempFilePath = await Deno.makeTempFile();
 	const bot = createBot();
 	const kv = await Deno.openKv(tempFilePath);
