@@ -18,12 +18,8 @@
     "package.json"
   ],
   "scripts": {
-    "test:deno": "echo \"Error: no tests found\"",
-    "start": "node dist/mod.js",
-    "dev": "nodemon",
-    "debug": "node --inspect=0.0.0.0:9229 --nolazy ./dist/mod.js",
     "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
+    "build": "tsc -b tsconfig.cjs.json && tsc -b tsconfig.esm.json && pnpm postbuild",
     "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
   },
   "repository": {
@@ -37,10 +33,10 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/supabase#readme",
   "devDependencies": {
-    "@supabase/supabase-js": "^1.24.0"
+    "@supabase/supabase-js": "^2.45.6"
   },
   "peerDependencies": {
-    "@supabase/supabase-js": "^1.0.0 || ^2.0.0"
+    "@supabase/supabase-js": "^2.45.6"
   },
   "keywords": [
     "grammy",
