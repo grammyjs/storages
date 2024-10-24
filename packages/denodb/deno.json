@@ -1,3 +1,4 @@
 {
-  "name": "@grammyjs/storage-deno"
+  "name": "@grammyjs/storage-deno",
+  "exports": "./src/mod.ts"
 }

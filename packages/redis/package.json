@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/redis#readme",
   "devDependencies": {
-    "@grammyjs/storage-utils": "^2.4.2",
+    "@grammyjs/storage-utils": "workspace:*",
     "@types/ioredis": "^5.0.0",
     "grammy": "^1.21.1",
     "ioredis": "^5.3.2"

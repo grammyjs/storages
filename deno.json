@@ -7,6 +7,7 @@
     "./packages/mongodb",
     "./packages/psql",
     "./packages/redis",
-    "./packages/supabase"
+    "./packages/supabase",
+    "./libs/utils"
   ]
 }
