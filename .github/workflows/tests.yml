@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - run: npm i -g pnpm
+      - run: npm i -g pnpm@8
       - name: install dependencies
         run: pnpm install 
       - name: build
@@ -54,7 +54,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - run: npm i -g pnpm
+      - run: npm i -g pnpm@8
       - run: pnpm install
       - run: pnpm build
       - name: tests
