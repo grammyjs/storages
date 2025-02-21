@@ -29,7 +29,7 @@ class Storage {
     body?: string,
   ): Promise<string | undefined> {
     // perform request
-    const url = key ? `${this.rootUrl}/session/${key}` : `${this.rootUrl}/sessions`; // define url based on key
+    const url = key !== undefined ? `${this.rootUrl}/session/${key}` : `${this.rootUrl}/sessions`; // define url based on key
     const jwt = await this.login();
     const headers = { 'Authorization': `Bearer ${jwt}` };
     const response = await retryFetch(url, { method, body, headers });
