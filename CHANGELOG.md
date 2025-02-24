@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/grammyjs/storages/compare/v2.4.2...v2.5.0) (2025-02-24)
+
+### Bug Fixes
+
+- **file:** don't throw deleting a file that does not exist ([#233](https://github.com/grammyjs/storages/issues/233)) ([b9d2adf](https://github.com/grammyjs/storages/commit/b9d2adf7f0a1b6bbbf6234839571caf2a9f06466))
+
+### Features
+
+- add autoParseDates option to RedisAdapter ([#231](https://github.com/grammyjs/storages/issues/231)) ([e65c9a0](https://github.com/grammyjs/storages/commit/e65c9a0378e3125533a726f2e86d81a813cc53fb))
+- **free:** add readKeys method to free session storage adapter ([#242](https://github.com/grammyjs/storages/issues/242)) ([ee4016f](https://github.com/grammyjs/storages/commit/ee4016f23f1bd013d8e84e7c94028b0c44b11f35)), closes [/github.com/grammyjs/free-session-backend/blob/778a383057e7b8a244fdb2beee20542d8ce0867b/src/main.ts#L89](https://github.com//github.com/grammyjs/free-session-backend/blob/778a383057e7b8a244fdb2beee20542d8ce0867b/src/main.ts/issues/L89)
+- **pocketbase:** add pocketbase storage adapter ([#218](https://github.com/grammyjs/storages/issues/218)) ([087df7a](https://github.com/grammyjs/storages/commit/087df7a2fa3e0b019db4d154db8cde09bf6cc5a1))
+
 ## [2.4.2](https://github.com/grammyjs/storages/compare/v2.4.1...v2.4.2) (2024-02-29)
 
 ### Bug Fixes

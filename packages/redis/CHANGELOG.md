@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/grammyjs/storages/compare/v2.4.2...v2.5.0) (2025-02-24)
+
+### Features
+
+- add autoParseDates option to RedisAdapter ([#231](https://github.com/grammyjs/storages/issues/231)) ([e65c9a0](https://github.com/grammyjs/storages/commit/e65c9a0378e3125533a726f2e86d81a813cc53fb))
+
 ## [2.4.2](https://github.com/grammyjs/storages/compare/v2.4.1...v2.4.2) (2024-02-29)
 
 **Note:** Version bump only for package @grammyjs/storage-redis
