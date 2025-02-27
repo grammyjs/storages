@@ -1,6 +1,6 @@
 {
   "name": "@grammyjs/storage-prisma",
-  "version": "2.4.2",
+  "version": "2.5.1",
   "private": false,
   "description": "Prisma storage for grammY",
   "main": "dist/index.js",
