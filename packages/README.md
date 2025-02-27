@@ -14,6 +14,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev).
 - [firestore](https://github.com/grammyjs/storages/tree/main/packages/firestore)
 - [free](https://github.com/grammyjs/storages/tree/main/packages/free)
 - [supabase](https://github.com/grammyjs/storages/tree/main/packages/supabase)
+- [pocketbase](https://github.com/grammyjs/storages/tree/main/packages/pocketbase)
 - [prisma](https://github.com/grammyjs/storages/tree/main/packages/prisma)
 - [cloudflare](https://github.com/grammyjs/storages/tree/main/packages/cloudflare)
 - [denokv](https://github.com/grammyjs/storages/tree/main/packages/denokv)
@@ -31,7 +32,7 @@ Bug reports and pull requests are welcome.
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denodb|denokv|cloudflare
+  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denodb|denokv|cloudflare|pocketbase|prisma
   │                          
   │                          
   │                          
