@@ -15,7 +15,7 @@
     "publish": "lerna publish --no-private"
   },
   "devDependencies": {
-    "@types/node": "^20.11.22",
+    "@types/node": "^22.0.0",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "deno2node": "^1.11.0",
