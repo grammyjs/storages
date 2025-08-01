@@ -33,11 +33,11 @@ interface SessionData {
 }
 type MyContext = Context & SessionFlavor<SessionData>;
 
-const URL = 'http://localhost:3000';
-const KEY = 'some.fake.key';
+const SUPABASE_URL = 'http://localhost:3000';
+const SUPABASE_ANON_KEY = 'some.fake.key';
 
 // supabase instance
-const supabase = createClient(URL, KEY);
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 //create storage
 const storage = supabaseAdapter({
