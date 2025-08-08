@@ -1,0 +1,37 @@
+{
+  "name": "@grammyjs/storage-dynamodb",
+  "version": "0.1.0",
+  "private": false,
+  "description": "DynamoDB session storage for grammY.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"No tests found\"",
+    "test:deno": "echo \"No tests found\"",
+    "prebuild": "rimraf dist",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grammyjs/storages.git"
+  },
+  "author": "grammyjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grammyjs/storages/issues"
+  },
+  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/dynamodb#readme",
+  "dependencies": {
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
+  },
+  "devDependencies": {
+    "grammy": "^1.21.1"
+  }
+}
