@@ -9,8 +9,15 @@ interface SessionData {
 type MyContext = Context & SessionFlavor<SessionData>;
 
 async function bootstrap() {
-  // @see https://bun.com/docs/runtime/sql#database-environment-variables
-  const sql = new SQL();
+  // @see https://bun.com/docs/runtime/sql
+  const sql = new SQL({
+  	adapter: 'postgres',
+  	hostname: '127.0.0.1',
+  	port: 5432,
+  	database: 'test',
+  	username: 'postgres',
+  	password: '123456',
+  });
 
   await sql.connect();
   
