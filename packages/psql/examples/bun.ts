@@ -9,6 +9,7 @@ interface SessionData {
 type MyContext = Context & SessionFlavor<SessionData>;
 
 async function bootstrap() {
+  // @see https://bun.com/docs/runtime/sql#database-environment-variables
   const sql = new SQL();
 
   await sql.connect();
@@ -16,7 +17,7 @@ async function bootstrap() {
   const client = {
       async query(query: string, params?: string[]) {
           return {
-              rows: await db.unsafe(query, params)
+              rows: await sql.unsafe(query, params)
           }
       }
   };
