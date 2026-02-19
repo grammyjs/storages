@@ -1,7 +1,7 @@
 {
   "name": "@grammyjs/storages",
   "repository": "grammyjs/storages",
-  "version": "2.1.1",
+  "version": "2.5.2",
   "private": true,
   "scripts": {
     "build": "lerna run build",
