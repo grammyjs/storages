@@ -77,9 +77,9 @@ export function freeStorage<T>(token: string, opts?: StorageOptions) {
   const storage = new Storage(token, opts?.rootUrl);
   if (opts?.jwt !== undefined) storage.jwt = opts.jwt;
   return {
-    async readAllKeys(): Promise<T> {
+    async readAllKeys(): Promise<string[]> {
       const keys = await storage.call('GET');
-      return keys === undefined ? undefined : JSON.parse(keys);
+      return keys === undefined ? [] : JSON.parse(keys);
     },
     async read(key: string): Promise<T> {
       const session = await storage.call('GET', key);
