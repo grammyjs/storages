@@ -2,7 +2,7 @@
   "name": "denodb",
   "private": true,
   "scripts": {
-    "test:deno": "deno test --unstable ./test/session.test.ts"
+    "test:deno": "deno test --allow-import --unstable ./test/session.test.ts"
   },
   "version": "2.4.1"
 }
