@@ -1,2 +1,2 @@
-export * from './kv.js';
-export * from './d1.js';
+// kept for backwards compatibility
+export * from "./mod.js";
