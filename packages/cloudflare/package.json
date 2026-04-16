@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/workers-kv#readme",
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240222.0",
-    "grammy": "^1.21.1",
-    "wrangler": "^3.30.0"
+    "@cloudflare/workers-types": "^4.20260416.2",
+    "grammy": "^1.42.0",
+    "wrangler": "^4.83.0"
   }
 }

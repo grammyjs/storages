@@ -1,2 +1,2 @@
 // kept for backwards compatibility
-export * from "./mod.js";
+export * from './mod.js';

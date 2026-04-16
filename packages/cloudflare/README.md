@@ -6,12 +6,20 @@ using sessions.
 
 ## Installation
 
-
 ```bash
 npm install @grammyjs/storage-cloudflare --save
 ```
 
 ## Usage
+
+### D1
+
+You should create table for sessions in your D1 database. You can use the following SQL query and replace `sessions` with your desired table name:
+
+```sql
+CREATE TABLE IF NOT EXISTS "GrammySessions" (key TEXT PRIMARY KEY, value TEXT)
+CREATE INDEX IF NOT EXISTS "IDX_sessions" ON "GrammySessions" (key)
+```
 
 You can check
 [examples](https://github.com/grammyjs/storages/tree/main/packages/cloudflare/examples)

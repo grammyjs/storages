@@ -7,26 +7,9 @@ export class D1Adapter<T> implements StorageAdapter<T> {
   private readonly tableName: string;
   private readonly db: D1Database;
 
-  /**
-	 * @private
- 	*/
-  private constructor(db: D1Database, tableName?: string) {
+  constructor(db: D1Database, tableName?: string) {
     this.db = db;
     this.tableName = tableName ?? defaultTableName;
-  }
-
-  static async create<T>(db: D1Database, tableName?: string): Promise<D1Adapter<T>> {
-    const adapter = new D1Adapter<T>(db, tableName);
-    await adapter.#init();
-    return adapter;
-  }
-
-  async #init() {
-    await this.db
-      .exec(`CREATE TABLE IF NOT EXISTS "${this.tableName}" (key TEXT PRIMARY KEY, value TEXT)`);
-
-    await this.db
-      .exec(`CREATE INDEX IF NOT EXISTS "IDX_${this.tableName}" ON ${this.tableName} (key)`);
   }
 
   async read(key: string): Promise<T | undefined> {
@@ -48,7 +31,9 @@ export class D1Adapter<T> implements StorageAdapter<T> {
     const stringified = JSON.stringify(value);
 
     await this.db
-      .prepare(`INSERT INTO "${this.tableName}" (key, value) VALUES (?, ?) ON CONFLICT (key) DO UPDATE SET value = ?`)
+      .prepare(
+        `INSERT INTO "${this.tableName}" (key, value) VALUES (?, ?) ON CONFLICT (key) DO UPDATE SET value = ?`,
+      )
       .bind(key, stringified, stringified)
       .run();
   }
