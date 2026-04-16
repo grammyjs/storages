@@ -35,10 +35,11 @@ export class RedisAdapter<T> implements StorageAdapter<T> {
   }
 
   async write(key: string, value: T) {
-    await this.redis.set(key, JSON.stringify(value));
-    if (this.ttl) {
-      this.redis.expire(key, this.ttl);
-    }
+    const val = JSON.stringify(value)
+    const ttl = this.ttl
+    
+	  // ttl is undefined by default
+    await this.redis.set(key, val, "EX", ttl);
   }
 
   async delete(key: string) {
