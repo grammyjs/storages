@@ -2,6 +2,10 @@
 
 Storage adapter that can be used to [store your session data](https://grammy.dev/plugins/session.html) on [Google Cloud Firestore](https://cloud.google.com/firestore) when using sessions.
 
+> ⚠️ Google Cloud Firestore is known to cause trouble if you attempt to store anything else but plain JSON-like values.
+> For example, if your data contains `undefined` or has functions installed, errors will be thrown.
+> This is especially relevant when using the conversations plugin, so you might need to look into [small workarounds](https://t.me/grammyjs/320305) when using this adapter with it.
+
 ## Installation
 
 ```bash
