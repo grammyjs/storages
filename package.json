@@ -15,18 +15,18 @@
     "publish": "lerna publish --no-private"
   },
   "devDependencies": {
-    "@types/node": "^20.11.22",
+    "@types/node": "^24.12.2",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "deno2node": "^1.11.0",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "lerna": "^8.1.2",
-    "lint-staged": "^15.2.2",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
+    "rimraf": "^6.1.3",
     "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
+    "typescript": "^6.0.2"
   },
   "engines": {
     "pnpm": ">=10.0.0",
