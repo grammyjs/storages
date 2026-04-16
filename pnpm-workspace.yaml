@@ -1,3 +1,18 @@
 packages:
-  - "packages/*"
-  - "libs/*"
+  - packages/*
+  - libs/*
+
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - better-sqlite3
+  - bufferutil
+  - es5-ext
+  - esbuild
+  - mongodb-memory-server
+  - nx
+  - prisma
+  - protobufjs
+  - sharp
+  - utf-8-validate
+  - workerd
