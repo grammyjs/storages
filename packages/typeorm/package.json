@@ -35,7 +35,7 @@
     "@grammyjs/storage-utils": "workspace:*",
     "better-sqlite3": "^9.4.3",
     "grammy": "^1.21.1",
-    "mongodb": "^6.3.0",
+    "mongodb": "^7.0.0",
     "mongodb-memory-server": "^9.1.6",
     "typeorm": "^0.3.20",
     "vite": "^5.1.4",
