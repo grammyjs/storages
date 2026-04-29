@@ -38,7 +38,7 @@
   "devDependencies": {
     "@grammyjs/storage-utils": "workspace:*",
     "grammy": "^1.21.1",
-    "mongodb": "^6.3.0",
+    "mongodb": "^7.0.0",
     "mongodb-memory-server": "^9.1.6"
   },
   "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
