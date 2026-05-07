@@ -35,11 +35,11 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/deta#readme",
   "dependencies": {
-    "node-fetch": "^2.6.6"
+    "node-fetch": "^2.7.0"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.6.11",
-    "grammy": "^1.21.1"
+    "@types/node-fetch": "^2.6.13",
+    "grammy": "^1.42.0"
   },
   "keywords": [
     "grammy",

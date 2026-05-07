@@ -38,8 +38,8 @@
   "devDependencies": {
     "@grammyjs/storage-utils": "workspace:*",
     "@types/ioredis": "^5.0.0",
-    "grammy": "^1.35.0",
-    "ioredis": "^5.5.0"
+    "grammy": "^1.42.0",
+    "ioredis": "^5.10.1"
   },
   "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
 }

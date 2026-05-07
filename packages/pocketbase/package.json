@@ -35,10 +35,10 @@
     "pocketbase"
   ],
   "dependencies": {
-    "pocketbase": "^0.21.1"
+    "pocketbase": "^0.26.8"
   },
   "devDependencies": {
-    "@grammyjs/storage-utils": "workspace:^2.4.2",
-    "grammy": "^1.21.1"
+    "@grammyjs/storage-utils": "workspace:^",
+    "grammy": "^1.42.0"
   }
 }

@@ -1,10 +1,13 @@
 import { session } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts';
 import { expect } from 'https://deno.land/x/expect/mod.ts';
 import { PsqlAdapter } from '../src/mod.ts';
-import { Client } from 'https://deno.land/x/postgres@v0.17.0/mod.ts';
+import { Client } from 'https://deno.land/x/postgres@v0.19.2/mod.ts';
 import * as utils from '../../../libs/utils/src/mod.ts';
 
+const createTableName = (prefix: string) => `${prefix}_${crypto.randomUUID().replaceAll('-', '')}`;
+
 Deno.test('Pizza counter tests', async () => {
+  const tableName = createTableName('pizzacounter');
   const client = new Client({
     user: 'postgres',
     password: 'postgres',
@@ -17,7 +20,7 @@ Deno.test('Pizza counter tests', async () => {
   bot.use(
     session({
       initial: () => ({ pizzaCount: 0 }),
-      storage: await PsqlAdapter.create({ tableName: 'pizzacounter', client }),
+      storage: await PsqlAdapter.create({ tableName, client }),
     })
   );
 
@@ -37,6 +40,7 @@ Deno.test('Pizza counter tests', async () => {
 });
 
 Deno.test('Simple string tests', async () => {
+  const tableName = createTableName('simplestring');
   const client = new Client({
     user: 'postgres',
     password: 'postgres',
@@ -52,7 +56,7 @@ Deno.test('Simple string tests', async () => {
       initial() {
         return 'test';
       },
-      storage: await PsqlAdapter.create({ tableName: 'simplestring', client }),
+      storage: await PsqlAdapter.create({ tableName, client }),
     })
   );
 
@@ -69,4 +73,3 @@ Deno.test('Simple string tests', async () => {
 
   await client.end();
 });
-

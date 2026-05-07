@@ -10,7 +10,8 @@ class Storage {
       const url = `${this.rootUrl}/login`;
       const body = JSON.stringify({ token: this.token });
       const response = await retryFetch(url, { method: 'POST', body });
-      const { token } = await response.json();
+      const payload = await response.json();
+      const token = getStringProperty(payload, 'token');
       if (typeof token !== 'string') {
         throw new Error('Cannot use free session, invalid bot token!');
       }
@@ -46,9 +47,20 @@ class Storage {
       return method === 'GET' ? await response.text() : undefined;
     } else {
       // error
-      throw new Error(`${response.status}: ${(await response.json()).error}`);
+      const payload = await response.json();
+      throw new Error(`${response.status}: ${getStringProperty(payload, 'error')}`);
     }
   }
+}
+
+function getStringProperty(value: unknown, key: string): string {
+  if (typeof value === 'object' && value !== null && key in value) {
+    const property = value[key as keyof typeof value];
+    if (typeof property === 'string') {
+      return property;
+    }
+  }
+  throw new Error(`Response payload is missing string property \"${key}\".`);
 }
 
 /**

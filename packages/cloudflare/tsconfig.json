@@ -1,8 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "module": "es6",
     "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true
   },
   "include": [

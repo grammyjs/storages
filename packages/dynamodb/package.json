@@ -29,9 +29,10 @@
   },
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/dynamodb#readme",
   "dependencies": {
-    "@aws-sdk/lib-dynamodb": "^3.0.0"
+    "@aws-sdk/lib-dynamodb": "^3.1041.0"
   },
   "devDependencies": {
-    "grammy": "^1.21.1"
+    "@aws-sdk/client-dynamodb": "^3.1041.0",
+    "grammy": "^1.42.0"
   }
 }

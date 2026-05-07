@@ -22,7 +22,7 @@ export class DetaAdapter<T> implements StorageAdapter<T> {
     method: Method,
     key: string,
     body?: { items: T[] },
-  ) {
+  ): ReturnType<typeof fetch> {
     const apiUrl = `${this.rootUrl}${key}`;
     return await fetch(apiUrl, {
       method: method,
@@ -34,27 +34,27 @@ export class DetaAdapter<T> implements StorageAdapter<T> {
     });
   }
 
-  async read(key: string) {
+  async read(key: string): Promise<T | undefined> {
     key = `/${encodeURIComponent(key)}`;
     const res = await this.request('GET', key);
     if (!res.ok) return undefined;
-    return await res.json();
+    return await res.json() as T;
   }
 
   async write(
     key: string,
     value: T,
-  ) {
-    return await (await this.request('PUT', '', {
+  ): Promise<void> {
+    await this.request('PUT', '', {
       items: [{
         key: encodeURIComponent(key),
         ...value,
       }],
-    })).json();
+    });
   }
 
-  async delete(key: string) {
+  async delete(key: string): Promise<void> {
     key = `/${encodeURIComponent(key)}`;
-    return await (await this.request('DELETE', key)).json();
+    await this.request('DELETE', key);
   }
 }
