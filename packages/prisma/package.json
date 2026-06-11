@@ -35,9 +35,9 @@
   "homepage": "https://github.com/grammyjs/storages/tree/main/packages/typeorm#readme",
   "devDependencies": {
     "@grammyjs/storage-utils": "workspace:*",
-    "@prisma/client": "^5.10.2",
+    "@prisma/client": "^7.0.0",
     "grammy": "^1.21.1",
-    "prisma": "^5.10.2",
+    "prisma": "^7.0.0",
     "vite": "^5.1.4",
     "vitest": "^1.3.1"
   },
