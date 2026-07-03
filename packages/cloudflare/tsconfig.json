@@ -1,11 +1,4 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "es6",
-    "outDir": "./dist",
-    "strict": true
-  },
-  "include": [
-    "src"
-  ],
+	"extends": "../../tsconfig.json",
+	"include": ["src"]
 }

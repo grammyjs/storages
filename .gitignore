@@ -31,10 +31,10 @@ yarn-error.log*
 .pnpm-debug.log
 dist
 eggs-debug.log
-.npmrc
 .pnpm-store
 .idea
 lerna-debug.log
 # pnpm-lock.yaml
 .env
 .wrangler
+docs

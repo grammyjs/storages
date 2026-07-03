@@ -1,8 +1,8 @@
 {
-  "name": "denokv",
-  "private": true,
-  "scripts": {
-    "test:deno": "deno test --allow-read --allow-write --allow-import --unstable ./test/session.test.ts"
-  },
-  "version": "2.5.0"
+	"name": "denokv",
+	"version": "2.5.0",
+	"scripts": {
+		"test:deno": "deno test --allow-read --allow-write --allow-import --unstable ./test/session.test.ts",
+		"publish:jsr": "deno publish"
+	}
 }

@@ -17,7 +17,7 @@ jobs:
           node-version: 18.x
       - run: npm i -g pnpm
       - name: install dependencies
-        run: pnpm install 
+        run: pnpm install
       - name: build
         run: pnpm run build
       - name: tests
@@ -27,14 +27,14 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mongodb:
-          image: mongo
-          options: >-
-            --health-cmd "echo 'db.runCommand("ping").ok' | mongosh --quiet"
-            --health-interval 10s
-            --health-timeout 5s
-            --health-retries 5
-          ports:
-            - 27017:27017
+        image: mongo
+        options: >-
+          --health-cmd "echo 'db.runCommand("ping").ok' | mongosh --quiet"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 27017:27017
       postgres:
         image: postgres
         env:

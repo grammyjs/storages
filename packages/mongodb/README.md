@@ -17,10 +17,7 @@ npm install @grammyjs/storage-mongodb --save
 Deno
 
 ```ts
-import {
-  ISession,
-  MongoDBAdapter,
-} from "https://deno.land/x/grammy_storages/mongodb/src/mod.ts";
+import { ISession, MongoDBAdapter } from 'https://deno.land/x/grammy_storages/mongodb/src/mod.ts'
 ```
 
 ## Usage
@@ -33,19 +30,19 @@ If you use Mongoose for operations with mongodb, you can still use this adapter.
 You need to get a native connection and use it:
 
 ```ts
-import mongoose from "mongoose";
-import { MongoDBAdapter, ISession } from "@grammyjs/storage-mongodb";
+import mongoose from 'mongoose'
+import { MongoDBAdapter, ISession } from '@grammyjs/storage-mongodb'
 
-await mongoose.connect("mongodb://localhost:27017/test");
+await mongoose.connect('mongodb://localhost:27017/test')
 
-const collection = mongoose.connection.db.collection<ISession>(
-  "sessions",
-);
+const collection = mongoose.connection.db.collection<ISession>('sessions')
 
-bot.use(session({
-    initial: (): SessionData => ({
-        pizzaCount: 0,
-    }),
-    storage: new MongoDBAdapter({ collection }),
-}))
+bot.use(
+	session({
+		initial: (): SessionData => ({
+			pizzaCount: 0,
+		}),
+		storage: new MongoDBAdapter({ collection }),
+	})
+)
 ```

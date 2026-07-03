@@ -1,15 +1,15 @@
 export class RedisMock {
-  private store: Map<string, unknown> = new Map();
+	private store = new Map<string, unknown>()
 
-  get(key: string) {
-    return Promise.resolve(this.store.get(key));
-  }
+	get(key: string): Promise<unknown> {
+		return Promise.resolve(this.store.get(key))
+	}
 
-  set(key: string, data: string | number | Uint8Array) {
-    Promise.resolve(this.store.set(key, data));
-  }
+	set(key: string, data: string | number | Uint8Array): void {
+		Promise.resolve(this.store.set(key, data))
+	}
 
-  del(key: string) {
-    Promise.resolve(this.store.delete(key));
-  }
+	del(key: string): void {
+		Promise.resolve(this.store.delete(key))
+	}
 }

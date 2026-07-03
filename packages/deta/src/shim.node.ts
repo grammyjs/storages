@@ -1,1 +1,1 @@
-export { default as fetch, Headers } from 'node-fetch';
+export { default as fetch, Headers } from 'node-fetch'

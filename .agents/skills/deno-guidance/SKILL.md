@@ -4,7 +4,7 @@ description: Use when starting any Deno project, choosing packages, configuring 
 license: MIT
 metadata:
   author: denoland
-  version: "1.2"
+  version: '1.2'
 ---
 
 # Deno Development Guidance
@@ -68,18 +68,18 @@ The Deno standard library lives at `@std/` on JSR:
 ```jsonc
 // deno.json
 {
-  "imports": {
-    "@std/assert": "jsr:@std/assert@1",
-    "@std/http": "jsr:@std/http@1",
-    "@std/path": "jsr:@std/path@1"
-  }
+	"imports": {
+		"@std/assert": "jsr:@std/assert@1",
+		"@std/http": "jsr:@std/http@1",
+		"@std/path": "jsr:@std/path@1",
+	},
 }
 ```
 
 ```typescript
-import { serve } from "@std/http";
-import { join } from "@std/path";
-import { assertEquals } from "@std/assert";
+import { serve } from '@std/http'
+import { join } from '@std/path'
+import { assertEquals } from '@std/assert'
 ```
 
 Always use `jsr:@std/*` for the standard library (the old URL-based imports are deprecated).
@@ -89,6 +89,7 @@ Always use `jsr:@std/*` for the standard library (the old URL-based imports are 
 Reference: https://docs.deno.com/runtime/fundamentals/
 
 Key concepts:
+
 - **Native TypeScript** - No build step needed, Deno runs TypeScript directly
 - **Explicit permissions** - Use flags like `--allow-net`, `--allow-read`, `--allow-env`
 - **deno.json** - The config file (similar to package.json but simpler)
@@ -122,7 +123,6 @@ deno update jsr:@std/http # Update a specific dependency
 
 After running `deno update`, always check for breaking API changes - especially for alpha/pre-release packages where semver ranges can pull in breaking updates.
 
-
 ### CI/CD
 
 In CI pipelines, use `--check` with `deno fmt` so it fails without modifying files:
@@ -139,12 +139,12 @@ In `deno.json`, you can exclude directories from formatting/linting:
 
 ```json
 {
-  "fmt": {
-    "exclude": ["build/"]
-  },
-  "lint": {
-    "exclude": ["build/"]
-  }
+	"fmt": {
+		"exclude": ["build/"]
+	},
+	"lint": {
+		"exclude": ["build/"]
+	}
 }
 ```
 
@@ -152,7 +152,7 @@ A folder can also be excluded from everything at the top level:
 
 ```json
 {
-  "exclude": ["build/"]
+	"exclude": ["build/"]
 }
 ```
 
@@ -173,19 +173,19 @@ When more information is needed:
 
 ## Quick Reference: Deno CLI Commands
 
-| Command | Purpose |
-|---------|---------|
-| `deno run file.ts` | Run a TypeScript/JavaScript file |
-| `deno task <name>` | Run a task from deno.json |
-| `deno fmt` | Format code |
-| `deno lint` | Lint code |
-| `deno test` | Run tests |
-| `deno add <pkg>` | Add a package |
-| `deno install` | Install dependencies |
-| `deno update` | Update project dependencies |
-| `deno upgrade` | Update Deno runtime itself |
-| `deno doc <pkg>` | View package documentation |
-| `deno deploy --prod` | Deploy to Deno Deploy |
+| Command              | Purpose                          |
+| -------------------- | -------------------------------- |
+| `deno run file.ts`   | Run a TypeScript/JavaScript file |
+| `deno task <name>`   | Run a task from deno.json        |
+| `deno fmt`           | Format code                      |
+| `deno lint`          | Lint code                        |
+| `deno test`          | Run tests                        |
+| `deno add <pkg>`     | Add a package                    |
+| `deno install`       | Install dependencies             |
+| `deno update`        | Update project dependencies      |
+| `deno upgrade`       | Update Deno runtime itself       |
+| `deno doc <pkg>`     | View package documentation       |
+| `deno deploy --prod` | Deploy to Deno Deploy            |
 
 ## Common Mistakes
 
@@ -195,17 +195,17 @@ The old URL-based imports are deprecated. Always use `jsr:` imports with bare sp
 
 ```ts
 // ✅ Correct - use JSR and a bare specifier
-import { serve } from "@std/http";
-import { join } from "@std/path";
+import { serve } from '@std/http'
+import { join } from '@std/path'
 ```
 
 ```jsonc
 // deno.json
 {
-  "imports": {
-    "@std/http": "jsr:@std/http@1",
-    "@std/path": "jsr:@std/path@1"
-  }
+	"imports": {
+		"@std/http": "jsr:@std/http@1",
+		"@std/path": "jsr:@std/path@1",
+	},
 }
 ```
 

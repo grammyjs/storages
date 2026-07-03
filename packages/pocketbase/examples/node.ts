@@ -1,34 +1,34 @@
-import { Bot, session, type SessionFlavor, type Context } from "grammy";
-import { PocketbaseAdapter } from "@grammyjs/storage-pocketbase";
+import { PocketbaseAdapter } from '@grammyjs/storage-pocketbase'
+import { Bot, session, type SessionFlavor, type Context } from 'grammy'
 
 interface SessionData {
-  messagesCount: number;
+	messagesCount: number
 }
 
-type MyContext = Context & SessionFlavor<SessionData>;
+type MyContext = Context & SessionFlavor<SessionData>
 
-const bot = new Bot<MyContext>(process.env.botToken!);
+const bot = new Bot<MyContext>(process.env.botToken!)
 
 bot.use(
-  session({
-    initial: () => ({ messagesCount: 0 }),
-    storage: new PocketbaseAdapter({
-      pocketbaseInstanceUrl: '', // for example: http://127.0.0.1:8090 
-      botToken: process.env.botToken!
-    })
-  })
-);
+	session({
+		initial: () => ({ messagesCount: 0 }),
+		storage: new PocketbaseAdapter({
+			pocketbaseInstanceUrl: '', // For example: http://127.0.0.1:8090
+			botToken: process.env.botToken!,
+		}),
+	})
+)
 
-bot.on("message", async ctx => {
-  ctx.session.messagesCount++;
+bot.on('message', async (ctx) => {
+	ctx.session.messagesCount++
 
-  const message = `Your messages count: ${ctx.session.messagesCount}`;
+	const message = `Your messages count: ${ctx.session.messagesCount}`
 
-  await ctx.reply(message);
-});
+	await ctx.reply(message)
+})
 
 bot.start({
-  onStart: () => {
-    console.log("POLLING");
-  }
-});
+	onStart: () => {
+		console.log('POLLING')
+	},
+})

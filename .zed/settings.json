@@ -1,0 +1,70 @@
+{
+	"format_on_save": "on",
+	"languages": {
+		"TypeScript": {
+			"format_on_save": "on",
+			"language_servers": ["!tsgo", "vtsls", "!typescript-language-server"],
+			"formatter": {
+				"language_server": {
+					"name": "oxc"
+				}
+			},
+			"code_actions_on_format": {
+				"source.fixAll.oxlint": true
+			}
+		},
+		"TSX": {
+			"language_servers": ["tsgo", "vtsls", "!typescript-language-server"],
+			"formatter": {
+				"language_server": {
+					"name": "oxc"
+				}
+			},
+			"code_actions_on_format": {
+				"source.fixAll.oxlint": true
+			}
+		},
+		"JavaScript": {
+			"language_servers": ["!tsgo", "vtsls", "!typescript-language-server"],
+			"formatter": {
+				"language_server": {
+					"name": "oxc"
+				}
+			},
+			"code_actions_on_format": {
+				"source.fixAll.oxlint": true
+			}
+		},
+		"JSX": {
+			"formatter": {
+				"language_server": {
+					"name": "oxc"
+				}
+			},
+			"code_actions_on_format": {
+				"source.fixAll.oxlint": true
+			}
+		}
+	},
+	"lsp": {
+		"oxlint": {
+			"initialization_options": {
+				"settings": {
+					"configPath": null,
+					"run": "onType",
+					"disableNestedConfig": false,
+					"fixKind": "safe_fix",
+					"unusedDisableDirectives": "deny"
+				}
+			}
+		},
+		"oxfmt": {
+			"initialization_options": {
+				"settings": {
+					"fmt.configPath": null,
+					"run": "onSave"
+				}
+			}
+		}
+	}
+}

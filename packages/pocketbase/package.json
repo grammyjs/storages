@@ -1,44 +1,57 @@
 {
-  "name": "@grammyjs/storage-pocketbase",
-  "version": "2.5.0",
-  "description": "Pocketbase storage adapter for grammY",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "files": [
-    "README.md",
-    "dist",
-    "package.json",
-    "LICENSE"
-  ],
-  "scripts": {
-    "start": "node dist/index.js",
-    "build": "tsc -p tsconfig.build.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/grammyjs/storages.git"
-  },
-  "author": "ma <mobinaskarimail@protonmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/grammyjs/storages/issues"
-  },
-  "homepage": "https://github.com/grammyjs/storages#readme",
-  "keywords": [
-    "grammy",
-    "telegram",
-    "bot",
-    "session",
-    "storage",
-    "adapter",
-    "middleware",
-    "pocketbase"
-  ],
-  "dependencies": {
-    "pocketbase": "^0.21.1"
-  },
-  "devDependencies": {
-    "@grammyjs/storage-utils": "workspace:^2.4.2",
-    "grammy": "^1.21.1"
-  }
+	"name": "@grammyjs/storage-pocketbase",
+	"version": "2.5.0",
+	"private": false,
+	"description": "Pocketbase storage adapter for grammY",
+	"keywords": [
+		"adapter",
+		"bot",
+		"grammy",
+		"pocketbase",
+		"session",
+		"storage",
+		"telegram"
+	],
+	"homepage": "https://github.com/grammyjs/storages#readme",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"license": "MIT",
+	"author": "ma <mobinaskarimail@protonmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grammyjs/storages.git"
+	},
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"type": "module",
+	"main": "./dist/mod.cjs",
+	"module": "./dist/mod.mjs",
+	"types": "./dist/mod.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/mod.d.ts",
+				"default": "./dist/mod.mjs"
+			},
+			"require": {
+				"types": "./dist/mod.d.cts",
+				"default": "./dist/mod.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"build": "tsdown"
+	},
+	"dependencies": {
+		"pocketbase": "^0.27.0"
+	},
+	"devDependencies": {
+		"@grammyjs/storage-utils": "workspace:*",
+		"grammy": "^1.44.0"
+	}
 }

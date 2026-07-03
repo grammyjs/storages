@@ -1,24 +1,29 @@
 {
-  "name": "@grammyjs/storage-utils",
-  "private": true,
-  "main": "./dist/cjs/mod.js",
-  "module": "./dist/esm/mod.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/mod.js",
-      "require": "./dist/cjs/mod.js"
-    }
-  },
-  "version": "2.4.2",
-  "scripts": {
-    "test:deno": "echo \"Error: no tests specified\"",
-    "test": "tsx __tests__/index.ts",
-    "prebuild": "rm -rf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
-  },
-  "keywords": [],
-  "dependencies": {
-    "grammy": "^1.35.0"
-  }
+	"name": "@grammyjs/storage-utils",
+	"version": "2.4.2",
+	"private": true,
+	"keywords": [],
+	"type": "module",
+	"main": "./dist/mod.cjs",
+	"module": "./dist/mod.mjs",
+	"types": "./dist/mod.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/mod.d.ts",
+				"default": "./dist/mod.mjs"
+			},
+			"require": {
+				"types": "./dist/mod.d.cts",
+				"default": "./dist/mod.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"test": "tsx __tests__/index.ts",
+		"build": "tsdown"
+	},
+	"dependencies": {
+		"grammy": "^1.44.0"
+	}
 }

@@ -24,44 +24,43 @@ To get started, you first need to
 You can check [examples](https://github.com/grammyjs/storages/tree/main/packages/supabase/examples) folder for full blown usage, or see a simple use case below:
 
 ```ts
-import { Bot, Context, session, SessionFlavor } from 'grammy';
-import { supabaseAdapter } from '@grammyjs/storage-supabase';
-import { createClient } from '@supabase/supabase-js';
+import { Bot, Context, session, SessionFlavor } from 'grammy'
+import { supabaseAdapter } from '@grammyjs/storage-supabase'
+import { createClient } from '@supabase/supabase-js'
 
 interface SessionData {
-  counter: number;
+	counter: number
 }
-type MyContext = Context & SessionFlavor<SessionData>;
+type MyContext = Context & SessionFlavor<SessionData>
 
-const URL = 'http://localhost:3000';
-const KEY = 'some.fake.key';
+const URL = 'http://localhost:3000'
+const KEY = 'some.fake.key'
 
 // supabase instance
-const supabase = createClient(URL, KEY);
+const supabase = createClient(URL, KEY)
 
 //create storage
 const storage = supabaseAdapter({
-  supabase,
-  table: 'session', // the defined table name you want to use to store your session
-});
+	supabase,
+	table: 'session', // the defined table name you want to use to store your session
+})
 
 // Create bot and register session middleware
-const bot = new Bot<MyContext>(''); // <-- put your bot token here
+const bot = new Bot<MyContext>('') // <-- put your bot token here
 bot.use(
-  session({
-    initial: () => ({ counter: 0 }),
-    storage,
-  }),
-);
+	session({
+		initial: () => ({ counter: 0 }),
+		storage,
+	})
+)
 
 // Display total stats of images uploaded so far
-bot.command('stats', (ctx) => ctx.reply
-(`Already got ${ctx.session.counter} images!`));
+bot.command('stats', (ctx) => ctx.reply(`Already got ${ctx.session.counter} images!`))
 
 // Collect statistics of photos uploaded
-bot.on(':photo', (ctx) => ctx.session.counter++);
+bot.on(':photo', (ctx) => ctx.session.counter++)
 
-bot.start();
+bot.start()
 ```
 
 ## createdAt and updatedAt Guide
@@ -95,7 +94,6 @@ create trigger handle_updated_at before update on YOUR_TABLE_NAME
   for each row execute procedure moddatetime (updated_at);
 ```
 
- 
 ## Notes (WARNING)
 
 Using the `anon public` key will lead to unexpected behaviour since [RLS (Row Level Security)](https://supabase.com/docs/guides/database/postgres/row-level-security) is enabled by default when creating the table, and will lock writing unless explicit permissions.  

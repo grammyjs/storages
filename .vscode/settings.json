@@ -1,0 +1,21 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "oxc.oxc",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.oxlint": "explicit"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "oxc.oxc"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "oxc.oxc"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "oxc.oxc"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "oxc.oxc"
+	},
+	"oxc.lint.enable": true,
+	"oxc.enable": true
+}

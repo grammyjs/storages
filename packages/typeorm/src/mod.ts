@@ -1,40 +1,41 @@
-import { StorageAdapter } from 'grammy';
-import { Repository } from 'typeorm';
-import { ISession } from './types/session';
+import { StorageAdapter } from 'grammy'
+import { Repository } from 'typeorm'
 
-export * from './types/session';
+import { ISession } from './types/session'
+
+export * from './types/session'
 
 export class TypeormAdapter<T> implements StorageAdapter<T> {
-  private repository: Repository<ISession>;
-  
-  constructor(opts: { repository: Repository<ISession> }) {
-    this.repository = opts.repository;
-  }
+	private repository: Repository<ISession>
 
-  async read(key: string) {
-    const session = await this.repository.findOne({ where: { key } });
+	constructor(opts: { repository: Repository<ISession> }) {
+		this.repository = opts.repository
+	}
 
-    if (session === null || session === undefined) {
-      return undefined;
-    }
-    return JSON.parse(session.value) as unknown as T;
-  }
+	async read(key: string): Promise<T | undefined> {
+		const session = await this.repository.findOne({ where: { key } })
 
-  async write(key: string, data: T) {
-    const session = await this.repository.findOne({ 
-      where: { key },
-      select: ['key'],
-    });
-    const value = JSON.stringify(data);
+		if (session === null || session === undefined) {
+			return undefined
+		}
+		return JSON.parse(session.value) as unknown as T
+	}
 
-    if (session !== null && session !== undefined) {
-      await this.repository.update({ key }, { value });
-    } else {
-      await this.repository.save({ key, value });
-    }
-  }
+	async write(key: string, data: T): Promise<void> {
+		const session = await this.repository.findOne({
+			where: { key },
+			select: ['key'],
+		})
+		const value = JSON.stringify(data)
 
-  async delete(key: string) {
-    await this.repository.delete({ key });
-  }
+		if (session !== null && session !== undefined) {
+			await this.repository.update({ key }, { value })
+		} else {
+			await this.repository.save({ key, value })
+		}
+	}
+
+	async delete(key: string): Promise<void> {
+		await this.repository.delete({ key })
+	}
 }

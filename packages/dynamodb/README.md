@@ -13,63 +13,63 @@ npm install @grammyjs/storage-dynamodb @aws-sdk/client-dynamodb @aws-sdk/lib-dyn
 ### With Sessions
 
 ```typescript
-import { Bot, Context, session, SessionFlavor } from 'grammy';
-import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
-import { DynamoDBAdapter } from '@grammyjs/storage-dynamodb';
+import { Bot, Context, session, SessionFlavor } from 'grammy'
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
+import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb'
+import { DynamoDBAdapter } from '@grammyjs/storage-dynamodb'
 
 // Define the shape of our session.
 interface SessionData {
-  counter: number;
+	counter: number
 }
-type MyContext = Context & SessionFlavor<SessionData>;
+type MyContext = Context & SessionFlavor<SessionData>
 
-const bot = new Bot<MyContext>('your-bot-token');
+const bot = new Bot<MyContext>('your-bot-token')
 
 // Build your own DynamoDBClient. You may need to pass credentials here
 const client = new DynamoDBClient({
-  region: 'us-east-1',
-});
-const docClient = DynamoDBDocumentClient.from(client);
+	region: 'us-east-1',
+})
+const docClient = DynamoDBDocumentClient.from(client)
 
 bot.use(
-  session({
-    initial: () => ({ counter: 0 }),
-    storage: new DynamoDBAdapter({
-      instance: docClient,
-      tableName: 'telegram_sessions',
-      ttl: 60 * 60 * 24 * 30, // 30 days
-    }),
-  })
-);
+	session({
+		initial: () => ({ counter: 0 }),
+		storage: new DynamoDBAdapter({
+			instance: docClient,
+			tableName: 'telegram_sessions',
+			ttl: 60 * 60 * 24 * 30, // 30 days
+		}),
+	})
+)
 ```
 
 ### With Conversations
 
 ```typescript
-import { Bot, Context } from 'grammy';
-import { ConversationFlavor, conversations } from '@grammyjs/conversations';
-import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
-import { DynamoDBAdapter } from '@grammyjs/storage-dynamodb';
+import { Bot, Context } from 'grammy'
+import { ConversationFlavor, conversations } from '@grammyjs/conversations'
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
+import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb'
+import { DynamoDBAdapter } from '@grammyjs/storage-dynamodb'
 
 // Build your own DynamoDBClient. You may need to pass credentials here
 const client = new DynamoDBClient({
-  region: 'us-east-1',
-});
-const docClient = DynamoDBDocumentClient.from(client);
+	region: 'us-east-1',
+})
+const docClient = DynamoDBDocumentClient.from(client)
 
-const bot = new Bot<ConversationFlavor<Context>>('your-bot-token');
+const bot = new Bot<ConversationFlavor<Context>>('your-bot-token')
 
 bot.use(
-  conversations({
-    storage: new DynamoDBAdapter({
-      instance: docClient,
-      tableName: 'ConversationSessions',
-      ttl: 24 * 60 * 60, // 24 hours in seconds
-    }),
-  })
-);
+	conversations({
+		storage: new DynamoDBAdapter({
+			instance: docClient,
+			tableName: 'ConversationSessions',
+			ttl: 24 * 60 * 60, // 24 hours in seconds
+		}),
+	})
+)
 ```
 
 ## Configuration
@@ -150,14 +150,14 @@ Make sure your AWS credentials have the following DynamoDB permissions:
 
 ```json
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": ["dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:DeleteItem"],
-      "Resource": "arn:aws:dynamodb:region:account-id:table/GrammySessions"
-    }
-  ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": ["dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:DeleteItem"],
+			"Resource": "arn:aws:dynamodb:region:account-id:table/GrammySessions"
+		}
+	]
 }
 ```
 

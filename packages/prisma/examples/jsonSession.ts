@@ -1,29 +1,27 @@
-import { Bot, Context, session, SessionFlavor } from "grammy";
-import { PrismaAdapter } from "@grammyjs/storage-prisma";
-import { PrismaClient } from "@prisma/client";
+import { PrismaAdapter } from '@grammyjs/storage-prisma'
+import { PrismaClient } from '@prisma/client'
+import { Bot, Context, session, SessionFlavor } from 'grammy'
 
 interface SessionData {
-  counter: number;
+	counter: number
 }
-type MyContext = Context & SessionFlavor<SessionData>;
+type MyContext = Context & SessionFlavor<SessionData>
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
-async function bootstrap() {
-  const bot = new Bot<MyContext>("");
-  bot.use(
-    session({
-      initial: () => ({ counter: 0 }),
-      storage: new PrismaAdapter<SessionData>(prisma.session),
-    })
-  );
+async function bootstrap(): Promise<void> {
+	const bot = new Bot<MyContext>('')
+	bot.use(
+		session({
+			initial: () => ({ counter: 0 }),
+			storage: new PrismaAdapter<SessionData>(prisma.session),
+		})
+	)
 
-  bot.command("stats", (ctx) =>
-    ctx.reply(`Already got ${ctx.session.counter} photos!`)
-  );
-  bot.on(":photo", (ctx) => ctx.session.counter++);
+	bot.command('stats', (ctx) => ctx.reply(`Already got ${ctx.session.counter} photos!`))
+	bot.on(':photo', (ctx) => ctx.session.counter++)
 
-  bot.start();
+	bot.start()
 }
 
-bootstrap();
+bootstrap()

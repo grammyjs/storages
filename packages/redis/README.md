@@ -14,15 +14,15 @@ npm install @types/ioredis -D
 ```
 
 ```ts
-import { RedisAdapter } from "@grammyjs/storage-redis";
-import IORedis from "ioredis";
+import { RedisAdapter } from '@grammyjs/storage-redis'
+import IORedis from 'ioredis'
 ```
 
 Deno
 
 ```ts
-import { RedisAdapter } from "https://deno.land/x/grammy_storages/redis/src/mod.ts";
-import { connect } from "https://deno.land/x/redis@v0.32.1/mod.ts";
+import { RedisAdapter } from 'https://deno.land/x/grammy_storages/redis/src/mod.ts'
+import { connect } from 'https://deno.land/x/redis@v0.32.1/mod.ts'
 ```
 
 ## Usage
@@ -36,12 +36,12 @@ folder
 ### [Vercel KV](https://vercel.com/docs/storage/vercel-kv) ([Upstash](https://upstash.com))
 
 ```js
-import { kv as instance } from "@vercel/kv";
-import { RedisAdapter } from "@grammyjs/storage-redis";
+import { kv as instance } from '@vercel/kv'
+import { RedisAdapter } from '@grammyjs/storage-redis'
 
-instance.opts.automaticDeserialization = false;
+instance.opts.automaticDeserialization = false
 
-const storage = new RedisAdapter({instance});
+const storage = new RedisAdapter({ instance })
 
-bot.use(session({storage}));
+bot.use(session({ storage }))
 ```

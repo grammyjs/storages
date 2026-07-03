@@ -73,34 +73,31 @@ You may also be interested in [our open-source backend implementation](https://g
 Example of a message counter bot running on Deno:
 
 ```ts
-import {
-  Bot,
-  Context,
-  session,
-  SessionFlavor,
-} from "https://lib.deno.dev/x/grammy@1.x/mod.ts";
-import { freeStorage } from "https://deno.land/x/grammy_storages/free/src/mod.ts";
+import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
+import { freeStorage } from 'https://deno.land/x/grammy_storages/free/src/mod.ts'
 
 // Define session structure
 interface SessionData {
-  count: number;
+	count: number
 }
-type MyContext = Context & SessionFlavor<SessionData>;
+type MyContext = Context & SessionFlavor<SessionData>
 
 // Create the bot and register the session middleware
-const bot = new Bot<MyContext>(""); // <-- put your bot token between the ""
+const bot = new Bot<MyContext>('') // <-- put your bot token between the ""
 
-bot.use(session({
-  initial: () => ({ count: 0 }),
-  storage: freeStorage<SessionData>(bot.token),
-}));
+bot.use(
+	session({
+		initial: () => ({ count: 0 }),
+		storage: freeStorage<SessionData>(bot.token),
+	})
+)
 
 // Use persistent session data in update handlers
-bot.on("message", async (ctx) => {
-  ctx.session.count++;
-  await ctx.reply(`Message count: ${ctx.session.count}`);
-});
+bot.on('message', async (ctx) => {
+	ctx.session.count++
+	await ctx.reply(`Message count: ${ctx.session.count}`)
+})
 
-bot.catch((err) => console.error(err));
-bot.start();
+bot.catch((err) => console.error(err))
+bot.start()
 ```

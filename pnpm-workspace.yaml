@@ -2,6 +2,25 @@ packages:
   - packages/*
   - libs/*
 
+allowBuilds:
+  '@prisma/client': true
+  '@prisma/engines': true
+  better-sqlite3: true
+  bufferutil: true
+  es5-ext: true
+  esbuild: true
+  lefthook: true
+  mongodb-memory-server: true
+  nx: true
+  prisma: true
+  protobufjs: true
+  sharp: true
+  utf-8-validate: true
+  workerd: true
+
+minimumReleaseAgeExclude:
+  - '@cloudflare/workers-types@5.20260703.1'
+
 onlyBuiltDependencies:
   - '@prisma/client'
   - '@prisma/engines'

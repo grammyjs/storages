@@ -1,51 +1,54 @@
 {
-  "name": "@grammyjs/storage-firestore",
-  "version": "2.4.2",
-  "description": "Google Firestore storage adapter for grammY",
-  "main": "./dist/cjs/index.js",
-  "private": false,
-  "module": "./dist/esm/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
-  "types": "./dist/esm/index.d.ts",
-  "scripts": {
-    "test:deno": "echo \"Error: no tests found\"",
-    "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/grammyjs/storages.git"
-  },
-  "files": [
-    "README.md",
-    "dist",
-    "package.json",
-    "LICENSE"
-  ],
-  "author": "KnorpelSenf",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/grammyjs/storages/issues"
-  },
-  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/firestore#readme",
-  "devDependencies": {
-    "@google-cloud/firestore": "^6.6.0"
-  },
-  "keywords": [
-    "grammy",
-    "telegram",
-    "bot",
-    "session",
-    "storage",
-    "adapter",
-    "middleware",
-    "firestore"
-  ],
-  "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
+	"name": "@grammyjs/storage-firestore",
+	"version": "2.4.2",
+	"private": false,
+	"description": "Google Firestore storage adapter for grammY",
+	"keywords": [
+		"adapter",
+		"bot",
+		"firestore",
+		"grammy",
+		"session",
+		"storage",
+		"telegram"
+	],
+	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/firestore#readme",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"license": "MIT",
+	"author": "KnorpelSenf",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/grammyjs/storages.git"
+	},
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"type": "module",
+	"main": "./dist/mod.cjs",
+	"module": "./dist/mod.mjs",
+	"types": "./dist/mod.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/mod.d.ts",
+				"default": "./dist/mod.mjs"
+			},
+			"require": {
+				"types": "./dist/mod.d.cts",
+				"default": "./dist/mod.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"build": "tsdown"
+	},
+	"devDependencies": {
+		"@google-cloud/firestore": "^7.8.0",
+		"grammy": "^1.44.0"
+	}
 }

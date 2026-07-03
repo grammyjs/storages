@@ -1,45 +1,48 @@
 {
-  "name": "@grammyjs/storage-mongodb",
-  "version": "2.5.1",
-  "private": false,
-  "description": "MongoDB storage for grammy library.",
-  "main": "./dist/cjs/mod.js",
-  "module": "./dist/esm/mod.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/mod.js",
-      "require": "./dist/cjs/mod.js"
-    }
-  },
-  "files": [
-    "README.md",
-    "dist",
-    "package.json",
-    "LICENSE"
-  ],
-  "scripts": {
-    "test": "tsx __tests__/node.ts",
-    "test:deno": "deno test --allow-import --unstable --no-check --allow-net ./__tests__/deno.ts",
-    "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/grammyjs/storages.git"
-  },
-  "author": "Satont <satontworldwide@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/grammyjs/storages/issues"
-  },
-  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/mongodb#readme",
-  "devDependencies": {
-    "@grammyjs/storage-utils": "workspace:*",
-    "grammy": "^1.21.1",
-    "mongodb": "^6.3.0",
-    "mongodb-memory-server": "^9.1.6"
-  },
-  "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
+	"name": "@grammyjs/storage-mongodb",
+	"version": "2.5.1",
+	"private": false,
+	"description": "MongoDB storage for grammy library.",
+	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/mongodb#readme",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"license": "MIT",
+	"author": "Satont <satontworldwide@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grammyjs/storages.git"
+	},
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"type": "module",
+	"main": "./dist/mod.cjs",
+	"module": "./dist/mod.mjs",
+	"types": "./dist/mod.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/mod.d.ts",
+				"default": "./dist/mod.mjs"
+			},
+			"require": {
+				"types": "./dist/mod.d.cts",
+				"default": "./dist/mod.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"test": "tsx __tests__/node.ts",
+		"build": "tsdown"
+	},
+	"devDependencies": {
+		"@grammyjs/storage-utils": "workspace:*",
+		"grammy": "^1.44.0",
+		"mongodb": "^7.4.0",
+		"mongodb-memory-server": "^11.2.0"
+	}
 }

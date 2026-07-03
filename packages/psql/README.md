@@ -15,8 +15,8 @@ npm install @grammyjs/storage-psql pg --save
 Deno
 
 ```ts
-import { PsqlAdapter } from "https://deno.land/x/grammy_storages/psql/src/mod.ts";
-import { Client } from "https://deno.land/x/postgres@v0.19.2/mod.ts";
+import { PsqlAdapter } from 'https://deno.land/x/grammy_storages/psql/src/mod.ts'
+import { Client } from 'https://deno.land/x/postgres@v0.19.2/mod.ts'
 ```
 
 ## Usage
@@ -30,16 +30,16 @@ folder
 ### [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres) ([Neon](https://neon.tech))
 
 ```js
-import { createClient } from "@vercel/postgres";
-import { PsqlAdapter } from "@grammyjs/storage-psql";
+import { createClient } from '@vercel/postgres'
+import { PsqlAdapter } from '@grammyjs/storage-psql'
 
-const client = createClient();
+const client = createClient()
 
-await client.connect();
+await client.connect()
 
 bot.use(
-  session({
-    storage: await PsqlAdapter.create({ tableName: 'sessions', client }),
-  })
-);
+	session({
+		storage: await PsqlAdapter.create({ tableName: 'sessions', client }),
+	})
+)
 ```
