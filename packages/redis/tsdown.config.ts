@@ -5,4 +5,8 @@ import { baseConfig } from '../../tsdown.config.base.ts'
 export default defineConfig({
 	...baseConfig,
 	entry: ['src/mod.ts'],
+	deps: {
+		onlyBundle: false,
+		neverBundle: ['ioredis'],
+	},
 })
