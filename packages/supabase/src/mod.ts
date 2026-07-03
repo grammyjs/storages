@@ -24,25 +24,21 @@ export function supabaseAdapter<T>({
 
 	return {
 		read: async (id: string): Promise<T | undefined> => {
-			const { data, error } = await supabase
-				.from<Session>(table)
-				.select('session')
-				.eq('id', id)
-				.single()
+			const { data, error } = await supabase.from(table).select('session').eq('id', id).single()
 
 			if (error || !data) {
 				return undefined
 			}
 
-			return JSON.parse(data.session) as T
+			return JSON.parse((data as Session).session) as T
 		},
 		write: async (id: string, value: T): Promise<void> => {
 			const input = { id, session: JSON.stringify(value) }
 
-			await supabase.from<Session>(table).upsert(input, { returning: 'minimal' })
+			await supabase.from(table).upsert(input)
 		},
 		delete: async (id: string): Promise<void> => {
-			await supabase.from<Session>(table).delete({ returning: 'minimal' }).match({ id })
+			await supabase.from(table).delete().match({ id })
 		},
 	}
 }

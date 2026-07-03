@@ -1,4 +1,4 @@
-import type { D1Database } from '@cloudflare/workers-types/standalone'
+import type { D1Database } from '@cloudflare/workers-types'
 import type { StorageAdapter } from 'grammy/web'
 
 const defaultTableName = 'GrammySessions'

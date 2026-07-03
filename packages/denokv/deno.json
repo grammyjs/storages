@@ -4,5 +4,6 @@
 	"exports": "./src/mod.ts",
 	"publish": {
 		"include": ["src/", "README.md", "LICENSE"]
-	}
+	},
+	"nodeModulesDir": "auto"
 }

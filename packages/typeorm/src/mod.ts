@@ -24,7 +24,7 @@ export class TypeormAdapter<T> implements StorageAdapter<T> {
 	async write(key: string, data: T): Promise<void> {
 		const session = await this.repository.findOne({
 			where: { key },
-			select: ['key'],
+			select: { key: true },
 		})
 		const value = JSON.stringify(data)
 

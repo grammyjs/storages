@@ -33,24 +33,22 @@ export class DetaAdapter<T> implements StorageAdapter<T> {
 		key = `/${encodeURIComponent(key)}`
 		const res = await this.request('GET', key)
 		if (!res.ok) return undefined
-		return await res.json()
+		return (await res.json()) as T
 	}
 
-	async write(key: string, value: T): Promise<unknown> {
-		return await (
-			await this.request('PUT', '', {
-				items: [
-					{
-						key: encodeURIComponent(key),
-						...(value as object),
-					},
-				],
-			})
-		).json()
+	async write(key: string, value: T): Promise<void> {
+		await this.request('PUT', '', {
+			items: [
+				{
+					key: encodeURIComponent(key),
+					...((value ?? {}) as object),
+				} as T,
+			],
+		})
 	}
 
-	async delete(key: string): Promise<unknown> {
+	async delete(key: string): Promise<void> {
 		key = `/${encodeURIComponent(key)}`
-		return await (await this.request('DELETE', key)).json()
+		await this.request('DELETE', key)
 	}
 }

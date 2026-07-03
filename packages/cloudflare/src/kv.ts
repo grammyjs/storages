@@ -2,7 +2,7 @@ import type {
 	KVNamespace,
 	KVNamespaceListResult,
 	KVNamespaceListOptions,
-} from '@cloudflare/workers-types/standalone'
+} from '@cloudflare/workers-types'
 import type { StorageAdapter } from 'grammy/web'
 
 export class KvAdapter<T> implements StorageAdapter<T> {
