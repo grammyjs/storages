@@ -49,6 +49,6 @@
 		"build": "tsdown"
 	},
 	"devDependencies": {
-		"grammy": "^1.44.0"
+		"grammy": "1.44.0"
 	}
 }

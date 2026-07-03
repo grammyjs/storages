@@ -49,10 +49,10 @@
 		"build": "tsdown"
 	},
 	"devDependencies": {
-		"@supabase/supabase-js": "^2.110.0",
-		"grammy": "^1.44.0"
+		"@supabase/supabase-js": "2.110.0",
+		"grammy": "1.44.0"
 	},
 	"peerDependencies": {
-		"@supabase/supabase-js": "^2.0.0"
+		"@supabase/supabase-js": "2.0.0"
 	}
 }

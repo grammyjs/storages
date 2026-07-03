@@ -12,46 +12,43 @@ importers:
         specifier: 24.12.2
         version: 24.12.2
       lefthook:
-        specifier: ^1.11.13
-        version: 1.13.6
+        specifier: 2.1.9
+        version: 2.1.9
       lerna:
         specifier: 8.1.2
         version: 8.1.2(@types/node@24.12.2)(encoding@0.1.13)
       oxfmt:
-        specifier: latest
+        specifier: 0.57.0
         version: 0.57.0
       oxlint:
-        specifier: latest
+        specifier: 1.72.0
         version: 1.72.0
-      rimraf:
-        specifier: 6.1.3
-        version: 6.1.3
       tsdown:
-        specifier: latest
+        specifier: 0.22.3
         version: 0.22.3(tsx@4.7.1)(typescript@6.0.3)
       tsx:
         specifier: 4.7.1
         version: 4.7.1
       typescript:
-        specifier: ^6.0.3
+        specifier: 6.0.3
         version: 6.0.3
 
   libs/utils:
     dependencies:
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/cloudflare:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^5.20260703.1
+        specifier: 5.20260703.1
         version: 5.20260703.1
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
       wrangler:
-        specifier: ^4.107.0
+        specifier: 4.107.0
         version: 4.107.0(@cloudflare/workers-types@5.20260703.1)(bufferutil@4.1.0)(utf-8-validate@5.0.10)
 
   packages/denokv: {}
@@ -59,17 +56,17 @@ importers:
   packages/deta:
     devDependencies:
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/dynamodb:
     dependencies:
       '@aws-sdk/lib-dynamodb':
-        specifier: ^3.1079.0
+        specifier: 3.1079.0
         version: 3.1079.0(@aws-sdk/client-dynamodb@3.1031.0)
     devDependencies:
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/file:
@@ -78,22 +75,22 @@ importers:
         specifier: workspace:*
         version: link:../../libs/utils
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/firestore:
     devDependencies:
       '@google-cloud/firestore':
-        specifier: ^7.8.0
-        version: 7.11.6(encoding@0.1.13)
+        specifier: 7.8.0
+        version: 7.8.0(encoding@0.1.13)
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/free:
     devDependencies:
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/mongodb:
@@ -102,26 +99,26 @@ importers:
         specifier: workspace:*
         version: link:../../libs/utils
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
       mongodb:
-        specifier: ^7.4.0
+        specifier: 7.4.0
         version: 7.4.0(socks@2.8.7)
       mongodb-memory-server:
-        specifier: ^11.2.0
+        specifier: 11.2.0
         version: 11.2.0(socks@2.8.7)
 
   packages/pocketbase:
     dependencies:
       pocketbase:
-        specifier: ^0.27.0
+        specifier: 0.27.0
         version: 0.27.0
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
         version: link:../../libs/utils
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/prisma:
@@ -130,19 +127,19 @@ importers:
         specifier: workspace:*
         version: link:../../libs/utils
       '@prisma/client':
-        specifier: ^7.8.0
+        specifier: 7.8.0
         version: 7.8.0(prisma@7.8.0(@types/react@19.2.17)(better-sqlite3@12.11.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@6.0.3))(typescript@6.0.3)
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
       prisma:
-        specifier: ^7.8.0
+        specifier: 7.8.0
         version: 7.8.0(@types/react@19.2.17)(better-sqlite3@12.11.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@6.0.3)
       vite:
-        specifier: ^8.1.3
+        specifier: 8.1.3
         version: 8.1.3(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.8.3)
       vitest:
-        specifier: ^4.1.9
+        specifier: 4.1.9
         version: 4.1.9(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(vite@8.1.3(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.8.3))
 
   packages/psql:
@@ -151,16 +148,16 @@ importers:
         specifier: workspace:*
         version: link:../../libs/utils
       '@types/pg':
-        specifier: ^8.20.0
+        specifier: 8.20.0
         version: 8.20.0
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
       pg:
-        specifier: ^8.22.0
+        specifier: 8.22.0
         version: 8.22.0
       pg-mem:
-        specifier: ^3.0.14
+        specifier: 3.0.14
         version: 3.0.14(postgres@3.4.7)(typeorm@1.0.0(better-sqlite3@12.11.1)(ioredis@5.11.1)(mongodb@7.4.0(socks@2.8.7))(mysql2@3.15.3)(pg@8.22.0))
 
   packages/redis:
@@ -169,22 +166,22 @@ importers:
         specifier: workspace:*
         version: link:../../libs/utils
       '@types/ioredis':
-        specifier: ^5.0.0
+        specifier: 5.0.0
         version: 5.0.0
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
       ioredis:
-        specifier: ^5.11.1
+        specifier: 5.11.1
         version: 5.11.1
 
   packages/supabase:
     devDependencies:
       '@supabase/supabase-js':
-        specifier: ^2.110.0
+        specifier: 2.110.0
         version: 2.110.0
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
 
   packages/typeorm:
@@ -193,25 +190,25 @@ importers:
         specifier: workspace:*
         version: link:../../libs/utils
       better-sqlite3:
-        specifier: ^12.11.1
+        specifier: 12.11.1
         version: 12.11.1
       grammy:
-        specifier: ^1.44.0
+        specifier: 1.44.0
         version: 1.44.0(encoding@0.1.13)
       mongodb:
-        specifier: ^7.4.0
+        specifier: 7.4.0
         version: 7.4.0(socks@2.8.7)
       mongodb-memory-server:
-        specifier: ^11.2.0
+        specifier: 11.2.0
         version: 11.2.0(socks@2.8.7)
       typeorm:
-        specifier: ^1.0.0
+        specifier: 1.0.0
         version: 1.0.0(better-sqlite3@12.11.1)(ioredis@5.11.1)(mongodb@7.4.0(socks@2.8.7))(mysql2@3.15.3)(pg@8.22.0)
       vite:
-        specifier: ^8.1.3
+        specifier: 8.1.3
         version: 8.1.3(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.8.3)
       vitest:
-        specifier: ^4.1.9
+        specifier: 4.1.9
         version: 4.1.9(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(vite@8.1.3(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.8.3))
 
 packages:
@@ -909,8 +906,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@google-cloud/firestore@7.11.6':
-    resolution: {integrity: sha512-EW/O8ktzwLfyWBOsNuhRoMi8lrC3clHM5LVFhGvO1HCsLozCOOXRAlHrYBoE6HL42Sc8yYMuCb2XqcnJ4OOEpw==}
+  '@google-cloud/firestore@7.8.0':
+    resolution: {integrity: sha512-m21BWVZLz7H7NF8HZ5hCGUSCEJKNwYB5yzQqDTuE9YUzNDRMDei3BwVDht5k4xF636sGlnobyBL+dcbthSGONg==}
     engines: {node: '>=14.0.0'}
 
   '@grammyjs/types@3.28.0':
@@ -2360,10 +2357,6 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  balanced-match@4.0.4:
-    resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
-    engines: {node: 18 || 20 || >=22}
-
   bare-events@2.8.2:
     resolution: {integrity: sha512-riJjyv1/mHLIPX4RwiK+oW9/4c3TEUeORHKefKAKnZ5kyslbN+HXowtbaVEqt4IMUB7OXlfixcs6gsFeo/jhiQ==}
     peerDependencies:
@@ -2441,10 +2434,6 @@ packages:
 
   brace-expansion@2.1.0:
     resolution: {integrity: sha512-TN1kCZAgdgweJhWWpgKYrQaMNHcDULHkWwQIspdtjV4Y5aurRdZpjAqn6yX3FPqTA9ngHCc4hJxMAMgGfve85w==}
-
-  brace-expansion@5.0.5:
-    resolution: {integrity: sha512-VZznLgtwhn+Mact9tfiwx64fA9erHH/MCXEUfB/0bX/6Fz6ny5EGTXYltMocqg4xFAQZtnO3DHWWXi8RiuN7cQ==}
-    engines: {node: 18 || 20 || >=22}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -3189,10 +3178,6 @@ packages:
     deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
-  glob@13.0.6:
-    resolution: {integrity: sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw==}
-    engines: {node: 18 || 20 || >=22}
-
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
@@ -3600,58 +3585,58 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  lefthook-darwin-arm64@1.13.6:
-    resolution: {integrity: sha512-m6Lb77VGc84/Qo21Lhq576pEvcgFCnvloEiP02HbAHcIXD0RTLy9u2yAInrixqZeaz13HYtdDaI7OBYAAdVt8A==}
+  lefthook-darwin-arm64@2.1.9:
+    resolution: {integrity: sha512-119HryNcvr4nqn0wUIrNPgpMEPn9yMQzEcW/lezRsnb56PCJriJB92+MCySPVcWDxJnZef7o0T3jdnPNiSH7Qg==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@1.13.6:
-    resolution: {integrity: sha512-CoRpdzanu9RK3oXR1vbEJA5LN7iB+c7hP+sONeQJzoOXuq4PNKVtEaN84Gl1BrVtCNLHWFAvCQaZPPiiXSy8qg==}
+  lefthook-darwin-x64@2.1.9:
+    resolution: {integrity: sha512-dwo5Tke2XcQCM56DGHgFKBfRbJIL6xs2wZ0zG1TUVZgl4t4mQUt6LiZ4V/ZQfYHTZF9qywvXoIlR5N35qOaiVQ==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@1.13.6:
-    resolution: {integrity: sha512-X4A7yfvAJ68CoHTqP+XvQzdKbyd935sYy0bQT6Ajz7FL1g7hFiro8dqHSdPdkwei9hs8hXeV7feyTXbYmfjKQQ==}
+  lefthook-freebsd-arm64@2.1.9:
+    resolution: {integrity: sha512-+09PVap6nl6xsaHch5JLtq7WvIR++U1Q2MzA2ai0M4uB/VP3AqrvKqHw6+9hjyKnIH+HHL83uqi77EAY+LaxLA==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@1.13.6:
-    resolution: {integrity: sha512-ai2m+Sj2kGdY46USfBrCqLKe9GYhzeq01nuyDYCrdGISePeZ6udOlD1k3lQKJGQCHb0bRz4St0r5nKDSh1x/2A==}
+  lefthook-freebsd-x64@2.1.9:
+    resolution: {integrity: sha512-8XresjKIYpkE9ARgCtBEZgJZxAU3T4MIqzj4zNy15XRT59I1Us+QdqXTNm+pkZ41Yd2X/nxs2Pkvbq3NWWlIGw==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@1.13.6:
-    resolution: {integrity: sha512-cbo4Wtdq81GTABvikLORJsAWPKAJXE8Q5RXsICFUVznh5PHigS9dFW/4NXywo0+jfFPCT6SYds2zz4tCx6DA0Q==}
+  lefthook-linux-arm64@2.1.9:
+    resolution: {integrity: sha512-1oNIQfwrPe6rgU2KcDM3aF6+hpZDCKx1TmawQKpXUY5gVsbZ7MqX0Sk/1lnnWxqPm+kQQ5f6J2dpFWd+4xH8jg==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@1.13.6:
-    resolution: {integrity: sha512-uJl9vjCIIBTBvMZkemxCE+3zrZHlRO7Oc+nZJ+o9Oea3fu+W82jwX7a7clw8jqNfaeBS+8+ZEQgiMHWCloTsGw==}
+  lefthook-linux-x64@2.1.9:
+    resolution: {integrity: sha512-fT+7Q+BJyGp+CslFQkNXmdFRgyVXsPHPi9NAsDX0a6QOyNnoORByAsvx6zeAKuF5rL3BBgNfho1/v2RuGxGy9w==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@1.13.6:
-    resolution: {integrity: sha512-7r153dxrNRQ9ytRs2PmGKKkYdvZYFPre7My7XToSTiRu5jNCq++++eAKVkoyWPduk97dGIA+YWiEr5Noe0TK2A==}
+  lefthook-openbsd-arm64@2.1.9:
+    resolution: {integrity: sha512-4bVuafBk3dddVNo0+3hMbjcJs4mqYAstxpPMmX2ufkudSTYFNIhWoqwuGVQV/SS/xdcOKJAldW4qayAzed2ysw==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@1.13.6:
-    resolution: {integrity: sha512-Z+UhLlcg1xrXOidK3aLLpgH7KrwNyWYE3yb7ITYnzJSEV8qXnePtVu8lvMBHs/myzemjBzeIr/U/+ipjclR06g==}
+  lefthook-openbsd-x64@2.1.9:
+    resolution: {integrity: sha512-PmPoMmLP/wQQWcQ9u2YH86bTZ3UCfBsxuEmVTEyPU2U8R1qSTp5r/Gs3G8cN5Mxo91XB9oBERtF1n+xD3W6aVA==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@1.13.6:
-    resolution: {integrity: sha512-Uxef6qoDxCmUNQwk8eBvddYJKSBFglfwAY9Y9+NnnmiHpWTjjYiObE9gT2mvGVpEgZRJVAatBXc+Ha5oDD/OgQ==}
+  lefthook-windows-arm64@2.1.9:
+    resolution: {integrity: sha512-KphfkBKmwBnmolyrdhIl3lrBaOyTcCgXBT2AB/9OHnEXhOLvv5uTCUkrD4YRAxXPtFKq6UvnapIeoL3GZq0bdA==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@1.13.6:
-    resolution: {integrity: sha512-mOZoM3FQh3o08M8PQ/b3IYuL5oo36D9ehczIw1dAgp1Ly+Tr4fJ96A+4SEJrQuYeRD4mex9bR7Ps56I73sBSZA==}
+  lefthook-windows-x64@2.1.9:
+    resolution: {integrity: sha512-2qlUtkJHZ3MyUxgV5XTEmcrIoNZA07iwaquoswAcqv/1MeBFXlD+O+koFRfrzWng2O5WYEbpJnd8tvaYnV8fTA==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@1.13.6:
-    resolution: {integrity: sha512-ojj4/4IJ29Xn4drd5emqVgilegAPN3Kf0FQM2p/9+lwSTpU+SZ1v4Ig++NF+9MOa99UKY8bElmVrLhnUUNFh5g==}
+  lefthook@2.1.9:
+    resolution: {integrity: sha512-bwDaIOViTktE8kJLf9jP0p+H2/RDTlFFlc43Am2YgUsX22hI6Sq4RbzsrecwzY5y+MHTipOH7WsmWSEniePHWQ==}
     hasBin: true
 
   lerna@8.1.2:
@@ -3783,10 +3768,6 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lru-cache@11.3.5:
-    resolution: {integrity: sha512-NxVFwLAnrd9i7KUBxC4DrUhmgjzOs+1Qm50D3oF1/oL+r1NpZ4gA7xvG0/zJ8evR7zIKn4vLf7qTNduWFtCrRw==}
-    engines: {node: 20 || >=22}
-
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -3876,10 +3857,6 @@ packages:
     resolution: {integrity: sha512-L6eAAi6IKtyb/7J6L+YsH2vb1yBrJWKRXI293JYDiMl70+6nncdAgigex58w6WBd+CwvdMsqOyNyGs95Op5gWQ==}
     engines: {node: '>=22.0.0'}
     hasBin: true
-
-  minimatch@10.2.5:
-    resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
-    engines: {node: 18 || 20 || >=22}
 
   minimatch@3.0.5:
     resolution: {integrity: sha512-tUpxzX0VAzJHjLu0xUfFv1gwVp9ba3IOuRAVH2EGuRW8a5emA2FlACLqiT/lDVtS1W+TGNwqz3sWaNyLgDJWuw==}
@@ -4353,10 +4330,6 @@ packages:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
 
-  path-scurry@2.0.2:
-    resolution: {integrity: sha512-3O/iVVsJAPsOnpwWIeD+d6z/7PmqApyQePUtCndjatj/9I5LylHvt5qluFaBT3I5h3r1ejfR056c+FCv+NnNXg==}
-    engines: {node: 18 || 20 || >=22}
-
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
@@ -4746,11 +4719,6 @@ packages:
   rimraf@4.4.1:
     resolution: {integrity: sha512-Gk8NlF062+T9CqNGn6h4tls3k6T1+/nXdOcSZVikNVtlRdYpA7wRJJMoXmuvOnLW844rPjdQ7JgXCYM6PPC/og==}
     engines: {node: '>=14'}
-    hasBin: true
-
-  rimraf@6.1.3:
-    resolution: {integrity: sha512-LKg+Cr2ZF61fkcaK1UdkH2yEBBKnYjTyWzTJT6KNPcSPaiT7HSdhtMXQuN5wkTX0Xu72KQ1l8S42rlmexS2hSA==}
-    engines: {node: 20 || >=22}
     hasBin: true
 
   rolldown-plugin-dts@0.26.0:
@@ -6239,9 +6207,8 @@ snapshots:
   '@esbuild/win32-x64@0.28.1':
     optional: true
 
-  '@google-cloud/firestore@7.11.6(encoding@0.1.13)':
+  '@google-cloud/firestore@7.8.0(encoding@0.1.13)':
     dependencies:
-      '@opentelemetry/api': 1.9.1
       fast-deep-equal: 3.1.3
       functional-red-black-tree: 1.0.1
       google-gax: 4.6.1(encoding@0.1.13)
@@ -6708,7 +6675,8 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 18.1.1
 
-  '@opentelemetry/api@1.9.1': {}
+  '@opentelemetry/api@1.9.1':
+    optional: true
 
   '@oxc-project/types@0.138.0': {}
 
@@ -7655,8 +7623,6 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  balanced-match@4.0.4: {}
-
   bare-events@2.8.2: {}
 
   bare-fs@4.7.1:
@@ -7726,10 +7692,6 @@ snapshots:
   brace-expansion@2.1.0:
     dependencies:
       balanced-match: 1.0.2
-
-  brace-expansion@5.0.5:
-    dependencies:
-      balanced-match: 4.0.4
 
   braces@3.0.3:
     dependencies:
@@ -8464,7 +8426,7 @@ snapshots:
       get-proto: 1.0.1
       gopd: 1.2.0
       has-symbols: 1.1.0
-      hasown: 2.0.2
+      hasown: 2.0.4
       math-intrinsics: 1.1.0
 
   get-pkg-repo@4.2.1:
@@ -8538,12 +8500,6 @@ snapshots:
       minipass: 7.1.3
       package-json-from-dist: 1.0.1
       path-scurry: 1.11.1
-
-  glob@13.0.6:
-    dependencies:
-      minimatch: 10.2.5
-      minipass: 7.1.3
-      path-scurry: 2.0.2
 
   glob@8.1.0:
     dependencies:
@@ -8970,48 +8926,48 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  lefthook-darwin-arm64@1.13.6:
+  lefthook-darwin-arm64@2.1.9:
     optional: true
 
-  lefthook-darwin-x64@1.13.6:
+  lefthook-darwin-x64@2.1.9:
     optional: true
 
-  lefthook-freebsd-arm64@1.13.6:
+  lefthook-freebsd-arm64@2.1.9:
     optional: true
 
-  lefthook-freebsd-x64@1.13.6:
+  lefthook-freebsd-x64@2.1.9:
     optional: true
 
-  lefthook-linux-arm64@1.13.6:
+  lefthook-linux-arm64@2.1.9:
     optional: true
 
-  lefthook-linux-x64@1.13.6:
+  lefthook-linux-x64@2.1.9:
     optional: true
 
-  lefthook-openbsd-arm64@1.13.6:
+  lefthook-openbsd-arm64@2.1.9:
     optional: true
 
-  lefthook-openbsd-x64@1.13.6:
+  lefthook-openbsd-x64@2.1.9:
     optional: true
 
-  lefthook-windows-arm64@1.13.6:
+  lefthook-windows-arm64@2.1.9:
     optional: true
 
-  lefthook-windows-x64@1.13.6:
+  lefthook-windows-x64@2.1.9:
     optional: true
 
-  lefthook@1.13.6:
+  lefthook@2.1.9:
     optionalDependencies:
-      lefthook-darwin-arm64: 1.13.6
-      lefthook-darwin-x64: 1.13.6
-      lefthook-freebsd-arm64: 1.13.6
-      lefthook-freebsd-x64: 1.13.6
-      lefthook-linux-arm64: 1.13.6
-      lefthook-linux-x64: 1.13.6
-      lefthook-openbsd-arm64: 1.13.6
-      lefthook-openbsd-x64: 1.13.6
-      lefthook-windows-arm64: 1.13.6
-      lefthook-windows-x64: 1.13.6
+      lefthook-darwin-arm64: 2.1.9
+      lefthook-darwin-x64: 2.1.9
+      lefthook-freebsd-arm64: 2.1.9
+      lefthook-freebsd-x64: 2.1.9
+      lefthook-linux-arm64: 2.1.9
+      lefthook-linux-x64: 2.1.9
+      lefthook-openbsd-arm64: 2.1.9
+      lefthook-openbsd-x64: 2.1.9
+      lefthook-windows-arm64: 2.1.9
+      lefthook-windows-x64: 2.1.9
 
   lerna@8.1.2(@types/node@24.12.2)(encoding@0.1.13):
     dependencies:
@@ -9209,8 +9165,6 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lru-cache@11.3.5: {}
-
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
@@ -9327,10 +9281,6 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-
-  minimatch@10.2.5:
-    dependencies:
-      brace-expansion: 5.0.5
 
   minimatch@3.0.5:
     dependencies:
@@ -9940,11 +9890,6 @@ snapshots:
       lru-cache: 10.4.3
       minipass: 7.1.3
 
-  path-scurry@2.0.2:
-    dependencies:
-      lru-cache: 11.3.5
-      minipass: 7.1.3
-
   path-to-regexp@6.3.0: {}
 
   path-type@3.0.0:
@@ -10314,11 +10259,6 @@ snapshots:
   rimraf@4.4.1:
     dependencies:
       glob: 9.3.5
-
-  rimraf@6.1.3:
-    dependencies:
-      glob: 13.0.6
-      package-json-from-dist: 1.0.1
 
   rolldown-plugin-dts@0.26.0(rolldown@1.1.4)(typescript@6.0.3):
     dependencies:
