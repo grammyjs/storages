@@ -5,7 +5,7 @@ import test from 'node:test'
 
 import { Bot, session } from 'grammy'
 
-import { createBot, createMessage } from '../dist/esm/mod.js'
+import { createBot, createMessage } from '../dist/mod.mjs'
 
 test('Should create json session bot', async () => {
 	const bot = createBot()
@@ -46,5 +46,5 @@ test('Should create message', () => {
 	const message = createMessage(bot, 'Test')
 
 	assert.ok(Boolean(message.update.update_id))
-	assert.equal(message.message.text, 'Test')
+	assert.equal(message.message?.text, 'Test')
 })
