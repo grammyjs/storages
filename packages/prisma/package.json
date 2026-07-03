@@ -36,6 +36,8 @@
 		}
 	},
 	"scripts": {
+		"typecheck": "tsc",
+		"prebuild": "pnpm typecheck",
 		"test": "generate; prisma db push; vitest",
 		"generate": "prisma generate",
 		"build": "tsdown"

@@ -45,6 +45,8 @@
 		}
 	},
 	"scripts": {
+		"typecheck": "tsc",
+		"prebuild": "pnpm typecheck",
 		"build": "tsdown"
 	},
 	"dependencies": {

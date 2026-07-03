@@ -36,6 +36,8 @@
 		}
 	},
 	"scripts": {
+		"typecheck": "tsc",
+		"prebuild": "pnpm typecheck",
 		"test": "echo \"No tests found\"",
 		"build": "tsdown"
 	},

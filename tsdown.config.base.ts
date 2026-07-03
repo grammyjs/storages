@@ -1,6 +1,6 @@
-import { defineConfig, type UserConfig } from 'tsdown'
+import type { UserConfig } from 'tsdown'
 
-export const baseConfig: UserConfig = defineConfig({
+export const baseConfig: UserConfig = {
 	format: ['esm', 'cjs'],
 	platform: 'node',
 	dts: true,
@@ -8,6 +8,6 @@ export const baseConfig: UserConfig = defineConfig({
 	deps: {
 		onlyBundle: false,
 	},
-})
+}
 
 export default baseConfig

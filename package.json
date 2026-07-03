@@ -3,6 +3,10 @@
 	"version": "2.5.2",
 	"private": true,
 	"repository": "grammyjs/storages",
+	"workspaces": [
+		"packages/*",
+		"libs/*"
+	],
 	"scripts": {
 		"prepare": "lefthook install || true",
 		"build": "lerna run build",
