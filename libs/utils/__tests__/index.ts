@@ -5,7 +5,7 @@ import test from 'node:test'
 
 import { Bot, session } from 'grammy'
 
-import { createBot, createMessage } from '../dist/mod.mjs'
+import { createBot, createMessage } from '../src/mod.ts'
 
 test('Should create json session bot', async () => {
 	const bot = createBot()

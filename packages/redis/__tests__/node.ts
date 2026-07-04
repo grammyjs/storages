@@ -4,7 +4,7 @@ import test from 'node:test'
 import { createBot, createMessage } from '@grammyjs/storage-utils'
 import { Bot, Context, session } from 'grammy'
 
-import { RedisAdapter } from '../dist/esm/mod'
+import { RedisAdapter } from '../src/mod.ts'
 import { RedisMock } from './redisMock'
 
 test('Pizza counter tests', async () => {

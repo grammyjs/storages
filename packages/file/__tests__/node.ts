@@ -1,22 +1,24 @@
 import assert from 'node:assert'
+import { existsSync } from 'node:fs'
+import { rm } from 'node:fs/promises'
+import { resolve } from 'node:path'
 import test from 'node:test'
 
 import { createBot, createMessage } from '@grammyjs/storage-utils'
 import { session } from 'grammy'
 
-import { fs, path, cwd } from '../dist/esm/deps.node'
-import { FileAdapter } from '../dist/esm/mod'
+import { FileAdapter } from '../src/mod.ts'
 
-const dirPath = path.resolve(cwd(), 'sessions')
+const dirPath = resolve(process.cwd(), 'sessions')
 const cleanDir = async (): Promise<void> => {
-	await fs.remove(dirPath).catch(() => null)
+	await rm(dirPath, { recursive: true }).catch(() => null)
 }
 
 test('Should create sessions dir', async () => {
 	await cleanDir()
 
 	new FileAdapter({ dirName: 'sessions' })
-	assert.ok(fs.existsSync(dirPath))
+	assert.ok(existsSync(dirPath))
 })
 
 test('Pizza counter tests', async () => {

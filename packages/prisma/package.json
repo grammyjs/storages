@@ -38,13 +38,15 @@
 	"scripts": {
 		"typecheck": "tsc",
 		"prebuild": "pnpm typecheck",
-		"test": "generate; prisma db push; vitest",
+		"test": "prisma generate; prisma db push; vitest",
 		"generate": "prisma generate",
 		"build": "tsdown"
 	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
+		"@prisma/adapter-better-sqlite3": "7.8.0",
 		"@prisma/client": "7.8.0",
+		"better-sqlite3": "12.11.1",
 		"grammy": "1.44.0",
 		"prisma": "7.8.0",
 		"vite": "8.1.3",

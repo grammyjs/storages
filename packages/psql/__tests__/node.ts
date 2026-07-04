@@ -5,7 +5,7 @@ import * as utils from '@grammyjs/storage-utils'
 import { session } from 'grammy'
 import { newDb } from 'pg-mem'
 
-import { PsqlAdapter } from '../dist/cjs/mod'
+import { PsqlAdapter } from '../src/mod.ts'
 
 test('Pizza counter test', async () => {
 	const bot = utils.createBot()

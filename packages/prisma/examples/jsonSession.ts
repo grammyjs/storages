@@ -1,13 +1,16 @@
 import { PrismaAdapter } from '@grammyjs/storage-prisma'
-import { PrismaClient } from '@prisma/client'
+import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3'
 import { Bot, Context, session, SessionFlavor } from 'grammy'
+
+import { PrismaClient } from '../generated/prisma/client'
 
 interface SessionData {
 	counter: number
 }
 type MyContext = Context & SessionFlavor<SessionData>
 
-const prisma = new PrismaClient()
+const adapter = new PrismaBetterSqlite3({ url: 'file:./prisma/dev.db' })
+const prisma = new PrismaClient({ adapter })
 
 async function bootstrap(): Promise<void> {
 	const bot = new Bot<MyContext>('')
