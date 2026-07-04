@@ -33,8 +33,8 @@ beforeAll(async () => {
 })
 
 afterAll(async () => {
-	await source.destroy()
-	await mongod.stop()
+	await source?.destroy()
+	await mongod?.stop()
 })
 
 describe('Pizza counter test', () => {
