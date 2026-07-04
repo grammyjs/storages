@@ -11,6 +11,7 @@
 		"prepare": "lefthook install || true",
 		"build": "lerna run build",
 		"test": "lerna run test",
+		"test:deno": "pnpm run --filter \"./packages/denokv\" test:deno",
 		"dev": "lerna run dev --parallel",
 		"lint": "oxlint",
 		"lint:fix": "oxlint --fix",
