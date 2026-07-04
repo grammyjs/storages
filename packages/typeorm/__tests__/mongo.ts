@@ -1,7 +1,8 @@
 import { createBot, createMessage } from '@grammyjs/storage-utils'
 import { session } from 'grammy'
+import { ObjectId } from 'mongodb'
 import { MongoMemoryServer } from 'mongodb-memory-server'
-import { Column, DataSource, Entity, ObjectIdColumn, ObjectId } from 'typeorm'
+import { Column, DataSource, Entity, ObjectIdColumn } from 'typeorm'
 import { beforeAll, afterAll, test, expect, describe } from 'vitest'
 
 import { ISession, TypeormAdapter } from '../src'
@@ -9,13 +10,13 @@ import { ISession, TypeormAdapter } from '../src'
 @Entity()
 export class Session implements ISession {
 	@ObjectIdColumn()
-	id: ObjectId
+	id!: ObjectId
 
 	@Column({ type: 'string' })
-	key: string
+	key!: string
 
 	@Column({ type: 'string' })
-	value: string
+	value!: string
 }
 
 let mongod: MongoMemoryServer
