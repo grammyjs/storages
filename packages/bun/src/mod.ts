@@ -1,4 +1,3 @@
-import type { SQL } from 'bun'
 import type { StorageAdapter } from 'grammy'
 
 export type BunSQLDialect = 'postgres' | 'sqlite' | 'mysql'
@@ -9,10 +8,10 @@ export interface BunSQLAdapterOptions {
 }
 
 export class BunSQLAdapter<T> implements StorageAdapter<T> {
-	private readonly sql: SQL
+	private readonly sql: Bun.SQL
 	private readonly options: BunSQLAdapterOptions
 
-	constructor(sql: SQL, options: BunSQLAdapterOptions) {
+	constructor(sql: Bun.SQL, options: BunSQLAdapterOptions) {
 		this.sql = sql
 		this.options = options
 	}
