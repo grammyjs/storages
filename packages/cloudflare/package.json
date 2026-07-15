@@ -3,7 +3,7 @@
 	"version": "2.6.0",
 	"private": false,
 	"description": "Cloudflare Workers session storage for grammY.",
-	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/workers-kv#readme",
+	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/cloudflare#readme",
 	"bugs": {
 		"url": "https://github.com/grammyjs/storages/issues"
 	},

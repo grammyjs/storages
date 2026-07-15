@@ -4,5 +4,6 @@
 	"version": "2.6.0",
 	"changelog": true,
 	"conventionalCommits": true,
-	"createRelease": "github"
+	"createRelease": "github",
+	"ignore": "@grammyjs/denokv"
 }
