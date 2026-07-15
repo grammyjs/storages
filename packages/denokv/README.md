@@ -19,7 +19,7 @@ Database storage adapter that can be used to [store your session data](https://g
 1. Import the adapter
 
    ```ts
-   import { DenoKVAdapter } from 'https://deno.land/x/grammy_storages/denokv/src/mod.ts'
+   import { DenoKVAdapter } from 'npm:@grammyjs/denokv'
    ```
 
 2. Get KV instance (leave path blank to use default)
