@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/grammyjs/storages/compare/v2.5.1...v2.6.0) (2026-07-15)
+
+### Bug Fixes
+
+- **utils:** bump grammy to 1.35.0 and update botInfo type ([#264](https://github.com/grammyjs/storages/issues/264)) ([6a077eb](https://github.com/grammyjs/storages/commit/6a077ebf05444c1cfc3e7b5c33dd3b369e7c7bf0))
+
 ## [2.4.2](https://github.com/grammyjs/storages/compare/v2.4.1...v2.4.2) (2024-02-29)
 
 **Note:** Version bump only for package @grammyjs/storage-utils

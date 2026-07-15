@@ -1,6 +1,6 @@
 {
 	"name": "@grammyjs/storage-free",
-	"version": "2.5.1",
+	"version": "2.6.0",
 	"private": false,
 	"description": "Storage adapter for grammY's free sessions",
 	"keywords": [

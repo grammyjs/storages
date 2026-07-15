@@ -1,6 +1,6 @@
 {
 	"name": "denokv",
-	"version": "2.5.0",
+	"version": "2.6.0",
 	"scripts": {
 		"typecheck": "deno check src/mod.ts",
 		"test:deno": "deno test --no-check --allow-read --allow-write --allow-env --allow-import --unstable-kv ./test/session.test.ts",

@@ -1,6 +1,6 @@
 {
 	"name": "@grammyjs/storage-dynamodb",
-	"version": "0.1.0",
+	"version": "2.6.0",
 	"private": false,
 	"description": "DynamoDB session storage for grammY.",
 	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/dynamodb#readme",

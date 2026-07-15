@@ -1,6 +1,6 @@
 {
 	"name": "@grammyjs/storage-mongodb",
-	"version": "2.5.1",
+	"version": "2.6.0",
 	"private": false,
 	"description": "MongoDB storage for grammy library.",
 	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/mongodb#readme",

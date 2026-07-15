@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/grammyjs/storages/compare/v2.5.1...v2.6.0) (2026-07-15)
+
+### Bug Fixes
+
+- **denokv:** add --allow-import flag for Deno 2.0 compatibility ([#263](https://github.com/grammyjs/storages/issues/263)) ([cade075](https://github.com/grammyjs/storages/commit/cade0755ceb2aff8f54e27d42b4d68b214eecad8))
+- **free:** correct readAllKeys return type ([#261](https://github.com/grammyjs/storages/issues/261)) ([1e3d8da](https://github.com/grammyjs/storages/commit/1e3d8da09d0189360f7081058069627c2a4c95a9))
+- index.ts and mod.ts mixup. Shims for index.ts on all packages. ([#260](https://github.com/grammyjs/storages/issues/260)) ([0613dc6](https://github.com/grammyjs/storages/commit/0613dc6442ea98753dac5d461f362fcc6c00aa56))
+- **utils:** bump grammy to 1.35.0 and update botInfo type ([#264](https://github.com/grammyjs/storages/issues/264)) ([6a077eb](https://github.com/grammyjs/storages/commit/6a077ebf05444c1cfc3e7b5c33dd3b369e7c7bf0))
+
+### Features
+
+- **dynamodb:** Implement the DynamoDB Storage Adapter ([#247](https://github.com/grammyjs/storages/issues/247)) ([b7a2334](https://github.com/grammyjs/storages/commit/b7a23342183cc67d6ee503c9fb25a88fe55fac19))
+- upgrade cloudflare deps and usage example to pre-create table ([6a0ce34](https://github.com/grammyjs/storages/commit/6a0ce34e53b3b45b324a1844a20e95dd819621be))
+
 ## [2.5.1](https://github.com/grammyjs/storages/compare/v2.5.0...v2.5.1) (2025-02-27)
 
 **Note:** Version bump only for package @grammyjs/storages

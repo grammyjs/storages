@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/grammyjs/storages/compare/v2.5.1...v2.6.0) (2026-07-15)
+
+### Bug Fixes
+
+- index.ts and mod.ts mixup. Shims for index.ts on all packages. ([#260](https://github.com/grammyjs/storages/issues/260)) ([0613dc6](https://github.com/grammyjs/storages/commit/0613dc6442ea98753dac5d461f362fcc6c00aa56))
+
 ## [2.5.1](https://github.com/grammyjs/storages/compare/v2.5.0...v2.5.1) (2025-02-27)
 
 **Note:** Version bump only for package @grammyjs/storage-prisma

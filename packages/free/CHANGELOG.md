@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/grammyjs/storages/compare/v2.5.1...v2.6.0) (2026-07-15)
+
+### Bug Fixes
+
+- **free:** correct readAllKeys return type ([#261](https://github.com/grammyjs/storages/issues/261)) ([1e3d8da](https://github.com/grammyjs/storages/commit/1e3d8da09d0189360f7081058069627c2a4c95a9))
+
 # [2.5.0](https://github.com/grammyjs/storages/compare/v2.4.2...v2.5.0) (2025-02-24)
 
 ### Features
