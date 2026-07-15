@@ -1,7 +1,6 @@
 {
 	"name": "@grammyjs/denokv",
 	"version": "2.6.0",
-	"private": true,
 	"scripts": {
 		"typecheck": "deno check src/mod.ts",
 		"test:deno": "deno test --no-check --allow-read --allow-write --allow-env --allow-import --unstable-kv ./test/session.test.ts",

@@ -24,6 +24,8 @@ jobs:
         with:
           node-version-file: .nvmrc
           registry-url: https://registry.npmjs.org/
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
       - run: npm i -g pnpm
       - run: pnpm install
       - run: pnpm run lint
