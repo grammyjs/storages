@@ -20,26 +20,13 @@
 		"LICENSE"
 	],
 	"type": "module",
-	"main": "./dist/mod.cjs",
-	"module": "./dist/mod.mjs",
-	"types": "./dist/mod.d.ts",
-	"exports": {
-		".": {
-			"import": {
-				"types": "./dist/mod.d.ts",
-				"default": "./dist/mod.mjs"
-			},
-			"require": {
-				"types": "./dist/mod.d.cts",
-				"default": "./dist/mod.cjs"
-			}
-		}
-	},
+	"main": "./src/mod.ts",
+	"module": "./src/mod.ts",
+	"types": "./src/mod.ts",
 	"scripts": {
 		"typecheck": "tsc",
-		"prebuild": "pnpm typecheck",
 		"test": "node --test __tests__/node.ts",
-		"build": "tsdown"
+		"build": "pnpm typecheck"
 	},
 	"devDependencies": {
 		"@types/bun": "1.3.14",
