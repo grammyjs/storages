@@ -5,6 +5,10 @@ on:
     types: [published]
   workflow_dispatch:
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
@@ -21,19 +25,11 @@ jobs:
           node-version-file: .nvmrc
           registry-url: https://registry.npmjs.org/
       - run: npm i -g pnpm
-      - name: setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-      - name: setup pnpm config
-        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - run: pnpm install
       - run: pnpm run lint
-      - run: pnpm run format:Check
+      - run: pnpm run format:check
       - run: pnpm run build
       - run: pnpm run test
-      - name: create and publish versions
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create and Publish versions
         run: |
-          pnpm publish --no-git-checks -r
+          pnpm publish --access public --no-git-checks -r
