@@ -8,10 +8,6 @@ export interface BunSQLAdapterOptions {
 	dialect: BunSQLDialect
 }
 
-interface SessionRow {
-	value: string
-}
-
 export class BunSQLAdapter<T> implements StorageAdapter<T> {
 	private readonly sql: SQL
 	private readonly options: BunSQLAdapterOptions
@@ -22,9 +18,13 @@ export class BunSQLAdapter<T> implements StorageAdapter<T> {
 	}
 
 	async read(key: string): Promise<T | undefined> {
-		const [session] = (await this
-			.sql`SELECT ${this.sql('value')} FROM ${this.sql(this.options.tableName)} WHERE ${this.sql('key')} = ${key}`) as SessionRow[]
-		return session === undefined ? undefined : (JSON.parse(session.value) as T)
+		const [session] = await this
+			.sql`SELECT ${this.sql('value')} FROM ${this.sql(this.options.tableName)} WHERE ${this.sql('key')} = ${key}`
+		if (session?.value === undefined) {
+			return undefined
+		}
+
+		return JSON.parse(session.value) as T
 	}
 
 	async write(key: string, value: T): Promise<void> {
