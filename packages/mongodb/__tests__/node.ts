@@ -6,7 +6,7 @@ import { session } from 'grammy'
 import { MongoClient, Collection } from 'mongodb'
 import { MongoMemoryServer } from 'mongodb-memory-server'
 
-import { ISession, MongoDBAdapter } from '../dist/mod.mjs'
+import { type ISession, MongoDBAdapter } from '../src/mod.ts'
 
 let mongod: MongoMemoryServer
 let client: MongoClient

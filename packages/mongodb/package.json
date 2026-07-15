@@ -38,7 +38,7 @@
 	"scripts": {
 		"typecheck": "tsc",
 		"prebuild": "pnpm typecheck",
-		"test": "tsx __tests__/node.ts",
+		"test": "node __tests__/node.ts",
 		"build": "tsdown"
 	},
 	"devDependencies": {
