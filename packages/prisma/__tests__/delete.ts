@@ -23,7 +23,7 @@ describe('Delete test', () => {
 		)
 
 		bot.hears('first', (ctx) => {
-			ctx.session = null
+			ctx.session.pizzaCount = 0
 		})
 
 		bot.hears('second', (ctx) => {
