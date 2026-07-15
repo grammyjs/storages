@@ -2,6 +2,9 @@ packages:
   - packages/*
   - libs/*
 
+catalog:
+  grammy: 1.44.0
+
 allowBuilds:
   '@prisma/client': true
   '@prisma/engines': true

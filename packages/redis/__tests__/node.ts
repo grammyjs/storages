@@ -2,10 +2,10 @@ import assert from 'node:assert'
 import test from 'node:test'
 
 import { createBot, createMessage } from '@grammyjs/storage-utils'
-import { Bot, Context, session } from 'grammy'
+import { session } from 'grammy'
 
 import { RedisAdapter } from '../src/mod.ts'
-import { RedisMock } from './redisMock'
+import { RedisMock } from './redisMock.ts'
 
 test('Pizza counter tests', async () => {
 	const bot = createBot()
@@ -31,22 +31,7 @@ test('Pizza counter tests', async () => {
 })
 
 test('Simple string tests', async () => {
-	interface StringSessionFlavor {
-		get session(): string
-		set session(session: string | null | undefined)
-	}
-
-	const bot = new Bot<Context & StringSessionFlavor>('fake-token', {
-		botInfo: {
-			id: 42,
-			first_name: 'Test Bot',
-			is_bot: true,
-			username: 'bot',
-			can_join_groups: true,
-			can_read_all_group_messages: true,
-			supports_inline_queries: false,
-		},
-	})
+	const bot = createBot(false)
 
 	bot.use(
 		session({

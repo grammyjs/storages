@@ -43,7 +43,7 @@
 	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
-		"grammy": "1.44.0",
+		"grammy": "catalog:",
 		"mongodb": "7.4.0",
 		"mongodb-memory-server": "11.2.0"
 	}

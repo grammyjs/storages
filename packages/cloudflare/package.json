@@ -43,7 +43,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "5.20260703.1",
-		"grammy": "1.44.0",
+		"grammy": "catalog:",
 		"wrangler": "4.107.0"
 	}
 }

@@ -3,7 +3,6 @@
 	"languages": {
 		"TypeScript": {
 			"format_on_save": "on",
-			"language_servers": ["!tsgo", "vtsls", "!typescript-language-server"],
 			"formatter": {
 				"language_server": {
 					"name": "oxc"
@@ -14,7 +13,6 @@
 			}
 		},
 		"TSX": {
-			"language_servers": ["tsgo", "vtsls", "!typescript-language-server"],
 			"formatter": {
 				"language_server": {
 					"name": "oxc"
@@ -25,7 +23,6 @@
 			}
 		},
 		"JavaScript": {
-			"language_servers": ["!tsgo", "vtsls", "!typescript-language-server"],
 			"formatter": {
 				"language_server": {
 					"name": "oxc"

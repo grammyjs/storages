@@ -42,9 +42,9 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@aws-sdk/lib-dynamodb": "3.1079.0"
+		"@aws-sdk/lib-dynamodb": "3.1086.0"
 	},
 	"devDependencies": {
-		"grammy": "1.44.0"
+		"grammy": "catalog:"
 	}
 }

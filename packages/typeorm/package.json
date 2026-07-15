@@ -44,7 +44,7 @@
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
 		"better-sqlite3": "12.11.1",
-		"grammy": "1.44.0",
+		"grammy": "catalog:",
 		"mongodb": "7.4.0",
 		"mongodb-memory-server": "11.2.0",
 		"typeorm": "1.0.0",

@@ -43,6 +43,6 @@
 	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
-		"grammy": "1.44.0"
+		"grammy": "catalog:"
 	}
 }
