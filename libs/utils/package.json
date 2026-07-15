@@ -22,7 +22,7 @@
 	"scripts": {
 		"typecheck": "tsc",
 		"prebuild": "pnpm typecheck",
-		"test": "tsx __tests__/index.ts",
+		"test": "node __tests__/index.ts",
 		"build": "tsdown"
 	},
 	"dependencies": {
