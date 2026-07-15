@@ -42,8 +42,8 @@
 		"build": "tsdown"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "5.20260703.1",
+		"@cloudflare/workers-types": "5.20260714.1",
 		"grammy": "catalog:",
-		"wrangler": "4.107.0"
+		"wrangler": "4.110.0"
 	}
 }
