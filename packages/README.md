@@ -5,6 +5,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev).
 ## Storages
 
 - [file](https://github.com/grammyjs/storages/tree/main/packages/file)
+- [bun](https://github.com/grammyjs/storages/tree/main/packages/bun)
 - [mongodb](https://github.com/grammyjs/storages/tree/main/packages/mongodb)
 - [psql](https://github.com/grammyjs/storages/tree/main/packages/psql)
 - [redis](https://github.com/grammyjs/storages/tree/main/packages/redis)

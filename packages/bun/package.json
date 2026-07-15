@@ -1,0 +1,48 @@
+{
+	"name": "@grammyjs/storage-bun",
+	"version": "2.6.0",
+	"private": false,
+	"description": "Bun SQL storage for grammY library.",
+	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/bun#readme",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"license": "MIT",
+	"author": "Satont <satontworldwide@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grammyjs/storages.git"
+	},
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"type": "module",
+	"main": "./dist/mod.cjs",
+	"module": "./dist/mod.mjs",
+	"types": "./dist/mod.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/mod.d.ts",
+				"default": "./dist/mod.mjs"
+			},
+			"require": {
+				"types": "./dist/mod.d.cts",
+				"default": "./dist/mod.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"typecheck": "tsc",
+		"prebuild": "pnpm typecheck",
+		"test": "node --test __tests__/node.ts",
+		"build": "tsdown"
+	},
+	"devDependencies": {
+		"@types/bun": "1.3.14",
+		"grammy": "catalog:"
+	}
+}
