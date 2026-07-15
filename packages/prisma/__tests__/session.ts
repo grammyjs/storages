@@ -1,56 +1,57 @@
-import { session } from 'grammy';
-import { PrismaAdapter } from '../src';
-import { test, expect, describe, beforeEach } from 'vitest';
-import { createBot, createMessage } from '@grammyjs/storage-utils';
-import prisma from './helpers/prisma';
+import { createBot, createMessage } from '@grammyjs/storage-utils'
+import { session } from 'grammy'
+import { test, expect, describe, beforeEach } from 'vitest'
+
+import { PrismaAdapter } from '../src'
+import prisma from './helpers/prisma'
 
 beforeEach(async () => {
-  await prisma.pizzaSession.deleteMany({});
-});
+	await prisma.pizzaSession.deleteMany({})
+})
 
 describe('Pizza counter test', () => {
-  test('Pizza counter should be equals 0 on initial', async () => {
-    const bot = createBot();
-    const ctx = createMessage(bot);
+	test('Pizza counter should be equals 0 on initial', async () => {
+		const bot = createBot()
+		const ctx = createMessage(bot)
 
-    bot.use(
-      session({
-        initial() {
-          return { pizzaCount: 0 };
-        },
-        storage: new PrismaAdapter(prisma.pizzaSession),
-      })
-    );
+		bot.use(
+			session({
+				initial() {
+					return { pizzaCount: 0 }
+				},
+				storage: new PrismaAdapter(prisma.pizzaSession),
+			})
+		)
 
-    await bot.handleUpdate(ctx.update);
+		await bot.handleUpdate(ctx.update)
 
-    bot.on('msg:text', (ctx) => {
-      expect(ctx.session.pizzaCount).toEqual(0);
-    });
-  });
+		bot.on('msg:text', (ctx) => {
+			expect(ctx.session.pizzaCount).toEqual(0)
+		})
+	})
 
-  test('Pizza counter should be equals 1 after first message', async () => {
-    const bot = createBot();
+	test('Pizza counter should be equals 1 after first message', async () => {
+		const bot = createBot()
 
-    bot.use(
-      session({
-        initial: () => ({ pizzaCount: 0 }),
-        storage: new PrismaAdapter(prisma.pizzaSession),
-      })
-    );
+		bot.use(
+			session({
+				initial: () => ({ pizzaCount: 0 }),
+				storage: new PrismaAdapter(prisma.pizzaSession),
+			})
+		)
 
-    bot.hears('first', (ctx) => {
-      ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1;
-    });
+		bot.hears('first', (ctx) => {
+			ctx.session.pizzaCount = Number(ctx.session.pizzaCount) + 1
+		})
 
-    bot.hears('second', (ctx) => {
-      expect(ctx.session.pizzaCount).toEqual(1);
-    });
+		bot.hears('second', (ctx) => {
+			expect(ctx.session.pizzaCount).toEqual(1)
+		})
 
-    const firstMessage = createMessage(bot, 'first');
-    const secondMessage = createMessage(bot, 'second');
+		const firstMessage = createMessage(bot, 'first')
+		const secondMessage = createMessage(bot, 'second')
 
-    await bot.handleUpdate(firstMessage.update);
-    await bot.handleUpdate(secondMessage.update);
-  });
-});
+		await bot.handleUpdate(firstMessage.update)
+		await bot.handleUpdate(secondMessage.update)
+	})
+})

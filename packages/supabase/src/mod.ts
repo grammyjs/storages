@@ -1,36 +1,44 @@
-import { SupabaseClient } from './deps.deno.ts';
+import { SupabaseClient } from '@supabase/supabase-js'
+
+import type { StorageAdapter } from 'grammy'
 
 interface Session {
-  id: string;
-  session: string;
+	id: string
+	session: string
 }
 
-export function supabaseAdapter<T>({ supabase, table }: { supabase: SupabaseClient; table: string }) {
-  if (!supabase) {
-    throw new Error('Kindly pass an instance of supabase client to the parameter list.');
-  } 
-  
-  if (!table) {
-    throw new Error('Kindly pass a table to the parameter list.');
-  }
+export function supabaseAdapter<T>({
+	supabase,
+	table,
+}: {
+	supabase: SupabaseClient
+	table: string
+}): StorageAdapter<T> {
+	if (!supabase) {
+		throw new Error('Kindly pass an instance of supabase client to the parameter list.')
+	}
 
-  return {
-    read: async (id: string) => {
-      const { data, error } = await supabase.from<Session>(table).select('session').eq('id', id).single();
+	if (!table) {
+		throw new Error('Kindly pass a table to the parameter list.')
+	}
 
-      if (error || !data) {
-        return undefined;
-      }
+	return {
+		read: async (id: string): Promise<T | undefined> => {
+			const { data, error } = await supabase.from(table).select('session').eq('id', id).single()
 
-      return JSON.parse(data.session) as T;
-    },
-    write: async (id: string, value: T) => {
-      const input = { id, session: JSON.stringify(value) };
+			if (error || !data) {
+				return undefined
+			}
 
-      await supabase.from<Session>(table).upsert(input, { returning: 'minimal' });
-    },
-    delete: async (id: string) => {
-      await supabase.from<Session>(table).delete({ returning: 'minimal' }).match({ id });
-    },
-  };
+			return JSON.parse((data as Session).session) as T
+		},
+		write: async (id: string, value: T): Promise<void> => {
+			const input = { id, session: JSON.stringify(value) }
+
+			await supabase.from(table).upsert(input)
+		},
+		delete: async (id: string): Promise<void> => {
+			await supabase.from(table).delete().match({ id })
+		},
+	}
 }

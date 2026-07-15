@@ -1,36 +1,49 @@
 {
-  "name": "@grammyjs/storage-cloudflare",
-  "version": "2.4.2",
-  "private": false,
-  "description": "Cloudflare Workers session storage for grammY.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
-  "files": [
-    "README.md",
-    "dist",
-    "package.json",
-    "LICENSE"
-  ],
-  "scripts": {
-    "test": "echo \"No tests found\"",
-    "test:deno": "echo \"No tests found\"",
-    "prebuild": "rimraf dist",
-    "build": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/grammyjs/storages.git"
-  },
-  "author": "grammyjs",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/grammyjs/storages/issues"
-  },
-  "homepage": "https://github.com/grammyjs/storages/tree/main/packages/workers-kv#readme",
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260416.2",
-    "grammy": "^1.42.0",
-    "wrangler": "^4.83.0"
-  }
+	"name": "@grammyjs/storage-cloudflare",
+	"version": "2.4.2",
+	"private": false,
+	"description": "Cloudflare Workers session storage for grammY.",
+	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/workers-kv#readme",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"license": "MIT",
+	"author": "grammyjs",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grammyjs/storages.git"
+	},
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"typecheck": "tsc",
+		"prebuild": "pnpm typecheck",
+		"test": "echo \"No tests found\"",
+		"build": "tsdown"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "5.20260714.1",
+		"grammy": "catalog:",
+		"wrangler": "4.110.0"
+	}
 }

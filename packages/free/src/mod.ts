@@ -1,1 +1,2 @@
-export { freeStorage } from './adapter.ts';
+export { freeStorage } from './adapter.js'
+export type { StorageOptions } from './adapter.js'

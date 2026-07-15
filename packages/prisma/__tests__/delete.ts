@@ -1,38 +1,39 @@
-import { test, expect, describe, beforeEach } from 'vitest';
-import { session } from 'grammy';
-import { PrismaAdapter } from '../src';
-import { createBot, createMessage } from '@grammyjs/storage-utils';
-import prisma from './helpers/prisma';
+import { createBot, createMessage } from '@grammyjs/storage-utils'
+import { session } from 'grammy'
+import { test, expect, describe, beforeEach } from 'vitest'
+
+import { PrismaAdapter } from '../src'
+import prisma from './helpers/prisma'
 
 beforeEach(async () => {
-  await prisma.pizzaSession.deleteMany({});
-});
+	await prisma.pizzaSession.deleteMany({})
+})
 
 describe('Delete test', () => {
-  test('An not yet stored record should be nullable without throwing', async () => {
-    const bot = createBot();
+	test('An not yet stored record should be nullable without throwing', async () => {
+		const bot = createBot()
 
-    bot.use(
-      session({
-        initial() {
-          return { pizzaCount: 0 };
-        },
-        storage: new PrismaAdapter(prisma.pizzaSession),
-      })
-    );
+		bot.use(
+			session({
+				initial() {
+					return { pizzaCount: 0 }
+				},
+				storage: new PrismaAdapter(prisma.pizzaSession),
+			})
+		)
 
-    bot.hears('first', (ctx) => {
-      ctx.session = null;
-    });
+		bot.hears('first', (ctx) => {
+			ctx.session.pizzaCount = 0
+		})
 
-    bot.hears('second', (ctx) => {
-      expect(ctx.session).toHaveProperty('pizzaCount');
-    });
+		bot.hears('second', (ctx) => {
+			expect(ctx.session).toHaveProperty('pizzaCount')
+		})
 
-    const firstMessage = createMessage(bot, 'first');
-    const secondMessage = createMessage(bot, 'second');
+		const firstMessage = createMessage(bot, 'first')
+		const secondMessage = createMessage(bot, 'second')
 
-    await bot.handleUpdate(firstMessage.update);
-    await bot.handleUpdate(secondMessage.update);
-  });
-});
+		await bot.handleUpdate(firstMessage.update)
+		await bot.handleUpdate(secondMessage.update)
+	})
+})

@@ -1,8 +1,12 @@
 {
-  "name": "denokv",
-  "private": true,
-  "scripts": {
-    "test:deno": "deno test --allow-read --allow-write --allow-import --unstable ./test/session.test.ts"
-  },
-  "version": "2.5.0"
+	"name": "denokv",
+	"version": "2.5.0",
+	"scripts": {
+		"typecheck": "deno check src/mod.ts",
+		"test:deno": "deno test --no-check --allow-read --allow-write --allow-env --allow-import --unstable-kv ./test/session.test.ts",
+		"publish:jsr": "deno publish"
+	},
+	"devDependencies": {
+		"grammy": "catalog:"
+	}
 }

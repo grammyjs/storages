@@ -1,1 +1,1 @@
-export { SupabaseClient } from '@supabase/supabase-js';
+export { SupabaseClient } from '@supabase/supabase-js'

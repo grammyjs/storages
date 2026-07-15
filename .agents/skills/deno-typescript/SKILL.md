@@ -106,9 +106,9 @@ deno run --allow-net --allow-read=./data --allow-env main.ts
 
 ```typescript
 // Programmatic permission requests
-const status = await Deno.permissions.request({ name: "net", host: "api.example.com" });
-if (status.state === "granted") {
-  // Network access granted
+const status = await Deno.permissions.request({ name: 'net', host: 'api.example.com' })
+if (status.state === 'granted') {
+	// Network access granted
 }
 ```
 
@@ -117,27 +117,27 @@ if (status.state === "granted") {
 ```typescript
 // Simple HTTP server
 Deno.serve({ port: 8000 }, (req) => {
-  const url = new URL(req.url);
+	const url = new URL(req.url)
 
-  if (url.pathname === "/api/users" && req.method === "GET") {
-    return Response.json({ users: [] });
-  }
+	if (url.pathname === '/api/users' && req.method === 'GET') {
+		return Response.json({ users: [] })
+	}
 
-  return new Response("Not Found", { status: 404 });
-});
+	return new Response('Not Found', { status: 404 })
+})
 ```
 
 ### Using Hono with Deno
 
 ```typescript
-import { Hono } from "https://deno.land/x/hono/mod.ts";
+import { Hono } from 'https://deno.land/x/hono/mod.ts'
 
-const app = new Hono();
+const app = new Hono()
 
-app.get("/", (c) => c.text("Hello Deno!"));
-app.get("/api/users", (c) => c.json({ users: [] }));
+app.get('/', (c) => c.text('Hello Deno!'))
+app.get('/api/users', (c) => c.json({ users: [] }))
 
-Deno.serve(app.fetch);
+Deno.serve(app.fetch)
 ```
 
 ### Using Fresh Framework
@@ -169,19 +169,19 @@ export const handler: Handlers = {
 
 ```typescript
 // Using Deno KV (built-in key-value store)
-const kv = await Deno.openKv();
+const kv = await Deno.openKv()
 
 // Set a value
-await kv.set(["users", "1"], { name: "John", email: "john@example.com" });
+await kv.set(['users', '1'], { name: 'John', email: 'john@example.com' })
 
 // Get a value
-const result = await kv.get(["users", "1"]);
-console.log(result.value);
+const result = await kv.get(['users', '1'])
+console.log(result.value)
 
 // List values
-const entries = kv.list({ prefix: ["users"] });
+const entries = kv.list({ prefix: ['users'] })
 for await (const entry of entries) {
-  console.log(entry.key, entry.value);
+	console.log(entry.key, entry.value)
 }
 ```
 
@@ -189,39 +189,39 @@ for await (const entry of entries) {
 
 ```typescript
 // Access environment variables (requires --allow-env)
-const apiKey = Deno.env.get("API_KEY");
+const apiKey = Deno.env.get('API_KEY')
 
 // Using dotenv
-import { load } from "https://deno.land/std/dotenv/mod.ts";
-const env = await load();
+import { load } from 'https://deno.land/std/dotenv/mod.ts'
+const env = await load()
 ```
 
 ### Testing with Built-in Test Runner
 
 ```typescript
 // user_test.ts
-import { assertEquals, assertRejects } from "https://deno.land/std/assert/mod.ts";
-import { describe, it, beforeEach } from "https://deno.land/std/testing/bdd.ts";
-import { getUser, createUser } from "./user_service.ts";
+import { assertEquals, assertRejects } from 'https://deno.land/std/assert/mod.ts'
+import { describe, it, beforeEach } from 'https://deno.land/std/testing/bdd.ts'
+import { getUser, createUser } from './user_service.ts'
 
-describe("User Service", () => {
-  beforeEach(() => {
-    // Setup
-  });
+describe('User Service', () => {
+	beforeEach(() => {
+		// Setup
+	})
 
-  it("should create a user", async () => {
-    const user = await createUser({ name: "John", email: "john@example.com" });
-    assertEquals(user.name, "John");
-  });
+	it('should create a user', async () => {
+		const user = await createUser({ name: 'John', email: 'john@example.com' })
+		assertEquals(user.name, 'John')
+	})
 
-  it("should throw for invalid email", async () => {
-    await assertRejects(
-      () => createUser({ name: "John", email: "invalid" }),
-      Error,
-      "Invalid email"
-    );
-  });
-});
+	it('should throw for invalid email', async () => {
+		await assertRejects(
+			() => createUser({ name: 'John', email: 'invalid' }),
+			Error,
+			'Invalid email'
+		)
+	})
+})
 
 // Run tests
 // deno test --allow-net --allow-read
@@ -256,30 +256,30 @@ deno info main.ts
 
 ```json
 {
-  "tasks": {
-    "dev": "deno run --watch --allow-net --allow-env main.ts",
-    "start": "deno run --allow-net --allow-env main.ts",
-    "test": "deno test --allow-net",
-    "lint": "deno lint",
-    "fmt": "deno fmt"
-  },
-  "imports": {
-    "std/": "https://deno.land/std@0.208.0/",
-    "@/": "./src/"
-  },
-  "compilerOptions": {
-    "strict": true,
-    "lib": ["deno.window"]
-  },
-  "lint": {
-    "rules": {
-      "tags": ["recommended"]
-    }
-  },
-  "fmt": {
-    "indentWidth": 2,
-    "singleQuote": true
-  }
+	"tasks": {
+		"dev": "deno run --watch --allow-net --allow-env main.ts",
+		"start": "deno run --allow-net --allow-env main.ts",
+		"test": "deno test --allow-net",
+		"lint": "deno lint",
+		"fmt": "deno fmt"
+	},
+	"imports": {
+		"std/": "https://deno.land/std@0.208.0/",
+		"@/": "./src/"
+	},
+	"compilerOptions": {
+		"strict": true,
+		"lib": ["deno.window"]
+	},
+	"lint": {
+		"rules": {
+			"tags": ["recommended"]
+		}
+	},
+	"fmt": {
+		"indentWidth": 2,
+		"singleQuote": true
+	}
 }
 ```
 
@@ -287,33 +287,27 @@ deno info main.ts
 
 ```typescript
 class AppError extends Error {
-  constructor(
-    message: string,
-    public statusCode: number = 500,
-    public code: string = "INTERNAL_ERROR"
-  ) {
-    super(message);
-    this.name = "AppError";
-  }
+	constructor(
+		message: string,
+		public statusCode: number = 500,
+		public code: string = 'INTERNAL_ERROR'
+	) {
+		super(message)
+		this.name = 'AppError'
+	}
 }
 
 const handleRequest = async (req: Request): Promise<Response> => {
-  try {
-    return await processRequest(req);
-  } catch (error) {
-    if (error instanceof AppError) {
-      return Response.json(
-        { error: error.message, code: error.code },
-        { status: error.statusCode }
-      );
-    }
-    console.error(error);
-    return Response.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
-  }
-};
+	try {
+		return await processRequest(req)
+	} catch (error) {
+		if (error instanceof AppError) {
+			return Response.json({ error: error.message, code: error.code }, { status: error.statusCode })
+		}
+		console.error(error)
+		return Response.json({ error: 'Internal Server Error' }, { status: 500 })
+	}
+}
 ```
 
 ### Web Standards

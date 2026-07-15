@@ -13,7 +13,7 @@ npm install @grammyjs/storage-deta --save
 Deno
 
 ```ts
-import { DetaAdapter } from "https://deno.land/x/grammy_storages/deta/src/mod.ts";
+import { DetaAdapter } from 'https://deno.land/x/grammy_storages/deta/src/mod.ts'
 ```
 
 ## Introduction
@@ -34,37 +34,34 @@ You can check [examples](examples/) folder.
 Example of a message counter bot running on Deno:
 
 ```ts
-import {
-  Bot,
-  Context,
-  session,
-  SessionFlavor,
-} from "https://lib.deno.dev/x/grammy@1.x/mod.ts";
-import { DetaAdapter } from "https://deno.land/x/grammy_storages/deta/src/mod.ts";
+import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
+import { DetaAdapter } from 'https://deno.land/x/grammy_storages/deta/src/mod.ts'
 
 // Define session structure
 interface SessionData {
-  count: number;
+	count: number
 }
-type MyContext = Context & SessionFlavor<SessionData>;
+type MyContext = Context & SessionFlavor<SessionData>
 
 // Create the bot and register the session middleware
-const bot = new Bot<MyContext>(""); // <-- Put your Bot token here.
+const bot = new Bot<MyContext>('') // <-- Put your Bot token here.
 
-bot.use(session({
-  initial: () => ({ count: 0 }),
-  storage: new DetaAdapter<SessionData>({
-    baseName: "session", // <-- Base name - your choice.
-    projectKey: "", // <-- Project Key here.
-  }),
-}));
+bot.use(
+	session({
+		initial: () => ({ count: 0 }),
+		storage: new DetaAdapter<SessionData>({
+			baseName: 'session', // <-- Base name - your choice.
+			projectKey: '', // <-- Project Key here.
+		}),
+	})
+)
 
 // Use persistant session data in update handlers
-bot.on("message", async (ctx) => {
-  ctx.session.count++;
-  await ctx.reply(`Message count: ${ctx.session.count}`);
-});
+bot.on('message', async (ctx) => {
+	ctx.session.count++
+	await ctx.reply(`Message count: ${ctx.session.count}`)
+})
 
-bot.catch((err) => console.error(err));
-bot.start();
+bot.catch((err) => console.error(err))
+bot.start()
 ```

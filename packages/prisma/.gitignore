@@ -8,3 +8,4 @@ logs
 .env*
 !.env.example
 prisma/dev.db
+generated

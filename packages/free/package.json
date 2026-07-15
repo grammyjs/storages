@@ -1,54 +1,54 @@
 {
-  "name": "@grammyjs/storage-free",
-  "version": "2.5.1",
-  "private": false,
-  "description": "Storage adapter for grammY's free sessions",
-  "main": "./dist/cjs/mod.js",
-  "module": "./dist/esm/mod.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/mod.js",
-      "require": "./dist/cjs/mod.js"
-    }
-  },
-  "types": "./dist/esm/mod.d.ts",
-  "scripts": {
-    "test:deno": "echo \"Error: no tests found\"",
-    "prebuild": "rimraf dist",
-    "build": "deno2node tsconfig.cjs.json && deno2node tsconfig.esm.json && pnpm postbuild",
-    "postbuild": "tsx ../../tools/postBuildFixup.ts --path=dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/grammyjs/storages.git"
-  },
-  "files": [
-    "README.md",
-    "dist",
-    "package.json",
-    "LICENSE"
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/grammyjs/storages/issues"
-  },
-  "homepage": "https://github.com/grammyjs/storages/packages/free#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.6"
-  },
-  "devDependencies": {
-    "@types/node-fetch": "^2.6.11"
-  },
-  "keywords": [
-    "grammy",
-    "telegram",
-    "bot",
-    "session",
-    "storage",
-    "adapter",
-    "middleware",
-    "free"
-  ],
-  "gitHead": "a7758c4f957f103a14832088c6858d693c444576"
+	"name": "@grammyjs/storage-free",
+	"version": "2.5.1",
+	"private": false,
+	"description": "Storage adapter for grammY's free sessions",
+	"keywords": [
+		"adapter",
+		"bot",
+		"free",
+		"grammy",
+		"session",
+		"storage",
+		"telegram"
+	],
+	"homepage": "https://github.com/grammyjs/storages/packages/free#readme",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/grammyjs/storages.git"
+	},
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"type": "module",
+	"main": "./dist/mod.cjs",
+	"module": "./dist/mod.mjs",
+	"types": "./dist/mod.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/mod.d.ts",
+				"default": "./dist/mod.mjs"
+			},
+			"require": {
+				"types": "./dist/mod.d.cts",
+				"default": "./dist/mod.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"typecheck": "tsc",
+		"prebuild": "pnpm typecheck",
+		"build": "tsdown"
+	},
+	"devDependencies": {
+		"grammy": "catalog:"
+	}
 }

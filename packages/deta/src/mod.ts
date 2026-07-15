@@ -1,1 +1,2 @@
-export { DetaAdapter } from './adapter.ts';
+export { DetaAdapter } from './adapter.js'
+export type { BaseConfig } from './adapter.js'

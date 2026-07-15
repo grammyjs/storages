@@ -31,7 +31,7 @@ Bug reports and pull requests are welcome.
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denodb|denokv|cloudflare|pocketbase|prisma
+  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denokv|cloudflare|pocketbase|prisma
   │
   │
   │
