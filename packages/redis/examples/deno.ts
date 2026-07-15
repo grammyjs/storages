@@ -1,17 +1,13 @@
-import { RedisAdapter } from 'https://deno.land/x/grammy_storages/redis/src/mod.ts'
-import { connect } from 'https://deno.land/x/redis@v0.31.0/mod.ts'
-import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
+import { RedisAdapter } from 'npm:@grammyjs/storage-redis'
+import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
+import { Redis } from 'npm:ioredis'
 
 interface SessionData {
 	counter: number
 }
 type MyContext = Context & SessionFlavor<SessionData>
 
-const redisInstance = await connect({
-	hostname: '127.0.0.1',
-	port: 6379,
-	db: 0,
-})
+const redisInstance = new Redis('redis://127.0.0.1:6379/0')
 
 //Create storage
 const storage = new RedisAdapter({ instance: redisInstance, ttl: 10, autoParseDates: true })

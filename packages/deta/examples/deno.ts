@@ -1,5 +1,5 @@
-import { DetaAdapter } from 'https://deno.land/x/grammy_storages/deta/src/mod.ts'
-import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
+import { DetaAdapter } from 'npm:@grammyjs/storage-deta'
+import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 
 // Define session structure
 interface SessionData {

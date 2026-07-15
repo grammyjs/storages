@@ -15,7 +15,7 @@ The rest will work automatically.
 
 ```ts
 // Import this module
-import { freeStorage } from "https://deno.land/x/grammy_storages/free/src/mod.ts";
+import { freeStorage } from 'npm:@grammyjs/storage-free'
 
 // Install the session middleware
 bot.use(session({
@@ -73,8 +73,8 @@ You may also be interested in [our open-source backend implementation](https://g
 Example of a message counter bot running on Deno:
 
 ```ts
-import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
-import { freeStorage } from 'https://deno.land/x/grammy_storages/free/src/mod.ts'
+import { Bot, Context, session, SessionFlavor } from 'npm:grammy'
+import { freeStorage } from 'npm:@grammyjs/storage-free'
 
 // Define session structure
 interface SessionData {

@@ -1,5 +1,5 @@
-import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
 import { DenoKVAdapter } from 'npm:@grammyjs/denokv'
+import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 
 // Define session structure
 interface SessionData {

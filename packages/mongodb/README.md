@@ -17,7 +17,7 @@ npm install @grammyjs/storage-mongodb --save
 Deno
 
 ```ts
-import { ISession, MongoDBAdapter } from 'https://deno.land/x/grammy_storages/mongodb/src/mod.ts'
+import { ISession, MongoDBAdapter } from 'npm:@grammyjs/storage-mongodb'
 ```
 
 ## Usage

@@ -1,6 +1,6 @@
-import { PsqlAdapter } from 'https://deno.land/x/grammy_storages/psql/src/mod.ts'
-import { Client } from 'https://deno.land/x/postgres@v0.17.0/mod.ts'
-import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
+import { PsqlAdapter } from 'npm:@grammyjs/storage-psql'
+import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
+import { Client } from 'npm:pg'
 
 interface SessionData {
 	counter: number
@@ -11,7 +11,7 @@ async function bootstrap(): Promise<void> {
 	const client = new Client({
 		user: 'user',
 		database: 'test',
-		hostname: 'localhost',
+		host: 'localhost',
 		port: 5432,
 	})
 

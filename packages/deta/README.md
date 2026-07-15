@@ -13,7 +13,7 @@ npm install @grammyjs/storage-deta --save
 Deno
 
 ```ts
-import { DetaAdapter } from 'https://deno.land/x/grammy_storages/deta/src/mod.ts'
+import { DetaAdapter } from 'npm:@grammyjs/storage-deta'
 ```
 
 ## Introduction
@@ -34,8 +34,8 @@ You can check [examples](examples/) folder.
 Example of a message counter bot running on Deno:
 
 ```ts
-import { Bot, Context, session, SessionFlavor } from 'https://lib.deno.dev/x/grammy@1.x/mod.ts'
-import { DetaAdapter } from 'https://deno.land/x/grammy_storages/deta/src/mod.ts'
+import { Bot, Context, session, SessionFlavor } from 'npm:grammy'
+import { DetaAdapter } from 'npm:@grammyjs/storage-deta'
 
 // Define session structure
 interface SessionData {
