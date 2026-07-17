@@ -5,6 +5,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev).
 ## Storages
 
 - [file](https://github.com/grammyjs/storages/tree/main/packages/file)
+- [bun](https://github.com/grammyjs/storages/tree/main/packages/bun)
 - [mongodb](https://github.com/grammyjs/storages/tree/main/packages/mongodb)
 - [psql](https://github.com/grammyjs/storages/tree/main/packages/psql)
 - [redis](https://github.com/grammyjs/storages/tree/main/packages/redis)
@@ -32,7 +33,7 @@ Bug reports and pull requests are welcome.
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denokv|cloudflare|pocketbase|prisma|dynamodb
+  │       └─⫸ Commit Scope: bun|utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denokv|cloudflare|pocketbase|prisma|dynamodb
   │
   │
   │

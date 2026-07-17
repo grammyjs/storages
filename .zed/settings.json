@@ -44,6 +44,12 @@
 		}
 	},
 	"lsp": {
+		"vtsls": {
+			"binary": {
+				"path": "node_modules/.bin/tsc",
+				"arguments": ["--lsp", "--stdio"]
+			}
+		},
 		"oxlint": {
 			"initialization_options": {
 				"settings": {
