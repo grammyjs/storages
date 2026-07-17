@@ -15,7 +15,7 @@
 	},
 	"files": [
 		"README.md",
-		"dist",
+		"src",
 		"package.json",
 		"LICENSE"
 	],
