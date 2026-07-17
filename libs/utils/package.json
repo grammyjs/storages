@@ -27,8 +27,5 @@
 	},
 	"dependencies": {
 		"grammy": "1"
-	},
-	"devDependencies": {
-		"grammy": "1"
 	}
 }
