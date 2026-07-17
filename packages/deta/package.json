@@ -50,7 +50,8 @@
 		"test": "echo \"Error: no tests found\"",
 		"build": "tsdown"
 	},
-	"devDependencies": {
-		"grammy": "catalog:"
-	}
+	"dependencies": {
+		"grammy": "1"
+	},
+	"devDependencies": {}
 }

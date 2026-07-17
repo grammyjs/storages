@@ -41,11 +41,13 @@
 		"test": "node __tests__/node.ts",
 		"build": "tsdown"
 	},
+	"dependencies": {
+		"grammy": "1",
+		"pg": "8"
+	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
 		"@types/pg": "8.20.0",
-		"grammy": "catalog:",
-		"pg": "8.22.0",
 		"pg-mem": "3.0.14"
 	}
 }

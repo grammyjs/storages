@@ -50,10 +50,10 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"pocketbase": "0.27.0"
+		"grammy": "1",
+		"pocketbase": "0.27"
 	},
 	"devDependencies": {
-		"@grammyjs/storage-utils": "workspace:*",
-		"grammy": "catalog:"
+		"@grammyjs/storage-utils": "workspace:*"
 	}
 }

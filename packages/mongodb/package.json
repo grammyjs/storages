@@ -41,10 +41,12 @@
 		"test": "node __tests__/node.ts",
 		"build": "tsdown"
 	},
+	"dependencies": {
+		"grammy": "1",
+		"mongodb": "7"
+	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
-		"grammy": "catalog:",
-		"mongodb": "7.5.0",
 		"mongodb-memory-server": "11.2.0"
 	}
 }

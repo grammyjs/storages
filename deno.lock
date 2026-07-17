@@ -67,91 +67,98 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@types/node@24.12.2",
-        "npm:lefthook@2.1.9",
-        "npm:lerna@8.1.2",
-        "npm:oxfmt@0.57.0",
-        "npm:oxlint@1.72.0",
-        "npm:tsdown@0.22.3",
-        "npm:tsx@4.7.1",
-        "npm:typescript@6.0.3"
+        "npm:@types/node@26.1.1",
+        "npm:lefthook@2.1.10",
+        "npm:lerna@9.0.7",
+        "npm:oxfmt@0.58.0",
+        "npm:oxlint@1.73.0",
+        "npm:tsdown@0.22.7",
+        "npm:typescript@7.0.2"
       ]
     },
     "members": {
       "libs/utils": {
         "packageJson": {
           "dependencies": [
-            "npm:grammy@1.44.0"
+            "npm:grammy@1"
+          ]
+        }
+      },
+      "packages/bun": {
+        "packageJson": {
+          "dependencies": [
+            "npm:@types/bun@1.3.14",
+            "npm:grammy@1"
           ]
         }
       },
       "packages/cloudflare": {
         "packageJson": {
           "dependencies": [
-            "npm:@cloudflare/workers-types@5.20260703.1",
-            "npm:grammy@1.44.0",
-            "npm:wrangler@4.107.0"
+            "npm:@cloudflare/workers-types@5",
+            "npm:grammy@1",
+            "npm:wrangler@4.110.0"
           ]
         }
       },
       "packages/denokv": {
         "packageJson": {
           "dependencies": [
-            "npm:grammy@1.44.0"
+            "npm:grammy@1"
           ]
         }
       },
       "packages/deta": {
         "packageJson": {
           "dependencies": [
-            "npm:grammy@1.44.0"
+            "npm:grammy@1"
           ]
         }
       },
       "packages/dynamodb": {
         "packageJson": {
           "dependencies": [
-            "npm:@aws-sdk/lib-dynamodb@3.1079.0",
-            "npm:grammy@1.44.0"
+            "npm:@aws-sdk/lib-dynamodb@3",
+            "npm:grammy@1"
           ]
         }
       },
       "packages/file": {
         "packageJson": {
           "dependencies": [
-            "npm:grammy@1.44.0"
+            "npm:grammy@1"
           ]
         }
       },
       "packages/firestore": {
         "packageJson": {
           "dependencies": [
-            "npm:@google-cloud/firestore@7.8.0",
-            "npm:grammy@1.44.0"
+            "npm:@google-cloud/firestore@8",
+            "npm:grammy@1"
           ]
         }
       },
       "packages/free": {
         "packageJson": {
           "dependencies": [
-            "npm:grammy@1.44.0"
+            "npm:grammy@1"
           ]
         }
       },
       "packages/mongodb": {
         "packageJson": {
           "dependencies": [
-            "npm:grammy@1.44.0",
+            "npm:grammy@1",
             "npm:mongodb-memory-server@11.2.0",
-            "npm:mongodb@7.4.0"
+            "npm:mongodb@7"
           ]
         }
       },
       "packages/pocketbase": {
         "packageJson": {
           "dependencies": [
-            "npm:grammy@1.44.0",
-            "npm:pocketbase@0.27.0"
+            "npm:grammy@1",
+            "npm:pocketbase@0.27"
           ]
         }
       },
@@ -161,10 +168,10 @@
             "npm:@prisma/adapter-better-sqlite3@7.8.0",
             "npm:@prisma/client@7.8.0",
             "npm:better-sqlite3@12.11.1",
-            "npm:grammy@1.44.0",
+            "npm:grammy@1",
             "npm:prisma@7.8.0",
-            "npm:vite@8.1.3",
-            "npm:vitest@4.1.9"
+            "npm:vite@8.1.4",
+            "npm:vitest@4.1.10"
           ]
         }
       },
@@ -172,26 +179,25 @@
         "packageJson": {
           "dependencies": [
             "npm:@types/pg@8.20.0",
-            "npm:grammy@1.44.0",
+            "npm:grammy@1",
             "npm:pg-mem@3.0.14",
-            "npm:pg@8.22.0"
+            "npm:pg@8"
           ]
         }
       },
       "packages/redis": {
         "packageJson": {
           "dependencies": [
-            "npm:@types/ioredis@5.0.0",
-            "npm:grammy@1.44.0",
-            "npm:ioredis@5.11.1"
+            "npm:grammy@1",
+            "npm:ioredis@5"
           ]
         }
       },
       "packages/supabase": {
         "packageJson": {
           "dependencies": [
-            "npm:@supabase/supabase-js@2.110.0",
-            "npm:grammy@1.44.0"
+            "npm:@supabase/supabase-js@2",
+            "npm:grammy@1"
           ]
         }
       },
@@ -199,12 +205,12 @@
         "packageJson": {
           "dependencies": [
             "npm:better-sqlite3@12.11.1",
-            "npm:grammy@1.44.0",
+            "npm:grammy@1",
             "npm:mongodb-memory-server@11.2.0",
-            "npm:mongodb@7.4.0",
-            "npm:typeorm@1.0.0",
-            "npm:vite@8.1.3",
-            "npm:vitest@4.1.9"
+            "npm:mongodb@7",
+            "npm:typeorm@1",
+            "npm:vite@8.1.4",
+            "npm:vitest@4.1.10"
           ]
         }
       }

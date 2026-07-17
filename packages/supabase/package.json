@@ -48,10 +48,11 @@
 		"test": "echo \"Error: no tests found\"",
 		"build": "tsdown"
 	},
-	"devDependencies": {
-		"@supabase/supabase-js": "2.110.3",
-		"grammy": "catalog:"
+	"dependencies": {
+		"@supabase/supabase-js": "2",
+		"grammy": "1"
 	},
+	"devDependencies": {},
 	"peerDependencies": {
 		"@supabase/supabase-js": "2.0.0"
 	}

@@ -41,8 +41,10 @@
 		"test": "node __tests__/node.ts",
 		"build": "tsdown"
 	},
+	"dependencies": {
+		"grammy": "1"
+	},
 	"devDependencies": {
-		"@grammyjs/storage-utils": "workspace:*",
-		"grammy": "catalog:"
+		"@grammyjs/storage-utils": "workspace:*"
 	}
 }

@@ -48,7 +48,8 @@
 		"prebuild": "pnpm typecheck",
 		"build": "tsdown"
 	},
-	"devDependencies": {
-		"grammy": "catalog:"
-	}
+	"dependencies": {
+		"grammy": "1"
+	},
+	"devDependencies": {}
 }

@@ -1,5 +1,5 @@
 {
-	"name": "@grammyjs/denokv",
+	"name": "@grammyjs/storage-denokv",
 	"version": "2.6.0",
 	"scripts": {
 		"typecheck": "deno check src/mod.ts",
@@ -7,6 +7,6 @@
 		"publish:jsr": "deno publish"
 	},
 	"devDependencies": {
-		"grammy": "catalog:"
+		"grammy": "1"
 	}
 }

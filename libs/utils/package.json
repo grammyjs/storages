@@ -26,6 +26,9 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"grammy": "catalog:"
+		"grammy": "1"
+	},
+	"devDependencies": {
+		"grammy": "1"
 	}
 }

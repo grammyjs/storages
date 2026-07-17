@@ -41,9 +41,11 @@
 		"test": "echo \"No tests found\"",
 		"build": "tsdown"
 	},
+	"dependencies": {
+		"@cloudflare/workers-types": "5",
+		"grammy": "1"
+	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "5.20260714.1",
-		"grammy": "catalog:",
 		"wrangler": "4.110.0"
 	}
 }
