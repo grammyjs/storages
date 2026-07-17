@@ -25,6 +25,7 @@
 	"types": "./dist/mod.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/mod.ts",
 			"import": {
 				"types": "./dist/mod.d.ts",
 				"default": "./dist/mod.mjs"
@@ -41,14 +42,25 @@
 		"test": "vitest",
 		"build": "tsdown"
 	},
+	"dependencies": {
+		"grammy": "1",
+		"mongodb": "7",
+		"typeorm": "1"
+	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
 		"better-sqlite3": "12.11.1",
-		"grammy": "catalog:",
-		"mongodb": "7.5.0",
 		"mongodb-memory-server": "11.2.0",
-		"typeorm": "1.1.0",
 		"vite": "8.1.4",
 		"vitest": "4.1.10"
-	}
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }

@@ -32,6 +32,7 @@
 	"types": "./dist/mod.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/mod.ts",
 			"import": {
 				"types": "./dist/mod.d.ts",
 				"default": "./dist/mod.mjs"
@@ -48,11 +49,21 @@
 		"test": "echo \"Error: no tests found\"",
 		"build": "tsdown"
 	},
-	"devDependencies": {
-		"@supabase/supabase-js": "2.110.3",
-		"grammy": "catalog:"
+	"dependencies": {
+		"@supabase/supabase-js": "2",
+		"grammy": "1"
 	},
+	"devDependencies": {},
 	"peerDependencies": {
 		"@supabase/supabase-js": "2.0.0"
-	}
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }

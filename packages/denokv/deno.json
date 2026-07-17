@@ -1,8 +1,11 @@
 {
 	"name": "@grammyjs/storage-denokv",
-	"version": "2.5.0",
+	"version": "2.6.0",
 	"exports": "./src/mod.ts",
 	"publish": {
 		"include": ["src/", "README.md", "LICENSE"]
+	},
+	"imports": {
+		"grammy": "npm:grammy@1"
 	}
 }

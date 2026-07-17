@@ -25,6 +25,7 @@
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/index.ts",
 			"import": {
 				"types": "./dist/index.d.ts",
 				"default": "./dist/index.mjs"
@@ -41,9 +42,20 @@
 		"test": "echo \"No tests found\"",
 		"build": "tsdown"
 	},
+	"dependencies": {
+		"@cloudflare/workers-types": "5",
+		"grammy": "1"
+	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "5.20260714.1",
-		"grammy": "catalog:",
 		"wrangler": "4.110.0"
-	}
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }

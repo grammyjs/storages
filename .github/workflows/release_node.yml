@@ -35,3 +35,7 @@ jobs:
       - name: Create and Publish versions
         run: |
           pnpm publish --access public --no-git-checks -r
+      - name: Publish to JSR
+        run: |
+          pnpm sync:jsr-versions
+          pnpm publish:jsr

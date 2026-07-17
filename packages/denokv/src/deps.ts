@@ -1,3 +1,3 @@
-import type { StorageAdapter } from 'npm:grammy'
+import type { StorageAdapter } from 'grammy'
 
 export type { StorageAdapter }

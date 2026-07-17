@@ -34,6 +34,7 @@
 	"types": "./dist/mod.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/mod.ts",
 			"import": {
 				"types": "./dist/mod.d.ts",
 				"default": "./dist/mod.mjs"
@@ -49,8 +50,18 @@
 		"prebuild": "pnpm typecheck",
 		"build": "tsdown"
 	},
-	"devDependencies": {
-		"@google-cloud/firestore": "8.6.0",
-		"grammy": "catalog:"
-	}
+	"dependencies": {
+		"@google-cloud/firestore": "8",
+		"grammy": "1"
+	},
+	"devDependencies": {},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }

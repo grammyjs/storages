@@ -4,12 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-catalogs:
-  default:
-    grammy:
-      specifier: 1.44.0
-      version: 1.44.0
-
 importers:
 
   .:
@@ -39,26 +33,28 @@ importers:
   libs/utils:
     dependencies:
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
 
   packages/bun:
+    dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
     devDependencies:
       '@types/bun':
         specifier: 1.3.14
         version: 1.3.14
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
 
   packages/cloudflare:
-    devDependencies:
+    dependencies:
       '@cloudflare/workers-types':
-        specifier: 5.20260714.1
+        specifier: '5'
         version: 5.20260714.1
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
+    devDependencies:
       wrangler:
         specifier: 4.110.0
         version: 4.110.0(@cloudflare/workers-types@5.20260714.1)(bufferutil@4.1.0)(utf-8-validate@5.0.10)
@@ -66,78 +62,83 @@ importers:
   packages/denokv:
     devDependencies:
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
 
   packages/deta:
-    devDependencies:
+    dependencies:
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
 
   packages/dynamodb:
     dependencies:
       '@aws-sdk/lib-dynamodb':
-        specifier: 3.1086.0
+        specifier: '3'
         version: 3.1086.0(@aws-sdk/client-dynamodb@3.1031.0)
-    devDependencies:
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
 
   packages/file:
+    dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
         version: link:../../libs/utils
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
 
   packages/firestore:
-    devDependencies:
+    dependencies:
       '@google-cloud/firestore':
-        specifier: 8.6.0
+        specifier: '8'
         version: 8.6.0
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
 
   packages/free:
-    devDependencies:
+    dependencies:
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
 
   packages/mongodb:
+    dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
+      mongodb:
+        specifier: '7'
+        version: 7.5.0(socks@2.8.9)
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
         version: link:../../libs/utils
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
-      mongodb:
-        specifier: 7.5.0
-        version: 7.5.0(socks@2.8.9)
       mongodb-memory-server:
         specifier: 11.2.0
         version: 11.2.0(socks@2.8.9)
 
   packages/pocketbase:
     dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
       pocketbase:
-        specifier: 0.27.0
+        specifier: '0.27'
         version: 0.27.0
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
         version: link:../../libs/utils
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
 
   packages/prisma:
+    dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
@@ -151,9 +152,6 @@ importers:
       better-sqlite3:
         specifier: 12.11.1
         version: 12.11.1
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
       prisma:
         specifier: 7.8.0
         version: 7.8.0(@types/react@19.2.17)(better-sqlite3@12.11.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@7.0.2)
@@ -165,6 +163,13 @@ importers:
         version: 4.1.10(@opentelemetry/api@1.9.1)(@types/node@26.1.1)(vite@8.1.4(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.0))
 
   packages/psql:
+    dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
+      pg:
+        specifier: '8'
+        version: 8.22.0
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
@@ -172,38 +177,43 @@ importers:
       '@types/pg':
         specifier: 8.20.0
         version: 8.20.0
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
-      pg:
-        specifier: 8.22.0
-        version: 8.22.0
       pg-mem:
         specifier: 3.0.14
         version: 3.0.14(postgres@3.4.7)(typeorm@1.1.0(better-sqlite3@12.11.1)(ioredis@5.11.1)(mongodb@7.5.0(socks@2.8.9))(mysql2@3.15.3)(pg@8.22.0))
 
   packages/redis:
+    dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
+      ioredis:
+        specifier: '5'
+        version: 5.11.1
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
         version: link:../../libs/utils
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
-      ioredis:
-        specifier: 5.11.1
-        version: 5.11.1
 
   packages/supabase:
-    devDependencies:
+    dependencies:
       '@supabase/supabase-js':
-        specifier: 2.110.3
+        specifier: '2'
         version: 2.110.3
       grammy:
-        specifier: 'catalog:'
+        specifier: '1'
         version: 1.44.0(encoding@0.1.13)
 
   packages/typeorm:
+    dependencies:
+      grammy:
+        specifier: '1'
+        version: 1.44.0(encoding@0.1.13)
+      mongodb:
+        specifier: '7'
+        version: 7.5.0(socks@2.8.9)
+      typeorm:
+        specifier: '1'
+        version: 1.1.0(better-sqlite3@12.11.1)(ioredis@5.11.1)(mongodb@7.5.0(socks@2.8.9))(mysql2@3.15.3)(pg@8.22.0)
     devDependencies:
       '@grammyjs/storage-utils':
         specifier: workspace:*
@@ -211,18 +221,9 @@ importers:
       better-sqlite3:
         specifier: 12.11.1
         version: 12.11.1
-      grammy:
-        specifier: 'catalog:'
-        version: 1.44.0(encoding@0.1.13)
-      mongodb:
-        specifier: 7.5.0
-        version: 7.5.0(socks@2.8.9)
       mongodb-memory-server:
         specifier: 11.2.0
         version: 11.2.0(socks@2.8.9)
-      typeorm:
-        specifier: 1.1.0
-        version: 1.1.0(better-sqlite3@12.11.1)(ioredis@5.11.1)(mongodb@7.5.0(socks@2.8.9))(mysql2@3.15.3)(pg@8.22.0)
       vite:
         specifier: 8.1.4
         version: 8.1.4(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.0)
@@ -9185,7 +9186,7 @@ snapshots:
       proc-log: 6.1.0
       semver: 7.7.2
       tar: 7.5.11
-      tinyglobby: 0.2.12
+      tinyglobby: 0.2.17
       undici: 6.27.0
       which: 6.0.1
 

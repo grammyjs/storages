@@ -25,6 +25,7 @@
 	"types": "./dist/mod.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/mod.ts",
 			"import": {
 				"types": "./dist/mod.d.ts",
 				"default": "./dist/mod.mjs"
@@ -41,10 +42,21 @@
 		"test": "node __tests__/node.ts",
 		"build": "tsdown"
 	},
+	"dependencies": {
+		"grammy": "1",
+		"mongodb": "7"
+	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
-		"grammy": "catalog:",
-		"mongodb": "7.5.0",
 		"mongodb-memory-server": "11.2.0"
-	}
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }
