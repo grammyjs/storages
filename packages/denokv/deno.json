@@ -4,5 +4,8 @@
 	"exports": "./src/mod.ts",
 	"publish": {
 		"include": ["src/", "README.md", "LICENSE"]
+	},
+	"imports": {
+		"grammy": "npm:grammy@1"
 	}
 }
