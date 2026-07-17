@@ -34,6 +34,7 @@
 	"types": "./dist/mod.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/mod.ts",
 			"import": {
 				"types": "./dist/mod.d.ts",
 				"default": "./dist/mod.mjs"
@@ -55,5 +56,14 @@
 	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*"
-	}
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }

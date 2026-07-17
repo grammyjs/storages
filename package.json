@@ -19,7 +19,8 @@
 		"format:check": "oxfmt --check",
 		"sync:jsr-versions": "node scripts/sync-jsr-versions.mjs",
 		"prepublish": "pnpm sync:jsr-versions && pnpm build",
-		"publish": "lerna publish --no-private"
+		"publish": "lerna publish --no-private",
+		"publish:jsr": "./scripts/publish-jsr.sh"
 	},
 	"devDependencies": {
 		"@types/node": "26.1.1",

@@ -25,6 +25,7 @@
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/index.ts",
 			"import": {
 				"types": "./dist/index.d.ts",
 				"default": "./dist/index.mjs"
@@ -47,5 +48,14 @@
 	},
 	"devDependencies": {
 		"wrangler": "4.110.0"
-	}
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }

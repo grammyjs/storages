@@ -38,6 +38,4 @@ jobs:
       - name: Publish to JSR
         run: |
           pnpm sync:jsr-versions
-          for dir in packages/*/; do
-            (cd "$dir" && pnpm dlx jsr publish) || exit 1
-          done
+          pnpm publish:jsr

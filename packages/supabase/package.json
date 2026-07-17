@@ -32,6 +32,7 @@
 	"types": "./dist/mod.d.ts",
 	"exports": {
 		".": {
+			"jsr": "./src/mod.ts",
 			"import": {
 				"types": "./dist/mod.d.ts",
 				"default": "./dist/mod.mjs"
@@ -55,5 +56,14 @@
 	"devDependencies": {},
 	"peerDependencies": {
 		"@supabase/supabase-js": "2.0.0"
-	}
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
 }

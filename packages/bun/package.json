@@ -23,6 +23,13 @@
 	"main": "./src/mod.ts",
 	"module": "./src/mod.ts",
 	"types": "./src/mod.ts",
+	"exports": {
+		".": {
+			"jsr": "./src/mod.ts",
+			"types": "./src/mod.ts",
+			"default": "./src/mod.ts"
+		}
+	},
 	"scripts": {
 		"typecheck": "tsc",
 		"test": "node --test __tests__/node.ts",
@@ -33,5 +40,13 @@
 	},
 	"devDependencies": {
 		"@types/bun": "1.3.14"
-	}
+	},
+	"jsrExclude": [
+		"package.json"
+	],
+	"jsrInclude": [
+		"src",
+		"README.md",
+		"LICENSE"
+	]
 }
