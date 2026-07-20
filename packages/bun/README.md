@@ -5,8 +5,12 @@ Session storage for [grammY](https://grammy.dev) backed by an existing
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-bun) and [JSR](https://jsr.io/@grammyjs/storage-bun) under the same name.
+
 ```bash
 bun add @grammyjs/storage-bun
+# or via JSR:
+bunx jsr add @grammyjs/storage-bun
 ```
 
 ## Database setup

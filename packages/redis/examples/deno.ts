@@ -1,4 +1,4 @@
-import { RedisAdapter } from 'npm:@grammyjs/storage-redis'
+import { RedisAdapter } from 'jsr:@grammyjs/storage-redis'
 import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 import { Redis } from 'npm:ioredis'
 

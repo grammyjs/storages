@@ -6,11 +6,15 @@ Storage adapter that can be used to
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-redis) and [JSR](https://jsr.io/@grammyjs/storage-redis) under the same name.
+
 Node
 
 ```bash
 npm install @grammyjs/storage-redis ioredis --save
 npm install @types/ioredis -D
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-redis
 ```
 
 ```ts
@@ -20,8 +24,12 @@ import IORedis from 'ioredis'
 
 Deno
 
+```bash
+deno add jsr:@grammyjs/storage-redis npm:ioredis
+```
+
 ```ts
-import { RedisAdapter } from 'npm:@grammyjs/storage-redis'
+import { RedisAdapter } from 'jsr:@grammyjs/storage-redis'
 import { Redis } from 'npm:ioredis'
 ```
 

@@ -8,8 +8,14 @@ Storage adapter that can be used to [store your session data](https://grammy.dev
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-firestore) and [JSR](https://jsr.io/@grammyjs/storage-firestore) under the same name.
+
 ```bash
 npm install @grammyjs/storage-firestore --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-firestore
+# Deno:
+# deno add jsr:@grammyjs/storage-firestore
 ```
 
 You should also have [`@google-cloud/firestore`](https://www.npmjs.com/package/@google-cloud/firestore) installed.

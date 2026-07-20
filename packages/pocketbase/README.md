@@ -2,6 +2,18 @@
 
 Storage adapter that can be used to [store your session data](https://grammy.dev/plugins/session.html) with [Pocketbase](https://pocketbase.io/) when using sessions.
 
+## Installation
+
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-pocketbase) and [JSR](https://jsr.io/@grammyjs/storage-pocketbase) under the same name.
+
+```bash
+npm install @grammyjs/storage-pocketbase pocketbase --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-pocketbase
+# Deno:
+# deno add jsr:@grammyjs/storage-pocketbase
+```
+
 ## Usage
 
 ### Host a Pocketbase instance

@@ -6,8 +6,14 @@ using sessions.
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-cloudflare) and [JSR](https://jsr.io/@grammyjs/storage-cloudflare) under the same name.
+
 ```bash
 npm install @grammyjs/storage-cloudflare --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-cloudflare
+# Deno:
+# deno add jsr:@grammyjs/storage-cloudflare
 ```
 
 ## Usage

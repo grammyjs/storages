@@ -8,16 +8,24 @@ Compatible with deno and node!
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-mongodb) and [JSR](https://jsr.io/@grammyjs/storage-mongodb) under the same name.
+
 Node
 
 ```bash
 npm install @grammyjs/storage-mongodb --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-mongodb
 ```
 
 Deno
 
+```bash
+deno add jsr:@grammyjs/storage-mongodb
+```
+
 ```ts
-import { ISession, MongoDBAdapter } from 'npm:@grammyjs/storage-mongodb'
+import { ISession, MongoDBAdapter } from 'jsr:@grammyjs/storage-mongodb'
 ```
 
 ## Usage

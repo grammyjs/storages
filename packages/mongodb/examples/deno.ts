@@ -1,4 +1,4 @@
-import { MongoDBAdapter, type ISession } from 'npm:@grammyjs/storage-mongodb'
+import { MongoDBAdapter, type ISession } from 'jsr:@grammyjs/storage-mongodb'
 import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 import { MongoClient } from 'npm:mongodb'
 

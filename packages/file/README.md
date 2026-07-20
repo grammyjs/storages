@@ -6,16 +6,24 @@ using sessions.
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-file) and [JSR](https://jsr.io/@grammyjs/storage-file) under the same name.
+
 Node
 
 ```bash
 npm install @grammyjs/storage-file --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-file
 ```
 
 Deno
 
+```bash
+deno add jsr:@grammyjs/storage-file
+```
+
 ```ts
-import { FileAdapter } from 'npm:@grammyjs/storage-file'
+import { FileAdapter } from 'jsr:@grammyjs/storage-file'
 ```
 
 ## Usage

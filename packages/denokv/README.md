@@ -16,10 +16,16 @@ Database storage adapter that can be used to [store your session data](https://g
 
 ## Instructions
 
-1. Import the adapter
+1. Install and import the adapter
+
+   This package is published to [JSR](https://jsr.io/@grammyjs/storage-denokv):
+
+   ```bash
+   deno add jsr:@grammyjs/storage-denokv
+   ```
 
    ```ts
-   import { DenoKVAdapter } from 'npm:@grammyjs/denokv'
+   import { DenoKVAdapter } from 'jsr:@grammyjs/storage-denokv'
    ```
 
 2. Get KV instance (leave path blank to use default)

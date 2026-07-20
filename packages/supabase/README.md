@@ -4,8 +4,14 @@ Database storage adapter that can be used to [store your session data](https://g
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-supabase) and [JSR](https://jsr.io/@grammyjs/storage-supabase) under the same name.
+
 ```bash
 npm install @grammyjs/storage-supabase --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-supabase
+# Deno:
+# deno add jsr:@grammyjs/storage-supabase
 ```
 
 ## Instructions

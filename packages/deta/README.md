@@ -4,16 +4,24 @@ Storage adapter that can be used to [store your session data](https://grammy.dev
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-deta) and [JSR](https://jsr.io/@grammyjs/storage-deta) under the same name.
+
 Node
 
 ```bash
 npm install @grammyjs/storage-deta --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-deta
 ```
 
 Deno
 
+```bash
+deno add jsr:@grammyjs/storage-deta
+```
+
 ```ts
-import { DetaAdapter } from 'npm:@grammyjs/storage-deta'
+import { DetaAdapter } from 'jsr:@grammyjs/storage-deta'
 ```
 
 ## Introduction
@@ -35,7 +43,7 @@ Example of a message counter bot running on Deno:
 
 ```ts
 import { Bot, Context, session, SessionFlavor } from 'npm:grammy'
-import { DetaAdapter } from 'npm:@grammyjs/storage-deta'
+import { DetaAdapter } from 'jsr:@grammyjs/storage-deta'
 
 // Define session structure
 interface SessionData {

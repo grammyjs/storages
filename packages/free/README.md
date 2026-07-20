@@ -11,11 +11,17 @@ We already did the database setup for you.
 All you have to do is use this package.
 The rest will work automatically.
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-free) and [JSR](https://jsr.io/@grammyjs/storage-free) under the same name.
+
 ### Deno
+
+```bash
+deno add jsr:@grammyjs/storage-free
+```
 
 ```ts
 // Import this module
-import { freeStorage } from 'npm:@grammyjs/storage-free'
+import { freeStorage } from 'jsr:@grammyjs/storage-free'
 
 // Install the session middleware
 bot.use(session({
@@ -30,6 +36,8 @@ Install this package.
 
 ```bash
 npm i @grammyjs/storage-free
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-free
 ```
 
 Next, use this code.
@@ -74,7 +82,7 @@ Example of a message counter bot running on Deno:
 
 ```ts
 import { Bot, Context, session, SessionFlavor } from 'npm:grammy'
-import { freeStorage } from 'npm:@grammyjs/storage-free'
+import { freeStorage } from 'jsr:@grammyjs/storage-free'
 
 // Define session structure
 interface SessionData {

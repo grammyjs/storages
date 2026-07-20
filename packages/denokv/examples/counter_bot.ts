@@ -1,4 +1,4 @@
-import { DenoKVAdapter } from 'npm:@grammyjs/denokv'
+import { DenoKVAdapter } from 'jsr:@grammyjs/storage-denokv'
 import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 
 // Define session structure

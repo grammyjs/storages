@@ -4,8 +4,14 @@ Storage adapter that can be used to [store your session data](https://grammy.dev
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-typeorm) and [JSR](https://jsr.io/@grammyjs/storage-typeorm) under the same name.
+
 ```bash
 npm install @grammyjs/storage-typeorm typeorm --save
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-typeorm
+# Deno:
+# deno add jsr:@grammyjs/storage-typeorm
 ```
 
 ## Usage

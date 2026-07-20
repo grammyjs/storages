@@ -1,4 +1,4 @@
-import { DetaAdapter } from 'npm:@grammyjs/storage-deta'
+import { DetaAdapter } from 'jsr:@grammyjs/storage-deta'
 import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 
 // Define session structure

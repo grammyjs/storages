@@ -4,8 +4,14 @@ This package provides a [DynamoDB](https://aws.amazon.com/dynamodb/) storage ada
 
 ## Installation
 
+This package is published to both [npm](https://www.npmjs.com/package/@grammyjs/storage-dynamodb) and [JSR](https://jsr.io/@grammyjs/storage-dynamodb) under the same name.
+
 ```bash
 npm install @grammyjs/storage-dynamodb @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
+# or via JSR (npm compatibility layer):
+# npx jsr add @grammyjs/storage-dynamodb
+# Deno:
+# deno add jsr:@grammyjs/storage-dynamodb
 ```
 
 ## Usage

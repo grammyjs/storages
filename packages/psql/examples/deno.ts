@@ -1,4 +1,4 @@
-import { PsqlAdapter } from 'npm:@grammyjs/storage-psql'
+import { PsqlAdapter } from 'jsr:@grammyjs/storage-psql'
 import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 import { Client } from 'npm:pg'
 

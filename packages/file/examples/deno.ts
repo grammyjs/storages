@@ -1,4 +1,4 @@
-import { FileAdapter } from 'npm:@grammyjs/storage-file'
+import { FileAdapter } from 'jsr:@grammyjs/storage-file'
 import { Bot, type Context, session, type SessionFlavor } from 'npm:grammy'
 
 interface SessionData {
