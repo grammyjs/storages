@@ -1,7 +1,6 @@
 {
 	"name": "@grammyjs/storage-bun",
 	"version": "2.6.0",
-	"private": false,
 	"description": "Bun SQL storage for grammY library.",
 	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/bun#readme",
 	"bugs": {
@@ -39,7 +38,7 @@
 		"grammy": "1"
 	},
 	"devDependencies": {
-		"@types/bun": "1.3.14"
+		"@types/bun": "1"
 	},
 	"jsrExclude": [
 		"package.json"
