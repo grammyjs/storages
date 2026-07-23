@@ -1,0 +1,10 @@
+node_modules
+dist
+dest
+token
+test.ts
+test.js
+logs
+.env*
+!.env.example
+sessions

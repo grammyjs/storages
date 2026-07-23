@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 
-import { BunSQLAdapter } from '../src/mod.ts'
+import { BunS3Adapter, BunSQLAdapter } from '../src/mod.ts'
 
 class Identifier {
 	readonly name: string
@@ -108,4 +108,100 @@ test('deletes the session by key', async () => {
 
 	assert.deepEqual(mock.calls[0]?.strings, ['DELETE FROM ', ' WHERE ', ' = ', ''])
 	assert.deepEqual(values(mock.calls[0]!), ['grammy_sessions', 'key', 'chat:1'])
+})
+
+interface S3Call {
+	method: 'file' | 'write' | 'delete'
+	path: string
+	data?: unknown
+}
+
+function createS3Mock(initialFiles: Record<string, string> = {}): {
+	client: Bun.S3Client
+	calls: S3Call[]
+	files: Map<string, string>
+} {
+	const files = new Map(Object.entries(initialFiles))
+	const calls: S3Call[] = []
+	const client = {
+		file(path: string) {
+			calls.push({ method: 'file', path })
+			return {
+				exists: (): Promise<boolean> => Promise.resolve(files.has(path)),
+				json: (): Promise<unknown> => Promise.resolve(JSON.parse(files.get(path) ?? '')),
+			}
+		},
+		write(path: string, data: string) {
+			calls.push({ method: 'write', path, data })
+			files.set(path, data)
+			return Promise.resolve(data.length)
+		},
+		delete(path: string) {
+			calls.push({ method: 'delete', path })
+			files.delete(path)
+			return Promise.resolve()
+		},
+	} as unknown as Bun.S3Client
+	return { client, calls, files }
+}
+
+test('s3: returns undefined when the object is absent', async () => {
+	const mock = createS3Mock()
+	const adapter = new BunS3Adapter(mock.client, { dirName: 'sessions' })
+
+	assert.equal(await adapter.read('chat:1'), undefined)
+	assert.deepEqual(mock.calls[0], { method: 'file', path: 'sessions/chat:1.json' })
+})
+
+test('s3: deserializes a stored JSON session', async () => {
+	const mock = createS3Mock({ 'sessions/chat:1.json': '{"pizzaCount":1}' })
+	const adapter = new BunS3Adapter<{ pizzaCount: number }>(mock.client, {
+		dirName: 'sessions',
+	})
+
+	assert.deepEqual(await adapter.read('chat:1'), { pizzaCount: 1 })
+})
+
+test('s3: propagates invalid stored JSON', async () => {
+	const mock = createS3Mock({ 'sessions/chat:1.json': '{' })
+	const adapter = new BunS3Adapter(mock.client, { dirName: 'sessions' })
+
+	await assert.rejects(adapter.read('chat:1'), SyntaxError)
+})
+
+test('s3: writes JSON to the object named after the key', async () => {
+	const mock = createS3Mock()
+	const adapter = new BunS3Adapter(mock.client, { dirName: 'sessions' })
+
+	await adapter.write('chat:1', { pizzaCount: 1 })
+
+	assert.deepEqual(mock.calls[0], {
+		method: 'write',
+		path: 'sessions/chat:1.json',
+		data: '{"pizzaCount":1}',
+	})
+	assert.equal(mock.files.get('sessions/chat:1.json'), '{"pizzaCount":1}')
+})
+
+test('s3: stores objects at the bucket root without a dirName', async () => {
+	const mock = createS3Mock()
+	const adapter = new BunS3Adapter(mock.client)
+
+	await adapter.write('chat:1', { pizzaCount: 1 })
+
+	assert.deepEqual(mock.calls[0], {
+		method: 'write',
+		path: 'chat:1.json',
+		data: '{"pizzaCount":1}',
+	})
+})
+
+test('s3: deletes the object by key', async () => {
+	const mock = createS3Mock({ 'sessions/chat:1.json': '{"pizzaCount":1}' })
+	const adapter = new BunS3Adapter(mock.client, { dirName: 'sessions' })
+
+	await adapter.delete('chat:1')
+
+	assert.deepEqual(mock.calls[0], { method: 'delete', path: 'sessions/chat:1.json' })
+	assert.equal(mock.files.has('sessions/chat:1.json'), false)
 })

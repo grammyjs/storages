@@ -1,7 +1,7 @@
 {
 	"name": "@grammyjs/storage-bun",
 	"version": "2.6.0",
-	"description": "Bun SQL storage for grammY library.",
+	"description": "Bun SQL and S3 storage for grammY library.",
 	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/bun#readme",
 	"bugs": {
 		"url": "https://github.com/grammyjs/storages/issues"
@@ -19,14 +19,20 @@
 		"LICENSE"
 	],
 	"type": "module",
-	"main": "./src/mod.ts",
-	"module": "./src/mod.ts",
-	"types": "./src/mod.ts",
+	"main": "./dist/mod.cjs",
+	"module": "./dist/mod.mjs",
+	"types": "./dist/mod.d.ts",
 	"exports": {
 		".": {
 			"jsr": "./src/mod.ts",
-			"types": "./src/mod.ts",
-			"default": "./src/mod.ts"
+			"import": {
+				"types": "./dist/mod.d.ts",
+				"default": "./dist/mod.mjs"
+			},
+			"require": {
+				"types": "./dist/mod.d.cts",
+				"default": "./dist/mod.cjs"
+			}
 		}
 	},
 	"scripts": {
