@@ -18,13 +18,13 @@ export class S3Adapter<T> implements StorageAdapter<T> {
 	) {
 		if (client instanceof MinioClient) {
 			if (!bucket) {
-				throw new Error('You should pass bucket to constructor.')
+				throw new Error('You must specify a bucket.')
 			}
 
 			this.driver = createMinioDriver(client)
 		} else if (client instanceof S3Client) {
 			if (!bucket) {
-				throw new Error('You should pass bucket to constructor.')
+				throw new Error('You must specify a bucket.')
 			}
 
 			this.driver = createAwsDriver(client)
