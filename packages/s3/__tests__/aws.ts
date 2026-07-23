@@ -14,7 +14,7 @@ import { sdkStreamMixin } from '@smithy/util-stream'
 import { mockClient } from 'aws-sdk-client-mock'
 import { session } from 'grammy'
 
-import { S3Adapter } from '../src/aws-adapter.ts'
+import { S3Adapter } from '../src/index.ts'
 
 const s3Mock = mockClient(S3Client)
 const store = new Map<string, string>()
@@ -60,12 +60,12 @@ s3Mock.on(HeadObjectCommand).callsFake((input) => {
 const client = new S3Client({ region: 'us-east-1' })
 
 function createAdapter(prefix?: string): S3Adapter<{ pizzaCount: number }> {
-	return new S3Adapter({ instance: client, bucket: 'test-bucket', prefix })
+	return new S3Adapter(client, { bucket: 'test-bucket', prefix })
 }
 
 test('Should throw on missing constructor arguments', () => {
-	assert.throws(() => new S3Adapter({ bucket: 'test-bucket' } as never), /S3Client/)
-	assert.throws(() => new S3Adapter({ instance: client } as never), /bucket/)
+	assert.throws(() => new S3Adapter(client), /bucket/)
+	assert.throws(() => new S3Adapter({} as never), /Unsupported client/)
 })
 
 test('Adapter CRUD', async () => {
@@ -126,7 +126,7 @@ test('Simple string tests', async () => {
 	bot.use(
 		session({
 			initial: () => 'test',
-			storage: new S3Adapter<string>({ instance: client, bucket: 'test-bucket' }),
+			storage: new S3Adapter<string>(client, { bucket: 'test-bucket' }),
 		})
 	)
 

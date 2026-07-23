@@ -1,15 +1,14 @@
-import { S3Client } from '@aws-sdk/client-s3'
 import { S3Adapter } from '@grammyjs/storage-s3'
+import { S3Client } from 'bun'
 import { Bot, session } from 'grammy'
 
 const client = new S3Client({
-	region: 'us-east-1',
-	// Optional: set `endpoint` (and `forcePathStyle` for MinIO) to use any S3-compatible storage
-	// Optional: pass `credentials` here if not using the default AWS credential chain
+	bucket: 'grammy-sessions',
+	accessKeyId: 'your-access-key-id',
+	secretAccessKey: 'your-secret-access-key',
 })
 
 const adapter = new S3Adapter(client, {
-	bucket: 'grammy-sessions',
 	prefix: 'sessions/',
 })
 

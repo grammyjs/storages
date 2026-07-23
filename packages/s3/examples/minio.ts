@@ -1,4 +1,4 @@
-import { MinioAdapter } from '@grammyjs/storage-s3'
+import { S3Adapter } from '@grammyjs/storage-s3'
 import { Bot, session } from 'grammy'
 import { Client } from 'minio'
 
@@ -10,8 +10,7 @@ const client = new Client({
 	secretKey: 'your-secret-key',
 })
 
-const adapter = new MinioAdapter({
-	instance: client,
+const adapter = new S3Adapter(client, {
 	bucket: 'grammy-sessions',
 	prefix: 'sessions/',
 })

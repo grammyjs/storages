@@ -1,72 +1,53 @@
 import assert from 'node:assert'
-import { Readable } from 'node:stream'
 import test from 'node:test'
 
 import { createBot, createMessage } from '@grammyjs/storage-utils'
 import { session } from 'grammy'
-import { Client, type BucketItemStat } from 'minio'
 
 import { S3Adapter } from '../src/index.ts'
 
-type UploadedObjectInfo = Awaited<ReturnType<Client['putObject']>>
+class FakeS3File {
+	private readonly store: Map<string, string>
+	private readonly path: string
 
-class FakeMinioClient extends Client {
+	constructor(store: Map<string, string>, path: string) {
+		this.store = store
+		this.path = path
+	}
+
+	async exists(): Promise<boolean> {
+		return this.store.has(this.path)
+	}
+
+	async text(): Promise<string> {
+		return this.store.get(this.path) ?? ''
+	}
+}
+
+class FakeBunS3Client {
 	readonly store = new Map<string, string>()
 
-	override async getObject(_bucketName: string, objectName: string): Promise<Readable> {
-		const data = this.store.get(objectName)
-
-		if (data === undefined) {
-			throw Object.assign(new Error('The specified key does not exist.'), { code: 'NoSuchKey' })
-		}
-
-		return Readable.from([data])
+	file(path: string): FakeS3File {
+		return new FakeS3File(this.store, path)
 	}
 
-	override async putObject(
-		_bucketName: string,
-		objectName: string,
-		stream: Readable | Buffer | string
-	): Promise<UploadedObjectInfo> {
-		if (typeof stream !== 'string') {
-			throw new TypeError('FakeMinioClient only supports string payloads')
-		}
-
-		this.store.set(objectName, stream)
-		return { etag: 'fake-etag', versionId: null }
+	async write(path: string, data: string): Promise<number> {
+		this.store.set(path, data)
+		return data.length
 	}
 
-	override async removeObject(_bucketName: string, objectName: string): Promise<void> {
-		this.store.delete(objectName)
-	}
-
-	override async statObject(_bucketName: string, objectName: string): Promise<BucketItemStat> {
-		const data = this.store.get(objectName)
-
-		if (data === undefined) {
-			throw Object.assign(new Error('Not Found'), { code: 'NotFound' })
-		}
-
-		return { size: data.length, etag: 'fake-etag', lastModified: new Date(), metaData: {} }
+	async delete(path: string): Promise<void> {
+		this.store.delete(path)
 	}
 }
 
-const client = new FakeMinioClient({
-	endPoint: 'localhost',
-	port: 9000,
-	useSSL: false,
-	accessKey: 'test-access-key',
-	secretKey: 'test-secret-key',
-})
+Object.assign(globalThis, { Bun: { S3Client: FakeBunS3Client } })
+
+const client = new FakeBunS3Client()
 
 function createAdapter(prefix?: string): S3Adapter<{ pizzaCount: number }> {
-	return new S3Adapter(client, { bucket: 'test-bucket', prefix })
+	return new S3Adapter(client, { prefix })
 }
-
-test('Should throw on missing constructor arguments', () => {
-	assert.throws(() => new S3Adapter(client), /bucket/)
-	assert.throws(() => new S3Adapter({} as never), /Unsupported client/)
-})
 
 test('Adapter CRUD', async () => {
 	client.store.clear()
@@ -126,7 +107,7 @@ test('Simple string tests', async () => {
 	bot.use(
 		session({
 			initial: () => 'test',
-			storage: new S3Adapter<string>(client, { bucket: 'test-bucket' }),
+			storage: new S3Adapter<string>(client),
 		})
 	)
 
