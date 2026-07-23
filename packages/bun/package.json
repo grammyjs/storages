@@ -19,20 +19,14 @@
 		"LICENSE"
 	],
 	"type": "module",
-	"main": "./dist/mod.cjs",
-	"module": "./dist/mod.mjs",
-	"types": "./dist/mod.d.ts",
+	"main": "./src/mod.ts",
+	"module": "./src/mod.ts",
+	"types": "./src/mod.ts",
 	"exports": {
 		".": {
 			"jsr": "./src/mod.ts",
-			"import": {
-				"types": "./dist/mod.d.ts",
-				"default": "./dist/mod.mjs"
-			},
-			"require": {
-				"types": "./dist/mod.d.cts",
-				"default": "./dist/mod.cjs"
-			}
+			"types": "./src/mod.ts",
+			"default": "./src/mod.ts"
 		}
 	},
 	"scripts": {
