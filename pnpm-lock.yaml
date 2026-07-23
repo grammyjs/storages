@@ -212,6 +212,9 @@ importers:
       '@smithy/util-stream':
         specifier: 4.7.12
         version: 4.7.12
+      '@types/bun':
+        specifier: '1'
+        version: 1.3.14
       aws-sdk-client-mock:
         specifier: 4.1.0
         version: 4.1.0
@@ -5733,7 +5736,7 @@ snapshots:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-crypto/supports-web-crypto': 5.2.0
       '@aws-crypto/util': 5.2.0
-      '@aws-sdk/types': 3.974.0
+      '@aws-sdk/types': 3.974.2
       '@aws-sdk/util-locate-window': 3.965.8
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
@@ -5741,7 +5744,7 @@ snapshots:
   '@aws-crypto/sha256-js@5.2.0':
     dependencies:
       '@aws-crypto/util': 5.2.0
-      '@aws-sdk/types': 3.974.0
+      '@aws-sdk/types': 3.974.2
       tslib: 2.8.1
 
   '@aws-crypto/supports-web-crypto@5.2.0':
@@ -5750,7 +5753,7 @@ snapshots:
 
   '@aws-crypto/util@5.2.0':
     dependencies:
-      '@aws-sdk/types': 3.974.0
+      '@aws-sdk/types': 3.974.2
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
 
@@ -5766,7 +5769,7 @@ snapshots:
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       '@aws-sdk/credential-provider-node': 3.972.67
       '@aws-sdk/dynamodb-codec': 3.973.31
       '@aws-sdk/middleware-endpoint-discovery': 3.972.23
@@ -5775,12 +5778,12 @@ snapshots:
       '@aws-sdk/middleware-recursion-detection': 3.972.33
       '@aws-sdk/middleware-user-agent': 3.972.61
       '@aws-sdk/region-config-resolver': 3.972.35
-      '@aws-sdk/types': 3.974.0
+      '@aws-sdk/types': 3.974.2
       '@aws-sdk/util-endpoints': 3.996.30
       '@aws-sdk/util-user-agent-browser': 3.972.32
       '@aws-sdk/util-user-agent-node': 3.973.47
       '@smithy/config-resolver': 4.6.8
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       '@smithy/fetch-http-handler': 5.6.5
       '@smithy/hash-node': 4.4.8
       '@smithy/invalid-dependency': 4.4.8
@@ -5848,17 +5851,17 @@ snapshots:
 
   '@aws-sdk/credential-provider-env@3.972.57':
     dependencies:
-      '@aws-sdk/core': 3.975.1
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/core': 3.976.0
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@aws-sdk/credential-provider-http@3.972.59':
     dependencies:
-      '@aws-sdk/core': 3.975.1
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/core': 3.976.0
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/fetch-http-handler': 5.6.5
       '@smithy/node-http-handler': 4.9.5
       '@smithy/types': 4.16.1
@@ -5866,7 +5869,7 @@ snapshots:
 
   '@aws-sdk/credential-provider-ini@3.973.1':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       '@aws-sdk/credential-provider-env': 3.972.57
       '@aws-sdk/credential-provider-http': 3.972.59
       '@aws-sdk/credential-provider-login': 3.972.63
@@ -5874,18 +5877,18 @@ snapshots:
       '@aws-sdk/credential-provider-sso': 3.973.1
       '@aws-sdk/credential-provider-web-identity': 3.972.63
       '@aws-sdk/nested-clients': 3.997.31
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/credential-provider-imds': 4.4.8
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@aws-sdk/credential-provider-login@3.972.63':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       '@aws-sdk/nested-clients': 3.997.31
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
@@ -5897,43 +5900,43 @@ snapshots:
       '@aws-sdk/credential-provider-process': 3.972.57
       '@aws-sdk/credential-provider-sso': 3.973.1
       '@aws-sdk/credential-provider-web-identity': 3.972.63
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/credential-provider-imds': 4.4.8
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@aws-sdk/credential-provider-process@3.972.57':
     dependencies:
-      '@aws-sdk/core': 3.975.1
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/core': 3.976.0
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@aws-sdk/credential-provider-sso@3.973.1':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       '@aws-sdk/nested-clients': 3.997.31
       '@aws-sdk/token-providers': 3.1083.0
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@aws-sdk/credential-provider-web-identity@3.972.63':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       '@aws-sdk/nested-clients': 3.997.31
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@aws-sdk/dynamodb-codec@3.973.31':
     dependencies:
-      '@aws-sdk/core': 3.975.1
-      '@smithy/core': 3.29.3
+      '@aws-sdk/core': 3.976.0
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
@@ -5954,8 +5957,8 @@ snapshots:
   '@aws-sdk/middleware-endpoint-discovery@3.972.23':
     dependencies:
       '@aws-sdk/endpoint-cache': 3.972.9
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
@@ -5966,17 +5969,17 @@ snapshots:
 
   '@aws-sdk/middleware-host-header@3.972.32':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       tslib: 2.8.1
 
   '@aws-sdk/middleware-logger@3.972.31':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       tslib: 2.8.1
 
   '@aws-sdk/middleware-recursion-detection@3.972.33':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       tslib: 2.8.1
 
   '@aws-sdk/middleware-sdk-s3@3.972.53':
@@ -5990,15 +5993,15 @@ snapshots:
 
   '@aws-sdk/middleware-user-agent@3.972.61':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       tslib: 2.8.1
 
   '@aws-sdk/nested-clients@3.997.31':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       '@aws-sdk/signature-v4-multi-region': 3.996.39
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/fetch-http-handler': 5.6.5
       '@smithy/node-http-handler': 4.9.5
       '@smithy/types': 4.16.1
@@ -6006,7 +6009,7 @@ snapshots:
 
   '@aws-sdk/region-config-resolver@3.972.35':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       tslib: 2.8.1
 
   '@aws-sdk/signature-v4-multi-region@3.996.39':
@@ -6018,10 +6021,10 @@ snapshots:
 
   '@aws-sdk/token-providers@3.1083.0':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       '@aws-sdk/nested-clients': 3.997.31
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
+      '@aws-sdk/types': 3.974.2
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
@@ -6042,8 +6045,8 @@ snapshots:
 
   '@aws-sdk/util-endpoints@3.996.30':
     dependencies:
-      '@aws-sdk/core': 3.975.1
-      '@smithy/core': 3.29.3
+      '@aws-sdk/core': 3.976.0
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@aws-sdk/util-locate-window@3.965.8':
@@ -6052,12 +6055,12 @@ snapshots:
 
   '@aws-sdk/util-user-agent-browser@3.972.32':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       tslib: 2.8.1
 
   '@aws-sdk/util-user-agent-node@3.973.47':
     dependencies:
-      '@aws-sdk/core': 3.975.1
+      '@aws-sdk/core': 3.976.0
       tslib: 2.8.1
 
   '@aws-sdk/xml-builder@3.972.34':
@@ -7289,7 +7292,7 @@ snapshots:
 
   '@smithy/config-resolver@4.6.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/core@3.29.3':
@@ -7304,24 +7307,24 @@ snapshots:
 
   '@smithy/credential-provider-imds@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@smithy/fetch-http-handler@5.6.5':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@smithy/hash-node@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/invalid-dependency@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/is-array-buffer@2.2.0':
@@ -7330,43 +7333,43 @@ snapshots:
 
   '@smithy/middleware-content-length@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/middleware-endpoint@4.6.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/middleware-retry@4.7.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/middleware-serde@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/middleware-stack@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/node-config-provider@4.5.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/node-http-handler@4.9.5':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
   '@smithy/protocol-http@5.5.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/signature-v4@5.6.4':
@@ -7383,7 +7386,7 @@ snapshots:
 
   '@smithy/smithy-client@4.14.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
@@ -7393,22 +7396,22 @@ snapshots:
 
   '@smithy/url-parser@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-base64@4.5.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-body-length-browser@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-body-length-node@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-buffer-from@2.2.0':
@@ -7418,27 +7421,27 @@ snapshots:
 
   '@smithy/util-defaults-mode-browser@4.5.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-defaults-mode-node@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-endpoints@3.6.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-middleware@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-retry@4.5.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-stream@4.7.12':
@@ -7453,12 +7456,12 @@ snapshots:
 
   '@smithy/util-utf8@4.4.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@smithy/util-waiter@4.5.8':
     dependencies:
-      '@smithy/core': 3.29.3
+      '@smithy/core': 3.29.7
       tslib: 2.8.1
 
   '@speed-highlight/core@1.2.17': {}

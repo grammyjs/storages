@@ -6,12 +6,13 @@ Storage adapter that can be used to
 any S3-compatible storage (MinIO, Cloudflare R2, Wasabi, DigitalOcean Spaces,
 and others).
 
-Two implementations are shipped, pick the one that fits your stack:
+One `S3Adapter` class works with any of the supported clients and detects the
+SDK automatically:
 
-- `S3Adapter` — built on the official
-  [AWS SDK for JavaScript v3](https://www.npmjs.com/package/@aws-sdk/client-s3)
-- `MinioAdapter` — built on the
-  [MinIO JavaScript SDK](https://www.npmjs.com/package/minio)
+- [AWS SDK for JavaScript v3](https://www.npmjs.com/package/@aws-sdk/client-s3)
+  (`S3Client`)
+- [MinIO JavaScript SDK](https://www.npmjs.com/package/minio) (`Client`)
+- [Bun](https://bun.sh/docs/api/s3) (`Bun.S3Client`)
 
 ## Installation
 
@@ -28,7 +29,7 @@ npm install @grammyjs/storage-s3 minio --save
 ```
 
 ```ts
-import { MinioAdapter, S3Adapter } from '@grammyjs/storage-s3'
+import { S3Adapter } from '@grammyjs/storage-s3'
 ```
 
 Deno
@@ -40,7 +41,17 @@ deno add jsr:@grammyjs/storage-s3 npm:minio
 ```
 
 ```ts
-import { MinioAdapter, S3Adapter } from 'jsr:@grammyjs/storage-s3'
+import { S3Adapter } from 'jsr:@grammyjs/storage-s3'
+```
+
+Bun
+
+```bash
+bun add @grammyjs/storage-s3
+```
+
+```ts
+import { S3Adapter } from '@grammyjs/storage-s3'
 ```
 
 ## Usage
@@ -57,8 +68,7 @@ import { S3Adapter } from '@grammyjs/storage-s3'
 
 const client = new S3Client({ region: 'us-east-1' })
 
-const storage = new S3Adapter({
-	instance: client,
+const storage = new S3Adapter(client, {
 	bucket: 'my-bucket',
 	prefix: 'sessions/',
 })
@@ -74,7 +84,7 @@ bot.use(
 ### MinIO SDK
 
 ```ts
-import { MinioAdapter } from '@grammyjs/storage-s3'
+import { S3Adapter } from '@grammyjs/storage-s3'
 import { Client } from 'minio'
 
 const client = new Client({
@@ -85,9 +95,32 @@ const client = new Client({
 	secretKey: 'your-secret-key',
 })
 
-const storage = new MinioAdapter({
-	instance: client,
+const storage = new S3Adapter(client, {
 	bucket: 'my-bucket',
+	prefix: 'sessions/',
+})
+
+bot.use(
+	session({
+		initial: () => ({ pizzaCount: 0 }),
+		storage,
+	})
+)
+```
+
+### Bun
+
+```ts
+import { S3Adapter } from '@grammyjs/storage-s3'
+import { S3Client } from 'bun'
+
+const client = new S3Client({
+	bucket: 'my-bucket',
+	accessKeyId: 'your-access-key-id',
+	secretAccessKey: 'your-secret-access-key',
+})
+
+const storage = new S3Adapter(client, {
 	prefix: 'sessions/',
 })
 
@@ -101,11 +134,11 @@ bot.use(
 
 ## Configuration
 
-Both adapters accept the following options:
+The `S3Adapter` constructor takes the client instance as the first argument
+and an options object as the second:
 
-- `instance` (required): An `S3Client` or minio `Client` instance, depending
-  on the adapter
-- `bucket` (required): The name of the S3 bucket
+- `bucket` (required for the AWS and MinIO SDKs): The name of the S3 bucket.
+  Not needed for `Bun.S3Client`, which is already bound to a bucket
 - `prefix` (optional): A prefix prepended to every object key. Useful to
   separate sessions from other data in the same bucket. Defaults to `''`
 
@@ -118,6 +151,6 @@ with an expiration for the sessions prefix.
 
 ## Error Handling
 
-Both adapters include built-in error handling and logging. Reading a missing
+The adapter includes built-in error handling and logging. Reading a missing
 object returns `undefined`. Errors during read operations are logged and
 return `undefined`, while write and delete operations will throw errors.

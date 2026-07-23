@@ -39,7 +39,7 @@
 	"scripts": {
 		"typecheck": "tsc",
 		"prebuild": "pnpm typecheck",
-		"test": "node __tests__/aws.ts && node __tests__/minio.ts",
+		"test": "node __tests__/aws.ts && node __tests__/minio.ts && node __tests__/bun.ts",
 		"build": "tsdown"
 	},
 	"dependencies": {
@@ -50,6 +50,7 @@
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",
 		"@smithy/util-stream": "4.7.12",
+		"@types/bun": "1",
 		"aws-sdk-client-mock": "4.1.0"
 	},
 	"jsrExclude": [

@@ -1,8 +1,7 @@
-# Bun storage adapters for grammY
+# Bun SQL storage adapter for grammY
 
 Session storage for [grammY](https://grammy.dev) backed by an existing
-[Bun SQL](https://bun.sh/docs/runtime/sql) instance or an
-[S3 bucket](https://bun.sh/docs/api/s3).
+[Bun SQL](https://bun.sh/docs/runtime/sql) instance.
 
 ## Installation
 
@@ -66,33 +65,3 @@ bot.use(
 Set `dialect` to `postgres`, `sqlite`, or `mysql` to use the corresponding
 atomic upsert syntax. The adapter does not create, close, or otherwise manage
 the supplied `SQL` connection.
-
-## S3 usage
-
-```ts
-import { Bot, session } from 'grammy'
-import { S3Client } from 'bun'
-import { BunS3Adapter } from '@grammyjs/storage-bun'
-
-interface SessionData {
-	pizzaCount: number
-}
-
-const bot = new Bot('BOT_TOKEN')
-const client = new S3Client({
-	bucket: 'my-bucket',
-	accessKeyId: process.env.S3_ACCESS_KEY_ID,
-	secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-})
-
-bot.use(
-	session({
-		initial: (): SessionData => ({ pizzaCount: 0 }),
-		storage: new BunS3Adapter<SessionData>(client, { dirName: 'sessions' }),
-	})
-)
-```
-
-Sessions are stored as objects named `${key}.json` inside `dirName` (the bucket
-root by default), by analogy with the file adapter. The adapter does not create
-or check the bucket and never manages the supplied `S3Client`.
