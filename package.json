@@ -27,7 +27,7 @@
 		"lefthook": "2.1.10",
 		"lerna": "9.0.7",
 		"oxfmt": "0.58.0",
-		"oxlint": "1.73.0",
+		"oxlint": "1.75.0",
 		"tsdown": "0.22.7",
 		"typescript": "7.0.2"
 	},
