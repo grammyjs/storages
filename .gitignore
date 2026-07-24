@@ -39,3 +39,4 @@ lerna-debug.log
 .wrangler
 docs
 jsr.json
+.omo

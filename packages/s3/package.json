@@ -1,0 +1,65 @@
+{
+	"name": "@grammyjs/storage-s3",
+	"version": "2.6.0",
+	"private": false,
+	"description": "S3 session storage for grammY.",
+	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/s3#readme",
+	"bugs": {
+		"url": "https://github.com/grammyjs/storages/issues"
+	},
+	"license": "MIT",
+	"author": "Satont <satontworldwide@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grammyjs/storages.git"
+	},
+	"files": [
+		"README.md",
+		"dist",
+		"package.json",
+		"LICENSE"
+	],
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"jsr": "./src/index.ts",
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"typecheck": "tsc",
+		"prebuild": "pnpm typecheck",
+		"test": "node __tests__/aws.ts && node __tests__/minio.ts && node __tests__/bun.ts",
+		"build": "tsdown"
+	},
+	"dependencies": {
+		"@aws-sdk/client-s3": "3",
+		"grammy": "1",
+		"minio": "8"
+	},
+	"devDependencies": {
+		"@grammyjs/storage-utils": "workspace:*",
+		"@smithy/util-stream": "4.7.12",
+		"@types/bun": "1",
+		"aws-sdk-client-mock": "4.1.0"
+	},
+	"jsrExclude": [
+		"dist",
+		"package.json"
+	],
+	"jsrInclude": [
+		"src/",
+		"README.md",
+		"LICENSE"
+	]
+}

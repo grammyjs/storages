@@ -19,6 +19,7 @@ This is monorepo of session adapters for [grammY](https://grammy.dev).
 - [cloudflare](https://github.com/grammyjs/storages/tree/main/packages/cloudflare)
 - [denokv](https://github.com/grammyjs/storages/tree/main/packages/denokv)
 - [dynamodb](https://github.com/grammyjs/storages/tree/main/packages/dynamodb)
+- [s3](https://github.com/grammyjs/storages/tree/main/packages/s3)
 
 Each package is 100 % [TypeScript](https://www.typescriptlang.org/), well tested, and focused on supporting [Deno](https://deno.land) and [Node.js](https://nodejs.org).
 
@@ -33,7 +34,7 @@ Bug reports and pull requests are welcome.
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: bun|utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denokv|cloudflare|pocketbase|prisma|dynamodb
+  │       └─⫸ Commit Scope: bun|utils|file|mongodb|psql|redis|typeorm|supabase|free|firestore|deta|denokv|cloudflare|pocketbase|prisma|dynamodb|s3
   │
   │
   │

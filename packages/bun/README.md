@@ -37,7 +37,7 @@ CREATE TABLE grammy_sessions (
 );
 ```
 
-## Usage
+## SQL usage
 
 ```ts
 import { Bot, session } from 'grammy'
