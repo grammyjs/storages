@@ -23,7 +23,7 @@
 		"publish:jsr": "./scripts/publish-jsr.sh"
 	},
 	"devDependencies": {
-		"@types/node": "26.1.1",
+		"@types/node": "26.6.6",
 		"lefthook": "2.1.10",
 		"lerna": "9.0.7",
 		"oxfmt": "0.58.0",
