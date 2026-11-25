@@ -1,4 +1,4 @@
-import { type Client, escapeIdentifier } from 'pg'
+import pg, { type Client } from 'pg'
 
 import type { StorageAdapter } from 'grammy'
 
@@ -32,10 +32,10 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 	static async create(
 		opts = { tableName: 'sessions' } as Omit<AdapterConstructor, 'query'>
 	): Promise<PsqlAdapter<unknown>> {
-		const tableName = escapeIdentifier(opts.tableName)
+		const tableName = pg.escapeIdentifier(opts.tableName)
 		// Preserve the spelling of indexes created with an unquoted name.
 		const foldedName = opts.tableName.replace(/[A-Z]/g, (letter) => letter.toLowerCase())
-		const indexName = escapeIdentifier(`idx_${foldedName}`)
+		const indexName = pg.escapeIdentifier(`idx_${foldedName}`)
 		const queryString = `
       CREATE TABLE IF NOT EXISTS ${tableName} (
         "key" VARCHAR NOT NULL,
