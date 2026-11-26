@@ -44,7 +44,7 @@
 	},
 	"dependencies": {
 		"grammy": "1",
-		"pg": "8"
+		"pg": "^8.11.0"
 	},
 	"devDependencies": {
 		"@grammyjs/storage-utils": "workspace:*",

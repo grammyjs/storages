@@ -1,5 +1,6 @@
+import pg, { type Client } from 'pg'
+
 import type { StorageAdapter } from 'grammy'
-import type { Client } from 'pg'
 
 interface AdapterConstructor {
 	client: Client
@@ -31,25 +32,29 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 	static async create(
 		opts = { tableName: 'sessions' } as Omit<AdapterConstructor, 'query'>
 	): Promise<PsqlAdapter<unknown>> {
+		const tableName = pg.escapeIdentifier(opts.tableName)
+		// Preserve existing index names: PostgreSQL folds only ASCII A–Z in unquoted UTF-8
+		// identifiers, while JavaScript’s toLowerCase() also lowercases letters such as É.
+		const foldedName = opts.tableName.replace(/[A-Z]/g, (letter) => letter.toLowerCase())
+		const indexName = pg.escapeIdentifier(`idx_${foldedName}`)
 		const queryString = `
-      CREATE TABLE IF NOT EXISTS "${opts.tableName}" (
+      CREATE TABLE IF NOT EXISTS ${tableName} (
         "key" VARCHAR NOT NULL,
         "value" TEXT
       )`
 		const query = buildQueryRunner(opts.client)
 		await query(queryString)
-		await query(
-			`CREATE UNIQUE INDEX IF NOT EXISTS IDX_${opts.tableName} ON "${opts.tableName}" ("key")`
-		)
+		await query(`CREATE UNIQUE INDEX IF NOT EXISTS ${indexName} ON ${tableName} ("key")`)
 
 		return new PsqlAdapter({
 			...opts,
+			tableName,
 			query,
 		})
 	}
 
 	private async findSession(key: string): Promise<DbObject | undefined> {
-		const results = (await this.query(`select * from "${this.tableName}" where key = $1`, [
+		const results = (await this.query(`select * from ${this.tableName} where key = $1`, [
 			key,
 		])) as DbObject[]
 		return results[0]
@@ -68,7 +73,7 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 	async write(key: string, value: T): Promise<void> {
 		await this.query(
 			`
-      INSERT INTO "${this.tableName}" (key, value)
+      INSERT INTO ${this.tableName} (key, value)
       values ($1, $2)
       ON CONFLICT (key) DO UPDATE SET value = $2`,
 			[key, JSON.stringify(value)]

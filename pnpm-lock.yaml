@@ -168,7 +168,7 @@ importers:
         specifier: '1'
         version: 1.44.0(encoding@0.1.13)
       pg:
-        specifier: '8'
+        specifier: ^8.11.0
         version: 8.22.0
     devDependencies:
       '@grammyjs/storage-utils':

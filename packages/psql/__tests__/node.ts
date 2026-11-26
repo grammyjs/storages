@@ -53,3 +53,32 @@ test('Should be changed', async () => {
 	await bot.handleUpdate(utils.createMessage(bot, 'first').update)
 	await bot.handleUpdate(utils.createMessage(bot, 'second').update)
 })
+
+for (const tableName of ["my'sessions", 'my"sessions']) {
+	test(`stores and deletes sessions in table ${tableName}`, async () => {
+		const client = new (newDb().adapters.createPg().Client)()
+		const storage = await PsqlAdapter.create({ client, tableName })
+
+		await storage.write('chat', 'first')
+		assert.equal(await storage.read('chat'), 'first')
+		await storage.write('chat', 'second')
+		assert.equal(await storage.read('chat'), 'second')
+		await storage.delete('chat')
+		assert.equal(await storage.read('chat'), undefined)
+	})
+}
+
+test('preserves the legacy index name for a mixed-case table', async () => {
+	const db = newDb()
+	const client = new (db.adapters.createPg().Client)()
+
+	await PsqlAdapter.create({ client, tableName: 'MyÉSessions' })
+
+	assert.deepEqual(
+		db.public
+			.getTable('MyÉSessions')
+			.listIndices()
+			.map((index) => index.name),
+		['idx_myÉsessions']
+	)
+})
