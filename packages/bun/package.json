@@ -1,6 +1,6 @@
 {
 	"name": "@grammyjs/storage-bun",
-	"version": "2.6.0",
+	"version": "2.7.0",
 	"description": "Bun SQL storage for grammY library.",
 	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/bun#readme",
 	"bugs": {

@@ -1,6 +1,6 @@
 {
 	"name": "@grammyjs/storage-s3",
-	"version": "2.6.0",
+	"version": "2.7.0",
 	"private": false,
 	"description": "S3 session storage for grammY.",
 	"homepage": "https://github.com/grammyjs/storages/tree/main/packages/s3#readme",
