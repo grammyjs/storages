@@ -41,15 +41,23 @@ folder
 
 ## Vendor Examples
 
-### [Vercel KV](https://vercel.com/docs/storage/vercel-kv) ([Upstash](https://upstash.com))
+### [Upstash Redis](https://upstash.com/docs/redis/overall/getstarted) (also Vercel KV)
 
 ```js
-import { kv as instance } from '@vercel/kv'
+import { Redis } from '@upstash/redis'
 import { RedisAdapter } from '@grammyjs/storage-redis'
 
-instance.opts.automaticDeserialization = false
+const instance = new Redis({
+	// Vercel's Upstash integration sets KV_REST_API_URL and KV_REST_API_TOKEN instead
+	url: process.env.UPSTASH_REDIS_REST_URL,
+	token: process.env.UPSTASH_REDIS_REST_TOKEN,
+	// The adapter stores JSON strings and parses them itself
+	automaticDeserialization: false,
+})
 
 const storage = new RedisAdapter({ instance })
 
 bot.use(session({ storage }))
 ```
+
+Leave `ttl` unset with this client: the adapter writes it with the ioredis call `set(key, value, 'EX', ttl)`, which `@upstash/redis` does not accept. Use grammY's `enhanceStorage({ storage, millisecondsToLive })` for expiry instead.
