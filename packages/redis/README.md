@@ -41,7 +41,7 @@ folder
 
 ## Vendor Examples
 
-### [Upstash Redis](https://upstash.com/docs/redis/overall/getstarted) (also Vercel KV)
+### [Upstash Redis](https://upstash.com/docs/redis/overall/getstarted)
 
 ```js
 import { Redis } from '@upstash/redis'
