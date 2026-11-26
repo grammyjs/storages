@@ -47,13 +47,9 @@ folder
 import { Redis } from '@upstash/redis'
 import { RedisAdapter } from '@grammyjs/storage-redis'
 
-const instance = new Redis({
-	// Vercel's Upstash integration sets KV_REST_API_URL and KV_REST_API_TOKEN instead
-	url: process.env.UPSTASH_REDIS_REST_URL,
-	token: process.env.UPSTASH_REDIS_REST_TOKEN,
-	// The adapter stores JSON strings and parses them itself
-	automaticDeserialization: false,
-})
+// Reads UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN (or KV_REST_API_URL and KV_REST_API_TOKEN).
+// automaticDeserialization is off because the adapter stores JSON strings and parses them itself.
+const instance = Redis.fromEnv({ automaticDeserialization: false })
 
 const storage = new RedisAdapter({ instance })
 
