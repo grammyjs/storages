@@ -33,7 +33,8 @@ export class PsqlAdapter<T> implements StorageAdapter<T> {
 		opts = { tableName: 'sessions' } as Omit<AdapterConstructor, 'query'>
 	): Promise<PsqlAdapter<unknown>> {
 		const tableName = pg.escapeIdentifier(opts.tableName)
-		// Preserve the spelling of indexes created with an unquoted name.
+		// Preserve existing index names: PostgreSQL folds only ASCII A–Z in unquoted UTF-8
+		// identifiers, while JavaScript’s toLowerCase() also lowercases letters such as É.
 		const foldedName = opts.tableName.replace(/[A-Z]/g, (letter) => letter.toLowerCase())
 		const indexName = pg.escapeIdentifier(`idx_${foldedName}`)
 		const queryString = `
